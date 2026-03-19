@@ -18,28 +18,37 @@ body.light-mode {
   color: #24292e;
 }
 
-/* Navbar */
+/* Navbar with background */
 .navbar {
   display: flex;
   justify-content: center;
-  padding: 15px 40px;
-  background-color: inherit;
+  padding: 20px 40px;
   position: sticky;
   top: 0;
   z-index: 100;
+  background: rgba(13,17,23,0.85); /* hafif transparan dark */
+  backdrop-filter: blur(8px); /* blur efekti */
+  border-bottom: 1px solid #2ea44f; /* subtle line */
 }
 
+body.light-mode .navbar {
+  background: rgba(246,248,250,0.9);
+  border-bottom: 1px solid #2ea44f;
+}
+
+/* Navbar center container */
 .navbar-center {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* Navbar name */
 .navbar-name {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 2rem; /* biraz daha büyük */
+  font-weight: 700;
   color: #c9d1d9;
 }
 
@@ -47,17 +56,18 @@ body.light-mode .navbar-name {
   color: #24292e;
 }
 
+/* Navbar links */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 .navbar-links li a {
   text-decoration: none;
   color: #c9d1d9;
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 body.light-mode .navbar-links li a {
@@ -75,13 +85,15 @@ body.light-mode .navbar-links li a {
 }
 
 .navbar-controls button {
-  padding: 5px 10px;
+  padding: 6px 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: #2ea44f;
   color: #fff;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s;
 }
 
 .navbar-controls button:hover {
@@ -90,11 +102,12 @@ body.light-mode .navbar-links li a {
 
 /* Search input */
 #search {
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 6px 12px;
+  border-radius: 6px;
   border: 1px solid #444;
   background-color: #161b22;
   color: #c9d1d9;
+  font-size: 0.95rem;
 }
 
 body.light-mode #search {
@@ -110,12 +123,15 @@ body.light-mode #search {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 120px 20px;
+  padding: 150px 20px;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 4rem; /* büyük ve zarif */
+  font-weight: 700;
   color: #2ea44f;
+  letter-spacing: 1px;
+  line-height: 1.2;
 }
 
 body.light-mode .hero h1 {
@@ -123,20 +139,23 @@ body.light-mode .hero h1 {
 }
 
 .hero p {
-  margin: 15px 0;
-  font-size: 1.2rem;
+  margin: 20px 0;
+  font-size: 1.3rem; /* daha okunaklı */
+  font-weight: 500;
+  line-height: 1.6;
 }
 
 /* Social links */
 .socials {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .socials a {
-  margin: 0 10px;
+  margin: 0 12px;
   text-decoration: none;
   color: #c9d1d9;
   font-weight: 500;
+  font-size: 1rem;
 }
 
 body.light-mode .socials a {
@@ -155,28 +174,36 @@ body.light-mode .socials a {
 /* Footer */
 footer {
   text-align: center;
-  padding: 40px 20px;
-  font-size: 0.9rem;
+  padding: 50px 20px;
+  font-size: 1rem;
 }
 
 /* Responsive */
 @media screen and (max-width: 768px) {
   .navbar-center {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   .navbar-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   .navbar-controls {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   #search {
     width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
   }
 }
