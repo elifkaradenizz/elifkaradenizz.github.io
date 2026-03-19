@@ -11,82 +11,69 @@
 <!-- Navbar -->
 <nav>
   <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#articles">Articles</a></li>
-    <li><a href="#conference">Conference</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="conference.html">Conference</a></li>
+    <li><a href="about.html">About</a></li>
   </ul>
+
+  <!-- Search input -->
+  <input type="text" id="search" placeholder="Search...">
+
   <div class="nav-controls">
     <button id="lang-toggle">EN / TR</button>
     <button id="theme-toggle"><i class="fas fa-moon"></i></button>
   </div>
 </nav>
 
-<!-- Hero / Home -->
-<section id="home" class="hero">
+<!-- Hero -->
+<section class="hero">
   <p class="en">Hello, I'm</p>
   <p class="tr" style="display:none;">Merhaba, ben</p>
   <h1>Elif Karadeniz</h1>
   <p class="en">AI & Data Science Engineer building intelligent systems and evaluating AI models. Focused on Machine Learning, NLP, and LLM applications.</p>
   <p class="tr" style="display:none;">AI & Veri Bilimi Mühendisiyim, akıllı sistemler kuruyor ve ML, NLP, LLM uygulamalarında çalışıyorum.</p>
+
+  <div class="socials">
+    <a href="https://github.com/elifkaradenizz" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://linkedin.com/in/elifkaradenizz" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  </div>
 </section>
 
-<!-- Projects -->
+<!-- Projects Section (örnek) -->
 <section id="projects">
   <h2 class="en">Projects</h2>
   <h2 class="tr" style="display:none;">Projeler</h2>
 
-  <div class="project-card">
+  <div class="item-card" data-type="project" data-title="Customer Segmentation">
     <h3>Customer Segmentation</h3>
-    <p><b class="en">Problem:</b><b class="tr" style="display:none;">Problemi:</b> Businesses need better targeting.</p>
-    <p><b class="en">Solution:</b><b class="tr" style="display:none;">Çözüm:</b> Developed clustering model.</p>
-    <p><b class="en">Impact:</b><b class="tr" style="display:none;">Etkisi:</b> Improved marketing efficiency.</p>
+    <p>Clustering model to improve marketing efficiency.</p>
   </div>
 
-  <div class="project-card">
+  <div class="item-card" data-type="project" data-title="Hate Speech Detection">
     <h3>Hate Speech Detection</h3>
-    <p><b class="en">Problem:</b><b class="tr" style="display:none;">Problemi:</b> Harmful content on social media.</p>
-    <p><b class="en">Solution:</b><b class="tr" style="display:none;">Çözüm:</b> Built NLP-based classification model.</p>
-    <p><b class="en">Impact:</b><b class="tr" style="display:none;">Etkisi:</b> Supports safer digital environments.</p>
+    <p>NLP-based classification model for safer digital environments.</p>
   </div>
 </section>
 
-<!-- Articles -->
+<!-- Articles Section -->
 <section id="articles">
   <h2 class="en">Articles</h2>
   <h2 class="tr" style="display:none;">Makaleler</h2>
 
-  <div class="article-card">
+  <div class="item-card" data-type="article" data-title="Medium Article 1">
     <h3>Medium Article 1</h3>
     <a href="#">Read →</a>
   </div>
 </section>
 
-<!-- Conference -->
-<section id="conference">
-  <h2 class="en">Conference Talks</h2>
-  <h2 class="tr" style="display:none;">Konferans Sunumları</h2>
-
-  <div class="conference-card">
-    <h3>International Conference Paper</h3>
-    <p>Published in a reputable global conference.</p>
-    <a href="#">View Certificate</a>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about">
-  <h2 class="en">About Me</h2>
-  <h2 class="tr" style="display:none;">Hakkımda</h2>
-  <p class="en">I am an AI & Data Science enthusiast with experience in ML, NLP, and LLM applications. Passionate about real-world data solutions.</p>
-  <p class="tr" style="display:none;">AI & Veri Bilimi alanında deneyime sahibim; ML, NLP ve LLM uygulamalarını seviyorum. Gerçek dünya veri çözümlerine tutkuluyum.</p>
-</section>
-
 <!-- Footer -->
 <footer>
-  <p class="en">GitHub: <a href="https://github.com/elifkaradenizz" target="_blank">elifkaradenizz</a></p>
-  <p class="tr" style="display:none;">GitHub: <a href="https://github.com/elifkaradenizz" target="_blank">elifkaradenizz</a></p>
+  <div class="socials">
+    <a href="https://github.com/elifkaradenizz" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://linkedin.com/in/elifkaradenizz" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  </div>
 </footer>
 
 <!-- JS -->
@@ -108,6 +95,20 @@ const langBtn = document.getElementById('lang-toggle');
 langBtn.addEventListener('click', () => {
   document.querySelectorAll('.en').forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
   document.querySelectorAll('.tr').forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+});
+
+// Live search
+const searchInput = document.getElementById('search');
+searchInput.addEventListener('input', () => {
+  const term = searchInput.value.toLowerCase();
+  document.querySelectorAll('.item-card').forEach(card => {
+    const title = card.dataset.title.toLowerCase();
+    if(title.includes(term)){
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
 });
 </script>
 
