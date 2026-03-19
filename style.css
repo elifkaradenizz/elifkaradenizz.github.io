@@ -30,6 +30,10 @@ body.light-mode {
   backdrop-filter: blur(8px); /* blur efekti */
   border-bottom: 1px solid #2ea44f; /* subtle line */
 }
+.navbar-controls button.active {
+  background-color: #2ea44f;
+  color: white;
+}
 
 body.light-mode .navbar {
   background: rgba(246,248,250,0.9);
