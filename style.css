@@ -9,46 +9,62 @@
 /* Body */
 body {
   background-color: #f9f9f9;
-  color: #333;
+  color: #111827;
   line-height: 1.6;
   padding: 20px;
 }
 
-/* Header / Hero */
-h1 {
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
   font-size: 3rem;
-  color: #1f2937; /* koyu gri / siyah gibi */
-}
-
-h2 {
-  font-size: 2rem;
-  color: #111827;
-  margin-top: 10px;
-}
-
-p {
-  font-size: 1rem;
-  margin: 10px 0;
-}
-
-/* Navbar linkleri (sonraki adımda ekleyeceğiz) */
-nav a {
-  text-decoration: none;
   color: #1f2937;
-  margin-right: 20px;
-  font-weight: 500;
 }
 
-nav a:hover {
-  color: #4f46e5; /* mor ton hover */
+.hero span {
+  color: #4f46e5; /* mor aksan */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4f46e5;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 5px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #4338ca;
 }
 
 /* Sections */
 section {
-  margin: 40px 0;
+  margin: 60px 0;
+  padding: 20px;
 }
 
-/* Projects card style */
+/* Section Titles */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* Project Cards */
 .project-card {
   background-color: #fff;
   border-radius: 10px;
@@ -57,17 +73,22 @@ section {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Buttons / links */
-a.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4f46e5;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-top: 10px;
+/* Publications / Articles */
+.article-card, .conference-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 
-a.button:hover {
-  background-color: #4338ca;
+/* Links inside sections */
+section a {
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+section a:hover {
+  text-decoration: underline;
 }
