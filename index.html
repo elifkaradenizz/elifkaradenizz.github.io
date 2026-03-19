@@ -6,11 +6,13 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body class="dark-mode">
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="navbar-center">
+
     <span class="navbar-name">Elif Karadeniz</span>
 
     <ul class="navbar-links">
@@ -22,60 +24,113 @@
     </ul>
 
     <input type="text" id="search" placeholder="Search...">
+
     <div class="navbar-controls">
-      <button id="lang-toggle">EN | TR</button>
+      <button id="btn-en">EN</button>
+      <button id="btn-tr">TR</button>
       <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     </div>
+
   </div>
 </nav>
 
-<!-- Hero -->
+<!-- HERO -->
 <section class="hero">
+
   <p class="en">Hello, I'm</p>
   <p class="tr" style="display:none;">Merhaba, ben</p>
+
   <h1>Elif Karadeniz</h1>
-  <p class="en">AI & Data Science Engineer building intelligent systems and evaluating AI models. Focused on Machine Learning, NLP, and LLM applications.</p>
-  <p class="tr" style="display:none;">AI & Veri Bilimi Mühendisiyim, akıllı sistemler kuruyor ve ML, NLP, LLM uygulamalarında çalışıyorum.</p>
+
+  <p class="en">
+    AI & Data Science Engineer building intelligent systems and evaluating AI models.
+    Focused on Machine Learning, NLP, and LLM applications.
+  </p>
+
+  <p class="tr" style="display:none;">
+    AI & Veri Bilimi Mühendisiyim. Akıllı sistemler geliştiriyor,
+    Machine Learning, NLP ve LLM alanlarında çalışıyorum.
+  </p>
 
   <div class="socials">
     <a href="https://github.com/elifkaradenizz" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/elif-karadeniz/" target="_blank"><i class="fab fa-linkedin"></i> </a>
-    <a href="https://medium.com/@Elifkaradenizz" target="_blank"><i class="fab fa-medium"></i> </a>
+    <a href="https://linkedin.com/in/elif-karadeniz/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://medium.com/@Elifkaradenizz" target="_blank"><i class="fab fa-medium"></i></a>
   </div>
+
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
-
+  <p class="en">© 2026 Elif Karadeniz</p>
+  <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
 </footer>
 
 <!-- JS -->
 <script>
+
+/* 🌙 THEME */
 const themeBtn = document.getElementById('theme-toggle');
+
 themeBtn.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
+
   const icon = themeBtn.querySelector('i');
+
   if(document.body.classList.contains('light-mode')){
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
+    icon.classList.replace('fa-moon','fa-sun');
   } else {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
+    icon.classList.replace('fa-sun','fa-moon');
   }
 });
 
-const langBtn = document.getElementById('lang-toggle');
-langBtn.addEventListener('click', () => {
-  document.querySelectorAll('.en').forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
-  document.querySelectorAll('.tr').forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
-});
 
-// Live search
+/* 🌍 LANGUAGE SYSTEM (PROFESYONEL) */
+const btnEN = document.getElementById('btn-en');
+const btnTR = document.getElementById('btn-tr');
+
+function setLanguage(lang) {
+
+  if(lang === "en"){
+    document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
+    document.querySelectorAll('.tr').forEach(el => el.style.display = 'none');
+  } else {
+    document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.tr').forEach(el => el.style.display = 'block');
+  }
+
+  // aktif buton
+  btnEN.classList.remove('active');
+  btnTR.classList.remove('active');
+
+  if(lang === "en"){
+    btnEN.classList.add('active');
+  } else {
+    btnTR.classList.add('active');
+  }
+
+  // dili kaydet
+  localStorage.setItem("lang", lang);
+}
+
+// click events
+btnEN.addEventListener("click", () => setLanguage("en"));
+btnTR.addEventListener("click", () => setLanguage("tr"));
+
+// sayfa açılınca dili hatırla
+const savedLang = localStorage.getItem("lang") || "en";
+setLanguage(savedLang);
+
+
+/* 🔍 SEARCH (hazır altyapı) */
 const searchInput = document.getElementById('search');
+
 searchInput.addEventListener('input', () => {
   const term = searchInput.value.toLowerCase();
+
   document.querySelectorAll('.item-card').forEach(card => {
     const title = card.dataset.title.toLowerCase();
+
     if(title.includes(term)){
       card.style.display = 'block';
     } else {
@@ -83,6 +138,7 @@ searchInput.addEventListener('input', () => {
     }
   });
 });
+
 </script>
 
 </body>
