@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Elif Karadeniz</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="dark-mode">
 
@@ -16,49 +17,43 @@
     <li><a href="#conference">Conference</a></li>
     <li><a href="#about">About</a></li>
   </ul>
-  <div class="nav-buttons">
-    <button id="lang-toggle">TR/EN</button>
-    <button id="theme-toggle">Light/Dark</button>
+  <div class="nav-controls">
+    <button id="lang-toggle">EN / TR</button>
+    <button id="theme-toggle"><i class="fas fa-moon"></i></button>
   </div>
 </nav>
 
 <!-- Hero / Home -->
 <section id="home" class="hero">
-  <h1>
-    <span class="en">Hey, I'm</span>
-    <span class="tr" style="display:none;">Merhaba, ben</span>
-    <span>Elif Karadeniz</span>
-  </h1>
+  <p class="en">Hello, I'm</p>
+  <p class="tr" style="display:none;">Merhaba, ben</p>
+  <h1>Elif Karadeniz</h1>
   <p class="en">AI & Data Science Engineer building intelligent systems and evaluating AI models. Focused on Machine Learning, NLP, and LLM applications.</p>
-  <p class="tr" style="display:none;">Ben bir AI & Veri Bilimi Mühendisiyim, akıllı sistemler kuruyor ve ML, NLP, LLM uygulamalarında çalışıyorum.</p>
-  <a href="#projects" class="button">Projects →</a>
-  <a href="#articles" class="button">Articles →</a>
-  <a href="#about" class="button">About →</a>
-</section>
+  <p class="tr" style="display:none;">AI & Veri Bilimi Mühendisiyim, akıllı sistemler kuruyor ve ML, NLP, LLM uygulamalarında çalışıyorum.</p>
 
-<!-- About -->
-<section id="about">
-  <h2 class="en">About Me</h2>
-  <h2 class="tr" style="display:none;">Hakkımda</h2>
-  <p class="en">I am an AI & Data Science Engineer with experience in machine learning, NLP, and LLM applications. I focus on solving real-world problems and creating meaningful data-driven solutions.</p>
-  <p class="tr" style="display:none;">Ben makine öğrenmesi, NLP ve LLM uygulamaları konusunda deneyimli bir AI & Veri Bilimi Mühendisiyim. Amacım gerçek dünya problemlerini çözmek ve anlamlı veri odaklı çözümler geliştirmektir.</p>
+  <div class="socials">
+    <a href="https://github.com/elifkaradenizz" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/elifkaradenizz" target="_blank">LinkedIn</a>
+  </div>
 </section>
 
 <!-- Projects -->
 <section id="projects">
   <h2 class="en">Projects</h2>
   <h2 class="tr" style="display:none;">Projeler</h2>
+
   <div class="project-card">
     <h3>Customer Segmentation</h3>
-    <p><b>Problem:</b> Businesses struggle to target the right customers.</p>
-    <p><b>Solution:</b> Developed segmentation model using clustering techniques.</p>
-    <p><b>Impact:</b> Personalized marketing and improved conversion rates.</p>
+    <p><b class="en">Problem:</b><b class="tr" style="display:none;">Problemi:</b> Businesses need better targeting.</p>
+    <p><b class="en">Solution:</b><b class="tr" style="display:none;">Çözüm:</b> Developed clustering model.</p>
+    <p><b class="en">Impact:</b><b class="tr" style="display:none;">Etkisi:</b> Improved marketing efficiency.</p>
   </div>
+
   <div class="project-card">
     <h3>Hate Speech Detection</h3>
-    <p><b>Problem:</b> Detecting harmful content on social media platforms.</p>
-    <p><b>Solution:</b> Built NLP-based classification model.</p>
-    <p><b>Impact:</b> Supports safer digital environments.</p>
+    <p><b class="en">Problem:</b><b class="tr" style="display:none;">Problemi:</b> Harmful content on social media.</p>
+    <p><b class="en">Solution:</b><b class="tr" style="display:none;">Çözüm:</b> Built NLP-based classification model.</p>
+    <p><b class="en">Impact:</b><b class="tr" style="display:none;">Etkisi:</b> Supports safer digital environments.</p>
   </div>
 </section>
 
@@ -66,15 +61,14 @@
 <section id="articles">
   <h2 class="en">Articles</h2>
   <h2 class="tr" style="display:none;">Makaleler</h2>
+
   <div class="article-card">
     <h3>Medium Article 1</h3>
-    <p>Writing about AI, Data Science, and Machine Learning applications.</p>
-    <a href="#">Read more →</a>
+    <a href="#">Read →</a>
   </div>
   <div class="article-card">
     <h3>Medium Article 2</h3>
-    <p>Exploring data-driven solutions and project applications.</p>
-    <a href="#">Read more →</a>
+    <a href="#">Read →</a>
   </div>
 </section>
 
@@ -82,11 +76,24 @@
 <section id="conference">
   <h2 class="en">Conference Talks</h2>
   <h2 class="tr" style="display:none;">Konferans Sunumları</h2>
+
   <div class="conference-card">
-    <h3>Hate Speech Detection and Analysis</h3>
-    <p>Presented at an international conference. Focused on NLP-based detection of hate speech.</p>
-    <a href="#">View Certificate →</a>
+    <h3>International Conference Paper</h3>
+    <p>Published in a reputable global conference.</p>
+    <a href="#">View Certificate</a>
   </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <h2 class="en">About Me</h2>
+  <h2 class="tr" style="display:none;">Hakkımda</h2>
+  <p class="en">
+    I am an AI & Data Science enthusiast with experience in ML, NLP, and LLM applications. Passionate about real-world data solutions.
+  </p>
+  <p class="tr" style="display:none;">
+    AI & Veri Bilimi alanında deneyime sahibim; ML, NLP ve LLM uygulamalarını seviyorum. Gerçek dünya veri çözümlerine tutkuluyum.
+  </p>
 </section>
 
 <!-- Footer -->
@@ -95,12 +102,19 @@
   <p class="tr" style="display:none;">GitHub: <a href="https://github.com/elifkaradenizz" target="_blank">elifkaradenizz</a></p>
 </footer>
 
-<!-- JS for Theme + Language Toggle -->
+<!-- JS -->
 <script>
 const themeBtn = document.getElementById('theme-toggle');
 themeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
   document.body.classList.toggle('light-mode');
+  const icon = themeBtn.querySelector('i');
+  if(document.body.classList.contains('light-mode')){
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  } else {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+  }
 });
 
 const langBtn = document.getElementById('lang-toggle');
