@@ -109,17 +109,27 @@ section h2 {
   margin-bottom: 20px;
 }
 
-/* Cards */
+/* Cards – artık dark mode ve light mode ayrı */
 .project-card, .article-card, .conference-card {
-  background-color: inherit;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.project-card h3, .article-card h3, .conference-card h3 {
-  margin-bottom: 10px;
+body.dark-mode .project-card,
+body.dark-mode .article-card,
+body.dark-mode .conference-card {
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+}
+
+body.light-mode .project-card,
+body.light-mode .article-card,
+body.light-mode .conference-card {
+  background-color: #fff;
+  color: #111827;
 }
 
 /* Footer */
