@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Elif Karadeniz</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="dark-mode">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-center">
+
+    <span class="navbar-name">Elif Karadeniz</span>
+
+    <ul class="navbar-links">
+
+      <li>
+        <a href="#">
+          <span class="en">Home</span>
+          <span class="tr">Ana Sayfa</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html">
+          <span class="en">About</span>
+          <span class="tr">Hakkımda</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="projects.html">
+          <span class="en">Projects</span>
+          <span class="tr">Projeler</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="articles.html">
+          <span class="en">Articles</span>
+          <span class="tr">Makaleler</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="conference.html">
+          <span class="en">Conference</span>
+          <span class="tr">Konferans</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <input type="text" id="search" placeholder="Search...">
+
+    <div class="navbar-controls">
+
+      <!-- COOL LANGUAGE SWITCH -->
+      <div class="lang-switch">
+        <span id="btn-en">EN</span>
+        <span id="btn-tr">TR</span>
+      </div>
+
+      <button id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <p class="en">Hello, I'm</p>
+  <p class="tr">Merhaba, ben</p>
+
+  <h1>Elif Karadeniz</h1>
+
+  <p class="en">
+    AI & Data Science Engineer building intelligent systems and evaluating AI models.
+    Focused on Machine Learning, NLP, and LLM applications.
+  </p>
+
+  <p class="tr">
+    AI & Veri Bilimi Mühendisiyim. Akıllı sistemler geliştiriyor,
+    Machine Learning, NLP ve LLM alanlarında çalışıyorum.
+  </p>
+
+  <div class="socials">
+    <a href="https://github.com/elifkaradenizz" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/elif-karadeniz/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://medium.com/@Elifkaradenizz" target="_blank"><i class="fab fa-medium"></i></a>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="en">© 2026 Elif Karadeniz</p>
+  <p class="tr">© 2026 Elif Karadeniz</p>
+</footer>
+
+<!-- JS -->
+<script>
+
+/* 🌙 THEME */
+const themeBtn = document.getElementById('theme-toggle');
+
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+
+  const icon = themeBtn.querySelector('i');
+
+  if(document.body.classList.contains('light-mode')){
+    icon.classList.replace('fa-moon','fa-sun');
+  } else {
+    icon.classList.replace('fa-sun','fa-moon');
+  }
+});
+
+
+/* 🌍 GLOBAL LANGUAGE SYSTEM */
+const btnEN = document.getElementById('btn-en');
+const btnTR = document.getElementById('btn-tr');
+
+function setLanguage(lang) {
+
+  document.querySelectorAll('.en').forEach(el => {
+    el.style.display = (lang === "en") ? "block" : "none";
+  });
+
+  document.querySelectorAll('.tr').forEach(el => {
+    el.style.display = (lang === "tr") ? "block" : "none";
+  });
+
+  // aktif görünüm
+  btnEN.classList.remove('active');
+  btnTR.classList.remove('active');
+
+  if(lang === "en"){
+    btnEN.classList.add('active');
+  } else {
+    btnTR.classList.add('active');
+  }
+
+  localStorage.setItem("lang", lang);
+}
+
+// click
+btnEN.addEventListener("click", () => setLanguage("en"));
+btnTR.addEventListener("click", () => setLanguage("tr"));
+
+// sayfa açılınca dili uygula
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "en";
+  setLanguage(savedLang);
+});
+
+
+/* 🔍 SEARCH */
+const searchInput = document.getElementById('search');
+
+searchInput.addEventListener('input', () => {
+  const term = searchInput.value.toLowerCase();
+
+  document.querySelectorAll('.item-card').forEach(card => {
+    const title = card.dataset.title.toLowerCase();
+
+    if(title.includes(term)){
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>
