@@ -4,17 +4,18 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* Dark / Light Mode */
 body.dark-mode {
   background-color: #121212;
-  color: #f0f0f0;
+  color: #eee;
 }
 
 body.light-mode {
   background-color: #f9f9f9;
-  color: #111827;
+  color: #111;
 }
 
 /* Navbar */
@@ -25,8 +26,8 @@ nav {
   padding: 20px;
   position: sticky;
   top: 0;
-  background-color: inherit;
   z-index: 100;
+  background-color: inherit;
 }
 
 nav ul {
@@ -48,7 +49,7 @@ nav ul li a:hover {
   color: #4f46e5;
 }
 
-.nav-buttons button {
+.nav-controls button {
   margin-left: 10px;
   padding: 5px 10px;
   border: none;
@@ -58,7 +59,7 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-.nav-buttons button:hover {
+.nav-controls button:hover {
   background-color: #4338ca;
 }
 
@@ -70,32 +71,22 @@ nav ul li a:hover {
 
 .hero h1 {
   font-size: 3rem;
-}
-
-.hero span {
   color: #4f46e5;
 }
 
 .hero p {
-  margin: 20px 0;
+  margin: 15px 0;
   font-size: 1.2rem;
 }
 
-/* Buttons */
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4f46e5;
-  color: #fff;
-  border-radius: 5px;
+.socials a {
+  margin: 0 10px;
   text-decoration: none;
-  margin: 5px;
-  font-weight: 500;
-  transition: 0.3s;
+  color: #4f46e5;
 }
 
-.button:hover {
-  background-color: #4338ca;
+.socials a:hover {
+  text-decoration: underline;
 }
 
 /* Sections */
@@ -109,27 +100,44 @@ section h2 {
   margin-bottom: 20px;
 }
 
-/* Cards – artık dark mode ve light mode ayrı */
+/* Cards */
 .project-card, .article-card, .conference-card {
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-body.dark-mode .project-card,
-body.dark-mode .article-card,
-body.dark-mode .conference-card {
   background-color: #1f1f1f;
-  color: #f0f0f0;
+  color: #eee;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
 }
 
 body.light-mode .project-card,
 body.light-mode .article-card,
 body.light-mode .conference-card {
   background-color: #fff;
-  color: #111827;
+  color: #111;
+}
+
+.project-card:hover, .article-card:hover, .conference-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+/* Buttons */
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4f46e5;
+  color: #fff;
+  border-radius: 5px;
+  margin: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a.button:hover {
+  background-color: #4338ca;
 }
 
 /* Footer */
