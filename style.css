@@ -9,60 +9,92 @@
 
 /* Dark / Light Mode */
 body.dark-mode {
-  background-color: #0d1117; /* Github siyah/grimsi */
-  color: #c9d1d9; /* Github beyazı */
+  background-color: #0d1117; /* Github dark */
+  color: #c9d1d9;
 }
 
 body.light-mode {
-  background-color: #ffffff;
+  background-color: #f6f8fa; /* Github light */
   color: #24292e;
 }
 
 /* Navbar */
-nav {
+.navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
+  justify-content: center;
+  padding: 15px 40px;
+  background-color: inherit;
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: inherit;
 }
 
-nav ul {
-  list-style: none;
+.navbar-center {
   display: flex;
   align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-nav ul li {
-  margin-right: 20px;
+.navbar-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #c9d1d9;
 }
 
-nav ul li a {
+body.light-mode .navbar-name {
+  color: #24292e;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links li a {
   text-decoration: none;
-  color: inherit;
+  color: #c9d1d9;
   font-weight: 500;
-  transition: color 0.3s;
+  font-size: 1rem;
 }
 
-nav ul li a:hover {
+body.light-mode .navbar-links li a {
+  color: #24292e;
+}
+
+.navbar-links li a:hover {
   color: #2ea44f; /* Github green hover */
+}
+
+/* Navbar controls */
+.navbar-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-controls button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2ea44f;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.navbar-controls button:hover {
+  background-color: #22863a;
 }
 
 /* Search input */
 #search {
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid #444; /* gri sınır */
-  margin-left: 20px;
-  background-color: #161b22; /* Github arka plan tonu */
+  border: 1px solid #444;
+  background-color: #161b22;
   color: #c9d1d9;
-}
-
-#search::placeholder {
-  color: #888;
 }
 
 body.light-mode #search {
@@ -71,20 +103,8 @@ body.light-mode #search {
   color: #24292e;
 }
 
-/* Navbar controls (lang + theme toggle) */
-.nav-controls button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #2ea44f; /* Github green */
-  color: #fff;
-  transition: background 0.3s;
-}
-
-.nav-controls button:hover {
-  background-color: #22863a;
+#search::placeholder {
+  color: #888;
 }
 
 /* Hero Section */
@@ -95,7 +115,11 @@ body.light-mode #search {
 
 .hero h1 {
   font-size: 3rem;
-  color: #2ea44f; /* Github green */
+  color: #2ea44f;
+}
+
+body.light-mode .hero h1 {
+  color: #22863a;
 }
 
 .hero p {
@@ -115,6 +139,10 @@ body.light-mode #search {
   font-weight: 500;
 }
 
+body.light-mode .socials a {
+  color: #24292e;
+}
+
 .socials a i {
   margin-right: 5px;
 }
@@ -124,55 +152,6 @@ body.light-mode #search {
   text-decoration: underline;
 }
 
-/* Sections */
-section {
-  padding: 60px 20px;
-}
-
-/* Section Titles */
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #2ea44f;
-}
-
-/* Item Cards (Projects, Articles, Conference) */
-.item-card {
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: #161b22; /* Github gri ton */
-  color: #c9d1d9;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-body.light-mode .item-card {
-  background-color: #f6f8fa;
-  color: #24292e;
-}
-
-.item-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Buttons / Links */
-a.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #2ea44f;
-  color: #fff;
-  border-radius: 5px;
-  margin: 5px 0;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-a.button:hover {
-  background-color: #22863a;
-}
-
 /* Footer */
 footer {
   text-align: center;
@@ -180,23 +159,24 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Smooth transitions */
-body, button, a {
-  transition: all 0.3s ease;
-}
-
 /* Responsive */
 @media screen and (max-width: 768px) {
-  nav ul {
+  .navbar-center {
     flex-direction: column;
-    margin-bottom: 10px;
+    gap: 15px;
   }
-  nav ul li {
-    margin-right: 0;
-    margin-bottom: 10px;
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
   }
+
+  .navbar-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   #search {
-    margin-left: 0;
-    margin-top: 10px;
-  }    
+    width: 100%;
+  }
 }
