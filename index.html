@@ -1,64 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Elif Karadeniz</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Elif Karadeniz</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-mode">
 
-<!-- Hero -->
-<div class="hero">
-    <h1>Hey, I'm <span>Elif Karadeniz</span></h1>
-    <p>AI & Data Science Engineer building intelligent systems and evaluating AI models. Focused on Machine Learning, NLP, and LLM applications.</p>
-    <a href="#projects" class="button">Projects →</a>
-    <a href="#articles" class="button">Articles →</a>
-    <a href="#about" class="button">About →</a>
-</div>
+<!-- Navbar -->
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#articles">Articles</a></li>
+    <li><a href="#conference">Conference</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <div class="nav-buttons">
+    <button id="lang-toggle">TR/EN</button>
+    <button id="theme-toggle">Light/Dark</button>
+  </div>
+</nav>
+
+<!-- Hero / Home -->
+<section id="home" class="hero">
+  <h1>Hey, I'm <span>Elif Karadeniz</span></h1>
+  <p class="en">AI & Data Science Engineer building intelligent systems and evaluating AI models. Focused on Machine Learning, NLP, and LLM applications.</p>
+  <p class="tr" style="display:none;">Ben bir AI & Veri Bilimi Mühendisiyim, akıllı sistemler kuruyor ve ML, NLP, LLM uygulamalarında çalışıyorum.</p>
+  <a href="#projects" class="button">Projects →</a>
+  <a href="#articles" class="button">Articles →</a>
+  <a href="#about" class="button">About →</a>
+</section>
 
 <!-- About -->
 <section id="about">
-    <h2>About Me</h2>
-    <p>I am an AI & Data Science Engineer with experience in machine learning, NLP, and LLM applications. I focus on solving real-world problems and creating meaningful data-driven solutions.</p>
+  <h2 class="en">About Me</h2>
+  <h2 class="tr" style="display:none;">Hakkımda</h2>
+  <p class="en">I am an AI & Data Science Engineer with experience in machine learning, NLP, and LLM applications. I focus on solving real-world problems and creating meaningful data-driven solutions.</p>
+  <p class="tr" style="display:none;">Ben makine öğrenmesi, NLP ve LLM uygulamaları konusunda deneyimli bir AI & Veri Bilimi Mühendisiyim. Amacım gerçek dünya problemlerini çözmek ve anlamlı veri odaklı çözümler geliştirmektir.</p>
 </section>
 
 <!-- Projects -->
 <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-        <h3>Customer Segmentation</h3>
-        <p><b>Problem:</b> Businesses struggle to target the right customers.</p>
-        <p><b>Solution:</b> Developed segmentation model using clustering techniques.</p>
-        <p><b>Impact:</b> Personalized marketing and improved conversion rates.</p>
-    </div>
-    <div class="project-card">
-        <h3>Hate Speech Detection</h3>
-        <p><b>Problem:</b> Detecting harmful content on social media platforms.</p>
-        <p><b>Solution:</b> Built NLP-based classification model.</p>
-        <p><b>Impact:</b> Supports safer digital environments.</p>
-    </div>
+  <h2 class="en">Projects</h2>
+  <h2 class="tr" style="display:none;">Projeler</h2>
+  <div class="project-card">
+    <h3>Customer Segmentation</h3>
+    <p><b>Problem:</b> Businesses struggle to target the right customers.</p>
+    <p><b>Solution:</b> Developed segmentation model using clustering techniques.</p>
+    <p><b>Impact:</b> Personalized marketing and improved conversion rates.</p>
+  </div>
+  <div class="project-card">
+    <h3>Hate Speech Detection</h3>
+    <p><b>Problem:</b> Detecting harmful content on social media platforms.</p>
+    <p><b>Solution:</b> Built NLP-based classification model.</p>
+    <p><b>Impact:</b> Supports safer digital environments.</p>
+  </div>
 </section>
 
 <!-- Articles -->
 <section id="articles">
-    <h2>Articles</h2>
-    <div class="article-card">
-        <h3>Medium Article 1</h3>
-        <p>Writing about AI, Data Science, and Machine Learning applications.</p>
-    </div>
-    <div class="article-card">
-        <h3>Medium Article 2</h3>
-        <p>Exploring data-driven solutions and project applications.</p>
-    </div>
+  <h2 class="en">Articles</h2>
+  <h2 class="tr" style="display:none;">Makaleler</h2>
+  <div class="article-card">
+    <h3>Medium Article 1</h3>
+    <p>Writing about AI, Data Science, and Machine Learning applications.</p>
+    <a href="#">Read more →</a>
+  </div>
+  <div class="article-card">
+    <h3>Medium Article 2</h3>
+    <p>Exploring data-driven solutions and project applications.</p>
+    <a href="#">Read more →</a>
+  </div>
 </section>
 
-<!-- Conference Talks -->
+<!-- Conference -->
 <section id="conference">
-    <h2>Conference Talks</h2>
-    <div class="conference-card">
-        <h3>Hate Speech Detection and Analysis</h3>
-        <p>Presented at an international conference. Focused on NLP-based detection of hate speech.</p>
-    </div>
+  <h2 class="en">Conference Talks</h2>
+  <h2 class="tr" style="display:none;">Konferans Sunumları</h2>
+  <div class="conference-card">
+    <h3>Hate Speech Detection and Analysis</h3>
+    <p>Presented at an international conference. Focused on NLP-based detection of hate speech.</p>
+    <a href="#">View Certificate →</a>
+  </div>
 </section>
+
+<!-- Footer -->
+<footer>
+  <p class="en">GitHub: <a href="https://github.com/elifkaradenizz" target="_blank">elifkaradenizz</a></p>
+  <p class="tr" style="display:none;">GitHub: <a href="https://github.com/elifkaradenizz" target="_blank">elifkaradenizz</a></p>
+</footer>
+
+<!-- JS for Theme + Language Toggle -->
+<script>
+const themeBtn = document.getElementById('theme-toggle');
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  document.body.classList.toggle('light-mode');
+});
+
+const langBtn = document.getElementById('lang-toggle');
+langBtn.addEventListener('click', () => {
+  document.querySelectorAll('.en').forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+  document.querySelectorAll('.tr').forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+});
+</script>
 
 </body>
 </html>
