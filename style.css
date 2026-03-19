@@ -9,8 +9,8 @@
 
 /* Dark / Light Mode */
 body.dark-mode {
-  background-color: #121212;
-  color: #e1e4e8;
+  background-color: #0d1117; /* Github siyah/grimsi */
+  color: #c9d1d9; /* Github beyazı */
 }
 
 body.light-mode {
@@ -48,17 +48,17 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #0366d6; /* Github blue */
+  color: #2ea44f; /* Github green hover */
 }
 
 /* Search input */
 #search {
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid #888;
+  border: 1px solid #444; /* gri sınır */
   margin-left: 20px;
-  background-color: inherit;
-  color: inherit;
+  background-color: #161b22; /* Github arka plan tonu */
+  color: #c9d1d9;
 }
 
 #search::placeholder {
@@ -66,7 +66,9 @@ nav ul li a:hover {
 }
 
 body.light-mode #search {
-  border: 1px solid #0366d6;
+  background-color: #fff;
+  border: 1px solid #2ea44f;
+  color: #24292e;
 }
 
 /* Navbar controls (lang + theme toggle) */
@@ -76,13 +78,13 @@ body.light-mode #search {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #0366d6;
+  background-color: #2ea44f; /* Github green */
   color: #fff;
   transition: background 0.3s;
 }
 
 .nav-controls button:hover {
-  background-color: #024ea2;
+  background-color: #22863a;
 }
 
 /* Hero Section */
@@ -93,7 +95,7 @@ body.light-mode #search {
 
 .hero h1 {
   font-size: 3rem;
-  color: #0366d6; /* Github blue */
+  color: #2ea44f; /* Github green */
 }
 
 .hero p {
@@ -109,7 +111,7 @@ body.light-mode #search {
 .socials a {
   margin: 0 10px;
   text-decoration: none;
-  color: #0366d6;
+  color: #c9d1d9;
   font-weight: 500;
 }
 
@@ -118,7 +120,7 @@ body.light-mode #search {
 }
 
 .socials a:hover {
-  color: #024ea2;
+  color: #2ea44f;
   text-decoration: underline;
 }
 
@@ -131,7 +133,7 @@ section {
 section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #0366d6;
+  color: #2ea44f;
 }
 
 /* Item Cards (Projects, Articles, Conference) */
@@ -139,13 +141,13 @@ section h2 {
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
-  background-color: #1f1f1f;
-  color: #e1e4e8;
+  background-color: #161b22; /* Github gri ton */
+  color: #c9d1d9;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 body.light-mode .item-card {
-  background-color: #f6f8fa; /* light gray github tone */
+  background-color: #f6f8fa;
   color: #24292e;
 }
 
@@ -158,7 +160,7 @@ body.light-mode .item-card {
 a.button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #0366d6;
+  background-color: #2ea44f;
   color: #fff;
   border-radius: 5px;
   margin: 5px 0;
@@ -168,7 +170,7 @@ a.button {
 }
 
 a.button:hover {
-  background-color: #024ea2;
+  background-color: #22863a;
 }
 
 /* Footer */
@@ -196,5 +198,5 @@ body, button, a {
   #search {
     margin-left: 0;
     margin-top: 10px;
-  }
+  }    
 }
