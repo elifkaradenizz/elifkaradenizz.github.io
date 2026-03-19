@@ -127,7 +127,7 @@ body.light-mode #search {
 }
 
 .hero h1 {
-  font-size: 4rem; /* büyük ve zarif */
+  font-size:2rem; /* büyük ve zarif */
   font-weight: 700;
   color: #2ea44f;
   letter-spacing: 1px;
@@ -140,7 +140,7 @@ body.light-mode .hero h1 {
 
 .hero p {
   margin: 20px 0;
-  font-size: 1.3rem; /* daha okunaklı */
+  font-size: 0.7rem; /* daha okunaklı */
   font-weight: 500;
   line-height: 1.6;
 }
