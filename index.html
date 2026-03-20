@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,22 +14,18 @@
 <nav class="navbar">
   <div class="navbar-center">
 
-    <!-- LOGO / NAME -->
-    <a href="index.html" class="navbar-name">Elif Karadeniz</a>
+    <span class="navbar-name">Elif Karadeniz</span>
 
-    <!-- LINKS -->
     <ul class="navbar-links">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="articles.html">Articles</a></li>
       <li><a href="conference.html">Conference</a></li>
     </ul>
 
-    <!-- SEARCH -->
     <input type="text" id="search" placeholder="Search...">
 
-    <!-- CONTROLS -->
     <div class="navbar-controls">
       <button id="btn-en">EN</button>
       <button id="btn-tr">TR</button>
@@ -89,7 +86,7 @@ themeBtn.addEventListener('click', () => {
 });
 
 
-/* 🌍 LANGUAGE SYSTEM */
+/* 🌍 LANGUAGE SYSTEM (PROFESYONEL) */
 const btnEN = document.getElementById('btn-en');
 const btnTR = document.getElementById('btn-tr');
 
@@ -103,6 +100,7 @@ function setLanguage(lang) {
     document.querySelectorAll('.tr').forEach(el => el.style.display = 'block');
   }
 
+  // aktif buton
   btnEN.classList.remove('active');
   btnTR.classList.remove('active');
 
@@ -112,17 +110,20 @@ function setLanguage(lang) {
     btnTR.classList.add('active');
   }
 
+  // dili kaydet
   localStorage.setItem("lang", lang);
 }
 
+// click events
 btnEN.addEventListener("click", () => setLanguage("en"));
 btnTR.addEventListener("click", () => setLanguage("tr"));
 
+// sayfa açılınca dili hatırla
 const savedLang = localStorage.getItem("lang") || "en";
 setLanguage(savedLang);
 
 
-/* 🔍 SEARCH */
+/* 🔍 SEARCH (hazır altyapı) */
 const searchInput = document.getElementById('search');
 
 searchInput.addEventListener('input', () => {
