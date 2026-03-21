@@ -213,11 +213,90 @@ footer {
 }
 
 
+/* ABOUT PAGE */
 
-.page-content { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-.section-card { background: #1e1e1e; color: #fff; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 8px rgba(0,0,0,0.2);}
-.card-container { display: flex; flex-wrap: wrap; gap: 1rem; }
-.card { flex: 1 1 250px; background: #2a2a2a; padding: 1rem; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.15);}
-.card h3 { margin-bottom: 0.5rem; color: #00ffcc; } /* dikkat çekici başlık rengi */
-.card p { font-size: 0.95rem; line-height: 1.5; }
-.highlight { color: #00ffcc; font-weight: 600; }
+.page-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Başlıklar */
+.page-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2ea44f;
+}
+
+.page-content h2 {
+  margin-bottom: 1rem;
+}
+
+/* Kart gibi genel section */
+.section-card {
+  background: #161b22;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 1px solid #30363d;
+}
+
+/* Light mode uyum */
+body.light-mode .section-card {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+}
+
+/* Kart container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Tek kart */
+.card {
+  flex: 1 1 260px;
+  background: #0d1117;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover efekti (çok abartısız ama şık) */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+/* Light mode kart */
+body.light-mode .card {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+}
+
+/* Kart başlık */
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #2ea44f;
+  font-size: 1.1rem;
+}
+
+/* Kart text */
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Link (projeye git) */
+.card a {
+  color: #2ea44f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
