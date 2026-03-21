@@ -339,7 +339,6 @@ body.light-mode .inner-card {
 .card a:hover {
   text-decoration: underline;
 }
-
 /* See All Projects Card */
 .see-all {
   margin-top: 20px;
@@ -357,7 +356,7 @@ body.light-mode .inner-card {
   background: linear-gradient(135deg, rgba(46,164,79,0.1), transparent);
   color: #2ea44f;
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: none; /* alt çizgi kapalı */
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -366,6 +365,7 @@ body.light-mode .inner-card {
   background: rgba(46,164,79,0.15);
   box-shadow: 0 8px 20px rgba(46,164,79,0.25);
   transform: translateY(-4px) scale(1.02);
+  text-decoration: none; /* hover’da da alt çizgi yok */
 }
 
 .see-all a i {
