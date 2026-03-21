@@ -340,18 +340,37 @@ body.light-mode .inner-card {
   text-decoration: underline;
 }
 
-/* See All Projects */
-.see-all {
+/* See All Projects - PREMIUM CARD */
+.see-card {
   margin-top: 15px;
-  text-align: right;
+  border: 1px dashed #2ea44f;
+  background: linear-gradient(135deg, rgba(46,164,79,0.08), transparent);
 }
 
-.see-all a {
-  color: #2ea44f;
+/* Hover daha güçlü */
+.see-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(46,164,79,0.25);
+  background: rgba(46,164,79,0.12);
+}
+
+/* Yazı ortalı */
+.see-card span {
+  display: block;
+  text-align: center;
   font-weight: 600;
-  text-decoration: none;
+  color: #2ea44f;
+  letter-spacing: 0.5px;
 }
 
-.see-all a:hover {
-  text-decoration: underline;
+/* Hafif ikon hissi */
+.see-card span::after {
+  content: " ↗";
+  font-size: 0.9rem;
+}
+
+/* Light mode */
+body.light-mode .see-card {
+  background: linear-gradient(135deg, rgba(46,164,79,0.15), transparent);
+  border: 1px dashed #2ea44f;
 }
