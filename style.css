@@ -339,46 +339,42 @@ body.light-mode .inner-card {
 .card a:hover {
   text-decoration: underline;
 }
-/* See All Projects Card */
-.see-all {
-  margin-top: 20px;
-  text-align: center;
-}
 
 /* Inner Cards Links */
 .inner-card {
   margin: 10px 0;
 }
 
-/* Kart ok stili */
 .card-arrow {
   display: inline-block;
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 50%;
-  background: #2ea44f;
-  color: white;
+  margin-top: 10px;
+  color: #2ea44f;
   font-size: 1.2rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
   text-decoration: none; /* alt çizgi yok */
 }
 
 /* Hover efekti */
 .card-arrow:hover {
-  background: #22863a;
-  transform: translateX(4px) scale(1.1);
-  box-shadow: 0 6px 12px rgba(46,164,79,0.4);
+  color: #22863a;
+  transform: translateX(4px);
 }
 
 /* Light mode */
 body.light-mode .card-arrow {
-  background: #2ea44f;
-  color: #fff;
+  color: #2ea44f;
 }
 
 body.light-mode .card-arrow:hover {
-  background: #22863a;
+  color: #22863a;
 }
+
+/* See All Projects Card */
+.see-all {
+  margin-top: 20px;
+  text-align: center;
+}
+
 
 .see-all a {
   display: inline-flex;
