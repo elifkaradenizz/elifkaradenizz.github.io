@@ -297,6 +297,45 @@ body.light-mode .card {
   font-weight: 500;
 }
 
+/* Divider */
+.divider {
+  height: 1px;
+  background: #30363d;
+  margin: 25px 0;
+}
+
+body.light-mode .divider {
+  background: #d0d7de;
+}
+
+/* INNER PROJECT CARDS */
+.inner-card {
+  background: #161b22;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #30363d;
+  transition: all 0.2s ease;
+}
+
+.inner-card:hover {
+  transform: translateX(5px);
+  background: #21262d;
+}
+
+/* Light mode */
+body.light-mode .inner-card {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+}
+
+/* Link overlay */
+.inner-card a {
+  position: absolute;
+  inset: 0;
+}
 .card a:hover {
   text-decoration: underline;
 }
