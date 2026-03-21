@@ -350,6 +350,7 @@ body.light-mode .inner-card {
   margin: 10px 0;
 }
 
+/* Inner Links (Projeler + Conference) */
 .inner-link {
   display: flex;
   justify-content: space-between;
@@ -374,7 +375,7 @@ body.light-mode .inner-card {
 }
 
 .inner-link:hover i {
-  transform: translateX(5px);
+  transform: translateX(5px); /* ok sağa kayıyor */
 }
 
 /* Light mode */
