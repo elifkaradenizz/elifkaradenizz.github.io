@@ -350,38 +350,34 @@ body.light-mode .inner-card {
   margin: 10px 0;
 }
 
-/* Inner Links (Projeler + Conference) */
-.inner-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 16px;
-  border-radius: 8px;
-  background: rgba(46,164,79,0.05);
-  color: #00ffcc;
-  font-weight: 600;
-  text-decoration: none; /* alt çizgi yok */
+/* Kart ok stili */
+.card-arrow {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 50%;
+  background: #2ea44f;
+  color: white;
+  font-size: 1.2rem;
   transition: all 0.3s ease;
-}
-
-.inner-link i {
-  transition: transform 0.3s ease;
+  text-decoration: none; /* alt çizgi yok */
 }
 
 /* Hover efekti */
-.inner-link:hover {
-  background: rgba(46,164,79,0.12);
-  transform: translateY(-3px);
-}
-
-.inner-link:hover i {
-  transform: translateX(5px); /* ok sağa kayıyor */
+.card-arrow:hover {
+  background: #22863a;
+  transform: translateX(4px) scale(1.1);
+  box-shadow: 0 6px 12px rgba(46,164,79,0.4);
 }
 
 /* Light mode */
-body.light-mode .inner-link {
-  background: rgba(46,164,79,0.1);
-  color: #2ea44f;
+body.light-mode .card-arrow {
+  background: #2ea44f;
+  color: #fff;
+}
+
+body.light-mode .card-arrow:hover {
+  background: #22863a;
 }
 
 .see-all a {
