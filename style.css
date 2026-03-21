@@ -339,3 +339,19 @@ body.light-mode .inner-card {
 .card a:hover {
   text-decoration: underline;
 }
+
+/* See All Projects */
+.see-all {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.see-all a {
+  color: #2ea44f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.see-all a:hover {
+  text-decoration: underline;
+}
