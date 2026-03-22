@@ -33,7 +33,55 @@
   </div>
 </nav>
 
+<!-- CONTENT -->
+<section class="page-content">
 
+  <h1 class="page-title">Conference Presentation</h1>
+
+  <div class="section-card">
+
+    <h2>Hate Speech & Sexism Detection</h2>
+
+    <p>
+      In this project, natural language processing (NLP) techniques were used to detect and analyze sexism and hate speech on social media platforms.
+      During the preprocessing stage, tokenization, lemmatization, and stop-word removal were applied using the NLTK library.
+    </p>
+
+    <p>
+      Text data was transformed into semantic representations using Word2Vec, and WordCloud visualization was used to highlight frequently used terms.
+      Additionally, multiple machine learning algorithms were implemented to classify harmful content.
+    </p>
+
+    <p>
+      This work was presented at an international conference and later published as an academic paper.
+    </p>
+
+    <p class="highlight">
+      Contributors: Elif Karadeniz, Fatmanur Polat, Beyzanur Çelik
+    </p>
+
+  </div>
+
+  <!-- CERTIFICATE -->
+  <div class="section-card certificate-card">
+
+    <h3>Certificate</h3>
+
+    <button class="certificate-btn" onclick="openModal()">
+      View Certificate <i class="fas fa-arrow-right"></i>
+    </button>
+
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="certificateModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="certImage" src="/images/certificate.jpg">
+</div>
+
+  
 
 <!-- FOOTER -->
 <footer>
@@ -80,7 +128,22 @@ if(searchInput){
 
 /* LOGO CLICK */
 document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'});
+
+
+/* NAV */
+document.getElementById('navbar-name').onclick = () => window.location.href = '/';
+
+/* MODAL */
+function openModal() {
+  document.getElementById("certificateModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("certificateModal").style.display = "none";
+}
 </script>
 
+
+  
 </body>
 </html>
