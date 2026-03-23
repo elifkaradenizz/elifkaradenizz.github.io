@@ -537,7 +537,6 @@ body.light-mode .see-all a {
 .conference-card:hover .year-badge {
   background: #2ea44f;
   color: #fff;
-  box-shadow: 0 0 12px #2ea44f;
 }
 
 /* -------------------------
@@ -563,16 +562,6 @@ body.light-mode .see-all a {
   position: relative;
   line-height: 1.5;
   margin-bottom: 10px;
-}
-
-/* Fade effect for long text */
-.conference-card p::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent, #1e1e1e);
 }
 
 /* -------------------------
@@ -614,11 +603,11 @@ body .year-badge {
   color: #2ea44f;
 }
 
-body. conference-card:hover .year-badge {
+body .conference-card:hover .year-badge {
   background: #2ea44f;
   color: #fff;
 }
 
-body.light-mode .conference-card:hover h2 {
+body .conference-card:hover h2 {
   color: #2ea44f;
 }
