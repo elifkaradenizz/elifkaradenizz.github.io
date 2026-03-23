@@ -480,7 +480,9 @@ body.light-mode .see-all a {
   cursor: pointer;
 }
 
-/* LIST */
+/* -------------------------
+   GENERAL CONTAINER
+------------------------- */
 .conference-list {
   max-width: 900px;
   margin: 40px auto;
@@ -489,58 +491,71 @@ body.light-mode .see-all a {
   gap: 25px;
 }
 
-/* CARD */
+/* -------------------------
+   CARD
+------------------------- */
 .conference-card {
-  position: relative;
   background: #1e1e1e;
-  padding: 25px;
+  padding: 25px 30px;
   border-radius: 14px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
   border: 1px solid rgba(255,255,255,0.05);
-  transition: 0.3s;
-  overflow: hidden;
 }
 
-/* 🔥 SOL YEŞİL ÇİZGİ */
-.conference-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: rgba(46,164,79,0.25);
-  transition: 0.3s;
-}
-
-/* HOVER */
 .conference-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(46,164,79,0.15);
+  box-shadow: 0 12px 30px rgba(46,164,79,0.3);
 }
 
-.conference-card:hover::before {
-  background: #2ea44f;
-  box-shadow: 0 0 12px #2ea44f;
-}
-
-/* META */
+/* -------------------------
+   META (YEAR + STATUS)
+------------------------- */
 .conf-meta {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin: 8px 0 15px;
-  color: #1e1e1e;
-  font-weight: 600;
   font-size: 0.9rem;
 }
 
-/* TEXT */
+/* Year badge */
+.year-badge {
+  display: inline-block;
+  background: rgba(46,164,79,0.15);
+  color: #2ea44f;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid rgba(46,164,79,0.4);
+  transition: all 0.3s;
+}
+
+.conference-card:hover .year-badge {
+  background: #2ea44f;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(46,164,79,0.4);
+}
+
+/* Status text */
+.status {
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+/* -------------------------
+   TEXT CONTENT
+------------------------- */
 .conference-card p {
-  max-height: 120px;
+  max-height: 130px;
   overflow: hidden;
   position: relative;
   line-height: 1.5;
+  margin-bottom: 10px;
 }
 
-/* FADE */
+/* Fade effect for long text */
 .conference-card p::after {
   content: "";
   position: absolute;
@@ -550,34 +565,78 @@ body.light-mode .see-all a {
   background: linear-gradient(to bottom, transparent, #1e1e1e);
 }
 
-/* BUTTON */
+/* -------------------------
+   READ MORE BUTTON
+------------------------- */
 .conf-link {
-  margin-top: 15px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   color: #2ea44f;
   font-weight: 600;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 .conf-link i {
-  transition: 0.3s;
+  transition: transform 0.3s;
+}
+
+.conf-link:hover {
+  color: #1aff72;
 }
 
 .conf-link:hover i {
   transform: translateX(6px);
 }
 
-/* LIGHT MODE */
+/* -------------------------
+   LIGHT MODE
+------------------------- */
 body.light-mode .conference-card {
   background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 body.light-mode .conference-card p::after {
   background: linear-gradient(to bottom, transparent, #ffffff);
 }
 
-.conference-card:hover h2 {
+body.light-mode .year-badge {
+  background: rgba(46,164,79,0.15);
   color: #2ea44f;
+}
+
+body.light-mode .conference-card:hover .year-badge {
+  background: #2ea44f;
+  color: #fff;
+}
+
+/* -------------------------
+   HERO TITLE (Top of page)
+------------------------- */
+.conference-hero {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.conference-hero h1 {
+  font-size: 2.5rem;
+  color: #2ea44f;
+  margin-bottom: 15px;
+}
+
+/* -------------------------
+   RESPONSIVE
+------------------------- */
+@media (max-width: 768px) {
+  .conference-card {
+    padding: 20px;
+  }
+
+  .conference-hero h1 {
+    font-size: 2rem;
+  }
 }
