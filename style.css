@@ -470,8 +470,7 @@ body.light-mode .see-all a {
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
-
-/* Close button */
+/* CLOSE BUTTON */
 .close {
   position: absolute;
   top: 30px;
@@ -481,6 +480,7 @@ body.light-mode .see-all a {
   cursor: pointer;
 }
 
+/* LIST */
 .conference-list {
   max-width: 900px;
   margin: 40px auto;
@@ -489,17 +489,38 @@ body.light-mode .see-all a {
   gap: 25px;
 }
 
+/* CARD */
 .conference-card {
+  position: relative;
   background: #1e1e1e;
   padding: 25px;
   border-radius: 14px;
-  transition: 0.3s;
   border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.3s;
+  overflow: hidden;
 }
 
+/* 🔥 SOL YEŞİL ÇİZGİ */
+.conference-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: rgba(46,164,79,0.25);
+  transition: 0.3s;
+}
+
+/* HOVER */
 .conference-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(46,164,79,0.2);
+  box-shadow: 0 12px 30px rgba(46,164,79,0.15);
+}
+
+.conference-card:hover::before {
+  background: #2ea44f;
+  box-shadow: 0 0 12px #2ea44f;
 }
 
 /* META */
@@ -508,6 +529,7 @@ body.light-mode .see-all a {
   margin: 8px 0 15px;
   color: #2ea44f;
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
 /* TEXT */
@@ -518,7 +540,7 @@ body.light-mode .see-all a {
   line-height: 1.5;
 }
 
-/* FADE (ARTIK DOĞRU RENK) */
+/* FADE */
 .conference-card p::after {
   content: "";
   position: absolute;
