@@ -608,16 +608,13 @@ body.light-mode .conference-card {
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-body.light-mode .conference-card p::after {
-  background: linear-gradient(to bottom, transparent, #ffffff);
-}
 
-body.light-mode .year-badge {
+body .year-badge {
   background: rgba(46,164,79,0.15);
   color: #2ea44f;
 }
 
-body.light-mode .conference-card:hover .year-badge {
+body. conference-card:hover .year-badge {
   background: #2ea44f;
   color: #fff;
 }
