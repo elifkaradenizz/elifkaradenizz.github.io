@@ -494,8 +494,9 @@ body.light-mode .see-all a {
 /* -------------------------
    CARD
 ------------------------- */
+/* CARD */
 .conference-card {
-  background: #1e1e1e;
+  background: #1e1e1e; /* tüm cardlar için aynı */
   padding: 25px 30px;
   border-radius: 14px;
   position: relative;
@@ -505,48 +506,28 @@ body.light-mode .see-all a {
 
 .conference-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(46,164,79,0.3);
+  box-shadow: 0 12px 30px rgba(46,164,79,0.25);
 }
 
-/* -------------------------
-   META (YEAR + STATUS)
-------------------------- */
+/* META (year + status) */
 .conf-meta {
   display: flex;
   align-items: center;
   gap: 12px;
   margin: 8px 0 15px;
   font-size: 0.9rem;
-}
-
-/* Year badge */
-.year-badge {
-  display: inline-block;
-  background: rgba(46,164,79,0.15);
-  color: #2ea44f;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  border: 1px solid rgba(46,164,79,0.4);
-  transition: all 0.3s;
-}
-
-.conference-card:hover .year-badge {
-  background: #2ea44f;
-  color: #fff;
-  box-shadow: 0 0 8px rgba(46,164,79,0.4);
-}
-
-/* Status text */
-.status {
-  opacity: 0.8;
   font-weight: 600;
+  color: #2ea44f;
 }
 
-/* -------------------------
-   TEXT CONTENT
-------------------------- */
+/* Year badge hover yerine card hover ile glow efekti */
+.conference-card:hover .year-badge {
+  box-shadow: 0 0 12px #2ea44f;
+  color: #fff;
+  background: #2ea44f;
+}
+
+/* TEXT */
 .conference-card p {
   max-height: 130px;
   overflow: hidden;
@@ -555,7 +536,7 @@ body.light-mode .see-all a {
   margin-bottom: 10px;
 }
 
-/* Fade effect for long text */
+/* Fade effect */
 .conference-card p::after {
   content: "";
   position: absolute;
@@ -565,9 +546,7 @@ body.light-mode .see-all a {
   background: linear-gradient(to bottom, transparent, #1e1e1e);
 }
 
-/* -------------------------
-   READ MORE BUTTON
-------------------------- */
+/* BUTTON */
 .conf-link {
   display: inline-flex;
   align-items: center;
@@ -588,55 +567,4 @@ body.light-mode .see-all a {
 
 .conf-link:hover i {
   transform: translateX(6px);
-}
-
-/* -------------------------
-   LIGHT MODE
-------------------------- */
-body.light-mode .conference-card {
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-body.light-mode .conference-card p::after {
-  background: linear-gradient(to bottom, transparent, #ffffff);
-}
-
-body.light-mode .year-badge {
-  background: rgba(46,164,79,0.15);
-  color: #2ea44f;
-}
-
-body.light-mode .conference-card:hover .year-badge {
-  background: #2ea44f;
-  color: #fff;
-}
-
-/* -------------------------
-   HERO TITLE (Top of page)
-------------------------- */
-.conference-hero {
-  text-align: center;
-  padding: 80px 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-.conference-hero h1 {
-  font-size: 2.5rem;
-  color: #2ea44f;
-  margin-bottom: 15px;
-}
-
-/* -------------------------
-   RESPONSIVE
-------------------------- */
-@media (max-width: 768px) {
-  .conference-card {
-    padding: 20px;
-  }
-
-  .conference-hero h1 {
-    font-size: 2rem;
-  }
 }
