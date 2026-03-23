@@ -215,6 +215,32 @@ footer {
 
 /* ABOUT PAGE */
 
+.about-hero {
+  max-width: 900px;
+  margin: 80px auto 40px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  color: #2ea44f;
+}
+
+.about-hero p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Light mode */
+body.light-mode .about-hero p {
+  color: #444;
+}
+
 .page-content {
   max-width: 900px;
   margin: 2rem auto;
