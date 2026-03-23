@@ -669,3 +669,80 @@ body.light-mode .conference-hero h1 {
 body.light-mode .conference-hero p {
   color: #555;
 }
+
+
+/* HERO */
+.project-hero {
+  max-width: 800px;
+  margin: 80px auto 40px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.project-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.project-hero .subtitle {
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.project-meta {
+  font-size: 0.9rem;
+  color: #2ea44f;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+/* CONTENT */
+.project-content {
+  max-width: 750px;
+  margin: auto;
+  padding: 0 20px 60px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #ccc;
+}
+
+.project-content p {
+  margin-bottom: 20px;
+}
+
+.project-content .contributors {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #aaa;
+}
+
+
+/* CERTIFICATE CARD (DAHA TEMİZ) */
+.certificate-card {
+  max-width: 750px;
+  margin: 40px auto;
+  text-align: center;
+  background: #161b22;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+
+/* LIGHT MODE */
+body.light-mode .project-hero h1 {
+  color: #111;
+}
+
+body.light-mode .project-content {
+  color: #444;
+}
+
+body.light-mode .certificate-card {
+  background: #fff;
+}
