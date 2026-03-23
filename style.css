@@ -549,14 +549,57 @@ body.light-mode .see-all a {
   height: 40px;
   background: linear-gradient(to bottom, transparent, #1e1e1e);
 }
+.conference-hero { text-align: center; padding: 80px 20px; max-width: 800px; margin: auto; }
 
-/* READ MORE */
+.conference-hero h1 { font-size: 2.5rem; color: #2ea44f; margin-bottom: 15px; }
+
+.conference-list {
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.conference-card {
+  background: #1e1e1e;
+  padding: 25px;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.conference-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(46,164,79,0.2);
+}
+
+.conf-meta {
+  display: inline-block;
+  margin: 8px 0 15px;
+  color: #2ea44f;
+  font-weight: 600;
+}
+
+.conference-card p {
+  max-height: 130px;
+  overflow: hidden;
+  position: relative;
+}
+
+.conference-card p::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #1e1e1e);
+}
+
 .conf-link {
   margin-top: 15px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   color: #2ea44f;
   font-weight: 600;
   text-decoration: none;
@@ -568,13 +611,4 @@ body.light-mode .see-all a {
 
 .conf-link:hover i {
   transform: translateX(6px);
-}
-
-/* LIGHT MODE */
-body.light-mode .conference-card {
-  background: #ffffff;
-}
-
-body.light-mode .conference-card p::after {
-  background: linear-gradient(to bottom, transparent, #ffffff);
 }
