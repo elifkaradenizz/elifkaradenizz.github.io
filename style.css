@@ -481,95 +481,51 @@ body.light-mode .see-all a {
   cursor: pointer;
 }
 
-/* TIMELINE LINE */
 .conference-list {
-  position: relative;
   max-width: 900px;
-  margin: 50px auto;
-  padding-left: 30px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.conference-list::before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: #2ea44f;
-}
-
-/* CARD */
 .conference-card {
-  position: relative;
-  margin-bottom: 40px;
-}
-
-/* DOT */
-.conf-dot {
-  position: absolute;
-  left: -5px;
-  top: 25px;
-  width: 14px;
-  height: 14px;
   background: #1e1e1e;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #2ea44f;
+  padding: 25px;
+  border-radius: 14px;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
-
-
-/* HOVER EFFECT */
-.conf-content:hover {
+.conference-card:hover {
   transform: translateY(-6px);
-  border: 1px solid #2ea44f;
-  box-shadow: 0 10px 30px rgba(46,164,79,0.2);
-}
-
-/* TITLE */
-.conf-content h2 {
-  margin-bottom: 10px;
+  box-shadow: 0 12px 30px rgba(46,164,79,0.2);
 }
 
 /* META */
 .conf-meta {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-/* YEAR BADGE */
-.badge {
-  background: #2ea44f;
-  color: white;
-  padding: 3px 10px;
-  border-radius: 6px;
-  font-size: 0.8rem;
-}
-
-/* STATUS */
-.status {
-  font-size: 0.85rem;
-  opacity: 0.8;
+  display: inline-block;
+  margin: 8px 0 15px;
+  color: #2ea44f;
+  font-weight: 600;
 }
 
 /* TEXT */
-.conf-content p {
+.conference-card p {
   max-height: 120px;
   overflow: hidden;
   position: relative;
   line-height: 1.5;
 }
 
-/* FADE */
-.conf-content p::after {
+/* FADE (ARTIK DOĞRU RENK) */
+.conference-card p::after {
   content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 40px;
-  background: linear-gradient(to bottom, transparent, #161b22);
+  background: linear-gradient(to bottom, transparent, #1e1e1e);
 }
 
 /* BUTTON */
@@ -578,7 +534,6 @@ body.light-mode .see-all a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   color: #2ea44f;
   font-weight: 600;
   text-decoration: none;
@@ -593,100 +548,10 @@ body.light-mode .see-all a {
 }
 
 /* LIGHT MODE */
-body.light-mode .conf-content {
+body.light-mode .conference-card {
   background: #ffffff;
 }
 
-body.light-mode .conf-content p::after {
+body.light-mode .conference-card p::after {
   background: linear-gradient(to bottom, transparent, #ffffff);
-}
-
-/* META */
-.conf-meta {
-  display: inline-block;
-  margin: 8px 0 15px;
-  font-size: 0.9rem;
-  color: #2ea44f;
-  font-weight: 600;
-}
-
-/* TEXT */
-.conference-card p {
-  max-height: 130px;
-  overflow: hidden;
-  position: relative;
-  line-height: 1.5;
-}
-
-/* FADE */
-.conference-card p::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent, #1e1e1e);
-}
-.conference-hero { text-align: center; padding: 80px 20px; max-width: 800px; margin: auto; }
-
-.conference-hero h1 { font-size: 2.5rem; color: #2ea44f; margin-bottom: 15px; }
-
-.conference-list {
-  max-width: 900px;
-  margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.conference-card {
-  background: #1e1e1e;
-  padding: 25px;
-  border-radius: 14px;
-  transition: 0.3s;
-}
-
-.conference-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(46,164,79,0.2);
-}
-
-.conf-meta {
-  display: inline-block;
-  margin: 8px 0 15px;
-  color: #2ea44f;
-  font-weight: 600;
-}
-
-.conference-card p {
-  max-height: 130px;
-  overflow: hidden;
-  position: relative;
-}
-
-.conference-card p::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent, #1e1e1e);
-}
-
-.conf-link {
-  margin-top: 15px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #2ea44f;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.conf-link i {
-  transition: 0.3s;
-}
-
-.conf-link:hover i {
-  transform: translateX(6px);
 }
