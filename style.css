@@ -527,7 +527,7 @@ body.light-mode .see-all a {
 .conf-meta {
   display: inline-block;
   margin: 8px 0 15px;
-  color: #2ea44f;
+  color: #1e1e1e;
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -576,4 +576,8 @@ body.light-mode .conference-card {
 
 body.light-mode .conference-card p::after {
   background: linear-gradient(to bottom, transparent, #ffffff);
+}
+
+.conference-card:hover h2 {
+  color: #2ea44f;
 }
