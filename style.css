@@ -495,7 +495,7 @@ body.light-mode .see-all a {
    CARD
 ------------------------- */
 .conference-card {
-  background: #1e1e1e; /* tüm cardlar için aynı */
+  background: #0d1117;/* tüm cardlar için aynı */
   padding: 25px 30px;
   border-radius: 14px;
   position: relative;
@@ -620,7 +620,6 @@ body.light-mode .year-badge {
 body.light-mode .conference-card:hover .year-badge {
   background: #2ea44f;
   color: #fff;
-  box-shadow: 0 0 12px #2ea44f;
 }
 
 body.light-mode .conference-card:hover h2 {
