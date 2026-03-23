@@ -495,7 +495,7 @@ body.light-mode .see-all a {
    CARD
 ------------------------- */
 .conference-card {
-  background: #0d1117;/* tüm cardlar için aynı */
+  background: #30363d;
   padding: 25px 30px;
   border-radius: 14px;
   position: relative;
