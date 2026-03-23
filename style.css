@@ -517,14 +517,7 @@ body.light-mode .see-all a {
   box-shadow: 0 0 10px #2ea44f;
 }
 
-/* CONTENT BOX */
-.conf-content {
-  background: #161b22;
-  padding: 25px;
-  border-radius: 14px;
-  transition: 0.3s;
-  border: 1px solid transparent;
-}
+
 
 /* HOVER EFFECT */
 .conf-content:hover {
