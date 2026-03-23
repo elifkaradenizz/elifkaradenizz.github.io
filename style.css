@@ -479,4 +479,102 @@ body.light-mode .see-all a {
   font-size: 2rem;
   color: white;
   cursor: pointer;
+}/* HERO */
+.conference-hero {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.conference-hero h1 {
+  font-size: 2.5rem;
+  color: #2ea44f;
+  margin-bottom: 15px;
+}
+
+.conference-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* LIST */
+.conference-list {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* CARD */
+.conference-card {
+  background: #1e1e1e;
+  padding: 25px;
+  border-radius: 14px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.conference-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(46,164,79,0.2);
+}
+
+/* META */
+.conf-meta {
+  display: inline-block;
+  margin: 8px 0 15px;
+  font-size: 0.9rem;
+  color: #2ea44f;
+  font-weight: 600;
+}
+
+/* TEXT */
+.conference-card p {
+  max-height: 130px;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.5;
+}
+
+/* FADE */
+.conference-card p::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #1e1e1e);
+}
+
+/* READ MORE */
+.conf-link {
+  margin-top: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #2ea44f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.conf-link i {
+  transition: 0.3s;
+}
+
+.conf-link:hover i {
+  transform: translateX(6px);
+}
+
+/* LIGHT MODE */
+body.light-mode .conference-card {
+  background: #ffffff;
+}
+
+body.light-mode .conference-card p::after {
+  background: linear-gradient(to bottom, transparent, #ffffff);
 }
