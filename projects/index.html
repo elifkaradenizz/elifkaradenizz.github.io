@@ -2,38 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Elif Karadeniz</title>
+  <title>Projects - Elif Karadeniz</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body class="dark-mode">
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="navbar-center">
-
     <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
-
-<ul class="navbar-links">
-  <li><a href="/"><span class="en">Home</span><span class="tr">Ana Sayfa</span></a></li>
-  <li><a href="/about/"><span class="en">About</span><span class="tr">Hakkımda</span></a></li>
-  <li><a href="/projects/"><span class="en">Projects</span><span class="tr">Projeler</span></a></li>
-  <li><a href="/articles/"><span class="en">Articles</span><span class="tr">Yazılar</span></a></li>
-  <li><a href="/conference/"><span class="en">Conference</span><span class="tr">Konferans</span></a></li>
-</ul>
-
-    <input type="text" id="search" placeholder="Search...">
+    <ul class="navbar-links">
+      <li><a href="../"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
+      <li><a href="../about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
+      <li><a href="./"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
+      <li><a href="../articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
+      <li><a href="../conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
+    </ul>
     <div class="navbar-controls">
       <button id="btn-en">EN</button>
       <button id="btn-tr">TR</button>
       <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     </div>
-
   </div>
 </nav>
 
+<!-- HERO / HEADER -->
+<section class="hero">
+  <h1 class="en">Featured Projects</h1>
+  <h1 class="tr" style="display:none;">Öne Çıkan Projeler</h1>
+  <p class="en">A showcase of my key projects in AI, Data Science, and Web Development.</p>
+  <p class="tr" style="display:none;">AI, Veri Bilimi ve Web Geliştirme alanındaki bazı önemli projelerim.</p>
+</section>
 
+<!-- PROJECTS GRID -->
+<section class="projects">
+  <div class="project-card">
+    <h2>E-commerce Recommendation System</h2>
+    <p>Customer segmentation and recommendation system for e-commerce using ML algorithms.</p>
+    <a href="customer-segmentation.html" class="btn">View Project</a>
+  </div>
+
+  <div class="project-card">
+    <h2>Hate Speech Detection</h2>
+    <p>Social media content analysis to detect gender-based hate speech using NLP.</p>
+    <a href="https://github.com/elifkaradenizz/hate-speech-project" target="_blank" class="btn">View Project</a>
+  </div>
+
+  <div class="project-card">
+    <h2>Image Processing App (Streamlit)</h2>
+    <p>A web app that applies multiple image processing techniques and filters.</p>
+    <a href="https://github.com/elifkaradenizz/image-processing-app" target="_blank" class="btn">View Project</a>
+  </div>
+
+  <div class="project-card">
+    <h2>Carbon Emission Prediction</h2>
+    <p>Predicts individual carbon emissions using deep learning and ML models.</p>
+    <a href="https://github.com/elifkaradenizz/carbon-emission" target="_blank" class="btn">View Project</a>
+  </div>
+
+  <div class="project-card">
+    <h2>Health & Wellness App</h2>
+    <p>Mobile app to track health metrics, diet, sleep, and provide insights for wellness.</p>
+    <a href="https://github.com/elifkaradenizz/health-wellness-app" target="_blank" class="btn">View Project</a>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -55,31 +88,23 @@ themeBtn.addEventListener('click', () => {
 /* LANGUAGE */
 const btnEN = document.getElementById('btn-en');
 const btnTR = document.getElementById('btn-tr');
+
 function setLanguage(lang){
-  document.querySelectorAll('.en').forEach(el=>el.style.display=(lang==='en')?'':'none');
-  document.querySelectorAll('.tr').forEach(el=>el.style.display=(lang==='tr')?'':'none');
-  btnEN.classList.toggle('active', lang==='en');
-  btnTR.classList.toggle('active', lang==='tr');
+  document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
+  document.querySelectorAll('.tr').forEach(el => el.style.display = (lang === 'tr') ? '' : 'none');
+  btnEN.classList.toggle('active', lang === 'en');
+  btnTR.classList.toggle('active', lang === 'tr');
   localStorage.setItem("lang", lang);
 }
-btnEN.addEventListener("click",()=>setLanguage("en"));
-btnTR.addEventListener("click",()=>setLanguage("tr"));
-setLanguage(localStorage.getItem("lang")||"en");
 
-/* SEARCH */
-const searchInput = document.getElementById('search');
-if(searchInput){
-  searchInput.addEventListener('input',()=>{
-    const term = searchInput.value.toLowerCase();
-    document.querySelectorAll('.item-card').forEach(card=>{
-      const title = card.dataset.title.toLowerCase();
-      card.style.display = title.includes(term)?'block':'none';
-    });
-  });
-}
+btnEN.addEventListener("click", () => setLanguage("en"));
+btnTR.addEventListener("click", () => setLanguage("tr"));
+
+// Default language EN
+setLanguage("en");
 
 /* LOGO CLICK */
-document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'});
+document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'});  
 </script>
 
 </body>
