@@ -1,192 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects - Elif Karadeniz</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0f111a;
-      color: #e4e6eb;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.5em;
-    }
-    .project-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      background-color: #1c1e2a;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .project-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    }
-    .project-info {
-      max-width: 70%;
-    }
-    .project-title {
-      font-size: 1.3em;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .project-subtitle {
-      font-size: 0.9em;
-      color: #aaa;
-      margin-bottom: 10px;
-    }
-    .project-desc {
-      font-size: 1em;
-      line-height: 1.4;
-    }
-    .project-blog {
-      display: inline-block;
-      margin-top: 10px;
-      text-decoration: none;
-      color: #4ea1ff;
-      font-size: 0.9em;
-    }
-    .project-blog i {
-      margin-right: 5px;
-    }
-    .project-meta {
-      text-align: right;
-      font-size: 0.8em;
-      color: #aaa;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 5px;
-    }
-    .project-tags {
-      font-style: italic;
-    }
+<meta charset="UTF-8">
+<title>Projects - Elif Karadeniz</title>
 
-    /* EN/TR buttons */
-    .lang-btn {
-      margin: 20px;
-      cursor: pointer;
-      padding: 5px 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #4ea1ff;
-      color: white;
-      font-weight: bold;
-    }
-    .lang-btn.active {
-      background-color: #1c1e2a;
-      border: 1px solid #4ea1ff;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    @media (max-width: 768px) {
-      .project-item {
-        flex-direction: column;
-      }
-      .project-info {
-        max-width: 100%;
-      }
-      .project-meta {
-        align-items: flex-start;
-        margin-top: 10px;
-      }
-    }
-  </style>
+<style>
+
+/* GENEL */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f111a;
+  color: #e4e6eb;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* LANGUAGE BUTTONS */
+.lang-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.lang-btn {
+  border: none;
+  padding: 6px 12px;
+  margin-left: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #2a2d3e;
+  color: #fff;
+}
+
+.lang-btn.active {
+  background: #4ea1ff;
+}
+
+/* PROJECT CARD */
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  background: #1c1e2a;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  transition: 0.25s;
+}
+
+.project-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.project-info {
+  max-width: 70%;
+}
+
+.project-title {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.project-desc {
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+/* TAGS */
+.project-subtitle span {
+  display: inline-block;
+  background: #2a2d3e;
+  color: #4ea1ff;
+  padding: 5px 10px;
+  margin: 6px 6px 6px 0;
+  border-radius: 20px;
+  font-size: 0.75em;
+  transition: 0.2s;
+}
+
+.project-subtitle span:hover {
+  background: #4ea1ff;
+  color: white;
+}
+
+/* BLOG BUTTON */
+.project-blog {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid #4ea1ff;
+  border-radius: 6px;
+  color: #4ea1ff;
+  text-decoration: none;
+  font-size: 0.85em;
+  transition: 0.25s;
+}
+
+.project-blog:hover {
+  background: #4ea1ff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(78,161,255,0.3);
+}
+
+/* RIGHT SIDE */
+.project-meta {
+  text-align: right;
+  font-size: 0.8em;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .project-item {
+    flex-direction: column;
+  }
+  .project-info {
+    max-width: 100%;
+  }
+  .project-meta {
+    text-align: left;
+    margin-top: 10px;
+  }
+}
+
+</style>
 </head>
+
 <body>
 
+<div class="lang-wrapper">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('tr')">TR</button>
+</div>
+
 <div class="container">
-  <h1 class="en">Projects</h1>
-  <h1 class="tr" style="display:none;">Projeler</h1>
 
-  <div class="project-item">
-    <div class="project-info">
-      <div class="project-title">E-commerce Recommendation System</div>
-      <div class="project-subtitle">Python • ML • Streamlit</div>
-      <div class="project-desc">
-        <span class="en">A system that segments customers and recommends products accordingly.</span>
-        <span class="tr" style="display:none;">Müşteri segmentasyonu yapıp ürün öneren bir sistem.</span>
-      </div>
-      <a href="#" class="project-blog"><i class="fas fa-file-alt"></i> <span class="en">Read blog post</span><span class="tr" style="display:none;">Blog yazısını oku</span></a>
+<h1 class="en">Projects</h1>
+<h1 class="tr" style="display:none;">Projeler</h1>
+
+<!-- PROJECT 1 -->
+<div class="project-item">
+  <div class="project-info">
+    <div class="project-title">E-commerce Recommendation System</div>
+
+    <div class="project-subtitle">
+      <span>Python</span>
+      <span>ML</span>
+      <span>Streamlit</span>
     </div>
-    <div class="project-meta">
-      <div class="project-stars">⭐ 0</div>
-      <div class="project-tags">Python • ML • Customer Segmentation</div>
+
+    <div class="project-desc">
+      <span class="en">A system that segments customers and recommends products.</span>
+      <span class="tr" style="display:none;">Müşteri segmentasyonu yaparak ürün öneren sistem.</span>
     </div>
+
+    <a href="#" class="project-blog">
+      <i class="fas fa-file-alt"></i>
+      <span class="en">Read blog post</span>
+      <span class="tr" style="display:none;">Blog yazısını oku</span>
+    </a>
   </div>
 
-  <div class="project-item">
-    <div class="project-info">
-      <div class="project-title">Hate Speech Detection</div>
-      <div class="project-subtitle">Python • NLP • Machine Learning</div>
-      <div class="project-desc">
-        <span class="en">A project analyzing social media posts to detect hate speech and gender bias.</span>
-        <span class="tr" style="display:none;">Sosyal medya gönderilerini analiz edip nefret söylemi ve cinsiyetçilik tespiti yapan proje.</span>
-      </div>
-      <a href="#" class="project-blog"><i class="fas fa-file-alt"></i> <span class="en">Read blog post</span><span class="tr" style="display:none;">Blog yazısını oku</span></a>
+  <div class="project-meta">
+    <div>⭐ 0</div>
+    <div>Customer Segmentation</div>
+  </div>
+</div>
+
+<!-- PROJECT 2 -->
+<div class="project-item">
+  <div class="project-info">
+    <div class="project-title">Hate Speech Detection</div>
+
+    <div class="project-subtitle">
+      <span>Python</span>
+      <span>NLP</span>
+      <span>AI</span>
     </div>
-    <div class="project-meta">
-      <div class="project-stars">⭐ 0</div>
-      <div class="project-tags">Python • NLP • AI</div>
+
+    <div class="project-desc">
+      <span class="en">Detects hate speech and gender bias in social media posts.</span>
+      <span class="tr" style="display:none;">Sosyal medyada nefret söylemi ve cinsiyetçilik tespiti yapar.</span>
     </div>
+
+    <a href="#" class="project-blog">
+      <i class="fas fa-file-alt"></i>
+      <span class="en">Read blog post</span>
+      <span class="tr" style="display:none;">Blog yazısını oku</span>
+    </a>
   </div>
 
-  <div class="project-item">
-    <div class="project-info">
-      <div class="project-title">Image Processing App</div>
-      <div class="project-subtitle">Python • Streamlit</div>
-      <div class="project-desc">
-        <span class="en">An interactive app that applies filters, segmentation, and image processing techniques.</span>
-        <span class="tr" style="display:none;">Filtreleme, segmentasyon ve görüntü işleme tekniklerini uygulayan interaktif uygulama.</span>
-      </div>
-      <a href="#" class="project-blog"><i class="fas fa-file-alt"></i> <span class="en">Read blog post</span><span class="tr" style="display:none;">Blog yazısını oku</span></a>
-    </div>
-    <div class="project-meta">
-      <div class="project-stars">⭐ 0</div>
-      <div class="project-tags">Python • Streamlit • Image Processing</div>
-    </div>
+  <div class="project-meta">
+    <div>⭐ 0</div>
+    <div>NLP Analysis</div>
   </div>
+</div>
+
+<!-- PROJECT 3 -->
+<div class="project-item">
+  <div class="project-info">
+    <div class="project-title">Image Processing App</div>
+
+    <div class="project-subtitle">
+      <span>Python</span>
+      <span>Streamlit</span>
+      <span>Computer Vision</span>
+    </div>
+
+    <div class="project-desc">
+      <span class="en">Applies filters, segmentation and image processing techniques.</span>
+      <span class="tr" style="display:none;">Filtreleme ve segmentasyon gibi görüntü işleme teknikleri uygular.</span>
+    </div>
+
+    <a href="#" class="project-blog">
+      <i class="fas fa-file-alt"></i>
+      <span class="en">Read blog post</span>
+      <span class="tr" style="display:none;">Blog yazısını oku</span>
+    </a>
+  </div>
+
+  <div class="project-meta">
+    <div>⭐ 0</div>
+    <div>Image Processing</div>
+  </div>
+</div>
 
 </div>
 
 <script>
-  // LANGUAGE SWITCH
-  const btnEN = document.createElement('button');
-  btnEN.innerText = 'EN';
-  btnEN.className = 'lang-btn active';
-  document.body.prepend(btnEN);
+function setLang(lang){
+  document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
+  document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
 
-  const btnTR = document.createElement('button');
-  btnTR.innerText = 'TR';
-  btnTR.className = 'lang-btn';
-  document.body.prepend(btnTR);
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.lang-btn')[lang==='en'?0:1].classList.add('active');
 
-  function setLanguage(lang){
-    document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
-    document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
-    btnEN.classList.toggle('active', lang==='en');
-    btnTR.classList.toggle('active', lang==='tr');
-    localStorage.setItem('lang', lang);
-  }
+  localStorage.setItem('lang', lang);
+}
 
-  btnEN.addEventListener('click', ()=>setLanguage('en'));
-  btnTR.addEventListener('click', ()=>setLanguage('tr'));
-
-  const savedLang = localStorage.getItem('lang');
-  setLanguage(savedLang==='tr'?'tr':'en');
+const savedLang = localStorage.getItem('lang') || 'en';
+setLang(savedLang);
 </script>
 
 </body>
