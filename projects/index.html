@@ -85,8 +85,8 @@
 
 </div>
 
+<!-- JS -->
 <script>
-
 /* LANGUAGE (TEK SİSTEM) */
 function setLang(lang){
   document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
@@ -115,9 +115,8 @@ document.getElementById('search').addEventListener('input', e => {
   });
 });
 
-/* LOGO */
-document.getElementById('navbar-name').onclick = ()=> location.href='/';
-
+/* LOGO CLICK */
+document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'});
 </script>
 
 </body>
