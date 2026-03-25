@@ -223,16 +223,6 @@ footer {
   }
 }
 
-/* HERO text gölge ve geçiş */
-.hero h1 {
-  font-size: 3rem;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
-.hero h1:hover {
-  transform: scale(1.05);
-  text-shadow: 4px 4px 12px rgba(0,0,0,0.6);
-}
 
 
 
