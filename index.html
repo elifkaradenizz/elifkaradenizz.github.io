@@ -65,6 +65,7 @@ themeBtn.addEventListener('click', () => {
 });
 
 /* LANGUAGE */
+/* LANGUAGE */
 const btnEN = document.getElementById('btn-en');
 const btnTR = document.getElementById('btn-tr');
 
@@ -79,12 +80,13 @@ function setLanguage(lang){
 btnEN.addEventListener("click", () => setLanguage("en"));
 btnTR.addEventListener("click", () => setLanguage("tr"));
 
-// Default olarak İngilizce
-let savedLang = localStorage.getItem("lang");
-if(savedLang !== "en" && savedLang !== "tr"){
-  savedLang = "en"; // hiç kayıt yoksa İngilizce
+// LocalStorage'da geçerli bir değer yoksa İngilizce yap
+const savedLang = localStorage.getItem("lang");
+if(savedLang === "tr"){
+  setLanguage("tr");
+} else {
+  setLanguage("en"); // her türlü default İngilizce
 }
-setLanguage(savedLang);
 
 /* SEARCH */
 const searchInput = document.getElementById('search');
