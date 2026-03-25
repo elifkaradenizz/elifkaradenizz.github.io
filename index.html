@@ -5,23 +5,29 @@
   <title>Elif Karadeniz</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Başlangıçta dil flash’ını gizle */
+    body.hide-lang-flash .en,
+    body.hide-lang-flash .tr {
+      display: none !important;
+    }
+  </style>
 </head>
 
-<body class="dark-mode">
+<body class="dark-mode hide-lang-flash">
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="navbar-center">
-
     <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
 
-<ul class="navbar-links">
-  <li><a href="../"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
-  <li><a href="../about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
-  <li><a href="../projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
-  <li><a href="../articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-  <li><a href="../conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
-</ul>
+    <ul class="navbar-links">
+      <li><a href="../"><span class="en">Home</span><span class="tr">Ana Sayfa</span></a></li>
+      <li><a href="../about/"><span class="en">About</span><span class="tr">Hakkımda</span></a></li>
+      <li><a href="../projects/"><span class="en">Projects</span><span class="tr">Projeler</span></a></li>
+      <li><a href="../articles/"><span class="en">Articles</span><span class="tr">Yazılar</span></a></li>
+      <li><a href="../conference/"><span class="en">Conference</span><span class="tr">Konferans</span></a></li>
+    </ul>
 
     <input type="text" id="search" placeholder="Search...">
     <div class="navbar-controls">
@@ -29,17 +35,16 @@
       <button id="btn-tr">TR</button>
       <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     </div>
-
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <p class="en">Hello, I'm</p>
-  <p class="tr" style="display:none;">Merhaba, ben</p>
+  <p class="tr">Merhaba, ben</p>
   <h1>Elif Karadeniz</h1>
   <p class="en">AI & Data Science Engineer building intelligent systems and evaluating AI models. Focused on Machine Learning, NLP, and LLM applications.</p>
-  <p class="tr" style="display:none;">AI & Veri Bilimi Mühendisiyim. Akıllı sistemler geliştiriyor, Machine Learning, NLP ve LLM alanlarında çalışıyorum.</p>
+  <p class="tr">AI & Veri Bilimi Mühendisiyim. Akıllı sistemler geliştiriyor, Machine Learning, NLP ve LLM alanlarında çalışıyorum.</p>
   <div class="socials">
     <a href="https://github.com/elifkaradenizz" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://linkedin.com/in/elif-karadeniz/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -50,7 +55,7 @@
 <!-- FOOTER -->
 <footer>
   <p class="en">© 2026 Elif Karadeniz</p>
-  <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
+  <p class="tr">© 2026 Elif Karadeniz</p>
 </footer>
 
 <!-- JS -->
@@ -64,7 +69,6 @@ themeBtn.addEventListener('click', () => {
   icon.classList.toggle('fa-moon');
 });
 
-/* LANGUAGE */
 /* LANGUAGE */
 const btnEN = document.getElementById('btn-en');
 const btnTR = document.getElementById('btn-tr');
@@ -80,13 +84,17 @@ function setLanguage(lang){
 btnEN.addEventListener("click", () => setLanguage("en"));
 btnTR.addEventListener("click", () => setLanguage("tr"));
 
-// LocalStorage'da geçerli bir değer yoksa İngilizce yap
-const savedLang = localStorage.getItem("lang");
-if(savedLang === "tr"){
-  setLanguage("tr");
-} else {
-  setLanguage("en"); // her türlü default İngilizce
-}
+// DOM yüklendiğinde dili uygula ve flash’ı kaldır
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+  if(savedLang === "tr"){
+    setLanguage("tr");
+  } else {
+    setLanguage("en"); // default İngilizce
+  }
+  // Flash’ı kaldır
+  document.body.classList.remove("hide-lang-flash");
+});
 
 /* SEARCH */
 const searchInput = document.getElementById('search');
