@@ -87,7 +87,11 @@ body.light-mode .navbar-links li a {
   display: flex;
   gap: 10px;
 }
-
+.navbar-links li a span {
+  display: inline-block;
+  min-width: 70px; /* ihtiyacınıza göre ayarlayın */
+  text-align: center;
+}
 .navbar-controls button {
   padding: 6px 12px;
   border: none;
@@ -147,6 +151,13 @@ body.light-mode .hero h1 {
   font-size: 1.5rem; /* daha okunaklı */
   font-weight: 500;
   line-height: 1.6;
+}
+
+.hero p.en,
+.hero p.tr {
+  display: inline-block;
+  min-width: 300px; /* hero alanına göre ayarlayın */
+  text-align: center;
 }
 
 /* Social links */
