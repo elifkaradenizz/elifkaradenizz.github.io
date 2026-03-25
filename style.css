@@ -223,6 +223,57 @@ footer {
   }
 }
 
+/* HERO text gölge ve geçiş */
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.hero h1:hover {
+  transform: scale(1.05);
+  text-shadow: 4px 4px 12px rgba(0,0,0,0.6);
+}
+
+.hero p {
+  transition: color 0.3s ease;
+}
+.hero p:hover {
+  color: #f39c12;
+}
+
+/* Sosyal ikon hover */
+.socials a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.socials a:hover {
+  transform: scale(1.3);
+  color: #1abc9c;
+}
+
+/* CTA button hover */
+.btn {
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+  background: #f39c12;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Navbar link hover gölge */
+.navbar a:hover {
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+/* Proje kart hover */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
 
 /* ABOUT PAGE */
 
