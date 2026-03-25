@@ -1,1 +1,723 @@
-/* Reset */ * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; transition: all 0.3s ease; } /* Dark / Light Mode */ body.dark-mode { background-color: #0d1117; /* Github dark */ color: #c9d1d9; } body.light-mode { background-color: #f6f8fa; /* Github light */ color: #24292e; } /* Navbar with background */ .navbar { display: flex; justify-content: center; padding: 20px 40px; position: sticky; top: 0; z-index: 100; background: rgba(13,17,23,0.85); /* hafif transparan dark */ backdrop-filter: blur(8px); /* blur efekti */ border-bottom: 1px solid #2ea44f; /* subtle line */ } .navbar-controls button.active { background-color: #2ea44f; color: white; } body.light-mode .navbar { background: rgba(246,248,250,0.9); border-bottom: 1px solid #2ea44f; } /* Navbar center container */ .navbar-center { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center; } /* Navbar name */ .navbar-name { font-size: 1.5rem; /* biraz daha büyük */ font-weight: 700; color: #c9d1d9; } body.light-mode .navbar-name { color: #24292e; } /* Navbar links */ .navbar-links { list-style: none; display: flex; gap: 25px; } .navbar-links li a { text-decoration: none; color: #c9d1d9; font-weight: 600; font-size: 1rem; } body.light-mode .navbar-links li a { color: #24292e; } .navbar-links li a:hover { color: #2ea44f; /* Github green hover */ } /* Navbar controls */ .navbar-controls { display: flex; gap: 10px; } .navbar-links li a span { display: inline-block; min-width: 80px; text-align: center; } .navbar-controls button { padding: 6px 12px; border: none; border-radius: 6px; background-color: #2ea44f; color: #fff; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.3s; } .navbar-controls button:hover { background-color: #22863a; } /* Search input */ #search { padding: 6px 12px; border-radius: 6px; border: 1px solid #444; background-color: #161b22; color: #c9d1d9; font-size: 0.95rem; } body.light-mode #search { background-color: #fff; border: 1px solid #2ea44f; color: #24292e; } #search::placeholder { color: #888; } /* Hero Section */ .hero { text-align: center; padding: 150px 20px; } .hero h1 { font-size:2rem; /* büyük ve zarif */ font-weight: 700; color: #2ea44f; letter-spacing: 1px; line-height: 1.2; } body.light-mode .hero h1 { color: #22863a; } .hero p { margin: 20px 0; font-size: 1.5rem; /* daha okunaklı */ font-weight: 500; line-height: 1.6; } .hero p.en, .hero p.tr { display: inline-block; min-width: 300px; /* hero alanına göre ayarlayın */ text-align: center; } /* Social links */ .socials { margin-top: 30px; } .socials a { margin: 0 12px; text-decoration: none; color: #c9d1d9; font-weight: 500; font-size: 1.5rem; } body.light-mode .socials a { color: #24292e; } .socials a i { margin-right: 5px; } .socials a:hover { color: #2ea44f; text-decoration: underline; } /* Footer */ footer { text-align: center; padding: 50px 20px; font-size: 1rem; } /* Responsive */ @media screen and (max-width: 768px) { .navbar-center { flex-direction: column; gap: 20px; } .navbar-links { flex-direction: column; gap: 12px; } .navbar-controls { flex-direction: column; gap: 12px; } #search { width: 100%; } .hero h1 { font-size: 3rem; } .hero p { font-size: 1.1rem; } } /* ABOUT PAGE */ .about-hero { max-width: 900px; margin: 80px auto 40px; padding: 0 20px; text-align: center; } .about-hero h1 { font-size: 2.6rem; margin-bottom: 20px; color: #ffffff; } .about-hero p { font-size: 1.1rem; line-height: 1.8; color: #ccc; max-width: 700px; margin: auto; } /* Light mode */ body.light-mode .about-hero p { color: #444; } .page-content { max-width: 900px; margin: 2rem auto; padding: 0 1rem; } /* Başlıklar */ .page-content h1 { font-size: 2rem; margin-bottom: 1rem; color: #2ea44f; } .page-content h2 { margin-bottom: 1rem; } /* Kart gibi genel section */ .section-card { background: #161b22; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 1px solid #30363d; } /* Light mode uyum */ body.light-mode .section-card { background: #ffffff; border: 1px solid #d0d7de; } /* Kart container */ .card-container { display: flex; flex-wrap: wrap; gap: 1rem; } /* Tek kart */ .card { flex: 1 1 260px; background: #0d1117; padding: 1rem; border-radius: 10px; border: 1px solid #30363d; transition: transform 0.2s ease, box-shadow 0.2s ease; } /* Hover efekti (çok abartısız ama şık) */ .card:hover { transform: translateY(-5px); box-shadow: 0 6px 14px rgba(0,0,0,0.4); } /* Light mode kart */ body.light-mode .card { background: #f6f8fa; border: 1px solid #d0d7de; } /* Kart başlık */ .card h3 { margin-bottom: 0.5rem; color: #2ea44f; font-size: 1.1rem; } /* Kart text */ .card p { font-size: 0.95rem; line-height: 1.5; } /* Link (projeye git) */ .card a { color: #2ea44f; text-decoration: none; font-weight: 500; } /* Divider */ .divider { height: 1px; background: #30363d; margin: 25px 0; } body.light-mode .divider { background: #d0d7de; } /* INNER PROJECT CARDS */ .inner-card { background: #161b22; padding: 10px; border-radius: 8px; margin-top: 10px; cursor: pointer; position: relative; border: 1px solid #30363d; transition: all 0.2s ease; } .inner-card:hover { transform: translateX(5px); background: #21262d; } /* Light mode */ body.light-mode .inner-card { background: #f6f8fa; border: 1px solid #d0d7de; } /* Link overlay */ .inner-card a { position: absolute; inset: 0; } .card a:hover { text-decoration: underline; } /* Inner Cards Links */ .inner-card { margin: 10px 0; } .card-arrow { display: inline-block; margin-top: 10px; color: #2ea44f; font-size: 1.2rem; transition: transform 0.3s ease, color 0.3s ease; text-decoration: none; /* alt çizgi yok */ } /* Hover efekti */ .card-arrow:hover { color: #22863a; transform: translateX(4px); } /* Light mode */ body.light-mode .card-arrow { color: #2ea44f; } body.light-mode .card-arrow:hover { color: #22863a; } /* See All Projects Card */ .see-all { margin-top: 20px; text-align: center; } .see-all a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 12px; border: 2px solid #2ea44f; background: linear-gradient(135deg, rgba(46,164,79,0.1), transparent); color: #2ea44f; font-weight: 600; text-decoration: none; /* alt çizgi kapalı */ font-size: 1rem; transition: all 0.3s ease; } .see-all a:hover { background: rgba(46,164,79,0.15); box-shadow: 0 8px 20px rgba(46,164,79,0.25); transform: translateY(-4px) scale(1.02); text-decoration: none; /* hover’da da alt çizgi yok */ } .see-all a i { font-size: 1.2rem; transition: transform 0.3s ease; } .see-all a:hover i { transform: translateX(4px); /* ok hafif sağa kayar */ } /* Light mode */ body.light-mode .see-all a { background: linear-gradient(135deg, rgba(46,164,79,0.15), transparent); color: #2ea44f; border: 2px solid #2ea44f; } /* Page Title */ .page-title { font-size: 2rem; margin-bottom: 20px; color: #2ea44f; } /* Certificate Button */ .certificate-btn { margin-top: 15px; padding: 10px 18px; border: 1px solid #2ea44f; background: transparent; color: #2ea44f; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; } .certificate-btn i { margin-left: 5px; transition: transform 0.3s ease; } .certificate-btn:hover { background: rgba(46,164,79,0.1); } .certificate-btn:hover i { transform: translateX(4px); } /* MODAL (LIGHTBOX) */ .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; } /* Image */ .modal-content { max-width: 80%; max-height: 80%; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5); } /* CLOSE BUTTON */ .close { position: absolute; top: 30px; right: 40px; font-size: 2rem; color: white; cursor: pointer; } /* ------------------------- GENERAL CONTAINER ------------------------- */ .conference-list { max-width: 900px; margin: 40px auto; display: flex; flex-direction: column; gap: 25px; } /* ------------------------- CARD ------------------------- */ .conference-card { background: #161b22; padding: 25px 30px; border-radius: 14px; position: relative; transition: transform 0.3s, box-shadow 0.3s; border: 1px solid rgba(255,255,255,0.05); } .conference-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(46,164,79,0.25); } /* ------------------------- META (year + status) ------------------------- */ .conf-meta { display: flex; align-items: center; gap: 12px; margin: 8px 0 15px; font-size: 0.9rem; font-weight: 600; color: #2ea44f; } /* Year badge hover */ .year-badge { display: inline-block; background: rgba(46,164,79,0.15); color: #2ea44f; padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; border: 1px solid rgba(46,164,79,0.4); transition: all 0.3s; } .conference-card:hover .year-badge { background: #2ea44f; color: #fff; } /* ------------------------- TITLE HOVER ------------------------- */ .conference-card h2 { font-size: 1.6rem; color: #fff; margin-bottom: 10px; transition: color 0.3s; } .conference-card:hover h2 { color: #2ea44f; } /* ------------------------- TEXT CONTENT ------------------------- */ .conference-card p { max-height: 130px; overflow: hidden; position: relative; line-height: 1.5; margin-bottom: 10px; } /* ------------------------- READ MORE BUTTON ------------------------- */ .conf-link { display: inline-flex; align-items: center; gap: 8px; color: #2ea44f; font-weight: 600; text-decoration: none; transition: color 0.3s; } .conf-link i { transition: transform 0.3s; } .conf-link:hover { color: #1aff72; } .conf-link:hover i { transform: translateX(6px); } /* ------------------------- LIGHT MODE ------------------------- */ body.light-mode .conference-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.05); } body .year-badge { background: rgba(46,164,79,0.15); color: #2ea44f; } body .conference-card:hover .year-badge { background: #2ea44f; color: #fff; } body .conference-card:hover h2 { color: #2ea44f; } /* ------------------------- Conference Hero ------------------------- */ .conference-hero { max-width: 800px; margin: 80px auto 20px; text-align: center; padding: 0 20px; } .conference-hero h1 { font-size: 2.4rem; margin-bottom: 10px; color: #fff; } .conference-hero p { color: #aaa; font-size: 1rem; line-height: 1.6; } /* hover vibe ile uyum */ body.light-mode .conference-hero h1 { color: #111; } body.light-mode .conference-hero p { color: #555; } /* HERO */ .project-hero { max-width: 800px; margin: 80px auto 40px; text-align: center; padding: 0 20px; } .project-hero h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; } .project-hero .subtitle { color: #aaa; font-size: 1.1rem; margin-bottom: 15px; } .project-meta { font-size: 0.9rem; color: #2ea44f; display: flex; justify-content: center; gap: 10px; } /* CONTENT */ .project-content { max-width: 750px; margin: auto; padding: 0 20px 60px; line-height: 1.8; font-size: 1.05rem; color: #ccc; } .project-content p { margin-bottom: 20px; } .project-content .contributors { margin-top: 30px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.08); color: #aaa; } /* CERTIFICATE CARD (DAHA TEMİZ) */ .certificate-card { max-width: 750px; margin: 40px auto; text-align: center; background: #161b22; padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); } /* LIGHT MODE */ body.light-mode .project-hero h1 { color: #111; } body.light-mode .project-content { color: #444; } body.light-mode .certificate-card { background: #fff; } /* ======= Projects Section ======= */ .projects { padding: 60px 20px; text-align: center; } .projects h2 { font-size: 2.2rem; margin-bottom: 40px; } .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; } .project-card { background: #1f1f1f; padding: 20px; border-radius: 10px; box-shadow: 0 6px 15px rgba(0,0,0,0.3); transition: transform 0.2s, box-shadow 0.2s; } .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.4); } .project-card h3 { margin-top: 0; margin-bottom: 10px; } .project-card p { font-size: 0.95rem; margin-bottom: 10px; } .project-card .tech { display: block; font-size: 0.85rem; color: #aaa; margin-bottom: 15px; } .project-card a { text-decoration: none; color: #ff9800; font-weight: bold; } .more-projects { display: inline-block; margin-top: 40px; text-decoration: none; font-weight: bold; color: #ff9800; } /* ===== GENEL ===== */ body { margin: 0; font-family: 'Inter', sans-serif; background-color: #0d1117; color: #e6edf3; transition: all 0.3s ease; } /* ===== LIGHT MODE ===== */ body.light-mode { background-color: #f6f8fa; color: #24292f; } /* ===== NAVBAR ===== */ .navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 40px; background-color: #161b22; border-bottom: 1px solid #30363d; } body.light-mode .navbar { background-color: #ffffff; border-bottom: 1px solid #d0d7de; } /* LOGO */ #navbar-name { font-weight: 700; font-size: 20px; cursor: pointer; } /* ===== LANG + THEME ===== */ .lang-wrapper { display: flex; align-items: center; gap: 10px; } /* LANG BUTTON */ .lang-btn { padding: 6px 12px; border-radius: 6px; border: 1px solid #30363d; background: transparent; color: #e6edf3; cursor: pointer; transition: 0.2s; } .lang-btn:hover { border-color: #58a6ff; } .lang-btn.active { background-color: #238636; border-color: #238636; color: white; } /* LIGHT MODE LANG */ body.light-mode .lang-btn { border: 1px solid #d0d7de; color: #24292f; } body.light-mode .lang-btn.active { background-color: #2da44e; color: white; } /* ===== THEME BUTTON ===== */ #theme-toggle { padding: 8px; border-radius: 50%; border: 1px solid #30363d; background: transparent; color: #e6edf3; cursor: pointer; transition: 0.2s; } #theme-toggle:hover { background-color: #21262d; } body.light-mode #theme-toggle { border: 1px solid #d0d7de; color: #24292f; } body.light-mode #theme-toggle:hover { background-color: #f3f4f6; } /* ===== PROJECT CARD ===== */ .project-item { display: flex; flex-direction: column; gap: 10px; background: #161b22; border: 1px solid #30363d; padding: 20px; border-radius: 12px; transition: 0.3s; } .project-item:hover { transform: translateY(-5px); border-color: #238636; } /* LIGHT MODE CARD */ body.light-mode .project-item { background: #ffffff; border: 1px solid #d0d7de; } /* TITLE */ .project-title { font-size: 18px; font-weight: 600; } /* TECH STACK */ .project-tech { font-size: 13px; color: #8b949e; } body.light-mode .project-tech { color: #57606a; } /* DESCRIPTION */ .project-desc { font-size: 14px; line-height: 1.5; } /* ===== BLOG BUTTON ===== */ .blog-btn { display: inline-block; margin-top: 10px; color: #58a6ff; text-decoration: none; font-size: 14px; } .blog-btn:hover { text-decoration: underline; } /* ===== GITHUB BUTTON ===== */ .github-btn { display: inline-block; margin-top: 5px; padding: 8px 12px; background-color: #238636; color: white; border-radius: 6px; text-decoration: none; font-size: 14px; transition: 0.2s; } .github-btn:hover { background-color: #2ea043; } /* ===== GRID ===== */ .projects-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 40px; }
+/* ========================= RESET ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* ========================= DARK / LIGHT MODE ========================= */
+body.dark-mode {
+  background-color: #0d1117; /* Github dark */
+  color: #c9d1d9;
+}
+
+body.light-mode {
+  background-color: #f6f8fa; /* Github light */
+  color: #24292e;
+}
+
+/* ========================= NAVBAR ========================= */
+/* Navbar with background */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13,17,23,0.85); /* hafif transparan dark */
+  backdrop-filter: blur(8px); /* blur efekti */
+  border-bottom: 1px solid #2ea44f; /* subtle line */
+}
+
+.navbar-controls button.active {
+  background-color: #2ea44f;
+  color: white;
+}
+
+body.light-mode .navbar {
+  background: rgba(246,248,250,0.9);
+  border-bottom: 1px solid #2ea44f;
+}
+
+/* Navbar center container */
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Navbar name */
+.navbar-name {
+  font-size: 1.5rem; /* biraz daha büyük */
+  font-weight: 700;
+  color: #c9d1d9;
+}
+
+body.light-mode .navbar-name {
+  color: #24292e;
+}
+
+/* Navbar links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #c9d1d9;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+body.light-mode .navbar-links li a {
+  color: #24292e;
+}
+
+.navbar-links li a:hover {
+  color: #2ea44f; /* Github green hover */
+}
+
+/* Navbar controls */
+.navbar-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-links li a span {
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+}
+
+.navbar-controls button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2ea44f;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.navbar-controls button:hover {
+  background-color: #22863a;
+}
+
+/* Search input */
+#search {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #161b22;
+  color: #c9d1d9;
+  font-size: 0.95rem;
+}
+
+body.light-mode #search {
+  background-color: #fff;
+  border: 1px solid #2ea44f;
+  color: #24292e;
+}
+
+#search::placeholder {
+  color: #888;
+}
+
+/* ========================= HERO SECTION ========================= */
+.hero {
+  text-align: center;
+  padding: 150px 20px;
+}
+
+.hero h1 {
+  font-size:2rem; /* büyük ve zarif */
+  font-weight: 700;
+  color: #2ea44f;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+body.light-mode .hero h1 {
+  color: #22863a;
+}
+
+.hero p {
+  margin: 20px 0;
+  font-size: 1.5rem; /* daha okunaklı */
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.hero p.en, .hero p.tr {
+  display: inline-block;
+  min-width: 300px; /* hero alanına göre ayarlayın */
+  text-align: center;
+}
+
+/* Social links */
+.socials {
+  margin-top: 30px;
+}
+
+.socials a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #c9d1d9;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+body.light-mode .socials a {
+  color: #24292e;
+}
+
+.socials a i {
+  margin-right: 5px;
+}
+
+.socials a:hover {
+  color: #2ea44f;
+  text-decoration: underline;
+}
+
+/* ========================= FOOTER ========================= */
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 1rem;
+}
+
+/* ========================= RESPONSIVE ========================= */
+@media screen and (max-width: 768px) {
+  .navbar-center {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .navbar-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .navbar-controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+  #search {
+    width: 100%;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+/* ========================= ABOUT PAGE ========================= */
+.about-hero {
+  max-width: 900px;
+  margin: 80px auto 40px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.about-hero p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  max-width: 700px;
+  margin: auto;
+}
+
+body.light-mode .about-hero p {
+  color: #444;
+}
+
+.page-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Başlıklar */
+.page-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2ea44f;
+}
+
+.page-content h2 {
+  margin-bottom: 1rem;
+}
+
+/* Kart gibi genel section */
+.section-card {
+  background: #161b22;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 1px solid #30363d;
+}
+
+body.light-mode .section-card {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+}
+
+/* Kart container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Tek kart */
+.card {
+  flex: 1 1 260px;
+  background: #0d1117;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover efekti */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+body.light-mode .card {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #2ea44f;
+  font-size: 1.1rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card a {
+  color: #2ea44f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: #30363d;
+  margin: 25px 0;
+}
+
+body.light-mode .divider {
+  background: #d0d7de;
+}
+
+/* INNER PROJECT CARDS */
+.inner-card {
+  background: #161b22;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #30363d;
+  transition: all 0.2s ease;
+}
+
+.inner-card:hover {
+  transform: translateX(5px);
+  background: #21262d;
+}
+
+body.light-mode .inner-card {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+}
+
+.inner-card a {
+  position: absolute;
+  inset: 0;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.inner-card {
+  margin: 10px 0;
+}
+
+.card-arrow {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2ea44f;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.card-arrow:hover {
+  color: #22863a;
+  transform: translateX(4px);
+}
+
+body.light-mode .card-arrow {
+  color: #2ea44f;
+}
+
+body.light-mode .card-arrow:hover {
+  color: #22863a;
+}
+
+/* See All Projects Card */
+.see-all {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.see-all a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid #2ea44f;
+  background: linear-gradient(135deg, rgba(46,164,79,0.1), transparent);
+  color: #2ea44f;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.see-all a:hover {
+  background: rgba(46,164,79,0.15);
+  box-shadow: 0 8px 20px rgba(46,164,79,0.25);
+  transform: translateY(-4px) scale(1.02);
+  text-decoration: none;
+}
+
+.see-all a i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.see-all a:hover i {
+  transform: translateX(4px);
+}
+
+body.light-mode .see-all a {
+  background: linear-gradient(135deg, rgba(46,164,79,0.15), transparent);
+  color: #2ea44f;
+  border: 2px solid #2ea44f;
+}
+
+/* ========================= PAGE TITLE ========================= */
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2ea44f;
+}
+
+/* ========================= CERTIFICATE BUTTON ========================= */
+.certificate-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: 1px solid #2ea44f;
+  background: transparent;
+  color: #2ea44f;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.certificate-btn i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.certificate-btn:hover {
+  background: rgba(46,164,79,0.1);
+}
+
+.certificate-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* ========================= MODAL / LIGHTBOX ========================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ========================= GENERAL CONTAINER ========================= */
+.conference-list {
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ========================= CARD ========================= */
+.conference-card {
+  background: #161b22;
+  padding: 25px 30px;
+  border-radius: 14px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.conference-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(46,164,79,0.25);
+}
+
+/* META (year + status) */
+.conf-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2ea44f;
+}
+
+/* Year badge hover */
+.year-badge {
+  display: inline-block;
+  background: rgba(46,164,79,0.15);
+  color: #2ea44f;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid rgba(46,164,79,0.4);
+  transition: all 0.3s;
+}
+
+.conference-card:hover .year-badge {
+  background: #2ea44f;
+  color: #fff;
+}
+
+.conference-card h2 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.conference-card:hover h2 {
+  color: #2ea44f;
+}
+
+.conference-card p {
+  max-height: 130px;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.conf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2ea44f;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.conf-link i {
+  transition: transform 0.3s;
+}
+
+.conf-link:hover {
+  color: #1aff72;
+}
+
+.conf-link:hover i {
+  transform: translateX(6px);
+}
+
+/* LIGHT MODE */
+body.light-mode .conference-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+body .year-badge {
+  background: rgba(46,164,79,0.15);
+  color: #2ea44f;
+}
+
+body .conference-card:hover .year-badge {
+  background: #2ea44f;
+  color: #fff;
+}
+
+body .conference-card:hover h2 {
+  color: #2ea44f;
+}
+
+/* Conference Hero */
+.conference-hero {
+  max-width: 800px;
+  margin: 80px auto 20px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.conference-hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.conference-hero p {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+body.light-mode .conference-hero h1 {
+  color: #111;
+}
+
+body.light-mode .conference-hero p {
+  color: #555;
+}
+
+/* PROJECT HERO */
+.project-hero {
+  max-width: 800px;
+  margin: 80px auto 40px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.project-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.project-hero .subtitle {
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.project-meta {
+  font-size: 0.9rem;
+  color: #2ea44f;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.project-content {
+  max-width: 750px;
+  margin: auto;
+  padding: 0 20px 60px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #ccc;
+}
+
+.project-content p {
+  margin-bottom: 20px;
+}
+
+.project-content .contributors {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #aaa;
+}
+
+/* CERTIFICATE CARD */
+.certificate-card {
+  max-width: 750px;
+  margin: 40px auto;
+  text-align: center;
+  background: #161b22;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* LIGHT MODE */
+body.light-mode .project-hero h1 {
+  color: #111;
+}
+
+body.light-mode .project-content {
+  color: #444;
+}
+
+body.light-mode .certificate-card {
+  background: #fff;
+}
+
+/* ========================= PROJECTS SECTION ========================= */
+.projects {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.projects h2 {
+ 
