@@ -89,7 +89,7 @@ body.light-mode .navbar-links li a {
 }
 .navbar-links li a span {
   display: inline-block;
-  min-width: 75px; 
+  min-width: 80px; 
   text-align: center;
 }
 .navbar-controls button {
