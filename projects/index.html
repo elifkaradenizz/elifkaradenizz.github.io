@@ -27,7 +27,7 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* LANGUAGE BUTTONS */
+/* LANGUAGE */
 .lang-wrapper {
   position: absolute;
   top: 20px;
@@ -45,10 +45,10 @@ h1 {
 }
 
 .lang-btn.active {
-  background: #4ea1ff;
+  background: #2ecc71;
 }
 
-/* PROJECT CARD */
+/* CARD */
 .project-item {
   display: flex;
   justify-content: space-between;
@@ -73,16 +73,11 @@ h1 {
   font-weight: bold;
 }
 
-.project-desc {
-  margin: 10px 0;
-  line-height: 1.4;
-}
-
 /* TAGS */
 .project-subtitle span {
   display: inline-block;
   background: #2a2d3e;
-  color: #4ea1ff;
+  color: #2ecc71;
   padding: 5px 10px;
   margin: 6px 6px 6px 0;
   border-radius: 20px;
@@ -91,40 +86,76 @@ h1 {
 }
 
 .project-subtitle span:hover {
-  background: #4ea1ff;
+  background: #2ecc71;
   color: white;
 }
 
-/* BLOG BUTTON */
-.project-blog {
+.project-desc {
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+/* BUTTONS */
+.button-group {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.project-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 10px;
   padding: 8px 14px;
-  border: 1px solid #4ea1ff;
   border-radius: 6px;
-  color: #4ea1ff;
   text-decoration: none;
   font-size: 0.85em;
   transition: 0.25s;
 }
 
-.project-blog:hover {
-  background: #4ea1ff;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(78,161,255,0.3);
+/* BLOG */
+.blog-btn {
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
 }
 
-/* RIGHT SIDE */
-.project-meta {
-  text-align: right;
-  font-size: 0.8em;
-  color: #aaa;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.blog-btn:hover {
+  background: #2ecc71;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* GITHUB */
+.github-btn {
+  border: 1px solid #999;
+  color: #ccc;
+}
+
+.github-btn:hover {
+  background: #333;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* FOOTER LINK */
+.all-projects {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.all-projects a {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.all-projects a:hover {
+  background: #2ecc71;
+  color: white;
 }
 
 /* MOBILE */
@@ -134,10 +165,6 @@ h1 {
   }
   .project-info {
     max-width: 100%;
-  }
-  .project-meta {
-    text-align: left;
-    margin-top: 10px;
   }
 }
 
@@ -156,15 +183,19 @@ h1 {
 <h1 class="en">Projects</h1>
 <h1 class="tr" style="display:none;">Projeler</h1>
 
-<!-- PROJECT 1 -->
+<!-- PROJECT -->
 <div class="project-item">
   <div class="project-info">
-    <div class="project-title">E-commerce Recommendation System</div>
+
+    <div class="project-title">
+      <span class="en">E-commerce Recommendation System</span>
+      <span class="tr" style="display:none;">E-Ticaret Öneri Sistemi</span>
+    </div>
 
     <div class="project-subtitle">
-      <span>Python</span>
-      <span>ML</span>
-      <span>Streamlit</span>
+      <span class="en">Python</span><span class="tr" style="display:none;">Python</span>
+      <span class="en">ML</span><span class="tr" style="display:none;">Makine Öğrenmesi</span>
+      <span class="en">Streamlit</span><span class="tr" style="display:none;">Streamlit</span>
     </div>
 
     <div class="project-desc">
@@ -172,75 +203,30 @@ h1 {
       <span class="tr" style="display:none;">Müşteri segmentasyonu yaparak ürün öneren sistem.</span>
     </div>
 
-    <a href="#" class="project-blog">
-      <i class="fas fa-file-alt"></i>
-      <span class="en">Read blog post</span>
-      <span class="tr" style="display:none;">Blog yazısını oku</span>
-    </a>
-  </div>
+    <div class="button-group">
+      <a href="#" class="project-btn blog-btn">
+        <i class="fas fa-file-alt"></i>
+        <span class="en">Read Blog</span>
+        <span class="tr" style="display:none;">Blog Yazısı</span>
+      </a>
 
-  <div class="project-meta">
-    <div>⭐ 0</div>
-    <div>Customer Segmentation</div>
+      <a href="#" class="project-btn github-btn">
+        <i class="fab fa-github"></i>
+        <span class="en">View Code</span>
+        <span class="tr" style="display:none;">Kodu Gör</span>
+      </a>
+    </div>
+
   </div>
 </div>
 
-<!-- PROJECT 2 -->
-<div class="project-item">
-  <div class="project-info">
-    <div class="project-title">Hate Speech Detection</div>
-
-    <div class="project-subtitle">
-      <span>Python</span>
-      <span>NLP</span>
-      <span>AI</span>
-    </div>
-
-    <div class="project-desc">
-      <span class="en">Detects hate speech and gender bias in social media posts.</span>
-      <span class="tr" style="display:none;">Sosyal medyada nefret söylemi ve cinsiyetçilik tespiti yapar.</span>
-    </div>
-
-    <a href="#" class="project-blog">
-      <i class="fas fa-file-alt"></i>
-      <span class="en">Read blog post</span>
-      <span class="tr" style="display:none;">Blog yazısını oku</span>
-    </a>
-  </div>
-
-  <div class="project-meta">
-    <div>⭐ 0</div>
-    <div>NLP Analysis</div>
-  </div>
-</div>
-
-<!-- PROJECT 3 -->
-<div class="project-item">
-  <div class="project-info">
-    <div class="project-title">Image Processing App</div>
-
-    <div class="project-subtitle">
-      <span>Python</span>
-      <span>Streamlit</span>
-      <span>Computer Vision</span>
-    </div>
-
-    <div class="project-desc">
-      <span class="en">Applies filters, segmentation and image processing techniques.</span>
-      <span class="tr" style="display:none;">Filtreleme ve segmentasyon gibi görüntü işleme teknikleri uygular.</span>
-    </div>
-
-    <a href="#" class="project-blog">
-      <i class="fas fa-file-alt"></i>
-      <span class="en">Read blog post</span>
-      <span class="tr" style="display:none;">Blog yazısını oku</span>
-    </a>
-  </div>
-
-  <div class="project-meta">
-    <div>⭐ 0</div>
-    <div>Image Processing</div>
-  </div>
+<!-- TÜM PROJELER -->
+<div class="all-projects">
+  <a href="https://github.com/elifkaradeniz" target="_blank">
+    <i class="fab fa-github"></i>
+    <span class="en">See All Projects</span>
+    <span class="tr" style="display:none;">Tüm Projeleri Gör</span>
+  </a>
 </div>
 
 </div>
