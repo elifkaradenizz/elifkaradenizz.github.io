@@ -67,16 +67,24 @@ themeBtn.addEventListener('click', () => {
 /* LANGUAGE */
 const btnEN = document.getElementById('btn-en');
 const btnTR = document.getElementById('btn-tr');
+
 function setLanguage(lang){
-  document.querySelectorAll('.en').forEach(el=>el.style.display=(lang==='en')?'':'none');
-  document.querySelectorAll('.tr').forEach(el=>el.style.display=(lang==='tr')?'':'none');
-  btnEN.classList.toggle('active', lang==='en');
-  btnTR.classList.toggle('active', lang==='tr');
+  document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
+  document.querySelectorAll('.tr').forEach(el => el.style.display = (lang === 'tr') ? '' : 'none');
+  btnEN.classList.toggle('active', lang === 'en');
+  btnTR.classList.toggle('active', lang === 'tr');
   localStorage.setItem("lang", lang);
 }
-btnEN.addEventListener("click",()=>setLanguage("en"));
-btnTR.addEventListener("click",()=>setLanguage("tr"));
-setLanguage(localStorage.getItem("lang")||"en");
+
+btnEN.addEventListener("click", () => setLanguage("en"));
+btnTR.addEventListener("click", () => setLanguage("tr"));
+
+// Default olarak İngilizce
+let savedLang = localStorage.getItem("lang");
+if(savedLang !== "en" && savedLang !== "tr"){
+  savedLang = "en"; // hiç kayıt yoksa İngilizce
+}
+setLanguage(savedLang);
 
 /* SEARCH */
 const searchInput = document.getElementById('search');
