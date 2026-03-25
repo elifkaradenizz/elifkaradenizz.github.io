@@ -16,36 +16,65 @@ body {
   margin: 0;
 }
 
-.container {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 20px;
+/* NAVBAR */
+.navbar {
+  background: #1c1e2a;
+  padding: 15px 0;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 40px;
+.navbar-center {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-name {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.navbar-links a:hover {
+  color: #2ecc71;
 }
 
 /* LANGUAGE */
 .lang-wrapper {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .lang-btn {
   border: none;
-  padding: 6px 12px;
-  margin-left: 5px;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
   background: #2a2d3e;
   color: #fff;
+  cursor: pointer;
 }
 
 .lang-btn.active {
   background: #2ecc71;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
 }
 
 /* CARD */
@@ -61,7 +90,6 @@ h1 {
 
 .project-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
 }
 
 .project-info {
@@ -73,7 +101,7 @@ h1 {
   font-weight: bold;
 }
 
-/* TAGS */
+/* TAG */
 .project-subtitle span {
   display: inline-block;
   background: #2a2d3e;
@@ -82,35 +110,27 @@ h1 {
   margin: 6px 6px 6px 0;
   border-radius: 20px;
   font-size: 0.75em;
-  transition: 0.2s;
 }
 
-.project-subtitle span:hover {
-  background: #2ecc71;
-  color: white;
-}
-
+/* DESC */
 .project-desc {
   margin: 10px 0;
-  line-height: 1.4;
 }
 
 /* BUTTONS */
 .button-group {
-  margin-top: 10px;
   display: flex;
   gap: 10px;
 }
 
 .project-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: 6px;
   text-decoration: none;
   font-size: 0.85em;
-  transition: 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /* BLOG */
@@ -122,7 +142,6 @@ h1 {
 .blog-btn:hover {
   background: #2ecc71;
   color: white;
-  transform: translateY(-2px);
 }
 
 /* GITHUB */
@@ -133,24 +152,20 @@ h1 {
 
 .github-btn:hover {
   background: #333;
-  color: white;
-  transform: translateY(-2px);
 }
 
-/* FOOTER LINK */
+/* FOOTER */
 .all-projects {
   text-align: center;
   margin-top: 40px;
 }
 
 .all-projects a {
-  display: inline-block;
-  padding: 10px 20px;
   border: 1px solid #2ecc71;
-  color: #2ecc71;
+  padding: 10px 20px;
   border-radius: 8px;
+  color: #2ecc71;
   text-decoration: none;
-  transition: 0.25s;
 }
 
 .all-projects a:hover {
@@ -158,25 +173,34 @@ h1 {
   color: white;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .project-item {
-    flex-direction: column;
-  }
-  .project-info {
-    max-width: 100%;
-  }
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="lang-wrapper">
-  <button class="lang-btn active" onclick="setLang('en')">EN</button>
-  <button class="lang-btn" onclick="setLang('tr')">TR</button>
-</div>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-center">
+
+    <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+
+    <ul class="navbar-links">
+      <li><a href="../"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
+      <li><a href="../about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
+      <li><a href="../projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
+      <li><a href="../articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
+    </ul>
+
+    <input type="text" id="search" placeholder="Search...">
+
+    <div class="lang-wrapper">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('tr')">TR</button>
+      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </div>
+
+  </div>
+</nav>
 
 <div class="container">
 
@@ -195,43 +219,42 @@ h1 {
     <div class="project-subtitle">
       <span class="en">Python</span><span class="tr" style="display:none;">Python</span>
       <span class="en">ML</span><span class="tr" style="display:none;">Makine Öğrenmesi</span>
-      <span class="en">Streamlit</span><span class="tr" style="display:none;">Streamlit</span>
     </div>
 
     <div class="project-desc">
-      <span class="en">A system that segments customers and recommends products.</span>
-      <span class="tr" style="display:none;">Müşteri segmentasyonu yaparak ürün öneren sistem.</span>
+      <span class="en">Customer segmentation & recommendation.</span>
+      <span class="tr" style="display:none;">Müşteri segmentasyonu ve öneri sistemi.</span>
     </div>
 
     <div class="button-group">
       <a href="#" class="project-btn blog-btn">
-        <i class="fas fa-file-alt"></i>
-        <span class="en">Read Blog</span>
-        <span class="tr" style="display:none;">Blog Yazısı</span>
+        <span class="en">Blog</span>
+        <span class="tr" style="display:none;">Blog</span>
       </a>
 
       <a href="#" class="project-btn github-btn">
         <i class="fab fa-github"></i>
-        <span class="en">View Code</span>
-        <span class="tr" style="display:none;">Kodu Gör</span>
+        <span class="en">Code</span>
+        <span class="tr" style="display:none;">Kod</span>
       </a>
     </div>
 
   </div>
 </div>
 
-<!-- TÜM PROJELER -->
+<!-- ALL PROJECTS -->
 <div class="all-projects">
   <a href="https://github.com/elifkaradeniz" target="_blank">
-    <i class="fab fa-github"></i>
-    <span class="en">See All Projects</span>
-    <span class="tr" style="display:none;">Tüm Projeleri Gör</span>
+    <span class="en">All Projects</span>
+    <span class="tr" style="display:none;">Tüm Projeler</span>
   </a>
 </div>
 
 </div>
 
 <script>
+
+/* LANGUAGE (TEK SİSTEM) */
 function setLang(lang){
   document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
   document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
@@ -242,8 +265,26 @@ function setLang(lang){
   localStorage.setItem('lang', lang);
 }
 
+/* LOAD */
 const savedLang = localStorage.getItem('lang') || 'en';
 setLang(savedLang);
+
+/* THEME */
+document.getElementById('theme-toggle').onclick = () => {
+  document.body.classList.toggle('light-mode');
+};
+
+/* SEARCH */
+document.getElementById('search').addEventListener('input', e => {
+  const val = e.target.value.toLowerCase();
+  document.querySelectorAll('.project-item').forEach(card=>{
+    card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex':'none';
+  });
+});
+
+/* LOGO */
+document.getElementById('navbar-name').onclick = ()=> location.href='/';
+
 </script>
 
 </body>
