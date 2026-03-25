@@ -19,7 +19,7 @@ body.light-mode {
 }
 
 /* ========================= NAVBAR ========================= */
-/* Navbar with background */
+/* ========================= NAVBAR ========================= */
 .navbar {
   display: flex;
   justify-content: center;
@@ -27,14 +27,9 @@ body.light-mode {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(13,17,23,0.85); /* hafif transparan dark */
-  backdrop-filter: blur(8px); /* blur efekti */
-  border-bottom: 1px solid #2ea44f; /* subtle line */
-}
-
-.navbar-controls button.active {
-  background-color: #2ea44f;
-  color: white;
+  background: rgba(13,17,23,0.85); /* dark mode default */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #2ea44f;
 }
 
 body.light-mode .navbar {
@@ -53,7 +48,7 @@ body.light-mode .navbar {
 
 /* Navbar name */
 .navbar-name {
-  font-size: 1.5rem; /* biraz daha büyük */
+  font-size: 1.5rem;
   font-weight: 700;
   color: #c9d1d9;
 }
@@ -81,35 +76,13 @@ body.light-mode .navbar-links li a {
 }
 
 .navbar-links li a:hover {
-  color: #2ea44f; /* Github green hover */
-}
-
-/* Navbar controls */
-.navbar-controls {
-  display: flex;
-  gap: 10px;
+  color: #2ea44f;
 }
 
 .navbar-links li a span {
   display: inline-block;
   min-width: 80px;
   text-align: center;
-}
-
-.navbar-controls button {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 6px;
-  background-color: #2ea44f;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.navbar-controls button:hover {
-  background-color: #22863a;
 }
 
 /* Search input */
@@ -130,6 +103,70 @@ body.light-mode #search {
 
 #search::placeholder {
   color: #888;
+}
+
+/* ========================= LANGUAGE BUTTONS ========================= */
+.lang-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* EN/TR buttons */
+.lang-btn {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px; /* kare buton */
+  background: #2a2d3e;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.lang-btn.active {
+  background: #2ecc71;
+  color: #000;
+}
+
+.lang-btn:hover {
+  background: #22863a;
+}
+
+/* ========================= THEME TOGGLE ========================= */
+#theme-toggle {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px; /* kare */
+  background: #2a2d3e;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+#theme-toggle:hover {
+  background-color: #2ea44f; /* Github green hover */
+}
+
+body.light-mode #theme-toggle {
+  background: #ddd;
+  color: #24292e;
+}
+
+body.light-mode #theme-toggle:hover {
+  background: #2ea44f;
+  color: #fff;
+}
+
+/* ========================= CONTAINER ========================= */
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
 }
 
 /* ========================= HERO SECTION ========================= */
@@ -714,10 +751,108 @@ body.light-mode .certificate-card {
 }
 
 /* ========================= PROJECTS SECTION ========================= */
-.projects {
-  padding: 60px 20px;
-  text-align: center;
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
 }
 
-.projects h2 {
+/* CARD */
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  background: #1c1e2a;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  transition: 0.25s;
+}
+
+.project-item:hover {
+  transform: translateY(-4px);
+}
+
+.project-info {
+  max-width: 70%;
+}
+
+.project-title {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+/* TAG */
+.project-subtitle span {
+  display: inline-block;
+  background: #2a2d3e;
+  color: #2ecc71;
+  padding: 5px 10px;
+  margin: 6px 6px 6px 0;
+  border-radius: 20px;
+  font-size: 0.75em;
+}
+
+/* DESC */
+.project-desc {
+  margin: 10px 0;
+}
+
+/* BUTTONS */
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.project-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85em;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* BLOG */
+.blog-btn {
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+}
+
+.blog-btn:hover {
+  background: #2ecc71;
+  color: white;
+}
+
+/* GITHUB */
+.github-btn {
+  border: 1px solid #999;
+  color: #ccc;
+}
+
+.github-btn:hover {
+  background: #333;
+}
+
+/* FOOTER */
+.all-projects {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.all-projects a {
+  border: 1px solid #2ecc71;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #2ecc71;
+  text-decoration: none;
+}
+
+.all-projects a:hover {
+  background: #2ecc71;
+  color: white;
+}
+
  
