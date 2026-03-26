@@ -19,7 +19,6 @@ body.light-mode {
 }
 
 /* ========================= NAVBAR ========================= */
-/* ========================= NAVBAR ========================= */
 .navbar {
   display: flex;
   justify-content: center;
@@ -751,13 +750,6 @@ body.light-mode .certificate-card {
 }
 
 /* ========================= PROJECTS SECTION ========================= */
-
-/* CONTAINER */
-.container {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 20px;
-}
 
 /* CARD */
 .project-item {
