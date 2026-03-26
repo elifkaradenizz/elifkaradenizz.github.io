@@ -860,6 +860,17 @@ body.light-mode .project-subtitle span {
   background: #333;
 }
 
+/* DETAIL */
+.detail-btn {
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+}
+
+.detail-btn:hover {
+  background: #2ecc71;
+  color: white;
+}
+
 /* light mode button fix */
 body.light-mode .github-btn {
   color: #333;
