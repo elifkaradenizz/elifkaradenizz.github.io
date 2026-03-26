@@ -1,1 +1,179 @@
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Müşteri Segmentasyonu & Öneri Sistemi - Elif Karadeniz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 0 20px;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+    a { text-decoration: none; }
+    h1, h2 { color: #2ea44f; }
+    .container { max-width: 1000px; margin: 60px auto; }
+    .subtitle { color: #aaa; font-size: 1.15rem; margin-top: 4px; }
+    .meta { margin-top: 8px; color: #2ea44f; font-weight: 600; }
+    .badges { margin: 16px 0; }
+    .badge {
+      display: inline-block;
+      background: rgba(46,164,79,0.15);
+      color: #2ea44f;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin: 4px;
+    }
+    .links { margin-top: 20px; }
+    .links a {
+      margin: 0 10px;
+      padding: 10px 18px;
+      border: 1px solid #2ea44f;
+      border-radius: 8px;
+      color: #2ea44f;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .links a:hover { background: rgba(46,164,79,0.1); }
+    .mockup { margin-top: 30px; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
+    .mockup img { width: 100%; display: block; }
+    .content h2 { margin-top: 30px; }
+    .content ul { margin-left: 20px; }
+
+    /* Language toggle button */
+    .lang-switch { margin: 20px 0; text-align: right; }
+    .lang-switch button {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid #2ea44f;
+      background: transparent;
+      color: #2ea44f;
+      cursor: pointer;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="lang-switch">
+    <button onclick="setLang('tr')">TR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+
+  <section class="project-hero">
+    <h1 class="tr">Müşteri Segmentasyonu & Öneri Sistemi</h1>
+    <h1 class="en" style="display:none;">Customer Segmentation & Recommendation System</h1>
+
+    <p class="subtitle tr">Veri odaklı makine öğrenmesi dashboard'u</p>
+    <p class="subtitle en" style="display:none;">Data-driven machine learning dashboard</p>
+
+    <div class="meta tr">Bitirme Projesi • 2025 • Python / Streamlit / ML</div>
+    <div class="meta en" style="display:none;">Capstone Project • 2025 • Python / Streamlit / ML</div>
+
+    <div class="badges">
+      <span class="badge">Python</span>
+      <span class="badge">Streamlit</span>
+      <span class="badge">Machine Learning</span>
+      <span class="badge">Data Visualization</span>
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/elifkaradenizz/bitirme_projesi_ymu_2024" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://github.com/elifkaradenizz/bitirme-arayuz" target="_blank">
+        Live Streamlit UI
+      </a>
+    </div>
+  </section>
+
+  <div class="mockup">
+    <img src="/images/segmentasyon_dashboard.png" alt="Segmentasyon Dashboard Ekranı">
+  </div>
+
+  <div class="content">
+
+    <h2 class="tr">Proje Özeti</h2>
+    <h2 class="en" style="display:none;">Project Overview</h2>
+    <p class="tr">
+      Bu proje, e‑ticaret müşteri verilerini analiz ederek anlamlı segmentler oluşturur,
+      ardından bu segmentlere göre kişiselleştirilmiş öneri modelleri üretir. Segmentasyon
+      süreci etkileşimli arayüz ile kullanıcıya sunulur.
+    </p>
+    <p class="en" style="display:none;">
+      This project analyzes e-commerce customer data to create meaningful segments
+      and generates personalized recommendation models for each segment. The
+      segmentation process is presented through an interactive interface.
+    </p>
+
+    <h2 class="tr">Özellikler</h2>
+    <h2 class="en" style="display:none;">Features</h2>
+    <ul class="tr">
+      <li>CSV dosyası yükleme ve ön işleme</li>
+      <li>K‑Means tabanlı müşteri segmentasyonu</li>
+      <li>Performans metrikleri ve görselleştirme</li>
+      <li>Öneri model sonuçlarının görüntülenmesi</li>
+    </ul>
+    <ul class="en" style="display:none;">
+      <li>CSV upload and preprocessing</li>
+      <li>K-Means based customer segmentation</li>
+      <li>Performance metrics and visualization</li>
+      <li>Recommendation model outputs display</li>
+    </ul>
+
+    <h2 class="tr">Mimari ve Akış</h2>
+    <h2 class="en" style="display:none;">System Architecture</h2>
+    <p class="tr">
+      Sistem; veri ön işleme → kümeleme → modelleme → sonuç gösterimi adımlarından oluşur.
+      Arayüz, bu akışı görsel olarak destekler.
+    </p>
+    <p class="en" style="display:none;">
+      The system consists of data preprocessing → clustering → modeling → output layers.
+      The interface visually supports this workflow.
+    </p>
+
+    <h2 class="tr">Performans & Metrikler</h2>
+    <h2 class="en" style="display:none;">Performance & Metrics</h2>
+    <ul class="tr">
+      <li>Silhouette Skoru: 0.6657</li>
+      <li>Calinski–Harabasz: 2188.45</li>
+      <li>Davies–Bouldin: 0.4420</li>
+    </ul>
+    <ul class="en" style="display:none;">
+      <li>Silhouette Score: 0.6657</li>
+      <li>Calinski–Harabasz: 2188.45</li>
+      <li>Davies–Bouldin: 0.4420</li>
+    </ul>
+
+    <h2 class="tr">Ne Öğrendim?</h2>
+    <h2 class="en" style="display:none;">What I Learned</h2>
+    <p class="tr">
+      Bu projede veri ön işleme, model değerlendirme, kümeleme ve interaktif
+      dashboard geliştirme gibi konularda derinlemesine deneyim kazandım.
+    </p>
+    <p class="en" style="display:none;">
+      In this project, I gained in-depth experience in data preprocessing, model
+      evaluation, clustering, and developing an interactive dashboard.
+    </p>
+
+  </div>
+
+</div>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.tr').forEach(el => el.style.display = lang === 'tr' ? 'block' : 'none');
+  document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+}
+</script>
+
+</body>
+</html>
