@@ -751,10 +751,27 @@ body.light-mode .certificate-card {
 
 /* ========================= PROJECTS SECTION ========================= */
 
+.projects {
+  padding: 60px 20px;
+}
+
+/* container hizalama (senin diğer sayfalarla uyumlu) */
+.projects .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* başlık ortalama */
+.projects h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 /* CARD */
 .project-item {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   background: #1c1e2a;
   padding: 20px;
   margin-bottom: 20px;
@@ -766,10 +783,18 @@ body.light-mode .certificate-card {
   transform: translateY(-4px);
 }
 
+/* LIGHT MODE uyumu */
+body.light-mode .project-item {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+}
+
+/* içerik */
 .project-info {
   max-width: 70%;
 }
 
+/* başlık */
 .project-title {
   font-size: 1.3em;
   font-weight: bold;
@@ -786,6 +811,12 @@ body.light-mode .certificate-card {
   font-size: 0.75em;
 }
 
+/* light mode tag */
+body.light-mode .project-subtitle span {
+  background: #f3f4f6;
+  color: #2ea44f;
+}
+
 /* DESC */
 .project-desc {
   margin: 10px 0;
@@ -795,6 +826,7 @@ body.light-mode .certificate-card {
 .button-group {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .project-btn {
@@ -828,7 +860,17 @@ body.light-mode .certificate-card {
   background: #333;
 }
 
-/* FOOTER */
+/* light mode button fix */
+body.light-mode .github-btn {
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+body.light-mode .github-btn:hover {
+  background: #eee;
+}
+
+/* FOOTER BUTTON */
 .all-projects {
   text-align: center;
   margin-top: 40px;
@@ -840,6 +882,7 @@ body.light-mode .certificate-card {
   border-radius: 8px;
   color: #2ecc71;
   text-decoration: none;
+  display: inline-block;
 }
 
 .all-projects a:hover {
@@ -847,4 +890,15 @@ body.light-mode .certificate-card {
   color: white;
 }
 
+/* ========================= RESPONSIVE ========================= */
+@media (max-width: 768px) {
+  .project-item {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .project-info {
+    max-width: 100%;
+  }
+}
  
