@@ -2,290 +2,230 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Elif Karadeniz</title>
+  <title>E-commerce Recommendation System</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+  <style>
+    body.dark-mode {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+    }
+    body.light-mode {
+      background-color: #f4f4f4;
+      color: #111;
+    }
+    a { text-decoration: none; }
 
+    /* NAVBAR */
+    nav.navbar {
+      background-color: #161b22;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav.navbar .navbar-links li { display: inline-block; margin: 0 10px; }
+    nav.navbar .lang-btn { margin-left: 10px; padding: 5px 10px; cursor: pointer; }
+    nav.navbar .lang-btn.active { font-weight: bold; border-bottom: 2px solid #2ea44f; }
+
+    /* MAIN CONTAINER */
+    .project-detail-container {
+      display: flex;
+      max-width: 1200px;
+      margin: 50px auto;
+      gap: 30px;
+    }
+
+    /* SIDE PANEL */
+    .side-panel {
+      flex: 1;
+      background: rgba(46,164,79,0.05);
+      padding: 20px;
+      border-radius: 12px;
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+    .side-panel h3 { margin-bottom: 10px; color: #2ea44f; }
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      background: rgba(46,164,79,0.15);
+      color: #2ea44f;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      margin: 3px 3px 3px 0;
+    }
+    .side-panel a {
+      display: block;
+      margin-top: 15px;
+      color: #2ea44f;
+    }
+
+    /* MAIN CONTENT */
+    .main-content { flex: 3; }
+
+    .project-hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    .project-hero p.subtitle { color: #aaa; margin-bottom: 20px; }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #2ea44f;
+    }
+
+    /* METRICS CARDS */
+    .metrics {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .metric-card {
+      flex: 1 1 150px;
+      background: rgba(46,164,79,0.1);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .metric-card h4 { margin: 0; font-size: 1rem; color: #2ea44f; }
+    .metric-card p { margin: 5px 0 0 0; font-size: 1.2rem; font-weight: bold; }
+
+    /* SCREENSHOT */
+    .screenshot img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
 <body class="dark-mode">
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <div class="navbar-center">
-
-    <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
-
-    <ul class="navbar-links">
-      <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
-      <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
-      <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
-      <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-       <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
-    </ul>
-
-    <input type="text" id="search" placeholder="Search...">
-
-    <div class="lang-wrapper">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('tr')">TR</button>
-      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
-    </div>
-
+  <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+  <div>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('tr')">TR</button>
+    <button id="theme-toggle"><i class="fas fa-moon"></i></button>
   </div>
 </nav>
 
-<section class="projects">
+<!-- DETAIL CONTAINER -->
+<div class="project-detail-container">
 
-  <div class="container">
+  <!-- SIDE PANEL -->
+  <div class="side-panel">
+    <h3 class="en">Tech Stack</h3>
+    <h3 class="tr" style="display:none;">Teknolojiler</h3>
+    <span class="badge">Python</span>
+    <span class="badge">Scikit-learn</span>
+    <span class="badge">Pandas</span>
+    <span class="badge">Machine Learning</span>
 
-    <h1 class="en">Projects</h1>
-    <h1 class="tr" style="display:none;">Projeler</h1>
+    <h3 class="en">Links</h3>
+    <h3 class="tr" style="display:none;">Linkler</h3>
+    <a href="https://github.com/elifkaradenizz/bitirme_projesi_ymu_2024" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://medium.com/@elifkaradenizz" target="_blank"><i class="fas fa-book"></i> Blog</a>
+  </div>
 
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+
+    <!-- HERO -->
+    <div class="project-hero">
+      <h1 class="en">E-commerce Recommendation System</h1>
+      <h1 class="tr" style="display:none;">E-Ticaret Öneri Sistemi</h1>
+      <p class="subtitle en">Personalized recommendation engine using customer behavior.</p>
+      <p class="subtitle tr" style="display:none;">Müşteri davranışlarına dayalı kişiselleştirilmiş öneri sistemi.</p>
+    </div>
+
+    <!-- Problem & Solution -->
+    <div class="section-title en">Problem & Solution</div>
+    <div class="section-title tr" style="display:none;">Problem & Çözüm</div>
     <p class="en">
-Building intelligent systems powered by machine learning, NLP and LLMs — from data to real-world applications.
-</p>
+      Customers often struggle to find relevant products in large e-commerce platforms.
+      This project uses customer segmentation and collaborative filtering to provide personalized recommendations.
+    </p>
+    <p class="tr" style="display:none;">
+      Müşteriler büyük e-ticaret platformlarında ilgili ürünleri bulmakta zorlanıyor. Bu proje, müşteri segmentasyonu ve işbirlikçi filtreleme kullanarak kişiselleştirilmiş öneriler sunuyor.
+    </p>
 
-<p class="tr" style="display:none;">
-Makine öğrenmesi, NLP ve LLM destekli akıllı sistemler geliştiriyorum — veriden gerçek dünya uygulamalarına uzanan çözümler.
-</p>
-
-    <!-- PROJECT -->
-    <div class="project-item">
-      <div class="project-info">
-
-        <div class="project-title">
-          <span class="en">E-commerce Recommendation System</span>
-          <span class="tr" style="display:none;">E-Ticaret Öneri Sistemi</span>
-        </div>
-
-        <div class="project-subtitle">
-          <span class="en">Python</span>
-          <span class="tr" style="display:none;">Python</span>
-
-          <span class="en">ML</span>
-          <span class="tr" style="display:none;">Makine Öğrenmesi</span>
-        </div>
-
-        <div class="project-desc">
-          <span class="en">Customer segmentation & recommendation.</span>
-          <span class="tr" style="display:none;">Müşteri segmentasyonu ve öneri sistemi.</span>
-        </div>
-
-        <div class="button-group">
-          <a href="/projects/recommendation/" class="project-btn detail-btn">
-        <span class="en">Details</span>
-        <span class="tr" style="display:none;">Detay</span>
-      </a>
-
-          <a href="#" class="project-btn github-btn">
-            <i class="fab fa-github"></i>
-            <span class="en">Code</span>
-            <span class="tr" style="display:none;">Kod</span>
-          </a>
-
-              <a href="#" class="project-btn blog-btn">
-            <span class="en">Blog</span>
-            <span class="tr" style="display:none;">Blog</span>
-          </a>
-        </div>
-
+    <!-- Metrics -->
+    <div class="section-title en">Performance Metrics</div>
+    <div class="section-title tr" style="display:none;">Performans Metrikleri</div>
+    <div class="metrics">
+      <div class="metric-card">
+        <h4 class="en">Accuracy</h4>
+        <h4 class="tr" style="display:none;">Doğruluk</h4>
+        <p>92%</p>
+      </div>
+      <div class="metric-card">
+        <h4 class="en">F1 Score</h4>
+        <h4 class="tr" style="display:none;">F1 Skoru</h4>
+        <p>0.89</p>
+      </div>
+      <div class="metric-card">
+        <h4 class="en">User Engagement</h4>
+        <h4 class="tr" style="display:none;">Kullanıcı Etkileşimi</h4>
+        <p>+35%</p>
       </div>
     </div>
 
-    <!-- PROJECT 2 -->
-<div class="project-item">
-  <div class="project-info">
+    <!-- System Architecture -->
+    <div class="section-title en">System Architecture</div>
+    <div class="section-title tr" style="display:none;">Sistem Mimarisi</div>
+    <p class="en">
+      Data preprocessing → Feature engineering → Model training → Recommendation serving.
+    </p>
+    <p class="tr" style="display:none;">
+      Veri ön işleme → Özellik mühendisliği → Model eğitimi → Öneri sunumu.
+    </p>
 
-    <div class="project-title">
-      <span class="en">LLM File Analysis Chatbot</span>
-      <span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span>
+    <!-- Screenshot -->
+    <div class="section-title en">Screenshots</div>
+    <div class="section-title tr" style="display:none;">Ekran Görüntüleri</div>
+    <div class="screenshot">
+      <img src="/images/recommendation_dashboard.png" alt="Dashboard Screenshot">
     </div>
 
-    <div class="project-subtitle">
-      <span class="en">LLM</span>
-      <span class="tr" style="display:none;">LLM</span>
-
-      <span class="en">Streamlit</span>
-      <span class="tr" style="display:none;">Streamlit</span>
-    </div>
-
-    <div class="project-desc">
-      <span class="en">Chatbot that analyzes CSV, Excel and PDF files and answers questions.</span>
-      <span class="tr" style="display:none;">CSV, Excel ve PDF dosyalarını analiz eden chatbot.</span>
-    </div>
-
-    <div class="button-group">
-      <a href="/projects/chatbot/" class="project-btn detail-btn">
-        <span class="en">Details</span>
-        <span class="tr" style="display:none;">Detay</span>
-      </a>
-
-
-      <a href="https://github.com/elifkaradenizz/LLM_CHATBOT" target="_blank" class="project-btn github-btn">
-        <i class="fab fa-github"></i>
-        <span class="en">Code</span>
-        <span class="tr" style="display:none;">Kod</span>
-      </a>
-
-         <a href="#" class="project-btn blog-btn">
-            <span class="en">Blog</span>
-            <span class="tr" style="display:none;">Blog</span>
-          </a>
-    </div>
+    <!-- What I Learned -->
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title tr" style="display:none;">Neler Öğrendim</div>
+    <p class="en">
+      Improved my understanding of recommendation systems, customer segmentation, and model evaluation.
+    </p>
+    <p class="tr" style="display:none;">
+      Öneri sistemleri, müşteri segmentasyonu ve model değerlendirme konularında deneyim kazandım.
+    </p>
 
   </div>
+
 </div>
 
-<!-- PROJECT 3 -->
-<div class="project-item">
-  <div class="project-info">
-
-    <div class="project-title">
-      <span class="en">NLP + LLM Dashboard</span>
-      <span class="tr" style="display:none;">NLP + LLM Dashboard</span>
-    </div>
-
-    <div class="project-subtitle">
-      <span class="en">NLP</span>
-      <span class="tr" style="display:none;">NLP</span>
-
-      <span class="en">XGBoost</span>
-      <span class="tr" style="display:none;">XGBoost</span>
-    </div>
-
-    <div class="project-desc">
-      <span class="en">Sentiment analysis with ML models and LLM-powered explanations.</span>
-      <span class="tr" style="display:none;">Makine öğrenmesi ve LLM ile duygu analizi.</span>
-    </div>
-
-    <div class="button-group">
-      <a href="/projects/nlp-llm/" class="project-btn detail-btn">
-        <span class="en">Details</span>
-        <span class="tr" style="display:none;">Detay</span>
-      </a>
-
-      <a href="https://github.com/elifkaradenizz/nlp-llm-streamlit-dashboards" target="_blank" class="project-btn github-btn">
-        <i class="fab fa-github"></i>
-        <span class="en">Code</span>
-        <span class="tr" style="display:none;">Kod</span>
-      </a>
-
-         <a href="#" class="project-btn blog-btn">
-            <span class="en">Blog</span>
-            <span class="tr" style="display:none;">Blog</span>
-          </a>
-    </div>
-
-  </div>
-</div>
-
-<!-- PROJECT 4 -->
-<div class="project-item">
-  <div class="project-info">
-
-    <div class="project-title">
-      <span class="en">Carbon Emission Prediction</span>
-      <span class="tr" style="display:none;">Karbon Emisyon Tahmini</span>
-    </div>
-
-    <div class="project-subtitle">
-      <span class="en">Deep Learning</span>
-      <span class="tr" style="display:none;">Derin Öğrenme</span>
-
-      <span class="en">CNN</span>
-      <span class="tr" style="display:none;">CNN</span>
-    </div>
-
-    <div class="project-desc">
-      <span class="en">Prediction using DenseNet, NASNet and Xception models.</span>
-      <span class="tr" style="display:none;">DenseNet, NASNet ve Xception ile tahmin.</span>
-    </div>
-
-    <div class="button-group">
-      <a href="/projects/carbon/" class="project-btn detail-btn">
-        <span class="en">Details</span>
-        <span class="tr" style="display:none;">Detay</span>
-      </a>
-
-      <a href="https://github.com/elifkaradenizz" target="_blank" class="project-btn github-btn">
-        <i class="fab fa-github"></i>
-        <span class="en">Code</span>
-        <span class="tr" style="display:none;">Kod</span>
-      </a>
-
-         <a href="#" class="project-btn blog-btn">
-            <span class="en">Blog</span>
-            <span class="tr" style="display:none;">Blog</span>
-          </a>
-    </div>
-
-  </div>
-</div>
-
-<!-- PROJECT 5 -->
-<div class="project-item">
-  <div class="project-info">
-
-    <div class="project-title">
-      <span class="en">Hate Speech Detection</span>
-      <span class="tr" style="display:none;">Nefret Söylemi Tespiti</span>
-    </div>
-
-    <div class="project-subtitle">
-      <span class="en">NLP</span>
-      <span class="tr" style="display:none;">NLP</span>
-
-      <span class="en">Text Classification</span>
-      <span class="tr" style="display:none;">Metin Sınıflandırma</span>
-    </div>
-
-    <div class="project-desc">
-      <span class="en">Detection and analysis of hate speech on social media.</span>
-      <span class="tr" style="display:none;">Sosyal medya nefret söylemi analizi.</span>
-    </div>
-
-    <div class="button-group">
-      <a href="/projects/hate-speech/" class="project-btn detail-btn">
-        <span class="en">Details</span>
-        <span class="tr" style="display:none;">Detay</span>
-      </a>
-
-      <a href="https://github.com/elifkaradenizz" target="_blank" class="project-btn github-btn">
-        <i class="fab fa-github"></i>
-        <span class="en">Code</span>
-        <span class="tr" style="display:none;">Kod</span>
-      </a>
-
-         <a href="#" class="project-btn blog-btn">
-            <span class="en">Blog</span>
-            <span class="tr" style="display:none;">Blog</span>
-          </a>
-    </div>
-
-  </div>
-</div>
-
-    <!-- ALL PROJECTS -->
-    <div class="all-projects">
-      <a href="https://github.com/elifkaradenizz" target="_blank">
-        <span class="en">All Projects</span>
-        <span class="tr" style="display:none;">Tüm Projeler</span>
-      </a>
-    </div>
-
-  </div>
-
-</section>
-
-  <!-- FOOTER -->
+<!-- FOOTER -->
 <footer>
   <p class="en">© 2026 Elif Karadeniz</p>
   <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
 </footer>
 
-<!-- JS -->
 <script>
-/* LANGUAGE (TEK SİSTEM) */
+/* LANGUAGE */
 function setLang(lang){
   document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
   document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
@@ -295,8 +235,6 @@ function setLang(lang){
 
   localStorage.setItem('lang', lang);
 }
-
-/* LOAD */
 const savedLang = localStorage.getItem('lang') || 'en';
 setLang(savedLang);
 
@@ -304,14 +242,6 @@ setLang(savedLang);
 document.getElementById('theme-toggle').onclick = () => {
   document.body.classList.toggle('light-mode');
 };
-
-/* SEARCH */
-document.getElementById('search').addEventListener('input', e => {
-  const val = e.target.value.toLowerCase();
-  document.querySelectorAll('.project-item').forEach(card=>{
-    card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex':'none';
-  });
-});
 
 /* LOGO CLICK */
 document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'});
