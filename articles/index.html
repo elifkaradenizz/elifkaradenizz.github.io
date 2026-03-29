@@ -1,15 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Elif Karadeniz</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<title>Articles - Elif Karadeniz</title>
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ===== HERO ===== */
+.articles-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.articles-hero h1 {
+  font-size: 36px;
+  color: #3fb950;
+}
+
+.articles-hero p {
+  color: #8b949e;
+}
+
+body.light-mode .articles-hero p {
+  color: #555;
+}
+
+/* ===== GRID ===== */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+.article-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  padding: 20px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* LIGHT MODE CARD */
+body.light-mode .article-card {
+  background: #ffffff;
+  border-color: #ddd;
+  color: #000;
+}
+
+/* HOVER */
+.article-card:hover {
+  transform: translateY(-6px);
+  border-color: #3fb950;
+}
+
+/* TITLE */
+.article-card h3 {
+  color: #3fb950;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.article-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #c9d1d9;
+}
+
+body.light-mode .article-card p {
+  color: #333;
+}
+
+/* ===== READ MORE ===== */
+.read-more {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.read-more span {
+  font-size: 14px;
+  color: #3fb950;
+  font-weight: 500;
+}
+
+/* OK ANİMASYON */
+.arrow {
+  transition: 0.3s;
+}
+
+.read-more:hover .arrow {
+  transform: translateX(8px);
+}
+
+</style>
 </head>
 
 <body class="dark-mode">
 
-<!-- NAVBAR -->
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="navbar-center">
@@ -21,7 +117,7 @@
       <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
       <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
       <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-       <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
+      <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
     </ul>
 
     <input type="text" id="search" placeholder="Search...">
@@ -35,7 +131,82 @@
   </div>
 </nav>
 
+<section class="page-content">
 
+<!-- HERO -->
+<div class="articles-hero">
+
+  <h1>
+    <span class="en">Articles</span>
+    <span class="tr" style="display:none;">Yazılar</span>
+  </h1>
+
+  <p class="en">
+    Articles I wrote on Medium about AI, Data Science and my professional journey.
+  </p>
+
+  <p class="tr" style="display:none;">
+    Medium'da yazdığım yapay zeka, veri bilimi ve kariyerim üzerine makaleler.
+  </p>
+
+</div>
+
+<!-- ARTICLES -->
+<div class="articles-grid">
+
+  <!-- ARTICLE 1 -->
+  <div class="article-card">
+
+    <h3>
+      <span class="en">Customer Segmentation with Machine Learning</span>
+      <span class="tr" style="display:none;">Makine Öğrenmesi ile Müşteri Segmentasyonu</span>
+    </h3>
+
+    <p>
+      <span class="en">
+        A practical guide on clustering algorithms and customer segmentation using real-world datasets.
+      </span>
+      <span class="tr" style="display:none;">
+        Gerçek veri setleri ile müşteri segmentasyonu ve kümeleme algoritmaları üzerine bir rehber.
+      </span>
+    </p>
+
+    <a href="https://medium.com/YOUR-LINK-1" target="_blank" class="read-more">
+      <span class="en">Read More</span>
+      <span class="tr" style="display:none;">Devamını Oku</span>
+      <i class="fas fa-arrow-right arrow"></i>
+    </a>
+
+  </div>
+
+  <!-- ARTICLE 2 -->
+  <div class="article-card">
+
+    <h3>
+      <span class="en">Understanding Large Language Models</span>
+      <span class="tr" style="display:none;">Büyük Dil Modellerini Anlamak</span>
+    </h3>
+
+    <p>
+      <span class="en">
+        A simple explanation of how LLMs work and why they are powerful.
+      </span>
+      <span class="tr" style="display:none;">
+        LLM’lerin nasıl çalıştığını ve neden güçlü olduklarını anlatan basit bir rehber.
+      </span>
+    </p>
+
+    <a href="https://medium.com/YOUR-LINK-2" target="_blank" class="read-more">
+      <span class="en">Read More</span>
+      <span class="tr" style="display:none;">Devamını Oku</span>
+      <i class="fas fa-arrow-right arrow"></i>
+    </a>
+
+  </div>
+
+</div>
+
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -43,10 +214,9 @@
   <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
 </footer>
 
-<!-- JS -->
-<!-- JS -->
 <script>
-/* LANGUAGE (TEK SİSTEM) */
+
+/* LANGUAGE */
 function setLang(lang){
   document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
   document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
@@ -56,10 +226,7 @@ function setLang(lang){
 
   localStorage.setItem('lang', lang);
 }
-
-/* LOAD */
-const savedLang = localStorage.getItem('lang') || 'en';
-setLang(savedLang);
+setLang(localStorage.getItem('lang') || 'en');
 
 /* THEME */
 document.getElementById('theme-toggle').onclick = () => {
@@ -69,13 +236,16 @@ document.getElementById('theme-toggle').onclick = () => {
 /* SEARCH */
 document.getElementById('search').addEventListener('input', e => {
   const val = e.target.value.toLowerCase();
-  document.querySelectorAll('.project-item').forEach(card=>{
+  document.querySelectorAll('.article-card').forEach(card=>{
     card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex':'none';
   });
 });
 
 /* LOGO CLICK */
-document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'});
+document.getElementById('navbar-name').onclick = () => {
+  window.location.href = "/";
+};
+
 </script>
 
 </body>
