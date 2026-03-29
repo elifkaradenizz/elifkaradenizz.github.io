@@ -7,6 +7,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -34,6 +36,66 @@ body {
 .subtitle {
   color: #8b949e;
   margin-bottom: 25px;
+}
+
+/* IMAGE */
+.project-image {
+  width: 100%;
+  border-radius: 15px;
+  margin: 25px 0;
+  border: 1px solid #30363d;
+}
+
+/* INFO */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.info-card {
+  background: #161b22;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+}
+
+.info-card span {
+  font-size: 13px;
+  color: #8b949e;
+}
+
+/* DESCRIPTION */
+.description {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+/* ARCHITECTURE */
+.architecture {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.flow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  min-width: 140px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 /* GRID */
@@ -69,7 +131,6 @@ body {
 
 .code pre {
   padding: 20px;
-  font-size: 14px;
   color: #c9d1d9;
 }
 
@@ -84,9 +145,9 @@ body {
   background: #161b22;
   padding: 15px;
   border-radius: 12px;
+  border: 1px solid #30363d;
 }
 
-/* CHART */
 canvas {
   margin-top: 10px;
 }
@@ -115,6 +176,34 @@ canvas {
 <h1 class="title">LLM File Analysis Chatbot</h1>
 <p class="subtitle">LLM + Streamlit based intelligent file analyzer</p>
 
+<img src="project.png" class="project-image">
+
+<!-- INFO -->
+<div class="info-grid">
+  <div class="info-card"><span>Type</span><p>Generative AI</p></div>
+  <div class="info-card"><span>Model</span><p>Llama 3</p></div>
+  <div class="info-card"><span>Dataset</span><p>Custom</p></div>
+  <div class="info-card"><span>Status</span><p>Production</p></div>
+</div>
+
+<!-- DESCRIPTION -->
+<div class="description">
+AI chatbot that analyzes CSV, Excel and PDF files using embeddings and LLM.
+</div>
+
+<!-- ARCHITECTURE -->
+<div class="architecture">
+  <h3>Architecture</h3>
+  <div class="flow">
+    <div class="step">Upload</div>
+    <div class="step">Extract</div>
+    <div class="step">Embedding</div>
+    <div class="step">Vector DB</div>
+    <div class="step">LLM</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
 <div class="content">
 
   <!-- CODE -->
@@ -134,25 +223,29 @@ response = model.ask("Analyze file")
 
 print(response)
 </pre>
-
   </div>
 
   <!-- DASHBOARD -->
   <div class="dashboard">
 
-    <!-- SCORE CHART -->
+    <!-- SCORE -->
     <div class="dash-card">
       <p>Performance</p>
       <canvas id="scoreChart"></canvas>
     </div>
 
-    <!-- FILE SIZE ANALYSIS -->
+    <!-- BAR -->
     <div class="dash-card">
-      <p>File Size Performance</p>
+      <p>Latency (sec)</p>
       <canvas id="barChart"></canvas>
     </div>
 
-    <!-- ACTION -->
+    <!-- USAGE -->
+    <div class="dash-card">
+      <p>Usage Distribution</p>
+      <canvas id="pieChart"></canvas>
+    </div>
+
     <div class="btn" onclick="history.back()">Back</div>
 
   </div>
@@ -163,39 +256,40 @@ print(response)
 
 <script>
 
-/* GAUGE (Doughnut) */
-new Chart(document.getElementById("scoreChart"), {
+/* SCORE */
+new Chart(scoreChart, {
   type: "doughnut",
   data: {
-    labels: ["Score", "Remaining"],
     datasets: [{
       data: [92, 8],
-      backgroundColor: ["#3fb950", "#30363d"],
-      borderWidth: 0
+      backgroundColor: ["#3fb950", "#30363d"]
     }]
   },
-  options: {
-    plugins: {
-      legend: { display: false }
-    }
-  }
+  options: { plugins: { legend: { display: false } } }
 });
 
-/* BAR CHART */
-new Chart(document.getElementById("barChart"), {
+/* BAR */
+new Chart(barChart, {
   type: "bar",
   data: {
-    labels: ["1MB", "5MB", "10MB"],
+    labels: ["1MB","5MB","10MB"],
     datasets: [{
-      label: "Response Time",
-      data: [0.5, 1.2, 2.0],
+      data: [0.5,1.2,2.0],
       backgroundColor: "#3fb950"
     }]
   },
-  options: {
-    plugins: {
-      legend: { display: false }
-    }
+  options: { plugins: { legend: { display: false } } }
+});
+
+/* PIE */
+new Chart(pieChart, {
+  type: "pie",
+  data: {
+    labels: ["PDF","CSV","Excel"],
+    datasets: [{
+      data: [40,35,25],
+      backgroundColor: ["#3fb950","#58a6ff","#f85149"]
+    }]
   }
 });
 
