@@ -191,8 +191,10 @@ response = model.ask(<span class="string">"Analyze file"</span>)
 </footer>
 
 <!-- JS -->
+
+<!-- JS -->
 <script>
-/* LANGUAGE */
+/* LANGUAGE (TEK SİSTEM) */
 function setLang(lang){
   document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
   document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
@@ -221,7 +223,8 @@ document.getElementById('search').addEventListener('input', e => {
 });
 
 /* LOGO CLICK */
-document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'} );
+document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'});
+
 
 /* CHARTS */
 new Chart(document.getElementById("scoreChart"), {
