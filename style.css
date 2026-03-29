@@ -920,59 +920,249 @@ body.light-mode .github-btn:hover {
 
 
 /* ================= PROJECT DETAIL ================= */
-/* Project Details - Light Mode */
-body.light-mode .description,
-body.light-mode .architecture,
-body.light-mode .info-card,
-body.light-mode .project-image {
-    background: #fff;       /* Açık tema için arka plan */
-    color: #111;            /* Yazı rengi */
-    border-color: #d0d7de;  /* Sınır rengi varsa */
+/* ========================= PROJECT DETAIL ========================= */
+
+/* ================= LIGHT / DARK MODE ================= */
+body.light-mode {
+    background-color: #f6f8fa;
+    color: #24292e;
 }
 
-.container { max-width: 1200px; margin: auto; padding: 20px; }
-.title { font-size: 34px; color: #3fb950; margin-top: 20px; }
-.subtitle { color: #8b949e; margin-bottom: 25px; }
-.project-image { width: 100%; border-radius: 15px; margin: 25px 0; border: 1px solid #30363d; }
-body.light-mode .project-image { border-color: #ccc; }
+body.dark-mode {
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
 
-/* INFO GRID */
-.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 25px; }
-.info-card { padding: 15px; border-radius: 12px; }
-.info-card span { font-size: 13px; color: #8b949e; }
-body.light-mode .info-card span { color: #555; }
-.info-card p { margin-top: 5px; font-weight: bold; }
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
 
-/* DESCRIPTION & ARCHITECTURE */
-.description, .architecture { padding: 20px; border-radius: 15px; margin-bottom: 25px; line-height: 1.6; }
-.architecture h3 { margin-bottom: 15px; color: #3fb950; }
-.flow { display: flex; gap: 10px; flex-wrap: wrap; }
-.step { flex: 1; min-width: 140px; padding: 10px; border-radius: 10px; text-align: center; font-size: 13px; border: 1px solid #30363d; }
-body.light-mode .step { background: #0d1117; color: #fff; border-color: #0d1117; }
+/* ================= TITLES ================= */
+.title {
+    font-size: 34px;
+    color: #3fb950;
+    margin-top: 20px;
+}
 
-/* MAIN CONTENT GRID */
-.content { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: start; }
+.subtitle {
+    color: #8b949e;
+    margin-bottom: 25px;
+}
 
-/* CODE BLOCK */
-.code { border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
-.code-header { padding: 10px; display: flex; gap: 8px; }
-.dot { width: 12px; height: 12px; border-radius: 50%; }
-.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-.code pre { padding: 20px; font-size: 14px; line-height: 1.5; overflow-x: auto; max-height: 220px; }
-.keyword { color: #ff7b72; } .string { color: #a5d6ff; } .func { color: #d2a8ff; }
+/* ================= PROJECT IMAGE ================= */
+.project-image {
+    width: 100%;
+    border-radius: 15px;
+    margin: 25px 0;
+    border: 1px solid #30363d;
+}
 
-/* CHARTS */
-.charts-container { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-.charts-container .dash-card { flex: 1; min-width: 220px; }
-.dashboard { display: flex; flex-direction: column; gap: 12px; }
-.dash-card { padding: 12px; border-radius: 12px; }
+body.light-mode .project-image {
+    border-color: #ccc;
+}
+
+body.dark-mode .project-image {
+    border-color: #30363d;
+}
+
+/* ================= INFO GRID ================= */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-card {
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    background: #0d1117;
+    color: #c9d1d9;
+}
+
+body.light-mode .info-card {
+    background: #fff;
+    color: #111;
+    border-color: #d0d7de;
+}
+
+.info-card span {
+    font-size: 13px;
+    color: #8b949e;
+}
+
+body.light-mode .info-card span {
+    color: #555;
+}
+
+.info-card p {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* ================= DESCRIPTION & ARCHITECTURE ================= */
+.description,
+.architecture {
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    background: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+}
+
+body.light-mode .description,
+body.light-mode .architecture {
+    background: #fff;
+    color: #111;
+    border-color: #d0d7de;
+}
+
+.architecture h3 {
+    margin-bottom: 15px;
+    color: #3fb950;
+}
+
+/* ================= FLOW STEPS ================= */
+.flow {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 140px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+    border: 1px solid #30363d;
+    background: #0d1117;
+    color: #fff;
+}
+
+body.light-mode .step {
+    background: #fff;
+    color: #111;
+    border-color: #d0d7de;
+}
+
+/* ================= MAIN CONTENT GRID ================= */
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+/* ================= CODE BLOCK ================= */
+.code {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #0d1117;
+    color: #c9d1d9;
+}
+
+body.light-mode .code {
+    background: #f6f8fa;
+    color: #24292e;
+}
+
+.code-header {
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.code pre {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: auto;
+    max-height: 220px;
+}
+
+.keyword { color: #ff7b72; }
+.string { color: #a5d6ff; }
+.func { color: #d2a8ff; }
+
+/* ================= CHARTS ================= */
+.charts-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.dash-card {
+    flex: 1;
+    min-width: 220px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    background: #0d1117;
+    color: #c9d1d9;
+}
+
+body.light-mode .dash-card {
+    background: #fff;
+    border-color: #d0d7de;
+    color: #111;
+}
+
 .dash-card p { font-size: 13px; }
 .value { font-size: 20px; color: #3fb950; margin-top: 5px; }
 canvas { margin-top: 10px; max-height: 140px; }
-.tags span { display: inline-block; padding: 5px 10px; border-radius: 8px; margin: 3px; font-size: 12px; }
-.dash-card ul { margin-top: 8px; padding-left: 15px; font-size: 13px; }
 
-/* BUTTONS */
-.actions { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-.btn { padding: 10px; border-radius: 8px; border: 1px solid #3fb950; text-align: center; cursor: pointer; transition: 0.3s; }
-.btn:hover { background: #3fb950; color: #0d1117; }
+.tags span {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin: 3px;
+    font-size: 12px;
+}
+
+.dash-card ul {
+    margin-top: 8px;
+    padding-left: 15px;
+    font-size: 13px;
+}
+
+/* ================= BUTTONS ================= */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #3fb950;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #3fb950;
+    color: #0d1117;
+}
