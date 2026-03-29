@@ -920,249 +920,76 @@ body.light-mode .github-btn:hover {
 
 
 /* ================= PROJECT DETAIL ================= */
-/* ========================= PROJECT DETAIL ========================= */
-
-/* ================= LIGHT / DARK MODE ================= */
-body.light-mode {
-    background-color: #f6f8fa;
-    color: #24292e;
-}
-
+/* ========================= DARK / LIGHT MODE ========================= */
 body.dark-mode {
-    background-color: #0d1117;
-    color: #c9d1d9;
+  background-color: #0d1117;
+  color: #c9d1d9;
 }
 
-/* ================= CONTAINER ================= */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+body.light-mode {
+  background-color: #f6f8fa;
+  color: #24292e;
 }
 
-/* ================= TITLES ================= */
-.title {
-    font-size: 34px;
-    color: #3fb950;
-    margin-top: 20px;
-}
-
-.subtitle {
-    color: #8b949e;
-    margin-bottom: 25px;
-}
-
-/* ================= PROJECT IMAGE ================= */
-.project-image {
-    width: 100%;
-    border-radius: 15px;
-    margin: 25px 0;
-    border: 1px solid #30363d;
-}
-
-body.light-mode .project-image {
-    border-color: #ccc;
-}
-
-body.dark-mode .project-image {
-    border-color: #30363d;
-}
+/* ========================= PROJECT DETAIL ========================= */
+.container { max-width: 1200px; margin: auto; padding: 20px; }
+.title { font-size: 34px; color: #3fb950; margin-top: 20px; }
+.subtitle { color: #8b949e; margin-bottom: 25px; }
+.project-image { width: 100%; border-radius: 15px; margin: 25px 0; border: 1px solid #30363d; }
+body.light-mode .project-image { border-color: #ccc; }
 
 /* ================= INFO GRID ================= */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    margin-bottom: 25px;
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 25px; }
+.info-card, .dash-card, .description-card, .architecture-card, .code-card {
+  padding: 20px;
+  border-radius: 15px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+}
+body.light-mode .info-card,
+body.light-mode .dash-card,
+body.light-mode .description-card,
+body.light-mode .architecture-card,
+body.light-mode .code-card {
+  background: #fff;
+  color: #111;
+  border-color: #d0d7de;
 }
 
-.info-card {
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid #30363d;
-    background: #0d1117;
-    color: #c9d1d9;
-}
-
-body.light-mode .info-card {
-    background: #fff;
-    color: #111;
-    border-color: #d0d7de;
-}
-
-.info-card span {
-    font-size: 13px;
-    color: #8b949e;
-}
-
-body.light-mode .info-card span {
-    color: #555;
-}
-
-.info-card p {
-    margin-top: 5px;
-    font-weight: bold;
-}
+.info-card span { font-size: 13px; color: #8b949e; }
+body.light-mode .info-card span { color: #555; }
+.info-card p { margin-top: 5px; font-weight: bold; }
 
 /* ================= DESCRIPTION & ARCHITECTURE ================= */
-.description,
-.architecture {
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    line-height: 1.6;
-    background: #0d1117;
-    color: #c9d1d9;
-    border: 1px solid #30363d;
-}
+.description-card, .architecture-card { margin-bottom: 25px; }
+.architecture-card h3 { margin-bottom: 15px; color: #3fb950; }
 
-body.light-mode .description,
-body.light-mode .architecture {
-    background: #fff;
-    color: #111;
-    border-color: #d0d7de;
-}
-
-.architecture h3 {
-    margin-bottom: 15px;
-    color: #3fb950;
-}
-
-/* ================= FLOW STEPS ================= */
-.flow {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.step {
-    flex: 1;
-    min-width: 140px;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 13px;
-    border: 1px solid #30363d;
-    background: #0d1117;
-    color: #fff;
-}
-
-body.light-mode .step {
-    background: #fff;
-    color: #111;
-    border-color: #d0d7de;
-}
+.flow { display: flex; gap: 10px; flex-wrap: wrap; }
+.step { flex: 1; min-width: 140px; padding: 10px; border-radius: 10px; text-align: center; font-size: 13px; border: 1px solid #30363d; background: #0d1117; color: #fff; }
+body.light-mode .step { background: #3fb950; color: #fff; border-color: #3fb950; }
 
 /* ================= MAIN CONTENT GRID ================= */
-.content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    align-items: start;
-}
+.content { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: start; }
 
 /* ================= CODE BLOCK ================= */
-.code {
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 15px;
-    background: #0d1117;
-    color: #c9d1d9;
-}
-
-body.light-mode .code {
-    background: #f6f8fa;
-    color: #24292e;
-}
-
-.code-header {
-    padding: 10px;
-    display: flex;
-    gap: 8px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
-
-.code pre {
-    padding: 20px;
-    font-size: 14px;
-    line-height: 1.5;
-    overflow-x: auto;
-    max-height: 220px;
-}
-
-.keyword { color: #ff7b72; }
-.string { color: #a5d6ff; }
-.func { color: #d2a8ff; }
+.code-card { margin-bottom: 25px; }
+.code-header { padding: 10px; display: flex; gap: 8px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+.code pre { padding: 20px; font-size: 14px; line-height: 1.5; overflow-x: auto; max-height: 220px; }
+.keyword { color: #ff7b72; } .string { color: #a5d6ff; } .func { color: #d2a8ff; }
 
 /* ================= CHARTS ================= */
-.charts-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.dash-card {
-    flex: 1;
-    min-width: 220px;
-    padding: 12px;
-    border-radius: 12px;
-    border: 1px solid #30363d;
-    background: #0d1117;
-    color: #c9d1d9;
-}
-
-body.light-mode .dash-card {
-    background: #fff;
-    border-color: #d0d7de;
-    color: #111;
-}
-
+.charts-container { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.dash-card { flex: 1; min-width: 220px; padding: 20px; border-radius: 15px; }
 .dash-card p { font-size: 13px; }
 .value { font-size: 20px; color: #3fb950; margin-top: 5px; }
 canvas { margin-top: 10px; max-height: 140px; }
-
-.tags span {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 8px;
-    margin: 3px;
-    font-size: 12px;
-}
-
-.dash-card ul {
-    margin-top: 8px;
-    padding-left: 15px;
-    font-size: 13px;
-}
+.tags span { display: inline-block; padding: 5px 10px; border-radius: 8px; margin: 3px; font-size: 12px; }
+.dash-card ul { margin-top: 8px; padding-left: 15px; font-size: 13px; }
 
 /* ================= BUTTONS ================= */
-.actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.btn {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #3fb950;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #3fb950;
-    color: #0d1117;
-}
+.actions { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+.btn { padding: 10px; border-radius: 8px; border: 1px solid #3fb950; text-align: center; cursor: pointer; transition: 0.3s; }
+.btn:hover { background: #3fb950; color: #0d1117; }
