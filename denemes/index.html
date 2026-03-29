@@ -111,11 +111,12 @@ body {
   font-size: 13px;
 }
 
-/* GRID */
+/* GRID FIX */
 .content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
+  align-items: start;
 }
 
 /* CODE EDITOR */
@@ -148,8 +149,10 @@ body {
   color: #c9d1d9;
   line-height: 1.5;
   overflow-x: auto;
+  max-height: 220px; /* 🔥 sabit */
 }
 
+/* SYNTAX */
 .keyword { color: #ff7b72; }
 .string { color: #a5d6ff; }
 .func { color: #d2a8ff; }
@@ -158,12 +161,14 @@ body {
 .dashboard {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+  position: sticky;
+  top: 40px;
 }
 
 .dash-card {
   background: #161b22;
-  padding: 15px;
+  padding: 12px;
   border-radius: 12px;
   border: 1px solid #30363d;
 }
@@ -174,13 +179,15 @@ body {
 }
 
 .value {
-  font-size: 22px;
+  font-size: 20px;
   color: #3fb950;
   margin-top: 5px;
 }
 
+/* SMALL CHARTS */
 canvas {
   margin-top: 10px;
+  max-height: 140px;
 }
 
 /* TAGS */
@@ -236,28 +243,15 @@ canvas {
 
 <!-- INFO -->
 <div class="info-grid">
-  <div class="info-card">
-    <span>Project Type</span>
-    <p>Generative AI / NLP</p>
-  </div>
-  <div class="info-card">
-    <span>Core Model</span>
-    <p>Llama 3</p>
-  </div>
-  <div class="info-card">
-    <span>Dataset</span>
-    <p>Custom + Wikipedia</p>
-  </div>
-  <div class="info-card">
-    <span>Status</span>
-    <p>Production Ready</p>
-  </div>
+  <div class="info-card"><span>Project Type</span><p>Generative AI / NLP</p></div>
+  <div class="info-card"><span>Core Model</span><p>Llama 3</p></div>
+  <div class="info-card"><span>Dataset</span><p>Custom + Wikipedia</p></div>
+  <div class="info-card"><span>Status</span><p>Production Ready</p></div>
 </div>
 
 <!-- DESCRIPTION -->
 <div class="description">
-  This project is an AI-powered chatbot that analyzes CSV, Excel, and PDF files.
-  It leverages LLM models, embeddings, and vector databases to provide intelligent answers.
+This project is an AI-powered chatbot that analyzes CSV, Excel, and PDF files.
 </div>
 
 <!-- ARCHITECTURE -->
@@ -272,16 +266,15 @@ canvas {
   </div>
 </div>
 
-<!-- CONTENT -->
 <div class="content">
 
-  <!-- CODE -->
-  <div class="code">
-    <div class="code-header">
-      <div class="dot red"></div>
-      <div class="dot yellow"></div>
-      <div class="dot green"></div>
-    </div>
+<!-- CODE -->
+<div class="code">
+<div class="code-header">
+  <div class="dot red"></div>
+  <div class="dot yellow"></div>
+  <div class="dot green"></div>
+</div>
 
 <pre>
 <span class="keyword">from</span> langchain <span class="keyword">import</span> LLM
@@ -292,52 +285,47 @@ response = model.ask(<span class="string">"Analyze file"</span>)
 
 <span class="func">print</span>(response)
 </pre>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard">
+
+<div class="dash-card">
+  <p>Performance</p>
+  <div class="value">92 / 100</div>
+  <canvas id="scoreChart"></canvas>
+</div>
+
+<div class="dash-card">
+  <p>Tech Stack</p>
+  <div class="tags">
+    <span>Python</span>
+    <span>LLM</span>
+    <span>Streamlit</span>
   </div>
+</div>
 
-  <!-- DASHBOARD -->
-  <div class="dashboard">
+<div class="dash-card">
+  <p>Key Features</p>
+  <ul>
+    <li>File Analysis</li>
+    <li>Q&A System</li>
+    <li>Vector Search</li>
+  </ul>
+</div>
 
-    <!-- PERFORMANCE -->
-    <div class="dash-card">
-      <p>Performance</p>
-      <div class="value">92 / 100</div>
-      <canvas id="scoreChart"></canvas>
-    </div>
+<div class="dash-card">
+  <p>Model Metrics</p>
+  <canvas id="barChart"></canvas>
+</div>
 
-    <!-- TECH -->
-    <div class="dash-card">
-      <p>Tech Stack</p>
-      <div class="tags">
-        <span>Python</span>
-        <span>LLM</span>
-        <span>Streamlit</span>
-      </div>
-    </div>
+<div class="actions">
+  <div class="btn" onclick="history.back()">Back</div>
+  <div class="btn">GitHub</div>
+  <div class="btn">Blog</div>
+</div>
 
-    <!-- FEATURES -->
-    <div class="dash-card">
-      <p>Key Features</p>
-      <ul>
-        <li>File Analysis</li>
-        <li>Q&A System</li>
-        <li>Vector Search</li>
-      </ul>
-    </div>
-
-    <!-- GRAPH -->
-    <div class="dash-card">
-      <p>Model Metrics</p>
-      <canvas id="barChart"></canvas>
-    </div>
-
-    <!-- ACTIONS -->
-    <div class="actions">
-      <div class="btn" onclick="history.back()">Back</div>
-      <div class="btn" onclick="window.open('#')">GitHub</div>
-      <div class="btn" onclick="window.open('#')">Blog</div>
-    </div>
-
-  </div>
+</div>
 
 </div>
 
@@ -351,12 +339,11 @@ new Chart(document.getElementById("scoreChart"), {
   data: {
     datasets: [{
       data: [92, 8],
-      backgroundColor: ["#3fb950", "#30363d"],
-      borderWidth: 0
+      backgroundColor: ["#3fb950", "#30363d"]
     }]
   },
   options: {
-    cutout: "75%",
+    cutout: "80%",
     plugins: { legend: { display: false } }
   }
 });
@@ -372,12 +359,8 @@ new Chart(document.getElementById("barChart"), {
     }]
   },
   options: {
-    scales: {
-      y: { beginAtZero: true }
-    },
-    plugins: {
-      legend: { display: false }
-    }
+    scales: { y: { beginAtZero: true } },
+    plugins: { legend: { display: false } }
   }
 });
 
