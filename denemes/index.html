@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body class="dark-mode">
@@ -36,88 +37,94 @@
 <!-- MAIN CONTENT -->
 <div class="container">
 
-<h1 class="title"><span class="en">LLM File Analysis Chatbot</span><span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span></h1>
-<p class="subtitle"><span class="en">LLM + Streamlit based intelligent file analyzer</span><span class="tr" style="display:none;">LLM + Streamlit tabanlı akıllı dosya analiz aracı</span></p>
-<img src="project.png" class="project-image">
+  <h1 class="title"><span class="en">LLM File Analysis Chatbot</span><span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span></h1>
+  <p class="subtitle"><span class="en">LLM + Streamlit based intelligent file analyzer</span><span class="tr" style="display:none;">LLM + Streamlit tabanlı akıllı dosya analiz aracı</span></p>
+  <img src="project.png" class="project-image">
 
-<div class="info-grid">
-  <div class="info-card"><span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span><p>Generative AI / NLP</p></div>
-  <div class="info-card"><span><span class="en">Core Model</span><span class="tr" style="display:none;">Temel Model</span></span><p>Llama 3</p></div>
-  <div class="info-card"><span><span class="en">Dataset</span><span class="tr" style="display:none;">Veri Seti</span></span><p>Custom + Wikipedia</p></div>
-  <div class="info-card"><span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span><p><span class="en">Production Ready</span><span class="tr" style="display:none;">Üretime Hazır</span></p></div>
-</div>
-
-<div class="description"><span class="en">This project is an AI-powered chatbot that analyzes CSV, Excel, and PDF files.</span><span class="tr" style="display:none;">Bu proje, CSV, Excel ve PDF dosyalarını analiz eden yapay zekâ destekli bir chatbot'tur.</span></div>
-
-<div class="architecture">
-  <h3><span class="en">Project Architecture</span><span class="tr" style="display:none;">Proje Mimarisi</span></h3>
-  <div class="flow">
-    <div class="step"><span class="en">Upload</span><span class="tr" style="display:none;">Yükle</span></div>
-    <div class="step"><span class="en">Extract</span><span class="tr" style="display:none;">Çıkar</span></div>
-    <div class="step"><span class="en">Embedding</span><span class="tr" style="display:none;">Gömme</span></div>
-    <div class="step"><span class="en">Vector DB</span><span class="tr" style="display:none;">Vektör DB</span></div>
-    <div class="step"><span class="en">LLM</span><span class="tr" style="display:none;">LLM</span></div>
+  <!-- INFO GRID -->
+  <div class="info-grid">
+    <div class="info-card"><span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span><p>Generative AI / NLP</p></div>
+    <div class="info-card"><span><span class="en">Core Model</span><span class="tr" style="display:none;">Temel Model</span></span><p>Llama 3</p></div>
+    <div class="info-card"><span><span class="en">Dataset</span><span class="tr" style="display:none;">Veri Seti</span></span><p>Custom + Wikipedia</p></div>
+    <div class="info-card"><span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span><p><span class="en">Production Ready</span><span class="tr" style="display:none;">Üretime Hazır</span></p></div>
   </div>
-</div>
 
-<div class="content">
-  <!-- LEFT: CODE + CHARTS -->
-  <div>
-    <div class="code">
-      <div class="code-header">
-        <div class="dot red"></div>
-        <div class="dot yellow"></div>
-        <div class="dot green"></div>
+  <!-- DESCRIPTION -->
+  <div class="description-card">
+    <p><span class="en">This project is an AI-powered chatbot that analyzes CSV, Excel, and PDF files.</span><span class="tr" style="display:none;">Bu proje, CSV, Excel ve PDF dosyalarını analiz eden yapay zekâ destekli bir chatbot'tur.</span></p>
+  </div>
+
+  <!-- ARCHITECTURE -->
+  <div class="architecture-card">
+    <h3><span class="en">Project Architecture</span><span class="tr" style="display:none;">Proje Mimarisi</span></h3>
+    <div class="flow">
+      <div class="step"><span class="en">Upload</span><span class="tr" style="display:none;">Yükle</span></div>
+      <div class="step"><span class="en">Extract</span><span class="tr" style="display:none;">Çıkar</span></div>
+      <div class="step"><span class="en">Embedding</span><span class="tr" style="display:none;">Gömme</span></div>
+      <div class="step"><span class="en">Vector DB</span><span class="tr" style="display:none;">Vektör DB</span></div>
+      <div class="step"><span class="en">LLM</span><span class="tr" style="display:none;">LLM</span></div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT GRID -->
+  <div class="content">
+    <div>
+      <!-- CODE -->
+      <div class="code-card">
+        <div class="code-header">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+        </div>
+        <pre>
+from langchain import LLM
+model = LLM("llama3")
+response = model.ask("Analyze file")
+print(response)
+        </pre>
       </div>
-      <pre>
-<span class="keyword">from</span> langchain <span class="keyword">import</span> LLM
-model = <span class="func">LLM</span>(<span class="string">"llama3"</span>)
-response = model.ask(<span class="string">"Analyze file"</span>)
-<span class="func">print</span>(response)
-      </pre>
+
+      <!-- CHARTS -->
+      <div class="charts-container">
+        <div class="dash-card">
+          <p><span class="en">Performance</span><span class="tr" style="display:none;">Performans</span></p>
+          <div class="value">92 / 100</div>
+          <canvas id="scoreChart"></canvas>
+        </div>
+        <div class="dash-card">
+          <p><span class="en">Model Metrics</span><span class="tr" style="display:none;">Model Metrikleri</span></p>
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
     </div>
 
-    <div class="charts-container">
+    <!-- RIGHT DASHBOARD -->
+    <div class="dashboard">
       <div class="dash-card">
-        <p><span class="en">Performance</span><span class="tr" style="display:none;">Performans</span></p>
-        <div class="value">92 / 100</div>
-        <canvas id="scoreChart"></canvas>
+        <p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknoloji Yığını</span></p>
+        <div class="tags">
+          <span>Python</span>
+          <span>LLM</span>
+          <span>Streamlit</span>
+        </div>
       </div>
+
       <div class="dash-card">
-        <p><span class="en">Model Metrics</span><span class="tr" style="display:none;">Model Metrikleri</span></p>
-        <canvas id="barChart"></canvas>
+        <p><span class="en">Key Features</span><span class="tr" style="display:none;">Özellikler</span></p>
+        <ul>
+          <li><span class="en">File Analysis</span><span class="tr" style="display:none;">Dosya Analizi</span></li>
+          <li><span class="en">Q&A System</span><span class="tr" style="display:none;">Soru-Cevap Sistemi</span></li>
+          <li><span class="en">Vector Search</span><span class="tr" style="display:none;">Vektör Arama</span></li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <div class="btn" onclick="history.back()"><span class="en">Back</span><span class="tr" style="display:none;">Geri</span></div>
+        <div class="btn">GitHub</div>
+        <div class="btn">Blog</div>
       </div>
     </div>
   </div>
-
-  <!-- RIGHT: OTHER DASHBOARD -->
-  <div class="dashboard">
-    <div class="dash-card">
-      <p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknoloji Yığını</span></p>
-      <div class="tags">
-        <span>Python</span>
-        <span>LLM</span>
-        <span>Streamlit</span>
-      </div>
-    </div>
-
-    <div class="dash-card">
-      <p><span class="en">Key Features</span><span class="tr" style="display:none;">Özellikler</span></p>
-      <ul>
-        <li><span class="en">File Analysis</span><span class="tr" style="display:none;">Dosya Analizi</span></li>
-        <li><span class="en">Q&A System</span><span class="tr" style="display:none;">Soru-Cevap Sistemi</span></li>
-        <li><span class="en">Vector Search</span><span class="tr" style="display:none;">Vektör Arama</span></li>
-      </ul>
-    </div>
-
-    <div class="actions">
-      <div class="btn" onclick="history.back()"><span class="en">Back</span><span class="tr" style="display:none;">Geri</span></div>
-      <div class="btn">GitHub</div>
-      <div class="btn">Blog</div>
-    </div>
-  </div>
-</div>
-
 </div>
 
 <!-- FOOTER -->
@@ -126,6 +133,7 @@ response = model.ask(<span class="string">"Analyze file"</span>)
   <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
 </footer>
 
+<!-- SCRIPTS -->
 <script>
 /* LANGUAGE */
 function setLang(lang){
