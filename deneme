@@ -1,1 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Detail</title>
 
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0d1117;
+  color: #e6edf3;
+  padding: 40px;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* TITLE */
+.title {
+  font-size: 34px;
+  color: #3fb950;
+}
+
+.subtitle {
+  color: #8b949e;
+  margin-bottom: 25px;
+}
+
+/* IMAGE */
+.project-image {
+  width: 100%;
+  border-radius: 15px;
+  margin: 25px 0;
+  border: 1px solid #30363d;
+}
+
+/* INFO GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.info-card {
+  background: #161b22;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+}
+
+.info-card span {
+  font-size: 13px;
+  color: #8b949e;
+}
+
+.info-card p {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/* DESCRIPTION */
+.description {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* ARCHITECTURE */
+.architecture {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.architecture h3 {
+  margin-bottom: 15px;
+  color: #3fb950;
+}
+
+.flow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  min-width: 140px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* GRID */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* CODE EDITOR */
+.code {
+  background: #161b22;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.code-header {
+  background: #21262d;
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.code pre {
+  padding: 20px;
+  font-size: 14px;
+  color: #c9d1d9;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.keyword { color: #ff7b72; }
+.string { color: #a5d6ff; }
+.func { color: #d2a8ff; }
+
+/* DASHBOARD */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dash-card {
+  background: #161b22;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+}
+
+.dash-card p {
+  font-size: 13px;
+  color: #8b949e;
+}
+
+.value {
+  font-size: 22px;
+  color: #3fb950;
+  margin-top: 5px;
+}
+
+/* TAGS */
+.tags span {
+  display: inline-block;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin: 3px;
+  font-size: 12px;
+}
+
+/* LIST */
+.dash-card ul {
+  margin-top: 8px;
+  padding-left: 15px;
+  font-size: 13px;
+}
+
+/* BUTTONS */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #3fb950;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #3fb950;
+  color: #0d1117;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="title">LLM File Analysis Chatbot</h1>
+<p class="subtitle">LLM + Streamlit based intelligent file analyzer</p>
+
+<img src="project.png" class="project-image">
+
+<!-- INFO -->
+<div class="info-grid">
+  <div class="info-card">
+    <span>Project Type</span>
+    <p>Generative AI / NLP</p>
+  </div>
+  <div class="info-card">
+    <span>Core Model</span>
+    <p>Llama 3</p>
+  </div>
+  <div class="info-card">
+    <span>Dataset</span>
+    <p>Custom + Wikipedia</p>
+  </div>
+  <div class="info-card">
+    <span>Status</span>
+    <p>Production Ready</p>
+  </div>
+</div>
+
+<!-- DESCRIPTION -->
+<div class="description">
+  This project is an AI-powered chatbot that analyzes CSV, Excel, and PDF files.
+  It leverages LLM models, embeddings, and vector databases to provide intelligent answers.
+</div>
+
+<!-- ARCHITECTURE -->
+<div class="architecture">
+  <h3>Project Architecture</h3>
+  <div class="flow">
+    <div class="step">Upload</div>
+    <div class="step">Extract</div>
+    <div class="step">Embedding</div>
+    <div class="step">Vector DB</div>
+    <div class="step">LLM</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- CODE -->
+  <div class="code">
+    <div class="code-header">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+
+<pre>
+<span class="keyword">from</span> langchain <span class="keyword">import</span> LLM
+
+model = <span class="func">LLM</span>(<span class="string">"llama3"</span>)
+
+response = model.ask(<span class="string">"Analyze file"</span>)
+
+<span class="func">print</span>(response)
+</pre>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="dashboard">
+
+    <!-- SCORE (opsiyonel) -->
+    <div class="dash-card">
+      <p>Performance</p>
+      <div class="value">92 / 100</div>
+    </div>
+
+    <!-- TECH -->
+    <div class="dash-card">
+      <p>Tech Stack</p>
+      <div class="tags">
+        <span>Python</span>
+        <span>LLM</span>
+        <span>Streamlit</span>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="dash-card">
+      <p>Key Features</p>
+      <ul>
+        <li>File Analysis</li>
+        <li>Q&A System</li>
+        <li>Vector Search</li>
+      </ul>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <div class="btn" onclick="history.back()">Back</div>
+      <div class="btn" onclick="window.open('#')">GitHub</div>
+      <div class="btn" onclick="window.open('#')">Blog</div>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
