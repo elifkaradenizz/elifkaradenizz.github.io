@@ -920,6 +920,15 @@ body.light-mode .github-btn:hover {
 
 
 /* ================= PROJECT DETAIL ================= */
+/* Project Details - Light Mode */
+body.light-mode .description,
+body.light-mode .architecture,
+body.light-mode .info-card,
+body.light-mode .project-image {
+    background: #fff;       /* Açık tema için arka plan */
+    color: #111;            /* Yazı rengi */
+    border-color: #d0d7de;  /* Sınır rengi varsa */
+}
 
 .container { max-width: 1200px; margin: auto; padding: 20px; }
 .title { font-size: 34px; color: #3fb950; margin-top: 20px; }
