@@ -30,8 +30,8 @@ body.light-mode .articles-hero p {
 
 /* ===== GRID ===== */
 .articles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -45,6 +45,8 @@ body.light-mode .articles-hero p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
+  padding: 25px;
 }
 
 /* LIGHT MODE CARD */
@@ -94,11 +96,16 @@ body.light-mode .article-card p {
 
 /* OK ANİMASYON */
 .arrow {
+  color: #3fb950;
   transition: 0.3s;
+}
+  .article-card:hover {
+  transform: translateY(-6px);
+  border-color: #3fb950;
 }
 
 .read-more:hover .arrow {
-  transform: translateX(8px);
+  transform: translateX(10px);
 }
 
 </style>
