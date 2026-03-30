@@ -1,224 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Project Detail - Elif Karadeniz</title>
-<link rel="stylesheet" href="/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8">
+  <title>Elif Karadeniz - About</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-/* ===== CONTAINER ===== */
-body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; transition: all 0.3s; background: #0d1117; color: #c9d1d9; }
-body.light-mode { background: #f5f5f5; color: #000; }
-.container { max-width: 1200px; margin: auto; padding: 20px; }
+  <style>
+    /* HERO */
+.premium-hero {
+  text-align: center;
+  padding: 90px 20px;
+}
 
+.gradient-text {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #00ff99, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+.hero-sub {
+  color: #aaa;
+  margin-top: 10px;
+}
 
-/* ===== TITLE ===== */
-.title { font-size: 34px; color: #3fb950; margin-top: 20px; }
-body.light-mode .title { color: #3fb950; }
-.subtitle { color: #8b949e; margin-bottom: 25px; }
-body.light-mode .subtitle { color: #555; }
+/* GRID */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
 
-/* ===== IMAGE ===== */
-.project-image { width: 100%; border-radius: 15px; margin: 25px 0; border: 1px solid #30363d; }
-body.light-mode .project-image { border-color: #ccc; }
+/* CARD */
+.about-card {
+  background: #161b22;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
 
-/* ===== INFO GRID ===== */
-.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 25px; }
-.info-card { background: #161b22; padding: 15px; border-radius: 12px; border: 1px solid #30363d; }
-body.light-mode .info-card { background: #fff; border-color: #ccc; }
-.info-card span { font-size: 13px; color: #ffffff; }
-body.light-mode .info-card span { color: #000; }
-.info-card p { margin-top: 5px; font-weight: bold; color: #c9d1d9; }
-body.light-mode .info-card p { color: #000; }
+/* glow hover */
+.about-card::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,153,0.15), transparent);
+  top: -50%;
+  left: -50%;
+  opacity: 0;
+  transition: 0.4s;
+}
 
-/* ===== DESCRIPTION ===== */
-.description { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; line-height: 1.6; }
-body.light-mode .description { background: #fff; color: #000; }
+.about-card:hover::before {
+  opacity: 1;
+}
 
-/* ===== ARCHITECTURE ===== */
-.architecture { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; }
-body.light-mode .architecture { background: #fff; color: #000; }
-.architecture h3 { margin-bottom: 15px; color: #3fb950; }
-body.light-mode .architecture h3 { color: #3fb950; }
-.flow { display: flex; gap: 10px; flex-wrap: wrap; }
-.step { flex: 1; min-width: 140px; background: #0d1117; border: 1px solid #30363d; padding: 10px; border-radius: 10px; text-align: center; font-size: 13px; color: #c9d1d9; }
-body.light-mode .step { background: #fff; border-color: #ccc; color: #000; }
+.about-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
 
-/* ===== CODE BLOCK ===== */
-.code { background: #161b22; border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
-body.light-mode .code { background: #fff; color: #000; }
-.code-header { background: #21262d; padding: 10px; display: flex; gap: 8px; }
-body.light-mode .code-header { background: #eee; }
-.dot { width: 12px; height: 12px; border-radius: 50%; }
-.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-.code pre { padding: 20px; font-size: 14px; line-height: 1.5; overflow-x: auto; max-height: 220px; color: #c9d1d9; }
-body.light-mode .code pre { color: #000; }
-.keyword { color: #ff7b72; } .string { color: #a5d6ff; } .func { color: #d2a8ff; }
+.about-card i {
+  font-size: 28px;
+  color: #00ff99;
+  margin-bottom: 10px;
+}
 
-/* ===== CHARTS ===== */
-.charts-container { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-.charts-container .dash-card { flex: 1; min-width: 220px; background: #161b22; padding: 12px; border-radius: 12px; border: 1px solid #30363d; color: #c9d1d9; }
-body.light-mode .charts-container .dash-card { background: #fff; border-color: #ccc; color: #000; }
-.value { font-size: 20px; color: #3fb950; margin-top: 5px; }
+/* SKILLS */
+.skills-section {
+  max-width: 600px;
+  margin: auto;
+}
 
-/* ===== DASHBOARD RIGHT ===== */
-.dashboard { display: flex; flex-direction: column; gap: 12px; }
-.tags span { display: inline-block; background: #0d1117; border: 1px solid #30363d; padding: 5px 10px; border-radius: 8px; margin: 3px; font-size: 12px; color: #c9d1d9; }
-body.light-mode .tags span { background: #fff; border-color: #ccc; color: #000; }
+.skill {
+  margin-bottom: 20px;
+}
 
-/* ===== BUTTONS ===== */
-.actions { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-.btn { padding: 10px; border-radius: 8px; border: 1px solid #3fb950; text-align: center; cursor: pointer; transition: 0.3s; background: transparent; color: #3fb950; }
-.btn:hover { background: #3fb950; color: #fff; }
-body.light-mode .btn { color: #3fb950; border-color: #3fb950; }
-body.light-mode .btn:hover { color: #fff; }
+.bar {
+  height: 8px;
+  background: #30363d;
+  border-radius: 10px;
+  overflow: hidden;
+}
 
+.bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff99, #00ccff);
+}
 
+/* TIMELINE */
+.timeline-item {
+  display: flex;
+  margin-bottom: 25px;
+}
 
-</style>
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #00ff99;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.timeline .content {
+  background: #161b22;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* CTA */
+.cta-button {
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #00ff99, #00ccff);
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  transform: scale(1.08);
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+  </style>
 </head>
-
 <body class="dark-mode">
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="navbar-center">
+
     <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+
     <ul class="navbar-links">
       <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
       <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
       <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
       <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-      <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
+       <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
     </ul>
+
     <input type="text" id="search" placeholder="Search...">
+
     <div class="lang-wrapper">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('tr')">TR</button>
       <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     </div>
+
   </div>
 </nav>
 
-<!-- MAIN CONTENT -->
-<div class="container">
-<h1 class="title"><span class="en">LLM File Analysis Chatbot</span><span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span></h1>
-<p class="subtitle"><span class="en">LLM + Streamlit based intelligent file analyzer</span><span class="tr" style="display:none;">LLM + Streamlit tabanlı akıllı dosya analiz aracı</span></p>
-<img src="project.png" class="project-image">
 
-<div class="info-grid">
-  <div class="info-card"><span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span><p><span class="en">Generative AI / NLP</span><span class="tr" style="display:none;">Üretken AI / NLP</span></p></div>
-  <div class="info-card"><span><span class="en">Core Model</span><span class="tr" style="display:none;">Temel Model</span></span><p><span class="en">Llama 3</span><span class="tr" style="display:none;">Llama 3</span></p></div>
-  <div class="info-card"><span><span class="en">Dataset</span><span class="tr" style="display:none;">Veri Seti</span></span><p><span class="en">Custom + Wikipedia</span><span class="tr" style="display:none;">Özel + Wikipedia</span></p></div>
-  <div class="info-card"><span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span><p><span class="en">Production Ready</span><span class="tr" style="display:none;">Üretime Hazır</span></p></div>
-</div>
+<section class="page-content">
 
-<div class="description"><span class="en">This project is an AI-powered chatbot that analyzes CSV, Excel, and PDF files.</span><span class="tr" style="display:none;">Bu proje, CSV, Excel ve PDF dosyalarını analiz eden yapay zekâ destekli bir chatbot’tur.</span></div>
+<!-- HERO -->
+<section class="about-hero premium-hero">
 
-<div class="architecture">
-<h3><span class="en">Project Architecture</span><span class="tr" style="display:none;">Proje Mimarisi</span></h3>
-<div class="flow">
-  <div class="step"><span class="en">Upload</span><span class="tr" style="display:none;">Yükle</span></div>
-  <div class="step"><span class="en">Extract</span><span class="tr" style="display:none;">Çıkart</span></div>
-  <div class="step"><span class="en">Embedding</span><span class="tr" style="display:none;">Embedding</span></div>
-  <div class="step"><span class="en">Vector DB</span><span class="tr" style="display:none;">Vector DB</span></div>
-  <div class="step"><span class="en">LLM</span><span class="tr" style="display:none;">LLM</span></div>
-</div>
-</div>
+  <h1 class="gradient-text">
+    <span class="en">About Me</span>
+    <span class="tr" style="display:none;">Hakkımda</span>
+  </h1>
 
-<!-- LEFT + RIGHT CONTENT -->
-<div class="content">
-<div>
-  <div class="code">
-    <div class="code-header">
-      <div class="dot red"></div>
-      <div class="dot yellow"></div>
-      <div class="dot green"></div>
-    </div>
-    <pre>
-<span class="keyword">from</span> langchain <span class="keyword">import</span> LLM
-model = <span class="func">LLM</span>(<span class="string">"llama3"</span>)
-response = model.ask(<span class="string">"Analyze file"</span>)
-<span class="func">print</span>(response)
-    </pre>
+  <p class="hero-sub en">
+    AI Engineer building intelligent, scalable and impactful systems.
+  </p>
+
+  <p class="hero-sub tr" style="display:none;">
+    Ölçeklenebilir ve etkili yapay zeka sistemleri geliştiriyorum.
+  </p>
+
+</section>
+
+<div class="divider"></div>
+
+<!-- CARDS -->
+<section class="about-grid">
+
+  <div class="about-card reveal">
+    <i class="fas fa-brain"></i>
+    <h3>AI</h3>
+    <p>Machine Learning, NLP, LLM systems</p>
   </div>
 
-  <div class="charts-container">
-    <div class="dash-card">
-      <p><span class="en">Performance</span><span class="tr" style="display:none;">Performans</span></p>
-      <div class="value">92 / 100</div>
-      <canvas id="scoreChart"></canvas>
-    </div>
-    <div class="dash-card">
-      <p><span class="en">Model Metrics</span><span class="tr" style="display:none;">Model Ölçümleri</span></p>
-      <canvas id="barChart"></canvas>
-    </div>
+  <div class="about-card reveal">
+    <i class="fas fa-database"></i>
+    <h3>Data</h3>
+    <p>Data pipelines, analytics & insights</p>
   </div>
-</div>
 
-<div class="dashboard">
-<div class="dash-card">
-  <p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknoloji Yığını</span></p>
-  <div class="tags">
+  <div class="about-card reveal">
+    <i class="fas fa-code"></i>
+    <h3>Engineering</h3>
+    <p>Clean, scalable & production-ready systems</p>
+  </div>
+
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section class="skills-section">
+
+  <h2>Skills</h2>
+
+  <div class="skill">
     <span>Python</span>
-    <span>LLM</span>
-    <span>Streamlit</span>
+    <div class="bar"><div style="width:90%"></div></div>
   </div>
-</div>
 
-<div class="dash-card">
-  <p><span class="en">Key Features</span><span class="tr" style="display:none;">Ana Özellikler</span></p>
-  <ul>
-    <li><span class="en">File Analysis</span><span class="tr" style="display:none;">Dosya Analizi</span></li>
-    <li><span class="en">Q&A System</span><span class="tr" style="display:none;">Soru-Cevap Sistemi</span></li>
-    <li><span class="en">Vector Search</span><span class="tr" style="display:none;">Vector Arama</span></li>
-  </ul>
-</div>
+  <div class="skill">
+    <span>Machine Learning</span>
+    <div class="bar"><div style="width:85%"></div></div>
+  </div>
 
-<div class="actions">
-  <div class="btn" onclick="history.back()"><span class="en">Back</span><span class="tr" style="display:none;">Geri</span></div>
-  <div class="btn"><span class="en">GitHub</span><span class="tr" style="display:none;">GitHub</span></div>
-  <div class="btn"><span class="en">Blog</span><span class="tr" style="display:none;">Blog</span></div>
-</div>
-</div>
-</div>
+  <div class="skill">
+    <span>SQL</span>
+    <div class="bar"><div style="width:80%"></div></div>
+  </div>
 
-</div>
+  <div class="skill">
+    <span>React</span>
+    <div class="bar"><div style="width:75%"></div></div>
+  </div>
 
+</section>
+
+<div class="divider"></div>
+
+<!-- TIMELINE -->
+<section class="timeline">
+
+  <div class="timeline-item reveal">
+    <div class="dot"></div>
+    <div class="content">
+      <h3>2024</h3>
+      <p>Graduated - Software Engineering</p>
+    </div>
+  </div>
+
+  <div class="timeline-item reveal">
+    <div class="dot"></div>
+    <div class="content">
+      <h3>Projects</h3>
+      <p>Recommendation, NLP, Deep Learning</p>
+    </div>
+  </div>
+
+  <div class="timeline-item reveal">
+    <div class="dot"></div>
+    <div class="content">
+      <h3>Conference</h3>
+      <p>International presentation</p>
+    </div>
+  </div>
+
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<section class="about-cta">
+  <a href="/projects/" class="cta-button">
+    View My Projects <i class="fas fa-arrow-right"></i>
+  </a>
+</section>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
-<p class="en">© 2026 Elif Karadeniz</p>
-<p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
+  <p class="en">© 2026 Elif Karadeniz</p>
+  <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
 </footer>
 
+<!-- JS -->
+<!-- JS -->
 <script>
-/* LANGUAGE SWITCH */
+/* LANGUAGE (TEK SİSTEM) */
 function setLang(lang){
   document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
   document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
+
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelectorAll('.lang-btn')[lang==='en'?0:1].classList.add('active');
+
   localStorage.setItem('lang', lang);
 }
-setLang(localStorage.getItem('lang') || 'en');
 
-/* THEME SWITCH */
+/* LOAD */
+const savedLang = localStorage.getItem('lang') || 'en';
+setLang(savedLang);
+
+/* THEME */
 document.getElementById('theme-toggle').onclick = () => {
   document.body.classList.toggle('light-mode');
 };
 
-/* CHARTS */
-new Chart(document.getElementById("scoreChart"), {
-  type: "doughnut",
-  data: { datasets: [{ data: [92, 8], backgroundColor: ["#3fb950", "#30363d"] }] },
-  options: { cutout: "80%", plugins: { legend: { display: false } } }
+/* SEARCH */
+document.getElementById('search').addEventListener('input', e => {
+  const val = e.target.value.toLowerCase();
+  document.querySelectorAll('.project-item').forEach(card=>{
+    card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex':'none';
+  });
 });
-new Chart(document.getElementById("barChart"), {
-  type: "bar",
-  data: { labels: ["Accuracy","Speed","Quality"], datasets: [{ data: [92,85,88], backgroundColor: "#3fb950" }] },
-  options: { scales: { y: { beginAtZero:true } }, plugins: { legend:{ display:false } } }
+
+/* LOGO CLICK */
+document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'});
+  const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      el.classList.add("active");
+    }
+  });
 });
 </script>
 
