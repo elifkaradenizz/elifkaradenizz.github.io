@@ -7,136 +7,115 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* HERO */
-.premium-hero {
-  text-align: center;
-  padding: 90px 20px;
-}
+/* ===== ABOUT PAGE UPGRADE ===== */
 
-.gradient-text {
-  font-size: 3rem;
-  background: linear-gradient(90deg, #00ff99, #00ccff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-sub {
-  color: #aaa;
-  margin-top: 10px;
-}
-
-/* GRID */
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 25px;
-}
-
-/* CARD */
-.about-card {
+/* SECTION CARD */
+.section-card {
   background: #161b22;
-  padding: 30px;
-  border-radius: 18px;
-  text-align: center;
-  transition: 0.4s;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #30363d;
+  transition: 0.3s;
   position: relative;
   overflow: hidden;
 }
 
-/* glow hover */
-.about-card::before {
+.section-card::before {
   content: "";
   position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0,255,153,0.15), transparent);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(0,255,153,0.08), transparent);
   top: -50%;
   left: -50%;
   opacity: 0;
   transition: 0.4s;
 }
 
-.about-card:hover::before {
+.section-card:hover::before {
   opacity: 1;
 }
 
-.about-card:hover {
-  transform: translateY(-10px) scale(1.03);
+.section-card:hover {
+  transform: translateY(-5px);
 }
 
-.about-card i {
-  font-size: 28px;
-  color: #00ff99;
-  margin-bottom: 10px;
+/* CARD GRID */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
 }
 
-/* SKILLS */
-.skills-section {
-  max-width: 600px;
-  margin: auto;
+/* CARD */
+.card {
+  background: #0d1117;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+  transition: 0.3s;
+  position: relative;
 }
 
-.skill {
-  margin-bottom: 20px;
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
 }
 
-.bar {
-  height: 8px;
-  background: #30363d;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.bar div {
-  height: 100%;
-  background: linear-gradient(90deg, #00ff99, #00ccff);
-}
-
-/* TIMELINE */
-.timeline-item {
-  display: flex;
-  margin-bottom: 25px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background: #00ff99;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
-.timeline .content {
+/* INNER CARD */
+.inner-card {
   background: #161b22;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-/* CTA */
-.cta-button {
-  padding: 12px 25px;
-  border-radius: 30px;
-  background: linear-gradient(45deg, #00ff99, #00ccff);
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
+.inner-card i {
+  opacity: 0;
   transition: 0.3s;
 }
 
-.cta-button:hover {
-  transform: scale(1.08);
+.inner-card:hover {
+  transform: translateX(5px);
 }
 
-/* SCROLL ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
-}
-
-.reveal.active {
+.inner-card:hover i {
   opacity: 1;
-  transform: translateY(0);
+}
+
+/* SEE ALL */
+.see-all a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #00ff99;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.see-all a:hover {
+  background: rgba(0,255,153,0.08);
+}
+
+/* CARD ARROW */
+.card-arrow {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #00ff99;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(5px);
 }
   </style>
 </head>
