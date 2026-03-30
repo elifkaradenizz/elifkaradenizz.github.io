@@ -1,94 +1,128 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Articles - Elif Karadeniz</title>
-<style>
-  /* RESET */
-  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-  body { background:#0d1117; color:#ccc; line-height:1.6; padding:20px; }
-
-  a { text-decoration:none; color:inherit; }
-
-  h1 { text-align:center; margin-bottom:30px; color:#2ea44f; }
-
-  /* CARD CONTAINER */
-  .articles-container { max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:20px; }
-
-  /* CARD */
-  .article-card {
-    background:#161b22;
-    padding:20px;
-    border-radius:6px;
-    border-left:4px solid #2ea44f;
-    transition:all 0.3s ease;
-    position:relative;
-  }
-  .article-card:hover { transform:translateY(-3px); box-shadow:0 6px 18px rgba(46,164,79,0.3); }
-
-  .article-card h2 { font-size:1.3rem; margin-bottom:10px; color:#2ea44f; }
-  .article-card p { font-size:1rem; color:#ccc; }
-
-  /* DEVAMINI OKU LINKİ */
-  .read-more {
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-top:15px;
-    font-weight:600;
-    color:#2ea44f;
-    transition:all 0.3s ease;
-  }
-  .read-more:hover { gap:12px; }
-
-  .read-more i { transition:transform 0.3s ease; }
-  .read-more:hover i { transform:translateX(5px); }
-
-  /* MEDIUM LINK */
-  .medium-link {
-    text-align:center;
-    margin-top:40px;
-  }
-  .medium-link a {
-    display:inline-block;
-    padding:12px 24px;
-    border:2px solid #2ea44f;
-    border-radius:6px;
-    color:#2ea44f;
-    font-weight:600;
-    transition:all 0.3s ease;
-  }
-  .medium-link a:hover { background:#2ea44f1a; transform:scale(1.05); }
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Elif Karadeniz</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
 
-<h1>Articles</h1>
+<body class="dark-mode">
 
-<div class="articles-container">
-  <div class="article-card">
-    <h2>Makine Öğrenimi ile E-ticaret Analizi</h2>
-    <p>Müşteri verilerini segmentleyerek ve öneri sistemleri kullanarak e-ticaret satışlarını artırma yöntemleri üzerine bir analiz.</p>
-    <a href="https://medium.com/@elif" target="_blank" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-center">
+
+    <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+
+    <ul class="navbar-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/conference/">Conference</a></li>
+    </ul>
+
+    <div class="lang-wrapper">
+      <button class="lang-btn active">EN</button>
+      <button class="lang-btn">TR</button>
+      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="subtitle">Building Intelligent Systems with AI & Data</p>
+  <h1>Elif Karadeniz</h1>
+
+  <p class="desc">
+    AI & Data Science Engineer focused on Machine Learning, NLP and LLM applications.
+    I build intelligent systems and evaluate AI models for real-world problems.
+  </p>
+
+  <div class="cta-buttons">
+    <a href="/projects/" class="btn primary">View Projects</a>
+    <a href="/about/" class="btn secondary">About Me</a>
   </div>
 
-  <div class="article-card">
-    <h2>Sosyal Medyada Cinsiyetçilik ve Nefret Söylemi Tespiti</h2>
-    <p>Proje kapsamında sosyal medyada cinsiyetçilik ve nefret söylemi verilerinin analizi ve sınıflandırılması gerçekleştirildi.</p>
-    <a href="https://medium.com/@elif" target="_blank" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+  <div class="socials">
+    <a href="https://github.com/elifkaradenizz" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/elif-karadeniz/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://medium.com/@Elifkaradenizz" target="_blank"><i class="fab fa-medium"></i></a>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills">
+  <h2>Core Skills</h2>
+  <div class="skill-list">
+    <span>Machine Learning</span>
+    <span>NLP</span>
+    <span>LLM</span>
+    <span>Python</span>
+    <span>SQL</span>
+    <span>React</span>
+    <span>Docker</span>
+    <span>Kafka</span>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="projects">
+  <h2>Featured Projects</h2>
+
+  <div class="project-grid">
+
+    <div class="project-card">
+      <h3>Hate Speech Detection</h3>
+      <p>NLP-based model to detect toxic and sexist language in social media.</p>
+      <a href="/projects/">View Project →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Carbon Emission Prediction</h3>
+      <p>Deep learning models to estimate and analyze carbon footprint.</p>
+      <a href="/projects/">View Project →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Medical Billing Analysis</h3>
+      <p>Data analysis & statistical testing on healthcare billing datasets.</p>
+      <a href="/projects/">View Project →</a>
+    </div>
+
   </div>
 
-  <div class="article-card">
-    <h2>Karbon Emisyonlarının Tahmini ve Azaltılması</h2>
-    <p>Bireysel karbon ayak izi tahmini için makine öğrenimi modellerinin uygulanması ve derin öğrenme ile performans karşılaştırması.</p>
-    <a href="https://medium.com/@elif" target="_blank" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
-  </div>
-</div>
+  <a href="/projects/" class="view-all">View All Projects →</a>
+</section>
 
-<div class="medium-link">
-  <a href="https://medium.com/@elif" target="_blank">Tüm Yazılarımı Medium’da Gör</a>
-</div>
+<!-- ARTICLES -->
+<section class="articles">
+  <h2>Latest Articles</h2>
+
+  <div class="article-card">
+    <p>Sharing insights about Machine Learning, NLP and real-world data problems.</p>
+    <a href="https://medium.com/@Elifkaradenizz" target="_blank">Read on Medium →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Elif Karadeniz</p>
+</footer>
+
+<!-- JS -->
+<script>
+document.getElementById('theme-toggle').onclick = () => {
+  document.body.classList.toggle('light-mode');
+};
+
+document.getElementById('navbar-name').onclick = () => {
+  window.location.href = "/";
+};
+</script>
 
 </body>
 </html>
