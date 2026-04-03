@@ -16,112 +16,154 @@
     <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
 
     <ul class="navbar-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/projects/">Projects</a></li>
-      <li><a href="/articles/">Articles</a></li>
-      <li><a href="/conference/">Conference</a></li>
+      <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
+      <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
+      <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
+      <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
+      <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
     </ul>
 
+    <input type="text" id="search" placeholder="Search...">
+
     <div class="lang-wrapper">
-      <button class="lang-btn active">EN</button>
-      <button class="lang-btn">TR</button>
+      <button class="lang-btn active" id="btn-en">EN</button>
+      <button class="lang-btn" id="btn-tr">TR</button>
       <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     </div>
 
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <p class="subtitle">Building Intelligent Systems with AI & Data</p>
-  <h1>Elif Karadeniz</h1>
+<!-- PROJECT HERO -->
+<section class="project-hero">
+  <h1><span class="en">Hate Speech & Sexism Detection</span><span class="tr" style="display:none;">Zararlı Dil ve Cinsiyetçilik Tespiti</span></h1>
 
-  <p class="desc">
-    AI & Data Science Engineer focused on Machine Learning, NLP and LLM applications.
-    I build intelligent systems and evaluate AI models for real-world problems.
+  <p class="subtitle en">
+    NLP-based classification of toxic language on social media
+  </p>
+  <p class="subtitle tr" style="display:none;">
+    Sosyal medyada zararlı dilin NLP ile sınıflandırılması
   </p>
 
-  <div class="cta-buttons">
-    <a href="/projects/" class="btn primary">View Projects</a>
-    <a href="/about/" class="btn secondary">About Me</a>
-  </div>
-
-  <div class="socials">
-    <a href="https://github.com/elifkaradenizz" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/elif-karadeniz/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://medium.com/@Elifkaradenizz" target="_blank"><i class="fab fa-medium"></i></a>
+  <div class="project-meta">
+    <span class="en">Conference • 2024</span><span class="tr" style="display:none;">Konferans • 2024</span>
+    <span>•</span>
+    <span class="en">Machine Learning / NLP</span><span class="tr" style="display:none;">Makine Öğrenimi / NLP</span>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section class="skills">
-  <h2>Core Skills</h2>
-  <div class="skill-list">
-    <span>Machine Learning</span>
-    <span>NLP</span>
-    <span>LLM</span>
-    <span>Python</span>
-    <span>SQL</span>
-    <span>React</span>
-    <span>Docker</span>
-    <span>Kafka</span>
-  </div>
+<!-- PROJECT CONTENT -->
+<section class="project-content">
+  <p>
+    <span class="en">
+      In this project, natural language processing (NLP) techniques were used to detect and analyze sexism and hate speech on social media platforms.
+    </span>
+    <span class="tr" style="display:none;">
+      Bu projede, sosyal medya platformlarında cinsiyetçilik ve nefret söylemini tespit etmek ve analiz etmek için doğal dil işleme (NLP) teknikleri kullanıldı.
+    </span>
+  </p>
+
+  <p>
+    <span class="en">
+      During preprocessing, tokenization, lemmatization, and stop-word removal were applied using NLTK. Text data was transformed into semantic representations with Word2Vec.
+    </span>
+    <span class="tr" style="display:none;">
+      Ön işleme aşamasında, NLTK kullanılarak tokenizasyon, lemmatizasyon ve durak kelime (stop-word) temizliği yapıldı. Metin verileri Word2Vec ile anlamsal temsil biçimlerine dönüştürüldü.
+    </span>
+  </p>
+
+  <p>
+    <span class="en">
+      Multiple machine learning algorithms were implemented to classify harmful content, achieving strong results in identifying toxic patterns.
+    </span>
+    <span class="tr" style="display:none;">
+      Zararlı içerikleri sınıflandırmak için birden fazla makine öğrenimi algoritması uygulandı ve toksik kalıpları tanımada güçlü sonuçlar elde edildi.
+    </span>
+  </p>
+
+  <p>
+    <span class="en">
+      This work was presented at an international conference and published as an academic paper.
+    </span>
+    <span class="tr" style="display:none;">
+      Bu çalışma uluslararası bir konferansta sunuldu ve akademik bir makale olarak yayımlandı.
+    </span>
+  </p>
+
+  <p class="contributors">
+    <strong><span class="en">Contributors:</span><span class="tr" style="display:none;">Katkıda Bulunanlar:</span></strong> Elif Karadeniz, Fatmanur Polat, Beyzanur Çelik
+  </p>
+
+  <!-- Certificate Button -->
+  <button class="certificate-btn" onclick="openModal()">
+    <span class="en">View Certificate</span><span class="tr" style="display:none;">Sertifikayı Gör</span> <i class="fas fa-arrow-right"></i>
+  </button>
 </section>
 
-<!-- FEATURED PROJECTS -->
-<section class="projects">
-  <h2>Featured Projects</h2>
-
-  <div class="project-grid">
-
-    <div class="project-card">
-      <h3>Hate Speech Detection</h3>
-      <p>NLP-based model to detect toxic and sexist language in social media.</p>
-      <a href="/projects/">View Project →</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Carbon Emission Prediction</h3>
-      <p>Deep learning models to estimate and analyze carbon footprint.</p>
-      <a href="/projects/">View Project →</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Medical Billing Analysis</h3>
-      <p>Data analysis & statistical testing on healthcare billing datasets.</p>
-      <a href="/projects/">View Project →</a>
-    </div>
-
-  </div>
-
-  <a href="/projects/" class="view-all">View All Projects →</a>
-</section>
-
-<!-- ARTICLES -->
-<section class="articles">
-  <h2>Latest Articles</h2>
-
-  <div class="article-card">
-    <p>Sharing insights about Machine Learning, NLP and real-world data problems.</p>
-    <a href="https://medium.com/@Elifkaradenizz" target="_blank">Read on Medium →</a>
-  </div>
-</section>
+<!-- MODAL -->
+<div id="certificateModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" src="certificate.jpg" alt="Certificate">
+</div>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Elif Karadeniz</p>
+  <p class="en">© 2026 Elif Karadeniz</p>
+  <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
 </footer>
 
 <!-- JS -->
 <script>
-document.getElementById('theme-toggle').onclick = () => {
-  document.body.classList.toggle('light-mode');
-};
+  /* THEME */
+  const themeBtn = document.getElementById('theme-toggle');
+  themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const icon = themeBtn.querySelector('i');
+    icon.classList.toggle('fa-sun');
+    icon.classList.toggle('fa-moon');
+  });
 
-document.getElementById('navbar-name').onclick = () => {
-  window.location.href = "/";
-};
+  /* LANGUAGE */
+  const btnEN = document.getElementById('btn-en');
+  const btnTR = document.getElementById('btn-tr');
+
+  function setLanguage(lang){
+    document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
+    document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
+    btnEN.classList.toggle('active', lang==='en');
+    btnTR.classList.toggle('active', lang==='tr');
+    localStorage.setItem("lang", lang);
+  }
+
+  btnEN.addEventListener("click", () => setLanguage("en"));
+  btnTR.addEventListener("click", () => setLanguage("tr"));
+
+  // Set default language
+  setLanguage(localStorage.getItem("lang") || "en");
+
+  /* SEARCH */
+  const searchInput = document.getElementById('search');
+  if(searchInput){
+    searchInput.addEventListener('input', () => {
+      const term = searchInput.value.toLowerCase();
+      document.querySelectorAll('.item-card').forEach(card => {
+        const title = card.dataset.title.toLowerCase();
+        card.style.display = title.includes(term) ? 'block' : 'none';
+      });
+    });
+  }
+
+  /* LOGO CLICK */
+  document.getElementById('navbar-name').onclick = () => window.location.href = '/';
+
+  /* MODAL */
+  function openModal() {
+    document.getElementById("certificateModal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("certificateModal").style.display = "none";
+  }
 </script>
 
 </body>
