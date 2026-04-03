@@ -5,7 +5,6 @@
   <title>Elif Karadeniz</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
 <body class="dark-mode">
@@ -21,22 +20,23 @@
       <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
       <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
       <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-       <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
+      <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
     </ul>
 
     <input type="text" id="search" placeholder="Search...">
 
     <div class="lang-wrapper">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('tr')">TR</button>
+      <button class="lang-btn active" id="btn-en">EN</button>
+      <button class="lang-btn" id="btn-tr">TR</button>
       <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     </div>
 
   </div>
 </nav>
 
+<!-- PROJECT HERO -->
 <section class="project-hero">
-  <h1>Hate Speech & Sexism Detection</h1>
+  <h1><span class="en">Hate Speech & Sexism Detection</span><span class="tr" style="display:none;">Zararlı Dil ve Cinsiyetçilik Tespiti</span></h1>
 
   <p class="subtitle en">
     NLP-based classification of toxic language on social media
@@ -46,37 +46,57 @@
   </p>
 
   <div class="project-meta">
-    <span>Conference • 2024</span>
+    <span class="en">Conference • 2024</span><span class="tr" style="display:none;">Konferans • 2024</span>
     <span>•</span>
-    <span>Machine Learning / NLP</span>
+    <span class="en">Machine Learning / NLP</span><span class="tr" style="display:none;">Makine Öğrenimi / NLP</span>
   </div>
 </section>
 
+<!-- PROJECT CONTENT -->
 <section class="project-content">
   <p>
-    In this project, natural language processing (NLP) techniques were used to detect and analyze sexism and hate speech on social media platforms.
+    <span class="en">
+      In this project, natural language processing (NLP) techniques were used to detect and analyze sexism and hate speech on social media platforms.
+    </span>
+    <span class="tr" style="display:none;">
+      Bu projede, sosyal medya platformlarında cinsiyetçilik ve nefret söylemini tespit etmek ve analiz etmek için doğal dil işleme (NLP) teknikleri kullanıldı.
+    </span>
   </p>
 
   <p>
-    During preprocessing, tokenization, lemmatization, and stop-word removal were applied using NLTK.
-    Text data was transformed into semantic representations with Word2Vec.
+    <span class="en">
+      During preprocessing, tokenization, lemmatization, and stop-word removal were applied using NLTK. Text data was transformed into semantic representations with Word2Vec.
+    </span>
+    <span class="tr" style="display:none;">
+      Ön işleme aşamasında, NLTK kullanılarak tokenizasyon, lemmatizasyon ve durak kelime (stop-word) temizliği yapıldı. Metin verileri Word2Vec ile anlamsal temsil biçimlerine dönüştürüldü.
+    </span>
   </p>
 
   <p>
-    Multiple machine learning algorithms were implemented to classify harmful content, achieving strong results in identifying toxic patterns.
+    <span class="en">
+      Multiple machine learning algorithms were implemented to classify harmful content, achieving strong results in identifying toxic patterns.
+    </span>
+    <span class="tr" style="display:none;">
+      Zararlı içerikleri sınıflandırmak için birden fazla makine öğrenimi algoritması uygulandı ve toksik kalıpları tanımada güçlü sonuçlar elde edildi.
+    </span>
   </p>
 
   <p>
-    This work was presented at an international conference and published as an academic paper.
+    <span class="en">
+      This work was presented at an international conference and published as an academic paper.
+    </span>
+    <span class="tr" style="display:none;">
+      Bu çalışma uluslararası bir konferansta sunuldu ve akademik bir makale olarak yayımlandı.
+    </span>
   </p>
 
   <p class="contributors">
-    <strong>Contributors:</strong> Elif Karadeniz, Fatmanur Polat, Beyzanur Çelik
+    <strong><span class="en">Contributors:</span><span class="tr" style="display:none;">Katkıda Bulunanlar:</span></strong> Elif Karadeniz, Fatmanur Polat, Beyzanur Çelik
   </p>
 
   <!-- Certificate Button -->
   <button class="certificate-btn" onclick="openModal()">
-    View Certificate <i class="fas fa-arrow-right"></i>
+    <span class="en">View Certificate</span><span class="tr" style="display:none;">Sertifikayı Gör</span> <i class="fas fa-arrow-right"></i>
   </button>
 </section>
 
@@ -85,6 +105,7 @@
   <span class="close" onclick="closeModal()">&times;</span>
   <img class="modal-content" src="certificate.jpg" alt="Certificate">
 </div>
+
 <!-- FOOTER -->
 <footer>
   <p class="en">© 2026 Elif Karadeniz</p>
@@ -105,25 +126,29 @@
   /* LANGUAGE */
   const btnEN = document.getElementById('btn-en');
   const btnTR = document.getElementById('btn-tr');
+
   function setLanguage(lang){
-    document.querySelectorAll('.en').forEach(el=>el.style.display=(lang==='en')?'':'none');
-    document.querySelectorAll('.tr').forEach(el=>el.style.display=(lang==='tr')?'':'none');
+    document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
+    document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
     btnEN.classList.toggle('active', lang==='en');
     btnTR.classList.toggle('active', lang==='tr');
     localStorage.setItem("lang", lang);
   }
-  btnEN.addEventListener("click",()=>setLanguage("en"));
-  btnTR.addEventListener("click",()=>setLanguage("tr"));
-  setLanguage(localStorage.getItem("lang")||"en");
+
+  btnEN.addEventListener("click", () => setLanguage("en"));
+  btnTR.addEventListener("click", () => setLanguage("tr"));
+
+  // Set default language
+  setLanguage(localStorage.getItem("lang") || "en");
 
   /* SEARCH */
   const searchInput = document.getElementById('search');
   if(searchInput){
-    searchInput.addEventListener('input',()=>{
+    searchInput.addEventListener('input', () => {
       const term = searchInput.value.toLowerCase();
-      document.querySelectorAll('.item-card').forEach(card=>{
+      document.querySelectorAll('.item-card').forEach(card => {
         const title = card.dataset.title.toLowerCase();
-        card.style.display = title.includes(term)?'block':'none';
+        card.style.display = title.includes(term) ? 'block' : 'none';
       });
     });
   }
