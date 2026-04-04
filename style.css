@@ -770,6 +770,7 @@ body.light-mode .certificate-card {
 .projects p {
    text-align: center;
   margin-bottom: 50px;
+  width: 100%;
 }
 
 /* CARD */
