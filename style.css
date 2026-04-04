@@ -827,6 +827,7 @@ body.light-mode .project-subtitle span {
 /* DESC */
 .project-desc {
   margin: 10px 0;
+  width: 100%;
 }
 
 /* BUTTONS */
