@@ -74,6 +74,49 @@ canvas { margin-top: 10px; max-height: 140px; }
 .dash-card ul { margin-top: 8px; padding-left: 15px; font-size: 13px; }
  body.light-mode .tags span { background: #fff; border-color: #ccc; color: #000; }
 
+/* METRICS CARDS */
+.metric-card {
+  background: linear-gradient(135deg, #21262d, #161b22);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #30363d;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(63, 185, 80, 0.4);
+}
+
+.metric-card p {
+  font-size: 14px;
+  color: #8b949e;
+  margin-bottom: 10px;
+}
+
+.metric-card .value {
+  font-size: 26px;
+  font-weight: bold;
+  color: #3fb950;
+}
+
+/* LIGHT MODE */
+body.light-mode .metric-card {
+  background: linear-gradient(135deg, #f5f5f5, #fff);
+  border-color: #ccc;
+  color: #000;
+}
+
+body.light-mode .metric-card p {
+  color: #555;
+}
+
+body.light-mode .metric-card .value {
+  color: #3fb950;
+} 
+
 /* BUTTONS */
 .actions { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
 .btn { padding: 10px; border-radius: 8px; border: 1px solid #3fb950; text-align: center; cursor: pointer; transition: 0.3s; }
@@ -109,7 +152,7 @@ body.light-mode .btn:hover { color: #fff; }
 <div class="container">
 <h1 class="title"><span class="en">Customer Segmentation & Recommendation System</span><span class="tr" style="display:none;">Müşteri Segmentasyonu ve Öneri Sistemi</span></h1>
 <p class="subtitle"><span class="en">Machine Learning based customer segmentation and recommendation system with Streamlit interface</span><span class="tr" style="display:none;">Streamlit arayüzü ile geliştirilmiş makine öğrenmesi tabanlı müşteri segmentasyonu ve öneri sistemi</span></p>
-<img src="chatbot.png" class="project-image">
+<img src="clustering.png" class="project-image">
 
 <div class="info-grid">
   <div class="info-card"><span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span><p><span class="en">Machine Learning / Data Analysis</span><span class="tr" style="display:none;">Makine Öğrenmesi / Veri Analizi</span></p></div>
@@ -177,24 +220,21 @@ clusters = model.<span class="func">predict</span>(data)
       </pre>
     </div>
 
-  <!-- METRICS -->
-  <div class="charts-container">
+<div class="charts-container">
 
-    <div class="dash-card">
-      <p>Silhouette Score</p>
-      <div class="value">0.6657</div>
-    </div>
+  <div class="dash-card metric-card">
+    <p><span class="en">Silhouette Score</span><span class="tr" style="display:none;">Silhouette Skoru</span></p>
+    <div class="value">0.6657</div>
+  </div>
 
-    <div class="dash-card">
-      <p>Calinski-Harabasz</p>
-      <div class="value">2188</div>
-    </div>
+  <div class="dash-card metric-card">
+    <p><span class="en">Calinski-Harabasz</span><span class="tr" style="display:none;">Calinski-Harabasz</span></p>
+    <div class="value">2188</div>
+  </div>
 
-    <div class="dash-card">
-      <p>Davies-Bouldin</p>
-      <div class="value">0.44</div>
-    </div>
-
+  <div class="dash-card metric-card">
+    <p><span class="en">Davies-Bouldin</span><span class="tr" style="display:none;">Davies-Bouldin</span></p>
+    <div class="value">0.44</div>
   </div>
 
 </div>
