@@ -1,143 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>E-Commerce Recommendation System - Elif Karadeniz</title>
+<!-- TITLE -->
+<h1 class="title">
+  <span class="en">Customer Segmentation & Recommendation System</span>
+  <span class="tr" style="display:none;">Müşteri Segmentasyonu ve Öneri Sistemi</span>
+</h1>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link rel="stylesheet" href="/style.css">
+<p class="subtitle">
+  <span class="en">Machine Learning based customer segmentation and recommendation system with Streamlit interface</span>
+  <span class="tr" style="display:none;">Streamlit arayüzü ile geliştirilmiş makine öğrenmesi tabanlı müşteri segmentasyonu ve öneri sistemi</span>
+</p>
 
-<style>
+<img src="cluster_distribution.png" class="project-image">
 
-/* CONTAINER */
-.container { max-width: 1200px; margin: auto; }
-
-/* TITLE */
-.title { font-size: 34px; color: #3fb950; margin-top: 20px; }
-.subtitle { color: #8b949e; margin-bottom: 25px; }
-
-/* IMAGE */
-.project-image { width: 100%; border-radius: 15px; margin: 25px 0; border: 1px solid #30363d; }
-
-/* INFO GRID */
-.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 25px; }
-.info-card { background: #161b22; padding: 15px; border-radius: 12px; border: 1px solid #30363d; }
-.info-card span { font-size: 13px; color: #ffffff; }
-.info-card p { margin-top: 5px; font-weight: bold; }
-
-/* DESCRIPTION */
-.description { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; line-height: 1.6; }
-
-/* ARCHITECTURE */
-.architecture { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; }
-.architecture h3 { margin-bottom: 15px; color: #3fb950; }
-.flow { display: flex; gap: 10px; flex-wrap: wrap; }
-.step { flex: 1; min-width: 140px; background: #0d1117; border: 1px solid #30363d; padding: 10px; border-radius: 10px; text-align: center; font-size: 13px; }
-
-/* MAIN CONTENT */
-.content { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
-
-/* CODE */
-.code { background: #161b22; border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
-.code-header { background: #21262d; padding: 10px; display: flex; gap: 8px; }
-.dot { width: 12px; height: 12px; border-radius: 50%; }
-.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-.code pre { padding: 20px; font-size: 14px; color: #c9d1d9; }
-
-/* RIGHT SIDE */
-.dashboard { display: flex; flex-direction: column; gap: 12px; }
-.dash-card { background: #161b22; padding: 12px; border-radius: 12px; border: 1px solid #30363d; }
-.tags span { display: inline-block; background: #0d1117; border: 1px solid #30363d; padding: 5px 10px; border-radius: 8px; margin: 3px; font-size: 12px; }
-
-/* BUTTON */
-.btn { padding: 10px; border-radius: 8px; border: 1px solid #3fb950; text-align: center; cursor: pointer; }
-.btn:hover { background: #3fb950; color: #000; }
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<h1 class="title">E-Commerce Recommendation System</h1>
-<p class="subtitle">Customer recommendation system using Python and Machine Learning</p>
-
-<img src="recommendation.png" class="project-image">
-
+<!-- INFO -->
 <div class="info-grid">
-  <div class="info-card"><span>Project Type</span><p>Machine Learning / Data Analysis</p></div>
-  <div class="info-card"><span>Algorithms</span><p>K-Means, Collaborative Filtering</p></div>
-  <div class="info-card"><span>Dataset</span><p>E-commerce User Data</p></div>
-  <div class="info-card"><span>Status</span><p>Completed</p></div>
+  <div class="info-card">
+    <span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span>
+    <p><span class="en">Machine Learning / Data Analysis</span><span class="tr" style="display:none;">Makine Öğrenmesi / Veri Analizi</span></p>
+  </div>
+
+  <div class="info-card">
+    <span><span class="en">Core Algorithm</span><span class="tr" style="display:none;">Temel Algoritma</span></span>
+    <p>K-Means</p>
+  </div>
+
+  <div class="info-card">
+    <span><span class="en">Tech</span><span class="tr" style="display:none;">Teknoloji</span></span>
+    <p>Python · Streamlit · Scikit-learn</p>
+  </div>
+
+  <div class="info-card">
+    <span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span>
+    <p><span class="en">Completed</span><span class="tr" style="display:none;">Tamamlandı</span></p>
+  </div>
 </div>
 
+<!-- DESCRIPTION -->
 <div class="description">
-This project focuses on building a recommendation system that suggests products to users based on their behavior and preferences. 
-Machine learning algorithms were used to segment customers and generate personalized recommendations, improving user experience and engagement.
+  <span class="en">
+    This project analyzes customer behavior in e-commerce datasets to create meaningful segments and generate personalized product recommendations. 
+    A full machine learning pipeline was implemented including data preprocessing, feature engineering, clustering, and performance evaluation. 
+    The system also includes an interactive Streamlit interface for step-by-step analysis.
+  </span>
+
+  <span class="tr" style="display:none;">
+    Bu proje, e-ticaret verileri üzerinde müşteri davranışlarını analiz ederek anlamlı segmentler oluşturur ve kişiselleştirilmiş ürün önerileri sunar. 
+    Veri ön işleme, özellik mühendisliği, kümeleme ve performans değerlendirme adımlarını içeren uçtan uca bir makine öğrenmesi süreci geliştirilmiştir. 
+    Ayrıca, analiz sürecini adım adım gerçekleştirmeyi sağlayan bir Streamlit arayüzü bulunmaktadır.
+  </span>
 </div>
 
+<!-- FLOW -->
 <div class="architecture">
-<h3>Project Flow</h3>
+<h3><span class="en">Project Flow</span><span class="tr" style="display:none;">Proje Akışı</span></h3>
+
 <div class="flow">
-  <div class="step">Data Collection</div>
-  <div class="step">Preprocessing</div>
-  <div class="step">Segmentation</div>
+  <div class="step">Data Upload</div>
+  <div class="step">Data Cleaning</div>
+  <div class="step">Feature Engineering</div>
+  <div class="step">Clustering</div>
   <div class="step">Recommendation</div>
   <div class="step">Evaluation</div>
 </div>
 </div>
 
+<!-- MAIN -->
 <div class="content">
 
 <div>
+
+  <!-- CODE -->
   <div class="code">
     <div class="code-header">
       <div class="dot red"></div>
       <div class="dot yellow"></div>
       <div class="dot green"></div>
     </div>
-    <pre>
+
+<pre>
 from sklearn.cluster import KMeans
 
 model = KMeans(n_clusters=5)
 model.fit(data)
 
-recommendations = model.predict(user_data)
-print(recommendations)
-    </pre>
+clusters = model.predict(data)
+</pre>
   </div>
+
+  <!-- METRICS -->
+  <div class="charts-container">
+
+    <div class="dash-card">
+      <p>Silhouette Score</p>
+      <div class="value">0.6657</div>
+    </div>
+
+    <div class="dash-card">
+      <p>Calinski-Harabasz</p>
+      <div class="value">2188</div>
+    </div>
+
+    <div class="dash-card">
+      <p>Davies-Bouldin</p>
+      <div class="value">0.44</div>
+    </div>
+
+  </div>
+
 </div>
 
+<!-- RIGHT -->
 <div class="dashboard">
 
 <div class="dash-card">
-  <p>Tech Stack</p>
+  <p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknolojiler</span></p>
   <div class="tags">
     <span>Python</span>
     <span>Pandas</span>
     <span>Scikit-learn</span>
-    <span>Matplotlib</span>
+    <span>Streamlit</span>
   </div>
 </div>
 
 <div class="dash-card">
-  <p>Key Features</p>
+  <p><span class="en">Methods</span><span class="tr" style="display:none;">Yöntemler</span></p>
+  <ul>
+    <li>K-Means</li>
+    <li>PCA / t-SNE</li>
+    <li>LOF / Isolation Forest</li>
+  </ul>
+</div>
+
+<div class="dash-card">
+  <p><span class="en">Key Features</span><span class="tr" style="display:none;">Özellikler</span></p>
   <ul>
     <li>Customer Segmentation</li>
-    <li>Personalized Recommendation</li>
-    <li>Behavior Analysis</li>
+    <li>Recommendation System</li>
+    <li>Interactive Interface</li>
     <li>Data Visualization</li>
   </ul>
 </div>
 
-<div class="btn" onclick="history.back()">Back</div>
+<div class="actions">
+  <div class="btn" onclick="history.back()">
+    <span class="en">Back</span><span class="tr" style="display:none;">Geri</span>
+  </div>
+
+  <div class="btn">
+    GitHub
+  </div>
+</div>
 
 </div>
-</div>
 
 </div>
-
-</body>
-</html>
