@@ -176,64 +176,73 @@ clusters = model.<span class="func">predict</span>(data)
       </pre>
     </div>
 
-    <div class="charts-container">
-
-      <div class="dash-card">
-        <p><span class="en">Cluster Distribution</span><span class="tr" style="display:none;">Küme Dağılımı</span></p>
-        <canvas id="scoreChart"></canvas>
-      </div>
-
-      <div class="dash-card">
-        <p><span class="en">Model Metrics</span><span class="tr" style="display:none;">Model Ölçümleri</span></p>
-        <ul class="metrics-list">
-          <li><span>Silhouette:</span> 0.6657</li>
-          <li><span>Calinski-Harabasz:</span> 2188</li>
-          <li><span>Davies-Bouldin:</span> 0.44</li>
-        </ul>
-        <canvas id="barChart"></canvas>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- RIGHT -->
-  <div class="dashboard">
+  <!-- METRICS -->
+  <div class="charts-container">
 
     <div class="dash-card">
-      <p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknoloji Yığını</span></p>
-      <div class="tags">
-        <span>Python</span>
-        <span>Pandas</span>
-        <span>Scikit-learn</span>
-        <span>Streamlit</span>
-      </div>
+      <p>Silhouette Score</p>
+      <div class="value">0.6657</div>
     </div>
 
     <div class="dash-card">
-      <p><span class="en">Methods</span><span class="tr" style="display:none;">Yöntemler</span></p>
-      <ul>
-        <li>K-Means</li>
-        <li>PCA / t-SNE</li>
-        <li>LOF / Isolation Forest</li>
-      </ul>
+      <p>Calinski-Harabasz</p>
+      <div class="value">2188</div>
     </div>
 
     <div class="dash-card">
-      <p><span class="en">Key Features</span><span class="tr" style="display:none;">Ana Özellikler</span></p>
-      <ul>
-        <li><span class="en">Customer Segmentation</span><span class="tr" style="display:none;">Müşteri Segmentasyonu</span></li>
-        <li><span class="en">Recommendation System</span><span class="tr" style="display:none;">Öneri Sistemi</span></li>
-        <li><span class="en">Interactive Interface</span><span class="tr" style="display:none;">Etkileşimli Arayüz</span></li>
-        <li><span class="en">Data Visualization</span><span class="tr" style="display:none;">Veri Görselleştirme</span></li>
-      </ul>
-    </div>
-
-    <div class="actions">
-      <div class="btn" onclick="history.back()"><span class="en">Back</span><span class="tr" style="display:none;">Geri</span></div>
-      <div class="btn"><span class="en">GitHub</span><span class="tr" style="display:none;">GitHub</span></div>
+      <p>Davies-Bouldin</p>
+      <div class="value">0.44</div>
     </div>
 
   </div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="dashboard">
+
+<div class="dash-card">
+  <p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknolojiler</span></p>
+  <div class="tags">
+    <span>Python</span>
+    <span>Pandas</span>
+    <span>Scikit-learn</span>
+    <span>Streamlit</span>
+  </div>
+</div>
+
+<div class="dash-card">
+  <p><span class="en">Methods</span><span class="tr" style="display:none;">Yöntemler</span></p>
+  <ul>
+    <li>K-Means</li>
+    <li>PCA / t-SNE</li>
+    <li>LOF / Isolation Forest</li>
+  </ul>
+</div>
+
+<div class="dash-card">
+  <p><span class="en">Key Features</span><span class="tr" style="display:none;">Özellikler</span></p>
+  <ul>
+    <li>Customer Segmentation</li>
+    <li>Recommendation System</li>
+    <li>Interactive Interface</li>
+    <li>Data Visualization</li>
+  </ul>
+</div>
+
+<div class="actions">
+  <div class="btn" onclick="history.back()">
+    <span class="en">Back</span><span class="tr" style="display:none;">Geri</span>
+  </div>
+
+  <div class="btn">
+    GitHub
+  </div>
+</div>
+
+</div>
+
+</div>
 
 </div>
 
