@@ -1,223 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Elif Karadeniz</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<title>E-Commerce Recommendation System - Elif Karadeniz</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="/style.css">
+
+<style>
+
+/* CONTAINER */
+.container { max-width: 1200px; margin: auto; }
+
+/* TITLE */
+.title { font-size: 34px; color: #3fb950; margin-top: 20px; }
+.subtitle { color: #8b949e; margin-bottom: 25px; }
+
+/* IMAGE */
+.project-image { width: 100%; border-radius: 15px; margin: 25px 0; border: 1px solid #30363d; }
+
+/* INFO GRID */
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 25px; }
+.info-card { background: #161b22; padding: 15px; border-radius: 12px; border: 1px solid #30363d; }
+.info-card span { font-size: 13px; color: #ffffff; }
+.info-card p { margin-top: 5px; font-weight: bold; }
+
+/* DESCRIPTION */
+.description { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; line-height: 1.6; }
+
+/* ARCHITECTURE */
+.architecture { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; }
+.architecture h3 { margin-bottom: 15px; color: #3fb950; }
+.flow { display: flex; gap: 10px; flex-wrap: wrap; }
+.step { flex: 1; min-width: 140px; background: #0d1117; border: 1px solid #30363d; padding: 10px; border-radius: 10px; text-align: center; font-size: 13px; }
+
+/* MAIN CONTENT */
+.content { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+
+/* CODE */
+.code { background: #161b22; border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
+.code-header { background: #21262d; padding: 10px; display: flex; gap: 8px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+.code pre { padding: 20px; font-size: 14px; color: #c9d1d9; }
+
+/* RIGHT SIDE */
+.dashboard { display: flex; flex-direction: column; gap: 12px; }
+.dash-card { background: #161b22; padding: 12px; border-radius: 12px; border: 1px solid #30363d; }
+.tags span { display: inline-block; background: #0d1117; border: 1px solid #30363d; padding: 5px 10px; border-radius: 8px; margin: 3px; font-size: 12px; }
+
+/* BUTTON */
+.btn { padding: 10px; border-radius: 8px; border: 1px solid #3fb950; text-align: center; cursor: pointer; }
+.btn:hover { background: #3fb950; color: #000; }
+
+</style>
 </head>
 
-<body class="dark-mode">
+<body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="navbar-center">
+<div class="container">
 
-    <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+<h1 class="title">E-Commerce Recommendation System</h1>
+<p class="subtitle">Customer recommendation system using Python and Machine Learning</p>
 
-    <ul class="navbar-links">
-      <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
-      <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
-      <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
-      <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-      <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
-    </ul>
+<img src="recommendation.png" class="project-image">
 
-    <input type="text" id="search" placeholder="Search...">
+<div class="info-grid">
+  <div class="info-card"><span>Project Type</span><p>Machine Learning / Data Analysis</p></div>
+  <div class="info-card"><span>Algorithms</span><p>K-Means, Collaborative Filtering</p></div>
+  <div class="info-card"><span>Dataset</span><p>E-commerce User Data</p></div>
+  <div class="info-card"><span>Status</span><p>Completed</p></div>
+</div>
 
-    <div class="lang-wrapper">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('tr')">TR</button>
-      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+<div class="description">
+This project focuses on building a recommendation system that suggests products to users based on their behavior and preferences. 
+Machine learning algorithms were used to segment customers and generate personalized recommendations, improving user experience and engagement.
+</div>
+
+<div class="architecture">
+<h3>Project Flow</h3>
+<div class="flow">
+  <div class="step">Data Collection</div>
+  <div class="step">Preprocessing</div>
+  <div class="step">Segmentation</div>
+  <div class="step">Recommendation</div>
+  <div class="step">Evaluation</div>
+</div>
+</div>
+
+<div class="content">
+
+<div>
+  <div class="code">
+    <div class="code-header">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
     </div>
+    <pre>
+from sklearn.cluster import KMeans
 
+model = KMeans(n_clusters=5)
+model.fit(data)
+
+recommendations = model.predict(user_data)
+print(recommendations)
+    </pre>
   </div>
-</nav>
+</div>
 
-<section class="projects">
-  <div class="container">
+<div class="dashboard">
 
-    <h1 class="en">Projects</h1>
-    <h1 class="tr" style="display:none;">Projeler</h1>
-
-    <p class="en">
-      Building intelligent systems powered by machine learning, NLP and LLMs — from data to real-world applications.
-    </p>
-
-    <p class="tr" style="display:none;">
-      Makine öğrenmesi, NLP ve LLM destekli akıllı sistemler geliştiriyorum.
-    </p>
-
-    <!-- 🔥 CARBON -->
-    <div class="project-item">
-      <div class="project-info">
-        <div class="project-title">
-          <span class="en">Carbon Emission Prediction</span>
-          <span class="tr" style="display:none;">Karbon Emisyon Tahmini</span>
-        </div>
-
-        <div class="project-subtitle">
-          <span class="en">Deep Learning</span>
-          <span class="tr" style="display:none;">Derin Öğrenme</span>
-          <span class="en">CNN</span>
-          <span class="tr" style="display:none;">CNN</span>
-        </div>
-
-        <div class="project-desc">
-          <span class="en">Deep learning models (DenseNet, NASNet, Xception) for carbon emission prediction and sustainability insights.</span>
-          <span class="tr" style="display:none;">Karbon emisyon tahmini için derin öğrenme modelleri.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 🔥 HATE -->
-    <div class="project-item">
-      <div class="project-info">
-        <div class="project-title">
-          <span class="en">Hate Speech Detection</span>
-          <span class="tr" style="display:none;">Nefret Söylemi</span>
-        </div>
-
-        <div class="project-subtitle">
-          <span class="en">NLP</span>
-          <span class="tr" style="display:none;">NLP</span>
-        </div>
-
-        <div class="project-desc">
-          <span class="en">Classification model for detecting hate speech in social media data.</span>
-          <span class="tr" style="display:none;">Sosyal medya nefret söylemi analizi.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 🔥 SEGMENTATION -->
-    <div class="project-item">
-      <div class="project-info">
-        <div class="project-title">
-          <span class="en">Customer Segmentation</span>
-          <span class="tr" style="display:none;">Müşteri Segmentasyonu</span>
-        </div>
-
-        <div class="project-subtitle">
-          <span class="en">ML</span>
-          <span class="tr" style="display:none;">ML</span>
-        </div>
-
-        <div class="project-desc">
-          <span class="en">Clustering-based segmentation to understand customer behavior.</span>
-          <span class="tr" style="display:none;">Kümeleme ile müşteri analizi.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 🔥 NLP DASHBOARD -->
-    <div class="project-item">
-      <div class="project-info">
-        <div class="project-title">
-          <span class="en">NLP + LLM Dashboard</span>
-          <span class="tr" style="display:none;">NLP + LLM Panel</span>
-        </div>
-
-        <div class="project-desc">
-          <span class="en">Interactive NLP dashboard with ML models and LLM insights.</span>
-          <span class="tr" style="display:none;">LLM destekli NLP paneli.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 🔥 CHATBOT -->
-    <div class="project-item">
-      <div class="project-info">
-        <div class="project-title">
-          <span class="en">File Analysis Chatbot</span>
-          <span class="tr" style="display:none;">Dosya Chatbotu</span>
-        </div>
-
-        <div class="project-desc">
-          <span class="en">LLM chatbot that analyzes CSV, Excel and PDF files.</span>
-          <span class="tr" style="display:none;">Dosya analiz chatbotu.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 🔥 TEXT -->
-    <div class="project-item">
-      <div class="project-info">
-        <div class="project-title">
-          <span class="en">Text Summarization</span>
-          <span class="tr" style="display:none;">Metin Özetleme</span>
-        </div>
-
-        <div class="project-desc">
-          <span class="en">Automatic summarization of large texts using NLP.</span>
-          <span class="tr" style="display:none;">Metin özetleme sistemi.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 🔥 INTRUSION -->
-    <div class="project-item">
-      <div class="project-info">
-        <div class="project-title">
-          <span class="en">Intrusion Detection</span>
-          <span class="tr" style="display:none;">Saldırı Tespit</span>
-        </div>
-
-        <div class="project-desc">
-          <span class="en">ML-based anomaly detection system for network security.</span>
-          <span class="tr" style="display:none;">Ağ güvenliği sistemi.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 🔥 IMAGE -->
-    <div class="project-item">
-      <div class="project-info">
-        <div class="project-title">
-          <span class="en">Image Processing App</span>
-          <span class="tr" style="display:none;">Görsel Uygulama</span>
-        </div>
-
-        <div class="project-desc">
-          <span class="en">Streamlit-based image processing and visualization app.</span>
-          <span class="tr" style="display:none;">Görsel işleme uygulaması.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ALL -->
-    <div class="all-projects">
-      <a href="https://github.com/elifkaradenizz" target="_blank">
-        <span class="en">All Projects</span>
-        <span class="tr" style="display:none;">Tüm Projeler</span>
-      </a>
-    </div>
-
+<div class="dash-card">
+  <p>Tech Stack</p>
+  <div class="tags">
+    <span>Python</span>
+    <span>Pandas</span>
+    <span>Scikit-learn</span>
+    <span>Matplotlib</span>
   </div>
-</section>
+</div>
 
-<footer>
-  <p>© 2026 Elif Karadeniz</p>
-</footer>
+<div class="dash-card">
+  <p>Key Features</p>
+  <ul>
+    <li>Customer Segmentation</li>
+    <li>Personalized Recommendation</li>
+    <li>Behavior Analysis</li>
+    <li>Data Visualization</li>
+  </ul>
+</div>
 
-<script>
-function setLang(lang){
-  document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
-  document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
-  localStorage.setItem('lang', lang);
-}
+<div class="btn" onclick="history.back()">Back</div>
 
-setLang(localStorage.getItem('lang') || 'en');
+</div>
+</div>
 
-document.getElementById('search').addEventListener('input', e => {
-  const val = e.target.value.toLowerCase();
-  document.querySelectorAll('.project-item').forEach(card=>{
-    card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex':'none';
-  });
-});
-
-document.getElementById('navbar-name').onclick = () => window.location.href = '/';
-</script>
+</div>
 
 </body>
 </html>
