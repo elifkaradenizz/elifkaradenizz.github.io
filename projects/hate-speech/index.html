@@ -112,11 +112,13 @@ canvas { margin-top: 10px; max-height: 140px; }
 </nav>
 
 <h1 class="title">
-  Hate Speech Detection & Sexism Analysis
+  <span class="en">Hate Speech Detection & Sexism Analysis</span>
+  <span class="tr" style="display:none;">Nefret Söylemi ve Cinsiyetçilik Analizi</span>
 </h1>
 
 <p class="subtitle">
-  NLP tabanlı metin sınıflandırma ile sosyal medyada nefret söylemi ve cinsiyetçilik tespiti
+  <span class="en">Detecting hate speech and sexism on social media using NLP-based text classification</span>
+  <span class="tr" style="display:none;">NLP tabanlı metin sınıflandırma ile sosyal medyada nefret söylemi ve cinsiyetçilik tespiti</span>
 </p>
 
 <img src="hate-speech.png" class="project-image">
@@ -124,47 +126,62 @@ canvas { margin-top: 10px; max-height: 140px; }
 <!-- INFO GRID -->
 <div class="info-grid">
   <div class="info-card">
-    <span>Project Type</span>
-    <p>NLP / Text Classification</p>
+    <span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span>
+    <p><span class="en">NLP / Text Classification</span><span class="tr" style="display:none;">NLP / Metin Sınıflandırma</span></p>
   </div>
 
   <div class="info-card">
-    <span>Core Model</span>
-    <p>TF-IDF + ML Models</p>
+    <span><span class="en">Core Model</span><span class="tr" style="display:none;">Temel Model</span></span>
+    <p><span class="en">TF-IDF + Machine Learning</span><span class="tr" style="display:none;">TF-IDF + Makine Öğrenmesi</span></p>
   </div>
 
   <div class="info-card">
-    <span>Dataset</span>
-    <p>Social Media Text Data</p>
+    <span><span class="en">Dataset</span><span class="tr" style="display:none;">Veri Seti</span></span>
+    <p><span class="en">Social Media Text Data</span><span class="tr" style="display:none;">Sosyal Medya Metin Verisi</span></p>
   </div>
 
   <div class="info-card">
-    <span>Status</span>
-    <p>Published & Presented</p>
+    <span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span>
+    <p><span class="en">Published & Presented</span><span class="tr" style="display:none;">Yayınlandı & Sunuldu</span></p>
   </div>
 </div>
 
 <!-- DESCRIPTION -->
 <div class="description">
-  This project focuses on detecting sexism and hate speech in social media using Natural Language Processing techniques. 
-  A full pipeline including text preprocessing, TF-IDF feature extraction, and classification models was implemented.
+  <span class="en">
+    This project focuses on detecting sexism and hate speech in social media using Natural Language Processing techniques.
+    A complete machine learning pipeline was implemented including text preprocessing, TF-IDF feature extraction, 
+    and multiple classification models.
 
-  Different machine learning algorithms were tested and evaluated to improve performance.
+    The system was evaluated using various metrics and optimized to achieve high performance.
 
-  The project was presented at an international conference and published as an academic paper, contributing to social media analysis and ethical AI.
+    The project was presented at an international conference and published as an academic paper, contributing to ethical AI and social media analysis.
+  </span>
+
+  <span class="tr" style="display:none;">
+    Bu proje, sosyal medyada cinsiyetçilik ve nefret söylemini tespit etmek amacıyla Doğal Dil İşleme tekniklerini kullanmaktadır.
+    Metin temizleme, TF-IDF ile özellik çıkarımı ve çeşitli sınıflandırma modellerini içeren uçtan uca bir makine öğrenmesi süreci uygulanmıştır.
+
+    Sistem farklı metriklerle değerlendirilmiş ve yüksek performans elde edecek şekilde optimize edilmiştir.
+
+    Proje uluslararası bir konferansta sunulmuş ve akademik makale olarak yayınlanarak etik yapay zeka ve sosyal medya analizi alanına katkı sağlamıştır.
+  </span>
 </div>
 
 <!-- ARCHITECTURE -->
 <div class="architecture">
-  <h3>Project Workflow</h3>
+  <h3>
+    <span class="en">Project Workflow</span>
+    <span class="tr" style="display:none;">Proje İş Akışı</span>
+  </h3>
 
   <div class="flow">
-    <div class="step">Text Cleaning</div>
-    <div class="step">Tokenization</div>
-    <div class="step">TF-IDF</div>
-    <div class="step">Model Training</div>
-    <div class="step">Prediction</div>
-    <div class="step">Evaluation</div>
+    <div class="step"><span class="en">Text Cleaning</span><span class="tr" style="display:none;">Metin Temizleme</span></div>
+    <div class="step"><span class="en">Tokenization</span><span class="tr" style="display:none;">Tokenizasyon</span></div>
+    <div class="step"><span class="en">TF-IDF</span><span class="tr" style="display:none;">TF-IDF</span></div>
+    <div class="step"><span class="en">Model Training</span><span class="tr" style="display:none;">Model Eğitimi</span></div>
+    <div class="step"><span class="en">Prediction</span><span class="tr" style="display:none;">Tahmin</span></div>
+    <div class="step"><span class="en">Evaluation</span><span class="tr" style="display:none;">Değerlendirme</span></div>
   </div>
 </div>
 
@@ -174,7 +191,6 @@ canvas { margin-top: 10px; max-height: 140px; }
   <!-- LEFT -->
   <div>
 
-    <!-- CODE -->
     <div class="code">
       <div class="code-header">
         <div class="dot red"></div>
@@ -195,24 +211,21 @@ predictions = model.predict(X)
 </pre>
     </div>
 
-    <!-- METRICS -->
     <div class="charts-container">
-
       <div class="dash-card metric-card">
-        <p>Accuracy</p>
+        <p><span class="en">Accuracy</span><span class="tr" style="display:none;">Doğruluk</span></p>
         <div class="value">0.91</div>
       </div>
 
       <div class="dash-card metric-card">
-        <p>F1 Score</p>
+        <p><span class="en">F1 Score</span><span class="tr" style="display:none;">F1 Skoru</span></p>
         <div class="value">0.89</div>
       </div>
 
       <div class="dash-card metric-card">
-        <p>Precision</p>
+        <p><span class="en">Precision</span><span class="tr" style="display:none;">Kesinlik</span></p>
         <div class="value">0.90</div>
       </div>
-
     </div>
 
   </div>
@@ -221,7 +234,7 @@ predictions = model.predict(X)
   <div class="dashboard">
 
     <div class="dash-card">
-      <p>Tech Stack</p>
+      <p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknolojiler</span></p>
       <div class="tags">
         <span>Python</span>
         <span>Pandas</span>
@@ -231,45 +244,51 @@ predictions = model.predict(X)
     </div>
 
     <div class="dash-card">
-      <p>Methods</p>
+      <p><span class="en">Methods</span><span class="tr" style="display:none;">Yöntemler</span></p>
       <ul>
-        <li>Text Preprocessing</li>
-        <li>TF-IDF</li>
-        <li>Logistic Regression</li>
-        <li>Naive Bayes</li>
+        <li><span class="en">Text Preprocessing</span><span class="tr" style="display:none;">Metin Ön İşleme</span></li>
+        <li><span class="en">TF-IDF</span><span class="tr" style="display:none;">TF-IDF</span></li>
+        <li><span class="en">Logistic Regression</span><span class="tr" style="display:none;">Lojistik Regresyon</span></li>
+        <li><span class="en">Naive Bayes</span><span class="tr" style="display:none;">Naive Bayes</span></li>
       </ul>
     </div>
 
     <div class="dash-card">
-      <p>Key Features</p>
+      <p><span class="en">Key Features</span><span class="tr" style="display:none;">Öne Çıkan Özellikler</span></p>
       <ul>
-        <li>Hate Speech Detection</li>
-        <li>Sexism Classification</li>
-        <li>NLP Pipeline</li>
-        <li>Text Analysis</li>
+        <li><span class="en">Hate Speech Detection</span><span class="tr" style="display:none;">Nefret Söylemi Tespiti</span></li>
+        <li><span class="en">Sexism Classification</span><span class="tr" style="display:none;">Cinsiyetçilik Sınıflandırması</span></li>
+        <li><span class="en">NLP Pipeline</span><span class="tr" style="display:none;">NLP Süreci</span></li>
+        <li><span class="en">Text Analysis</span><span class="tr" style="display:none;">Metin Analizi</span></li>
       </ul>
     </div>
 
-    <!-- ⭐ EN ÖNEMLİ KISIM -->
     <div class="dash-card">
-      <p>Achievements</p>
+      <p><span class="en">Achievements</span><span class="tr" style="display:none;">Başarılar</span></p>
       <ul>
-        <li>International Conference Presentation</li>
-        <li>Published Academic Paper</li>
-        <li>Certificate Awarded</li>
+        <li><span class="en">International Conference Presentation</span><span class="tr" style="display:none;">Uluslararası Konferans Sunumu</span></li>
+        <li><span class="en">Published Academic Paper</span><span class="tr" style="display:none;">Akademik Yayın</span></li>
+        <li><span class="en">Certificate Awarded</span><span class="tr" style="display:none;">Sertifika Alındı</span></li>
       </ul>
     </div>
 
-    <!-- BUTTONS -->
     <div class="actions">
-      <div class="btn">Conference Paper</div>
+      <div class="btn">
+        <span class="en">Conference Paper</span>
+        <span class="tr" style="display:none;">Konferans Bildirisi</span>
+      </div>
+
       <div class="btn">GitHub</div>
+
       <div class="btn">Blog</div>
     </div>
 
   </div>
 
 </div>
+
+
+ 
 <footer>
 <p class="en">© 2026 Elif Karadeniz</p>
 <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
