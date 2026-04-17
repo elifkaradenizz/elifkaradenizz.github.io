@@ -111,91 +111,165 @@ canvas { margin-top: 10px; max-height: 140px; }
   </div>
 </nav>
 
-<!-- MAIN CONTENT -->
-<div class="container">
-<h1 class="title"><span class="en">LLM File Analysis Chatbot</span><span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span></h1>
-<p class="subtitle"><span class="en">LLM + Streamlit based intelligent file analyzer</span><span class="tr" style="display:none;">LLM + Streamlit tabanlı akıllı dosya analiz aracı</span></p>
-<img src="chatbot.png" class="project-image">
+<h1 class="title">
+  Hate Speech Detection & Sexism Analysis
+</h1>
 
+<p class="subtitle">
+  NLP tabanlı metin sınıflandırma ile sosyal medyada nefret söylemi ve cinsiyetçilik tespiti
+</p>
+
+<img src="hate-speech.png" class="project-image">
+
+<!-- INFO GRID -->
 <div class="info-grid">
-  <div class="info-card"><span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span><p><span class="en">Generative AI / NLP</span><span class="tr" style="display:none;">Üretken AI / NLP</span></p></div>
-  <div class="info-card"><span><span class="en">Core Model</span><span class="tr" style="display:none;">Temel Model</span></span><p><span class="en">Llama 3</span><span class="tr" style="display:none;">Llama 3</span></p></div>
-  <div class="info-card"><span><span class="en">Dataset</span><span class="tr" style="display:none;">Veri Seti</span></span><p><span class="en">Custom + Wikipedia</span><span class="tr" style="display:none;">Özel + Wikipedia</span></p></div>
-  <div class="info-card"><span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span><p><span class="en">Production Ready</span><span class="tr" style="display:none;">Üretime Hazır</span></p></div>
+  <div class="info-card">
+    <span>Project Type</span>
+    <p>NLP / Text Classification</p>
+  </div>
+
+  <div class="info-card">
+    <span>Core Model</span>
+    <p>TF-IDF + ML Models</p>
+  </div>
+
+  <div class="info-card">
+    <span>Dataset</span>
+    <p>Social Media Text Data</p>
+  </div>
+
+  <div class="info-card">
+    <span>Status</span>
+    <p>Published & Presented</p>
+  </div>
 </div>
 
-<div class="description"><span class="en">This project is an AI-powered chatbot that analyzes CSV, Excel, and PDF files.</span><span class="tr" style="display:none;">Bu proje, CSV, Excel ve PDF dosyalarını analiz eden yapay zekâ destekli bir chatbot’tur.</span></div>
+<!-- DESCRIPTION -->
+<div class="description">
+  This project focuses on detecting sexism and hate speech in social media using Natural Language Processing techniques. 
+  A full pipeline including text preprocessing, TF-IDF feature extraction, and classification models was implemented.
 
+  Different machine learning algorithms were tested and evaluated to improve performance.
+
+  The project was presented at an international conference and published as an academic paper, contributing to social media analysis and ethical AI.
+</div>
+
+<!-- ARCHITECTURE -->
 <div class="architecture">
-<h3><span class="en">Project Architecture</span><span class="tr" style="display:none;">Proje Mimarisi</span></h3>
-<div class="flow">
-  <div class="step"><span class="en">Upload</span><span class="tr" style="display:none;">Yükle</span></div>
-  <div class="step"><span class="en">Extract</span><span class="tr" style="display:none;">Çıkart</span></div>
-  <div class="step"><span class="en">Embedding</span><span class="tr" style="display:none;">Embedding</span></div>
-  <div class="step"><span class="en">Vector DB</span><span class="tr" style="display:none;">Vector DB</span></div>
-  <div class="step"><span class="en">LLM</span><span class="tr" style="display:none;">LLM</span></div>
-</div>
+  <h3>Project Workflow</h3>
+
+  <div class="flow">
+    <div class="step">Text Cleaning</div>
+    <div class="step">Tokenization</div>
+    <div class="step">TF-IDF</div>
+    <div class="step">Model Training</div>
+    <div class="step">Prediction</div>
+    <div class="step">Evaluation</div>
+  </div>
 </div>
 
-<!-- LEFT + RIGHT CONTENT -->
+<!-- MAIN GRID -->
 <div class="content">
-<div>
-  <div class="code">
-    <div class="code-header">
-      <div class="dot red"></div>
-      <div class="dot yellow"></div>
-      <div class="dot green"></div>
+
+  <!-- LEFT -->
+  <div>
+
+    <!-- CODE -->
+    <div class="code">
+      <div class="code-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+<pre>
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+
+vectorizer = TfidfVectorizer(max_features=5000)
+X = vectorizer.fit_transform(texts)
+
+model = LogisticRegression()
+model.fit(X, y)
+
+predictions = model.predict(X)
+</pre>
     </div>
-    <pre>
-<span class="keyword">from</span> langchain <span class="keyword">import</span> LLM
-model = <span class="func">LLM</span>(<span class="string">"llama3"</span>)
-response = model.ask(<span class="string">"Analyze file"</span>)
-<span class="func">print</span>(response)
-    </pre>
+
+    <!-- METRICS -->
+    <div class="charts-container">
+
+      <div class="dash-card metric-card">
+        <p>Accuracy</p>
+        <div class="value">0.91</div>
+      </div>
+
+      <div class="dash-card metric-card">
+        <p>F1 Score</p>
+        <div class="value">0.89</div>
+      </div>
+
+      <div class="dash-card metric-card">
+        <p>Precision</p>
+        <div class="value">0.90</div>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="charts-container">
+  <!-- RIGHT -->
+  <div class="dashboard">
+
     <div class="dash-card">
-      <p><span class="en">Performance</span><span class="tr" style="display:none;">Performans</span></p>
-      <div class="value">92 / 100</div>
-      <canvas id="scoreChart"></canvas>
+      <p>Tech Stack</p>
+      <div class="tags">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>Scikit-learn</span>
+        <span>NLTK</span>
+      </div>
     </div>
+
     <div class="dash-card">
-      <p><span class="en">Model Metrics</span><span class="tr" style="display:none;">Model Ölçümleri</span></p>
-      <canvas id="barChart"></canvas>
+      <p>Methods</p>
+      <ul>
+        <li>Text Preprocessing</li>
+        <li>TF-IDF</li>
+        <li>Logistic Regression</li>
+        <li>Naive Bayes</li>
+      </ul>
     </div>
+
+    <div class="dash-card">
+      <p>Key Features</p>
+      <ul>
+        <li>Hate Speech Detection</li>
+        <li>Sexism Classification</li>
+        <li>NLP Pipeline</li>
+        <li>Text Analysis</li>
+      </ul>
+    </div>
+
+    <!-- ⭐ EN ÖNEMLİ KISIM -->
+    <div class="dash-card">
+      <p>Achievements</p>
+      <ul>
+        <li>International Conference Presentation</li>
+        <li>Published Academic Paper</li>
+        <li>Certificate Awarded</li>
+      </ul>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="actions">
+      <div class="btn">Conference Paper</div>
+      <div class="btn">GitHub</div>
+      <div class="btn">Blog</div>
+    </div>
+
   </div>
-</div>
-
-<div class="dashboard">
-<div class="dash-card">
-  <p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknoloji Yığını</span></p>
-  <div class="tags">
-    <span>Python</span>
-    <span>LLM</span>
-    <span>Streamlit</span>
-  </div>
-</div>
-
-<div class="dash-card">
-  <p><span class="en">Key Features</span><span class="tr" style="display:none;">Ana Özellikler</span></p>
-  <ul>
-    <li><span class="en">File Analysis</span><span class="tr" style="display:none;">Dosya Analizi</span></li>
-    <li><span class="en">Q&A System</span><span class="tr" style="display:none;">Soru-Cevap Sistemi</span></li>
-    <li><span class="en">Vector Search</span><span class="tr" style="display:none;">Vector Arama</span></li>
-  </ul>
-</div>
-
-<div class="actions">
-  <div class="btn" onclick="history.back()"><span class="en">Back</span><span class="tr" style="display:none;">Geri</span></div>
-  <div class="btn"><span class="en">GitHub</span><span class="tr" style="display:none;">GitHub</span></div>
-  <div class="btn"><span class="en">Blog</span><span class="tr" style="display:none;">Blog</span></div>
-</div>
-</div>
-</div>
 
 </div>
-
 <footer>
 <p class="en">© 2026 Elif Karadeniz</p>
 <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
