@@ -122,39 +122,73 @@ body.light-mode .subtitle { color: #555; }
 
 <img src="hate-speech.png" class="project-image">
 
+<!-- INFO -->
 <div class="info-grid">
   <div class="info-card">
-    <span><span class="en">Project Type</span><span class="tr">Proje Türü</span></span>
-    <p>NLP / Text Classification</p>
+    <span>
+      <span class="en">Project Type</span>
+      <span class="tr" style="display:none;">Proje Türü</span>
+    </span>
+    <p>
+      <span class="en">NLP / Text Classification</span>
+      <span class="tr" style="display:none;">NLP / Metin Sınıflandırma</span>
+    </p>
   </div>
+
   <div class="info-card">
-    <span><span class="en">Core Model</span><span class="tr">Model</span></span>
+    <span>
+      <span class="en">Core Model</span>
+      <span class="tr" style="display:none;">Temel Model</span>
+    </span>
     <p>TF-IDF + Logistic Regression</p>
   </div>
+
   <div class="info-card">
-    <span><span class="en">Dataset</span><span class="tr">Veri Seti</span></span>
-    <p>Social Media Data</p>
+    <span>
+      <span class="en">Dataset</span>
+      <span class="tr" style="display:none;">Veri Seti</span>
+    </span>
+    <p>
+      <span class="en">Social Media Data</span>
+      <span class="tr" style="display:none;">Sosyal Medya Verileri</span>
+    </p>
   </div>
+
   <div class="info-card">
-    <span><span class="en">Status</span><span class="tr">Durum</span></span>
-    <p>Published</p>
+    <span>
+      <span class="en">Status</span>
+      <span class="tr" style="display:none;">Durum</span>
+    </span>
+    <p>
+      <span class="en">Published</span>
+      <span class="tr" style="display:none;">Yayınlandı</span>
+    </p>
   </div>
 </div>
 
+<!-- DESCRIPTION -->
 <div class="description">
+
 <span class="en">
-This project detects hate speech and sexism in social media using NLP techniques...
+This project detects hate speech and sexism in social media using NLP techniques.
+A full pipeline including text preprocessing, TF-IDF feature extraction and classification models was implemented.
+The system achieved high accuracy and contributes to ethical AI by reducing harmful content.
 </span>
 
 <span class="tr" style="display:none;">
-Bu proje, sosyal medyada nefret söylemi ve cinsiyetçi içerikleri tespit etmek amacıyla geliştirilmiş bir doğal dil işleme sistemidir. 
-Metin ön işleme, TF-IDF özellik çıkarımı ve makine öğrenmesi modelleri kullanılarak yüksek doğruluk elde edilmiştir.
+Bu proje, sosyal medyada nefret söylemi ve cinsiyetçi içerikleri tespit etmek amacıyla geliştirilmiş bir doğal dil işleme sistemidir.
+Metin ön işleme, TF-IDF özellik çıkarımı ve sınıflandırma modellerini içeren tam bir makine öğrenmesi pipeline’ı kurulmuştur.
+Model yüksek doğruluk elde etmiş olup zararlı içeriklerin azaltılmasına katkı sağlayarak etik yapay zekâ alanına destek sunmaktadır.
 </span>
+
 </div>
 
+<!-- CONTENT -->
 <div class="content">
 
+<!-- LEFT -->
 <div>
+
 <div class="code">
 <div class="code-header">
 <div class="dot red"></div>
@@ -167,28 +201,45 @@ from sklearn.linear_model import LogisticRegression
 </pre>
 </div>
 
+<!-- METRICS -->
 <div class="charts-container">
+
 <div class="metric-card">
-<p>Accuracy</p>
+<p>
+  <span class="en">Accuracy</span>
+  <span class="tr" style="display:none;">Doğruluk</span>
+</p>
 <div class="value">0.91</div>
 </div>
 
 <div class="metric-card">
-<p>F1 Score</p>
+<p>
+  <span class="en">F1 Score</span>
+  <span class="tr" style="display:none;">F1 Skoru</span>
+</p>
 <div class="value">0.89</div>
 </div>
 
 <div class="metric-card">
-<p>Precision</p>
+<p>
+  <span class="en">Precision</span>
+  <span class="tr" style="display:none;">Kesinlik</span>
+</p>
 <div class="value">0.90</div>
 </div>
-</div>
+
 </div>
 
+</div>
+
+<!-- RIGHT -->
 <div class="dashboard">
 
 <div class="dash-card">
-<p>Tech Stack</p>
+<p>
+  <span class="en">Tech Stack</span>
+  <span class="tr" style="display:none;">Teknolojiler</span>
+</p>
 <div class="tags">
 <span>Python</span>
 <span>Pandas</span>
@@ -198,7 +249,10 @@ from sklearn.linear_model import LogisticRegression
 </div>
 
 <div class="dash-card">
-<p>Methods</p>
+<p>
+  <span class="en">Methods</span>
+  <span class="tr" style="display:none;">Yöntemler</span>
+</p>
 <ul>
 <li>TF-IDF</li>
 <li>Logistic Regression</li>
@@ -207,21 +261,48 @@ from sklearn.linear_model import LogisticRegression
 </div>
 
 <div class="dash-card">
-<p>Key Features</p>
+<p>
+  <span class="en">Key Features</span>
+  <span class="tr" style="display:none;">Özellikler</span>
+</p>
 <ul>
-<li>Hate Speech Detection</li>
-<li>Sexism Classification</li>
-<li>NLP Pipeline</li>
+<li>
+  <span class="en">Hate Speech Detection</span>
+  <span class="tr" style="display:none;">Nefret Söylemi Tespiti</span>
+</li>
+<li>
+  <span class="en">Sexism Classification</span>
+  <span class="tr" style="display:none;">Cinsiyetçilik Sınıflandırması</span>
+</li>
+<li>
+  <span class="en">NLP Pipeline</span>
+  <span class="tr" style="display:none;">NLP İş Akışı</span>
+</li>
 </ul>
 </div>
 
 <div class="dash-card">
-<p>Achievements</p>
+<p>
+  <span class="en">Achievements</span>
+  <span class="tr" style="display:none;">Başarılar</span>
+</p>
 <ul>
-<li>Conference Presentation</li>
-<li>Published Paper</li>
-<li>High Accuracy</li>
-<li>Ethical AI Contribution</li>
+<li>
+  <span class="en">Conference Presentation</span>
+  <span class="tr" style="display:none;">Konferans Sunumu</span>
+</li>
+<li>
+  <span class="en">Published Paper</span>
+  <span class="tr" style="display:none;">Yayınlanan Akademik Makale</span>
+</li>
+<li>
+  <span class="en">High Accuracy</span>
+  <span class="tr" style="display:none;">Yüksek Doğruluk</span>
+</li>
+<li>
+  <span class="en">Ethical AI Contribution</span>
+  <span class="tr" style="display:none;">Etik Yapay Zekâ Katkısı</span>
+</li>
 </ul>
 </div>
 
