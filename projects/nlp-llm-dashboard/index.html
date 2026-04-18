@@ -340,279 +340,199 @@
 
 <body class="dark-mode">
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="navbar-center">
-            <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
-            <ul class="navbar-links">
-                <li>
-                    <a href="/">
-                        <span class="en">Home</span>
-                        <span class="tr" style="display:none;">Ana Sayfa</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/about/">
-                        <span class="en">About</span>
-                        <span class="tr" style="display:none;">Hakkımda</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/projects/">
-                        <span class="en">Projects</span>
-                        <span class="tr" style="display:none;">Projeler</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/articles/">
-                        <span class="en">Articles</span>
-                        <span class="tr" style="display:none;">Yazılar</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/conference/">
-                        <span class="en">Conference</span>
-                        <span class="tr" style="display:none;">Konferans</span>
-                    </a>
-                </li>
-            </ul>
-            <input type="text" id="search" placeholder="Search...">
-            <div class="lang-wrapper">
-                <button class="lang-btn active" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" onclick="setLang('tr')">TR</button>
-                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
-            </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="navbar-center">
+        <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+
+        <ul class="navbar-links">
+            <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
+            <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
+            <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
+            <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
+            <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
+        </ul>
+
+        <input type="text" id="search" placeholder="Search...">
+
+        <div class="lang-wrapper">
+            <button class="lang-btn active" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('tr')">TR</button>
+            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- MAIN CONTENT -->
-    <div class="container">
+<!-- MAIN CONTENT -->
+<div class="container">
 
-        <h1 class="title">
-            <span class="en">Customer Segmentation & Recommendation System</span>
-            <span class="tr" style="display:none;">Müşteri Segmentasyonu ve Öneri Sistemi</span>
-        </h1>
+    <!-- TITLE -->
+    <h1 class="title">
+        <span class="en">LLM File Analysis Chatbot</span>
+        <span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span>
+    </h1>
 
-        <p class="subtitle">
-            <span class="en">Machine Learning based customer segmentation and recommendation system with Streamlit interface</span>
-            <span class="tr" style="display:none;">Streamlit arayüzü ile geliştirilmiş makine öğrenmesi tabanlı müşteri segmentasyonu ve öneri sistemi</span>
-        </p>
+    <p class="subtitle">
+        <span class="en">
+            AI-powered chatbot that analyzes CSV, Excel and PDF files using Large Language Models (LLM)
+        </span>
+        <span class="tr" style="display:none;">
+            Büyük Dil Modelleri (LLM) kullanarak CSV, Excel ve PDF dosyalarını analiz eden yapay zeka chatbot sistemi
+        </span>
+    </p>
 
-        <img src="clustering.png" class="project-image">
+    <img src="llm-chatbot.png" class="project-image">
 
-        <!-- INFO GRID -->
-        <div class="info-grid">
-            <div class="info-card">
-                <span>
-                    <span class="en">Project Type</span>
-                    <span class="tr" style="display:none;">Proje Türü</span>
-                </span>
-                <p>
-                    <span class="en">Machine Learning / Data Analysis</span>
-                    <span class="tr" style="display:none;">Makine Öğrenmesi / Veri Analizi</span>
-                </p>
-            </div>
-            <div class="info-card">
-                <span>
-                    <span class="en">Core Algorithm</span>
-                    <span class="tr" style="display:none;">Temel Algoritma</span>
-                </span>
-                <p>
-                    <span class="en">K-Means</span>
-                    <span class="tr" style="display:none;">K-Means</span>
-                </p>
-            </div>
-            <div class="info-card">
-                <span>
-                    <span class="en">Dataset</span>
-                    <span class="tr" style="display:none;">Veri Seti</span>
-                </span>
-                <p>
-                    <span class="en">Online Retail Dataset (UCI)</span>
-                    <span class="tr" style="display:none;">Online Retail Veri Seti (UCI)</span>
-                </p>
-            </div>
-            <div class="info-card">
-                <span>
-                    <span class="en">Status</span>
-                    <span class="tr" style="display:none;">Durum</span>
-                </span>
-                <p>
-                    <span class="en">Completed</span>
-                    <span class="tr" style="display:none;">Tamamlandı</span>
-                </p>
-            </div>
+    <!-- INFO GRID -->
+    <div class="info-grid">
+
+        <div class="info-card">
+            <span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span>
+            <p><span class="en">Machine Learning / NLP</span><span class="tr" style="display:none;">Makine Öğrenmesi / NLP</span></p>
         </div>
 
-        <!-- DESCRIPTION -->
-        <div class="description">
-            <span class="en">
-                This project analyzes customer behavior in e-commerce datasets to create meaningful segments
-                and generate personalized product recommendations. A full machine learning pipeline was
-                implemented including data preprocessing, feature engineering, clustering, and performance
-                evaluation. The system also includes an interactive Streamlit interface for step-by-step analysis.
-            </span>
-            <span class="tr" style="display:none;">
-                Bu proje, e-ticaret veri kümelerindeki müşteri davranışlarını analiz ederek anlamlı segmentler
-                oluşturmayı ve kişiselleştirilmiş ürün önerileri sunmayı amaçlamaktadır. Veri ön işleme,
-                özellik mühendisliği, kümeleme ve performans değerlendirmesi dahil olmak üzere eksiksiz bir
-                makine öğrenimi iş akışı hayata geçirilmiştir. Sistem ayrıca adım adım analiz imkanı sunan
-                etkileşimli bir Streamlit arayüzüne sahiptir.
-            </span>
+        <div class="info-card">
+            <span><span class="en">Core Technology</span><span class="tr" style="display:none;">Temel Teknoloji</span></span>
+            <p>OpenAI GPT (LLM)</p>
         </div>
 
-        <!-- ARCHITECTURE -->
-        <div class="architecture">
-            <h3>
-                <span class="en">Project Workflow</span>
-                <span class="tr" style="display:none;">Proje İş Akışı</span>
-            </h3>
-            <div class="flow">
-                <div class="step">
-                    <span class="en">Data Upload</span>
-                    <span class="tr" style="display:none;">Veri Yükleme</span>
-                </div>
-                <div class="step">
-                    <span class="en">Data Cleaning</span>
-                    <span class="tr" style="display:none;">Veri Temizleme</span>
-                </div>
-                <div class="step">
-                    <span class="en">Feature Engineering</span>
-                    <span class="tr" style="display:none;">Özellik Mühendisliği</span>
-                </div>
-                <div class="step">
-                    <span class="en">Clustering</span>
-                    <span class="tr" style="display:none;">Kümeleme</span>
-                </div>
-                <div class="step">
-                    <span class="en">Recommendation</span>
-                    <span class="tr" style="display:none;">Öneri Sistemi</span>
-                </div>
-                <div class="step">
-                    <span class="en">Evaluation</span>
-                    <span class="tr" style="display:none;">Değerlendirme</span>
-                </div>
-            </div>
+        <div class="info-card">
+            <span><span class="en">File Types</span><span class="tr" style="display:none;">Veri Tipleri</span></span>
+            <p>CSV / Excel / PDF</p>
         </div>
 
-        <!-- LEFT + RIGHT CONTENT -->
-        <div class="content">
+        <div class="info-card">
+            <span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span>
+            <p><span class="en">Completed</span><span class="tr" style="display:none;">Tamamlandı</span></p>
+        </div>
 
-            <!-- LEFT -->
-            <div>
-                <div class="code">
-                    <div class="code-header">
-                        <div class="dot red"></div>
-                        <div class="dot yellow"></div>
-                        <div class="dot green"></div>
-                    </div>
-                    <pre>
-<span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans
+    </div>
 
-model    = <span class="func">KMeans</span>(n_clusters=5)
-model.<span class="func">fit</span>(data)
-clusters = model.<span class="func">predict</span>(data)
-                    </pre>
-                </div>
+    <!-- DESCRIPTION -->
+    <div class="description">
 
-                <div class="charts-container">
-                    <div class="dash-card metric-card">
-                        <p>
-                            <span class="en">Silhouette Score</span>
-                            <span class="tr" style="display:none;">Silhouette Skoru</span>
-                        </p>
-                        <div class="value">0.6657</div>
-                    </div>
-                    <div class="dash-card metric-card">
-                        <p>
-                            <span class="en">Calinski-Harabasz</span>
-                            <span class="tr" style="display:none;">Calinski-Harabasz</span>
-                        </p>
-                        <div class="value">2188</div>
-                    </div>
-                    <div class="dash-card metric-card">
-                        <p>
-                            <span class="en">Davies-Bouldin</span>
-                            <span class="tr" style="display:none;">Davies-Bouldin</span>
-                        </p>
-                        <div class="value">0.44</div>
-                    </div>
+        <span class="en">
+            This project enables users to analyze structured and unstructured data files without any technical knowledge.
+            The system reads CSV, Excel and PDF files, processes the content, and generates contextual answers using LLMs.
+            Users can interact with their data through natural language queries or use the system as a general AI assistant.
+        </span>
+
+        <span class="tr" style="display:none;">
+            Bu proje, kullanıcıların teknik bilgiye ihtiyaç duymadan CSV, Excel ve PDF gibi veri dosyalarını analiz etmesini sağlar.
+            Sistem dosya içeriğini okuyarak LLM (Büyük Dil Modeli) ile bağlamsal cevaplar üretir.
+            Kullanıcılar doğal dil ile veri sorgulaması yapabilir veya sistemi genel amaçlı yapay zeka asistanı olarak kullanabilir.
+        </span>
+
+    </div>
+
+    <!-- WORKFLOW -->
+    <div class="architecture">
+
+        <h3>
+            <span class="en">Project Workflow</span>
+            <span class="tr" style="display:none;">Proje İş Akışı</span>
+        </h3>
+
+        <div class="flow">
+            <div class="step"><span class="en">File Upload</span><span class="tr" style="display:none;">Dosya Yükleme</span></div>
+            <div class="step"><span class="en">Data Parsing</span><span class="tr" style="display:none;">Veri Ayrıştırma</span></div>
+            <div class="step"><span class="en">PDF / Excel Reading</span><span class="tr" style="display:none;">PDF / Excel Okuma</span></div>
+            <div class="step"><span class="en">Text Cleaning</span><span class="tr" style="display:none;">Metin Temizleme</span></div>
+            <div class="step"><span class="en">LLM Processing</span><span class="tr" style="display:none;">LLM İşleme</span></div>
+            <div class="step"><span class="en">Response Generation</span><span class="tr" style="display:none;">Cevap Üretimi</span></div>
+        </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="content">
+
+        <!-- CODE -->
+        <div class="code">
+
+            <div class="code-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+
+            <pre>
+from langchain.chat_models import ChatOpenAI
+import pandas as pd
+import PyPDF2
+
+df = pd.read_csv("data.csv")
+
+llm = ChatOpenAI(model="gpt-4")
+
+question = "What is the highest selling product?"
+
+response = llm.predict(
+    f"""
+    Data:
+    {df.head().to_string()}
+
+    Question:
+    {question}
+    """
+)
+
+print(response)
+            </pre>
+
+        </div>
+
+        <!-- DASHBOARD -->
+        <div class="dashboard">
+
+            <!-- CAPABILITY -->
+            <div class="dash-card">
+                <p>
+                    <span class="en">Capability</span>
+                    <span class="tr" style="display:none;">Yetenek</span>
+                </p>
+                <div class="value">
+                    Context-aware answer generation<br>
+                    Multi-format file understanding (CSV, PDF, Excel)<br>
+                    Natural language query interpretation<br>
+                    General AI assistant mode (no data required)
                 </div>
             </div>
 
-            <!-- RIGHT -->
-            <div class="dashboard">
-                <div class="dash-card">
-                    <p>
-                        <span class="en">Tech Stack</span>
-                        <span class="tr" style="display:none;">Teknolojiler</span>
-                    </p>
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Pandas</span>
-                        <span>Scikit-learn</span>
-                        <span>Streamlit</span>
-                    </div>
+            <!-- UX -->
+            <div class="dash-card">
+                <p>
+                    <span class="en">User Experience (UX)</span>
+                    <span class="tr" style="display:none;">Kullanıcı Deneyimi</span>
+                </p>
+                <div class="value">
+                    No technical knowledge required<br>
+                    Interactive chat-based analysis<br>
+                    Fast data exploration workflow<br>
+                    Streamlit-based simple interface
                 </div>
+            </div>
 
-                <div class="dash-card">
-                    <p>
-                        <span class="en">Methods</span>
-                        <span class="tr" style="display:none;">Yöntemler</span>
-                    </p>
-                    <ul>
-                        <li>
-                            <span class="en">K-Means</span>
-                            <span class="tr" style="display:none;">K-Means</span>
-                        </li>
-                        <li>
-                            <span class="en">PCA / t-SNE</span>
-                            <span class="tr" style="display:none;">PCA / t-SNE</span>
-                        </li>
-                        <li>
-                            <span class="en">LOF / Isolation Forest</span>
-                            <span class="tr" style="display:none;">LOF / Isolation Forest</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="dash-card">
-                    <p>
-                        <span class="en">Key Features</span>
-                        <span class="tr" style="display:none;">Özellikler</span>
-                    </p>
-                    <ul>
-                        <li>
-                            <span class="en">Customer Segmentation</span>
-                            <span class="tr" style="display:none;">Müşteri Segmentasyonu</span>
-                        </li>
-                        <li>
-                            <span class="en">Recommendation System</span>
-                            <span class="tr" style="display:none;">Öneri Sistemi</span>
-                        </li>
-                        <li>
-                            <span class="en">Interactive Interface</span>
-                            <span class="tr" style="display:none;">Etkileşimli Arayüz</span>
-                        </li>
-                        <li>
-                            <span class="en">Data Visualization</span>
-                            <span class="tr" style="display:none;">Veri Görselleştirme</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="actions">
-                    <div class="btn" onclick="history.back()">
-                        <span class="en">Back</span>
-                        <span class="tr" style="display:none;">Geri</span>
-                    </div>
-                    <div class="btn">GitHub</div>
+            <!-- EXTRA -->
+            <div class="dash-card">
+                <p>
+                    <span class="en">Additional Strength</span>
+                    <span class="tr" style="display:none;">Ek Güç</span>
+                </p>
+                <div class="value">
+                    Prompt engineering optimized responses<br>
+                    LLM-powered reasoning over structured data<br>
+                    Flexible file-agnostic architecture
                 </div>
             </div>
 
         </div>
 
     </div>
+
+</div>
+
+
 
     <footer>
         <p class="en">© 2026 Elif Karadeniz</p>
