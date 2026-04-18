@@ -1,257 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Project Detail - Elif Karadeniz</title>
+    <meta charset="UTF-8">
+    <title>Project Detail - Elif Karadeniz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* CONTAINER */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- <link rel="stylesheet" href="/style.css">
+        /* TITLE */
+        .title {
+            font-size: 34px;
+            color: #3fb950;
+            margin-top: 20px;
+        }
 
- <style>
+        .subtitle {
+            color: #8b949e;
+            margin-bottom: 25px;
+        }
 
+        body.light-mode .subtitle {
+            color: #555;
+        }
 
-/* CONTAINER */
-.container { max-width: 1200px; margin: auto; }
+        /* IMAGE */
+        .project-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 1px solid #30363d;
+        }
 
-/* TITLE */
-.title { font-size: 34px; color: #3fb950; margin-top: 20px; }
-.subtitle { color: #8b949e; margin-bottom: 25px; }
- body.light-mode .subtitle { color: #555; }
+        body.light-mode .project-image {
+            border-color: #ccc;
+        }
 
-/* IMAGE */
-.project-image { width: 100%; border-radius: 15px; margin: 25px 0; border: 1px solid #30363d; }
- body.light-mode .project-image { border-color: #ccc; }
+        /* INFO GRID */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
 
-/* INFO GRID */
-.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 25px; }
-.info-card { background: #161b22; padding: 15px; border-radius: 12px; border: 1px solid #30363d; }
- body.light-mode .info-card { background: #fff; color: #000; }
-.info-card span { font-size: 13px; color: #ffffff; }
-body.light-mode .info-card span { color: #000; }
-.info-card p { margin-top: 5px; font-weight: bold; }
-body.light-mode .info-card p { color: #000; }
+        .info-card {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+        }
 
-/* DESCRIPTION */
-.description { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; line-height: 1.6; }
+        body.light-mode .info-card {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
 
-/* ARCHITECTURE */
-.architecture { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; }
- body.light-mode .architecture { background: #fff; border-color: #ccc; color: #000; }
-.architecture h3 { margin-bottom: 15px; color: #3fb950; }
- body.light-mode .architecture  h3{ color: #000; }
-.flow { display: flex; gap: 10px; flex-wrap: wrap; }
-.step { flex: 1; min-width: 140px; background: #0d1117; border: 1px solid #30363d; padding: 10px; border-radius: 10px; text-align: center; font-size: 13px; }
- body.light-mode .step { background: #fff; border-color: #ccc; color: #000; }
+        .info-card span {
+            font-size: 13px;
+            color: #ffffff;
+        }
 
-/* MAIN CONTENT GRID */
-.content { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: start; }
-body.light-mode .description { background: #fff; color: #000; }
+        body.light-mode .info-card span {
+            color: #000;
+        }
 
-/* CODE BLOCK */
-.code { background: #161b22; border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
- body.light-mode .code { background: #fff; color: #000; }
-.code-header { background: #21262d; padding: 10px; display: flex; gap: 8px; }
- body.light-mode .code-header { background: #eee; }
-.dot { width: 12px; height: 12px; border-radius: 50%; }
-.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-.code pre { padding: 20px; font-size: 14px; color: #c9d1d9; line-height: 1.5; overflow-x: auto; max-height: 220px; }
- body.light-mode .code pre { color: #000; }
-.keyword { color: #ff7b72; } .string { color: #a5d6ff; } .func { color: #d2a8ff; }
+        .info-card p {
+            margin-top: 5px;
+            font-weight: bold;
+        }
 
-/* CHARTS UNDER CODE */
-.charts-container { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-.charts-container .dash-card { flex: 1; min-width: 220px; }
- body.light-mode .charts-container .dash-card { background: #fff; border-color: #ccc; color: #000; }
+        body.light-mode .info-card p {
+            color: #000;
+        }
 
-/* DASHBOARD RIGHT COLUMN */
-.dashboard { display: flex; flex-direction: column; gap: 12px; }
-.dash-card { background: #161b22; padding: 12px; border-radius: 12px; border: 1px solid #30363d; }
-body.light-mode .dashboard .dash-card { background: #fff; border-color: #ccc; color: #000; }
-.dash-card p { font-size: 13px; color:#ffffff; font-weight: bold; }
- body.light-mode .dashboard .dash-card  p{  color: #000; }
-.value { font-size: 20px; color: #3fb950; margin-top: 5px; }
-canvas { margin-top: 10px; max-height: 140px; }
-.tags span { display: inline-block; background: #0d1117; border: 1px solid #30363d; padding: 5px 10px; border-radius: 8px; margin: 3px; font-size: 12px; }
-.dash-card ul { margin-top: 8px; padding-left: 15px; font-size: 13px; }
- body.light-mode .tags span { background: #fff; border-color: #ccc; color: #000; }
+        /* DESCRIPTION */
+        .description {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
 
-/* BUTTONS */
-.actions { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-.btn { padding: 10px; border-radius: 8px; border: 1px solid #3fb950; text-align: center; cursor: pointer; transition: 0.3s; }
-.btn:hover { background: #3fb950; color: #0d1117; }
- body.light-mode .btn { color: #3fb950; border-color: #3fb950; }
- body.light-mode .btn:hover { color: #fff; }
+        body.light-mode .description {
+            background: #fff;
+            color: #000;
+        }
 
+        /* ARCHITECTURE */
+        .architecture {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
 
-</style>
+        body.light-mode .architecture {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
 
+        .architecture h3 {
+            margin-bottom: 15px;
+            color: #3fb950;
+        }
+
+        body.light-mode .architecture h3 {
+            color: #000;
+        }
+
+        .flow {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 140px;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        body.light-mode .step {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        /* MAIN CONTENT GRID */
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* CODE BLOCK */
+        .code {
+            background: #161b22;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        body.light-mode .code {
+            background: #fff;
+            color: #000;
+        }
+
+        .code-header {
+            background: #21262d;
+            padding: 10px;
+            display: flex;
+            gap: 8px;
+        }
+
+        body.light-mode .code-header {
+            background: #eee;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .red    { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green  { background: #27c93f; }
+
+        .code pre {
+            padding: 20px;
+            font-size: 14px;
+            color: #c9d1d9;
+            line-height: 1.5;
+            overflow-x: auto;
+            max-height: 220px;
+        }
+
+        body.light-mode .code pre {
+            color: #000;
+        }
+
+        .keyword { color: #ff7b72; }
+        .string  { color: #a5d6ff; }
+        .func    { color: #d2a8ff; }
+
+        /* CHARTS UNDER CODE */
+        .charts-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .charts-container .dash-card {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        body.light-mode .charts-container .dash-card {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        /* DASHBOARD RIGHT COLUMN */
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .dash-card {
+            background: #161b22;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        body.light-mode .dashboard .dash-card {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        .dash-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(63, 185, 80, 0.3);
+        }
+
+        .dash-card p {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        body.light-mode .dashboard .dash-card p {
+            color: #000;
+        }
+
+        .value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #3fb950;
+        }
+
+        .tags span {
+            display: inline-block;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin: 2px;
+            font-size: 11px;
+        }
+
+        .dash-card ul {
+            margin-top: 8px;
+            padding-left: 15px;
+            font-size: 13px;
+        }
+
+        body.light-mode .tags span {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        /* BUTTONS */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #3fb950;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #3fb950;
+            color: #0d1117;
+        }
+
+        body.light-mode .btn {
+            color: #3fb950;
+            border-color: #3fb950;
+        }
+
+        body.light-mode .btn:hover {
+            color: #fff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .charts-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body class="dark-mode">
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <div class="navbar-center">
-    <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
-    <ul class="navbar-links">
-      <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
-      <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
-      <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
-      <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-      <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
-    </ul>
-    <input type="text" id="search" placeholder="Search...">
-    <div class="lang-wrapper">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('tr')">TR</button>
-      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    <div class="navbar-center">
+        <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+
+        <ul class="navbar-links">
+            <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
+            <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
+            <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
+            <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
+            <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
+        </ul>
+
+        <input type="text" id="search" placeholder="Search...">
+
+        <div class="lang-wrapper">
+            <button class="lang-btn active" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('tr')">TR</button>
+            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+        </div>
     </div>
-  </div>
 </nav>
 
 <!-- MAIN CONTENT -->
 <div class="container">
-<h1 class="title"><span class="en">LLM File Analysis Chatbot</span><span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span></h1>
-<p class="subtitle"><span class="en">LLM + Streamlit based intelligent file analyzer</span><span class="tr" style="display:none;">LLM + Streamlit tabanlı akıllı dosya analiz aracı</span></p>
-<img src="chatbot.png" class="project-image">
 
-<div class="info-grid">
-  <div class="info-card"><span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span><p><span class="en">Generative AI / NLP</span><span class="tr" style="display:none;">Üretken AI / NLP</span></p></div>
-  <div class="info-card"><span><span class="en">Core Model</span><span class="tr" style="display:none;">Temel Model</span></span><p><span class="en">Llama 3</span><span class="tr" style="display:none;">Llama 3</span></p></div>
-  <div class="info-card"><span><span class="en">Dataset</span><span class="tr" style="display:none;">Veri Seti</span></span><p><span class="en">Custom + Wikipedia</span><span class="tr" style="display:none;">Özel + Wikipedia</span></p></div>
-  <div class="info-card"><span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span><p><span class="en">Production Ready</span><span class="tr" style="display:none;">Üretime Hazır</span></p></div>
-</div>
+    <!-- TITLE -->
+    <h1 class="title">
+        <span class="en">LLM File Analysis Chatbot</span>
+        <span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span>
+    </h1>
 
-<div class="description"><span class="en">This project is an AI-powered chatbot that analyzes CSV, Excel, and PDF files.</span><span class="tr" style="display:none;">Bu proje, CSV, Excel ve PDF dosyalarını analiz eden yapay zekâ destekli bir chatbot’tur.</span></div>
+    <p class="subtitle">
+        <span class="en">
+            AI-powered chatbot that analyzes CSV, Excel and PDF files using Large Language Models (LLM)
+        </span>
+        <span class="tr" style="display:none;">
+            Büyük Dil Modelleri (LLM) kullanarak CSV, Excel ve PDF dosyalarını analiz eden yapay zeka chatbot sistemi
+        </span>
+    </p>
 
-<div class="architecture">
-<h3><span class="en">Project Architecture</span><span class="tr" style="display:none;">Proje Mimarisi</span></h3>
-<div class="flow">
-  <div class="step"><span class="en">Upload</span><span class="tr" style="display:none;">Yükle</span></div>
-  <div class="step"><span class="en">Extract</span><span class="tr" style="display:none;">Çıkart</span></div>
-  <div class="step"><span class="en">Embedding</span><span class="tr" style="display:none;">Embedding</span></div>
-  <div class="step"><span class="en">Vector DB</span><span class="tr" style="display:none;">Vector DB</span></div>
-  <div class="step"><span class="en">LLM</span><span class="tr" style="display:none;">LLM</span></div>
-</div>
-</div>
+    <img src="llm-chatbot.png" class="project-image">
 
-<!-- LEFT + RIGHT CONTENT -->
-<div class="content">
-<div>
-  <div class="code">
-    <div class="code-header">
-      <div class="dot red"></div>
-      <div class="dot yellow"></div>
-      <div class="dot green"></div>
+    <!-- INFO GRID -->
+    <div class="info-grid">
+
+        <div class="info-card">
+            <span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span>
+            <p><span class="en">Machine Learning / NLP</span><span class="tr" style="display:none;">Makine Öğrenmesi / NLP</span></p>
+        </div>
+
+        <div class="info-card">
+            <span><span class="en">Core Technology</span><span class="tr" style="display:none;">Temel Teknoloji</span></span>
+            <p>OpenAI GPT (LLM)</p>
+        </div>
+
+        <div class="info-card">
+            <span><span class="en">File Types</span><span class="tr" style="display:none;">Veri Tipleri</span></span>
+            <p>CSV / Excel / PDF</p>
+        </div>
+
+        <div class="info-card">
+            <span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span>
+            <p><span class="en">Completed</span><span class="tr" style="display:none;">Tamamlandı</span></p>
+        </div>
+
     </div>
-    <pre>
-<span class="keyword">from</span> langchain <span class="keyword">import</span> LLM
-model = <span class="func">LLM</span>(<span class="string">"llama3"</span>)
-response = model.ask(<span class="string">"Analyze file"</span>)
-<span class="func">print</span>(response)
-    </pre>
-  </div>
 
-  <div class="charts-container">
-    <div class="dash-card">
-      <p><span class="en">Performance</span><span class="tr" style="display:none;">Performans</span></p>
-      <div class="value">92 / 100</div>
-      <canvas id="scoreChart"></canvas>
+    <!-- DESCRIPTION -->
+    <div class="description">
+
+        <span class="en">
+            This project enables users to analyze structured and unstructured data files without any technical knowledge.
+            The system reads CSV, Excel and PDF files, processes the content, and generates contextual answers using LLMs.
+            Users can interact with their data through natural language queries or use the system as a general AI assistant.
+        </span>
+
+        <span class="tr" style="display:none;">
+            Bu proje, kullanıcıların teknik bilgiye ihtiyaç duymadan CSV, Excel ve PDF gibi veri dosyalarını analiz etmesini sağlar.
+            Sistem dosya içeriğini okuyarak LLM (Büyük Dil Modeli) ile bağlamsal cevaplar üretir.
+            Kullanıcılar doğal dil ile veri sorgulaması yapabilir veya sistemi genel amaçlı yapay zeka asistanı olarak kullanabilir.
+        </span>
+
     </div>
-    <div class="dash-card">
-      <p><span class="en">Model Metrics</span><span class="tr" style="display:none;">Model Ölçümleri</span></p>
-      <canvas id="barChart"></canvas>
+
+    <!-- WORKFLOW -->
+    <div class="architecture">
+
+        <h3>
+            <span class="en">Project Workflow</span>
+            <span class="tr" style="display:none;">Proje İş Akışı</span>
+        </h3>
+
+        <div class="flow">
+            <div class="step"><span class="en">File Upload</span><span class="tr" style="display:none;">Dosya Yükleme</span></div>
+            <div class="step"><span class="en">Data Parsing</span><span class="tr" style="display:none;">Veri Ayrıştırma</span></div>
+            <div class="step"><span class="en">PDF / Excel Reading</span><span class="tr" style="display:none;">PDF / Excel Okuma</span></div>
+            <div class="step"><span class="en">Text Cleaning</span><span class="tr" style="display:none;">Metin Temizleme</span></div>
+            <div class="step"><span class="en">LLM Processing</span><span class="tr" style="display:none;">LLM İşleme</span></div>
+            <div class="step"><span class="en">Response Generation</span><span class="tr" style="display:none;">Cevap Üretimi</span></div>
+        </div>
+
     </div>
-  </div>
+
+    <!-- MAIN -->
+    <div class="content">
+
+        <!-- CODE -->
+        <div class="code">
+
+            <div class="code-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+
+            <pre>
+from langchain.chat_models import ChatOpenAI
+import pandas as pd
+import PyPDF2
+
+df = pd.read_csv("data.csv")
+
+llm = ChatOpenAI(model="gpt-4")
+
+question = "What is the highest selling product?"
+
+response = llm.predict(
+    f"""
+    Data:
+    {df.head().to_string()}
+
+    Question:
+    {question}
+    """
+)
+
+print(response)
+            </pre>
+
+        </div>
+
+        <!-- DASHBOARD -->
+        <div class="dashboard">
+
+            <!-- CAPABILITY -->
+            <div class="dash-card">
+                <p>
+                    <span class="en">Capability</span>
+                    <span class="tr" style="display:none;">Yetenek</span>
+                </p>
+                <div class="value">
+                    Context-aware answer generation<br>
+                    Multi-format file understanding (CSV, PDF, Excel)<br>
+                    Natural language query interpretation<br>
+                    General AI assistant mode (no data required)
+                </div>
+            </div>
+
+            <!-- UX -->
+            <div class="dash-card">
+                <p>
+                    <span class="en">User Experience (UX)</span>
+                    <span class="tr" style="display:none;">Kullanıcı Deneyimi</span>
+                </p>
+                <div class="value">
+                    No technical knowledge required<br>
+                    Interactive chat-based analysis<br>
+                    Fast data exploration workflow<br>
+                    Streamlit-based simple interface
+                </div>
+            </div>
+
+            <!-- EXTRA -->
+            <div class="dash-card">
+                <p>
+                    <span class="en">Additional Strength</span>
+                    <span class="tr" style="display:none;">Ek Güç</span>
+                </p>
+                <div class="value">
+                    Prompt engineering optimized responses<br>
+                    LLM-powered reasoning over structured data<br>
+                    Flexible file-agnostic architecture
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
-<div class="dashboard">
-<div class="dash-card">
-  <p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknoloji Yığını</span></p>
-  <div class="tags">
-    <span>Python</span>
-    <span>LLM</span>
-    <span>Streamlit</span>
-  </div>
-</div>
-
-<div class="dash-card">
-  <p><span class="en">Key Features</span><span class="tr" style="display:none;">Ana Özellikler</span></p>
-  <ul>
-    <li><span class="en">File Analysis</span><span class="tr" style="display:none;">Dosya Analizi</span></li>
-    <li><span class="en">Q&A System</span><span class="tr" style="display:none;">Soru-Cevap Sistemi</span></li>
-    <li><span class="en">Vector Search</span><span class="tr" style="display:none;">Vector Arama</span></li>
-  </ul>
-</div>
-
-<div class="actions">
-  <div class="btn" onclick="history.back()"><span class="en">Back</span><span class="tr" style="display:none;">Geri</span></div>
-  <div class="btn"><span class="en">GitHub</span><span class="tr" style="display:none;">GitHub</span></div>
-  <div class="btn"><span class="en">Blog</span><span class="tr" style="display:none;">Blog</span></div>
-</div>
-</div>
-</div>
-
-</div>
-
-<footer>
-<p class="en">© 2026 Elif Karadeniz</p>
-<p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
-</footer>
-
-<!-- JS -->
-<script>
-/* LANGUAGE (TEK SİSTEM) */
-function setLang(lang){
-  document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
-  document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
-
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.lang-btn')[lang==='en'?0:1].classList.add('active');
-
-  localStorage.setItem('lang', lang);
-}
-
-/* LOAD */
-const savedLang = localStorage.getItem('lang') || 'en';
-setLang(savedLang);
-
-  /* THEME */
-  const themeBtn = document.getElementById('theme-toggle');
-  themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const icon = themeBtn.querySelector('i');
-    icon.classList.toggle('fa-sun');
-    icon.classList.toggle('fa-moon');
-  });
-
-/* SEARCH */
-document.getElementById('search').addEventListener('input', e => {
-  const val = e.target.value.toLowerCase();
-  document.querySelectorAll('.project-item').forEach(card=>{
-    card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex':'none';
-  });
-});
-
-/* LOGO CLICK */
-document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'});
 
 
-/* CHARTS */
-new Chart(document.getElementById("scoreChart"), {
-  type: "doughnut",
-  data: { datasets: [{ data: [92, 8], backgroundColor: ["#3fb950", "#30363d"] }] },
-  options: { cutout: "80%", plugins: { legend: { display: false } } }
-});
+    <footer>
+        <p class="en">© 2026 Elif Karadeniz</p>
+        <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
+    </footer>
 
-new Chart(document.getElementById("barChart"), {
-  type: "bar",
-  data: { labels: ["Accuracy", "Speed", "Quality"], datasets: [{ data: [92, 85, 88], backgroundColor: "#3fb950" }] },
-  options: { scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false } } }
-});
-</script>
+    <script>
+        /* LANGUAGE */
+        function setLang(lang) {
+            document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
+            document.querySelectorAll('.tr').forEach(el => el.style.display = (lang === 'tr') ? '' : 'none');
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.lang-btn')[lang === 'en' ? 0 : 1].classList.add('active');
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang') || 'en';
+        setLang(savedLang);
+
+        /* THEME */
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const icon = themeBtn.querySelector('i');
+            icon.classList.toggle('fa-sun');
+            icon.classList.toggle('fa-moon');
+        });
+
+        /* SEARCH */
+        document.getElementById('search').addEventListener('input', e => {
+            const val = e.target.value.toLowerCase();
+            document.querySelectorAll('.project-item').forEach(card => {
+                card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex' : 'none';
+            });
+        });
+
+        /* LOGO CLICK */
+        document.getElementById('navbar-name').addEventListener('click', () => {
+            window.location.href = '/';
+        });
+
+        /* CHARTS */
+        new Chart(document.getElementById("scoreChart"), {
+            type: "doughnut",
+            data: {
+                labels: ["Cluster 1", "Cluster 2", "Cluster 3", "Cluster 4", "Cluster 5"],
+                datasets: [{
+                    data: [120, 95, 140, 80, 106],
+                    backgroundColor: ["#3fb950", "#58a6ff", "#f78166", "#d2a8ff", "#ffa657"]
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { display: true }
+                }
+            }
+        });
+
+        new Chart(document.getElementById("barChart"), {
+            type: "bar",
+            data: {
+                labels: ["Silhouette", "Calinski-Harabasz", "Davies-Bouldin"],
+                datasets: [{
+                    data: [0.6657, 2188, 0.44],
+                    backgroundColor: "#3fb950"
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
