@@ -464,160 +464,131 @@
             <div class="step"><span class="en">Evaluation</span><span class="tr" style="display:none;">Değerlendirme</span></div>
         </div>
     </div>
+<!-- LEFT + RIGHT CONTENT -->
+<div class="content">
 
-    <!-- LEFT + RIGHT CONTENT -->
-    <div class="content">
+    <!-- LEFT -->
+    <div>
 
-        <!-- LEFT SIDE -->
-        <div>
-
-            <!-- CODE -->
-            <div class="code">
-                <div class="code-header">
-                    <div class="dot red"></div>
-                    <div class="dot yellow"></div>
-                    <div class="dot green"></div>
-                </div>
-
-<pre>
-from sklearn.ensemble import IsolationForest
-
-model = IsolationForest(
-    n_estimators=500,
-    contamination=0.2,
-    max_samples=1000
-)
-
-model.fit(X)
-pred = model.predict(X)
-</pre>
+        <!-- CODE -->
+        <div class="code">
+            <div class="code-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
             </div>
 
-            <!-- METRICS (ONLY WINNER MODEL) -->
-            <div class="charts-container">
+<pre>
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+<span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> IsolationForest
+<span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> DBSCAN
+<span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler
+<span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA
+</pre>
 
-                <div class="dash-card metric-card winner-card">
-                    <p>
-                        <span class="en">Isolation Forest - Final Model Performance</span>
-                        <span class="tr" style="display:none;">Isolation Forest - Nihai Model Performansı</span>
-                    </p>
+        </div>
 
-                    <ul>
-                        <li>
-                            <span class="en">Accuracy: 0.73</span>
-                            <span class="tr" style="display:none;">Doğruluk: 0.73</span>
-                        </li>
+        <!-- METRICS (KAZANAN MODEL) -->
+        <div class="charts-container">
 
-                        <li>
-                            <span class="en">Precision: 0.32</span>
-                            <span class="tr" style="display:none;">Precision: 0.32</span>
-                        </li>
+            <div class="dash-card metric-card winner-card">
+                <p>
+                    <span class="en">Final Model</span>
+                    <span class="tr" style="display:none;">Nihai Model</span>
+                </p>
+                <div class="value">Isolation Forest</div>
+            </div>
 
-                        <li>
-                            <span class="en">Recall (Attack Detection): 0.32</span>
-                            <span class="tr" style="display:none;">Recall (Saldırı Tespiti): 0.32</span>
-                        </li>
+            <div class="dash-card metric-card">
+                <p>
+                    <span class="en">Recall</span>
+                    <span class="tr" style="display:none;">Recall</span>
+                </p>
+                <div class="value">0.32</div>
+            </div>
 
-                        <li>
-                            <span class="en">F1-Score: 0.32</span>
-                            <span class="tr" style="display:none;">F1-Skoru: 0.32</span>
-                        </li>
+            <div class="dash-card metric-card">
+                <p>
+                    <span class="en">Precision</span>
+                    <span class="tr" style="display:none;">Precision</span>
+                </p>
+                <div class="value">0.32</div>
+            </div>
 
-                        <li>
-                            <span class="en">True Positives: 158</span>
-                            <span class="tr" style="display:none;">Doğru Tespit: 158</span>
-                        </li>
+            <div class="dash-card metric-card">
+                <p>
+                    <span class="en">F1 Score</span>
+                    <span class="tr" style="display:none;">F1 Skoru</span>
+                </p>
+                <div class="value">0.32</div>
+            </div>
 
-                        <li>
-                            <span class="en">Best Model Selected (Highest Recall)</span>
-                            <span class="tr" style="display:none;">En İyi Model Seçildi (En Yüksek Recall)</span>
-                        </li>
-                    </ul>
-                </div>
-
+            <div class="dash-card metric-card">
+                <p>
+                    <span class="en">True Positives</span>
+                    <span class="tr" style="display:none;">Doğru Tespit</span>
+                </p>
+                <div class="value">158</div>
             </div>
 
         </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="dashboard">
+    </div>
 
-            <!-- TECH STACK -->
-            <div class="dash-card">
-                <p>
-                    <span class="en">Tech Stack</span>
-                    <span class="tr" style="display:none;">Teknolojiler</span>
-                </p>
-                <div class="tags">
-                    <span>Python</span>
-                    <span>Pandas</span>
-                    <span>Scikit-learn</span>
-                    <span>NumPy</span>
-                    <span>Matplotlib</span>
-                    <span>Jupyter</span>
-                </div>
+    <!-- RIGHT -->
+    <div class="dashboard">
+
+        <!-- TECH STACK -->
+        <div class="dash-card">
+            <p>
+                <span class="en">Tech Stack</span>
+                <span class="tr" style="display:none;">Teknolojiler</span>
+            </p>
+            <div class="tags">
+                <span>Python</span>
+                <span>Scikit-learn</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>Matplotlib</span>
             </div>
+        </div>
 
-            <!-- METHODS -->
-            <div class="dash-card">
-                <p>
-                    <span class="en">Methods</span>
-                    <span class="tr" style="display:none;">Yöntemler</span>
-                </p>
-                <ul>
-                    <li>
-                        <span class="en">Data preprocessing & cleaning</span>
-                        <span class="tr" style="display:none;">Veri ön işleme ve temizleme</span>
-                    </li>
-                    <li>
-                        <span class="en">Label encoding & normalization</span>
-                        <span class="tr" style="display:none;">Label encoding ve normalizasyon</span>
-                    </li>
-                    <li>
-                        <span class="en">StandardScaler & PowerTransformer</span>
-                        <span class="tr" style="display:none;">StandardScaler & PowerTransformer</span>
-                    </li>
-                    <li>
-                        <span class="en">PCA for dimensionality reduction</span>
-                        <span class="tr" style="display:none;">PCA ile boyut indirgeme</span>
-                    </li>
-                    <li>
-                        <span class="en">Isolation Forest anomaly detection</span>
-                        <span class="tr" style="display:none;">Isolation Forest ile anomali tespiti</span>
-                    </li>
-                    <li>
-                        <span class="en">Model evaluation (Recall, F1, Precision)</span>
-                        <span class="tr" style="display:none;">Model değerlendirme (Recall, F1, Precision)</span>
-                    </li>
-                </ul>
+        <!-- METHODS (NEW) -->
+        <div class="dash-card">
+            <p>
+                <span class="en">Methods</span>
+                <span class="tr" style="display:none;">Yöntemler</span>
+            </p>
+            <div class="tags">
+                <span>StandardScaler</span>
+                <span>PCA</span>
+                <span>DBSCAN</span>
+                <span>Isolation Forest</span>
+                <span>Data Cleaning</span>
+                <span>Feature Scaling</span>
             </div>
+        </div>
 
-            <!-- KEY INSIGHT -->
-            <div class="dash-card">
-                <p>
-                    <span class="en">Key Insight</span>
-                    <span class="tr" style="display:none;">Önemli Sonuç</span>
-                </p>
-                <ul>
-                    <li>
-                        <span class="en">Recall is more important than accuracy</span>
-                        <span class="tr" style="display:none;">Recall doğruluktan daha önemlidir</span>
-                    </li>
-                    <li>
-                        <span class="en">Isolation Forest outperforms DBSCAN</span>
-                        <span class="tr" style="display:none;">Isolation Forest DBSCAN’dan daha başarılıdır</span>
-                    </li>
-                </ul>
+        <!-- KEY INSIGHT -->
+        <div class="dash-card">
+            <p>
+                <span class="en">Key Insight</span>
+                <span class="tr" style="display:none;">Önemli Sonuç</span>
+            </p>
+            <p>
+                <span class="en">Isolation Forest performs better in recall-based detection</span>
+                <span class="tr" style="display:none;">Isolation Forest recall bazlı tespitte daha başarılıdır</span>
+            </p>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="actions">
+            <div class="btn" onclick="history.back()">
+                <span class="en">Back</span>
+                <span class="tr" style="display:none;">Geri</span>
             </div>
-
-            <div class="actions">
-                <div class="btn" onclick="history.back()">
-                    <span class="en">Back</span>
-                    <span class="tr" style="display:none;">Geri</span>
-                </div>
-                <div class="btn">GitHub</div>
-            </div>
-
+            <div class="btn">GitHub</div>
         </div>
 
     </div>
