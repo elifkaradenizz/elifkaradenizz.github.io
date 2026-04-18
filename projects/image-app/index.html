@@ -543,81 +543,142 @@
 
             </div>
 
-            <!-- METRICS -->
-            <div class="charts-container">
+    <!-- METRICS -->
+<div class="charts-container">
 
-                <div class="dash-card metric-card">
-                    <p>
-                        <span class="en">Image Operations</span>
-                        <span class="tr" style="display:none;">Görüntü Operasyonları</span>
-                    </p>
-                    <ul>
-                        <li>Filtering techniques (blur, sharpen, edge detection)</li>
-                        <li>Morphological transformations</li>
-                        <li>Contour extraction</li>
-                    </ul>
-                </div>
+    <div class="dash-card metric-card">
+        <p>
+            <span class="en">Image Operations</span>
+            <span class="tr" style="display:none;">Görüntü Operasyonları</span>
+        </p>
+        <ul>
+            <li>
+                <span class="en">Filtering techniques (blur, sharpen, edge detection)</span>
+                <span class="tr" style="display:none;">Filtreleme teknikleri (bulanıklaştırma, keskinleştirme, kenar tespiti)</span>
+            </li>
 
-                <div class="dash-card metric-card">
-                    <p>
-                        <span class="en">Analysis Features</span>
-                        <span class="tr" style="display:none;">Analiz Özellikleri</span>
-                    </p>
-                    <ul>
-                        <li>Histogram distribution analysis</li>
-                        <li>Pixel intensity inspection</li>
-                        <li>Color space transformations</li>
-                    </ul>
-                </div>
+            <li>
+                <span class="en">Morphological transformations</span>
+                <span class="tr" style="display:none;">Morfolojik dönüşümler</span>
+            </li>
 
-            </div>
+            <li>
+                <span class="en">Contour extraction</span>
+                <span class="tr" style="display:none;">Kontur çıkarımı</span>
+            </li>
+        </ul>
+    </div>
 
+    <div class="dash-card metric-card">
+        <p>
+            <span class="en">Analysis Features</span>
+            <span class="tr" style="display:none;">Analiz Özellikleri</span>
+        </p>
+        <ul>
+            <li>
+                <span class="en">Histogram distribution analysis</span>
+                <span class="tr" style="display:none;">Histogram dağılım analizi</span>
+            </li>
+
+            <li>
+                <span class="en">Pixel intensity inspection</span>
+                <span class="tr" style="display:none;">Piksel yoğunluk analizi</span>
+            </li>
+
+            <li>
+                <span class="en">Color space transformations</span>
+                <span class="tr" style="display:none;">Renk uzayı dönüşümleri</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!-- RIGHT DASHBOARD -->
+<div class="dashboard">
+
+    <div class="dash-card">
+        <p>
+            <span class="en">Tech Stack</span>
+            <span class="tr" style="display:none;">Teknolojiler</span>
+        </p>
+        <div class="tags">
+            <span>Python</span>
+            <span>OpenCV</span>
+            <span>Streamlit</span>
+            <span>NumPy</span>
+            <span>PIL</span>
         </div>
+    </div>
 
-        <!-- RIGHT -->
-        <div class="dashboard">
+    <div class="dash-card">
+        <p>
+            <span class="en">Modules</span>
+            <span class="tr" style="display:none;">Modüller</span>
+        </p>
+        <ul>
+            <li>
+                <span class="en">filter.py (image filtering operations)</span>
+                <span class="tr" style="display:none;">filter.py (görüntü filtreleme işlemleri)</span>
+            </li>
 
-            <div class="dash-card">
-                <p>
-                    <span class="en">Tech Stack</span>
-                    <span class="tr" style="display:none;">Teknolojiler</span>
-                </p>
-                <div class="tags">
-                    <span>Python</span>
-                    <span>OpenCV</span>
-                    <span>Streamlit</span>
-                    <span>NumPy</span>
-                    <span>PIL</span>
-                </div>
-            </div>
+            <li>
+                <span class="en">histogram.py (histogram analysis)</span>
+                <span class="tr" style="display:none;">histogram.py (histogram analizi)</span>
+            </li>
 
-            <div class="dash-card">
-                <p>
-                    <span class="en">Modules</span>
-                    <span class="tr" style="display:none;">Modüller</span>
-                </p>
-                <ul>
-                    <li>filter.py</li>
-                    <li>histogram.py</li>
-                    <li>morfoprocess.py</li>
-                    <li>contour_operations.py</li>
-                    <li>pixel.py</li>
-                    <li>colorselect.py</li>
-                </ul>
-            </div>
+            <li>
+                <span class="en">morfoprocess.py (morphological operations)</span>
+                <span class="tr" style="display:none;">morfoprocess.py (morfolojik işlemler)</span>
+            </li>
 
-            <div class="dash-card">
-                <p>
-                    <span class="en">Key Features</span>
-                    <span class="tr" style="display:none;">Özellikler</span>
-                </p>
-                <ul>
-                    <li>Interactive image processing UI</li>
-                    <li>Real-time visual output</li>
-                    <li>Multiple CV operations in one dashboard</li>
-                    <li>Educational image analysis tools</li>
-                </ul>
-            </div>
+            <li>
+                <span class="en">contour_operations.py (edge & contour detection)</span>
+                <span class="tr" style="display:none;">contour_operations.py (kenar ve kontur tespiti)</span>
+            </li>
+
+            <li>
+                <span class="en">pixel.py (pixel-level analysis)</span>
+                <span class="tr" style="display:none;">pixel.py (piksel seviyesinde analiz)</span>
+            </li>
+
+            <li>
+                <span class="en">colorselect.py (color selection tools)</span>
+                <span class="tr" style="display:none;">colorselect.py (renk seçme araçları)</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="dash-card">
+        <p>
+            <span class="en">Key Features</span>
+            <span class="tr" style="display:none;">Özellikler</span>
+        </p>
+        <ul>
+            <li>
+                <span class="en">Interactive image processing interface</span>
+                <span class="tr" style="display:none;">İnteraktif görüntü işleme arayüzü</span>
+            </li>
+
+            <li>
+                <span class="en">Real-time visual output generation</span>
+                <span class="tr" style="display:none;">Gerçek zamanlı görsel çıktı üretimi</span>
+            </li>
+
+            <li>
+                <span class="en">Multiple computer vision operations</span>
+                <span class="tr" style="display:none;">Birden fazla bilgisayarlı görü işlemi</span>
+            </li>
+
+            <li>
+                <span class="en">Educational image analysis tools</span>
+                <span class="tr" style="display:none;">Eğitsel görüntü analiz araçları</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
 
             <div class="actions">
                 <div class="btn" onclick="history.back()">
