@@ -802,48 +802,7 @@ preds = model.<span class="func">predict</span>(X_test)
             window.location.href = '/';
         });
 
-        /* CHARTS */
-        new Chart(document.getElementById("scoreChart"), {
-            type: "doughnut",
-            data: {
-                labels: [
-                    "Transport", "Diet", "Energy", "Shopping", "Other"
-                ],
-                datasets: [{
-                    data: [28, 22, 20, 18, 12],
-                    backgroundColor: ["#3fb950", "#58a6ff", "#f78166", "#d2a8ff", "#ffa657"]
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: { display: true }
-                }
-            }
-        });
-
-        new Chart(document.getElementById("barChart"), {
-            type: "bar",
-            data: {
-                labels: ["Linear", "Ridge", "Lasso", "ElasticNet", "DT", "RF", "GB"],
-                datasets: [{
-                    label: "R² Score",
-                    data: [0.57, 0.57, 0.54, 0.55, 0.62, 0.68, 0.71],
-                    backgroundColor: "#3fb950"
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: false,
-                        min: 0.50,
-                        max: 0.80
-                    }
-                },
-                plugins: {
-                    legend: { display: false }
-                }
-            }
-        });
+     
     </script>
 
 </body>
