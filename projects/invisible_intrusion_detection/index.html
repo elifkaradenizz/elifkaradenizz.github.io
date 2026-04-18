@@ -9,10 +9,7 @@
     <link rel="stylesheet" href="/style.css">
 <style>
 
-/* ===================== */
-/* BASE */
-/* ===================== */
-
+/* CONTAINER */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -26,10 +23,7 @@ body {
     padding: 20px;
 }
 
-/* ===================== */
 /* TITLE */
-/* ===================== */
-
 .title {
     font-size: 34px;
     color: #3fb950;
@@ -45,10 +39,7 @@ body.light-mode .subtitle {
     color: #555;
 }
 
-/* ===================== */
 /* INFO GRID */
-/* ===================== */
-
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -71,6 +62,11 @@ body.light-mode .info-card {
 
 .info-card span {
     font-size: 13px;
+    color: #ffffff;
+}
+
+body.light-mode .info-card span {
+    color: #000;
 }
 
 .info-card p {
@@ -78,10 +74,7 @@ body.light-mode .info-card {
     font-weight: bold;
 }
 
-/* ===================== */
 /* DESCRIPTION */
-/* ===================== */
-
 .description {
     background: #161b22;
     padding: 20px;
@@ -95,10 +88,7 @@ body.light-mode .description {
     color: #000;
 }
 
-/* ===================== */
 /* ARCHITECTURE */
-/* ===================== */
-
 .architecture {
     background: #161b22;
     padding: 20px;
@@ -143,20 +133,15 @@ body.light-mode .step {
     color: #000;
 }
 
-/* ===================== */
-/* MAIN GRID */
-/* ===================== */
-
+/* MAIN CONTENT */
 .content {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
+    align-items: start;
 }
 
-/* ===================== */
-/* CODE BLOCK */
-/* ===================== */
-
+/* CODE */
 .code {
     background: #161b22;
     border-radius: 15px;
@@ -195,58 +180,85 @@ body.light-mode .code-header {
     font-size: 14px;
     line-height: 1.5;
     overflow-x: auto;
-    max-height: 220px;
 }
 
 .keyword { color: #ff7b72; }
 .string  { color: #a5d6ff; }
 .func    { color: #d2a8ff; }
 
-/* ===================== */
-/* METRICS (FIXED) */
-/* ===================== */
+/* ========================= */
+/* 🔥 METRIC FIX (ANA KISIM) */
+/* ========================= */
 
 .charts-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
     margin-bottom: 20px;
+    align-items: stretch; /* hepsi eşit */
 }
 
-/* 🔥 EŞİT KART BOYU */
+/* kartlar */
 .charts-container .dash-card {
+    flex: 1;
+    min-width: 220px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 110px;
+    justify-content: center;
 }
 
-/* 🔥 TR/EN FIX */
-.metric-card p {
-    min-height: 36px;
+/* metric özel */
+.metric-card {
+    min-width: 260px;
+    min-height: 110px;
+
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    font-size: 13px;
-    font-weight: bold;
+
+    text-align: center;
 }
 
-/* VALUE */
-.value {
-    text-align: center;
-    font-size: 22px;
+/* başlık */
+.metric-card p {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+/* değer */
+.metric-card .value {
+    font-size: 20px;
     font-weight: bold;
     color: #3fb950;
 }
 
-/* WINNER CARD */
-.winner-card {
-    border: 1px solid #3fb950;
-    box-shadow: 0 0 10px rgba(63,185,80,0.25);
+/* UL normalize */
+.metric-card ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
-/* ===================== */
+.metric-card ul li {
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+/* light mode fix */
+body.light-mode .charts-container .dash-card {
+    background: #fff;
+    border-color: #ccc;
+    color: #000;
+}
+
+body.light-mode .metric-card p {
+    color: #000;
+}
+
+/* ========================= */
 /* DASHBOARD */
-/* ===================== */
+/* ========================= */
 
 .dashboard {
     display: flex;
@@ -259,18 +271,29 @@ body.light-mode .code-header {
     padding: 12px;
     border-radius: 12px;
     border: 1px solid #30363d;
-    transition: 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+body.light-mode .dashboard .dash-card {
+    background: #fff;
+    border-color: #ccc;
+    color: #000;
 }
 
 .dash-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(63,185,80,0.3);
+    box-shadow: 0 5px 15px rgba(63, 185, 80, 0.3);
 }
 
 .dash-card p {
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 6px;
+    color: #ffffff;
+}
+
+body.light-mode .dashboard .dash-card p {
+    color: #000;
 }
 
 /* TAGS */
@@ -284,10 +307,13 @@ body.light-mode .code-header {
     font-size: 11px;
 }
 
-/* ===================== */
-/* BUTTONS */
-/* ===================== */
+body.light-mode .tags span {
+    background: #fff;
+    border-color: #ccc;
+    color: #000;
+}
 
+/* BUTTON */
 .actions {
     display: flex;
     flex-direction: column;
@@ -308,35 +334,14 @@ body.light-mode .code-header {
     color: #0d1117;
 }
 
-/* ===================== */
-/* LIGHT MODE */
-/* ===================== */
-
-body.light-mode {
-    background: #f5f5f5;
-    color: #000;
-}
-
-body.light-mode .dash-card,
-body.light-mode .charts-container .dash-card {
-    background: #fff;
-    border-color: #ccc;
-    color: #000;
-}
-
-body.light-mode .tags span {
-    background: #fff;
-    border-color: #ccc;
-    color: #000;
-}
-
-/* ===================== */
 /* RESPONSIVE */
-/* ===================== */
-
 @media (max-width: 900px) {
     .content {
         grid-template-columns: 1fr;
+    }
+
+    .charts-container {
+        flex-direction: column;
     }
 }
 
