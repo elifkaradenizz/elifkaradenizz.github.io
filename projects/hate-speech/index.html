@@ -315,16 +315,61 @@ from sklearn.linear_model import LogisticRegression
 </div>
 
 <script>
+/* LANGUAGE */
 function setLang(lang){
   document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
   document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
-
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelectorAll('.lang-btn')[lang==='en'?0:1].classList.add('active');
-
   localStorage.setItem('lang', lang);
 }
-setLang(localStorage.getItem('lang') || 'en');
+const savedLang = localStorage.getItem('lang') || 'en';
+setLang(savedLang);
+
+/* THEME */
+const themeBtn = document.getElementById('theme-toggle');
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  const icon = themeBtn.querySelector('i');
+  icon.classList.toggle('fa-sun');
+  icon.classList.toggle('fa-moon');
+});
+
+/* SEARCH */
+document.getElementById('search').addEventListener('input', e => {
+  const val = e.target.value.toLowerCase();
+  document.querySelectorAll('.project-item').forEach(card=>{
+    card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex':'none';
+  });
+});
+
+/* LOGO CLICK */
+document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/';});
+
+/* CHARTS */
+new Chart(document.getElementById("scoreChart"), {
+  type: "doughnut",
+  data: {
+    labels: ["Cluster 1", "Cluster 2", "Cluster 3", "Cluster 4", "Cluster 5"],
+    datasets: [{
+      data: [120, 95, 140, 80, 106],
+      backgroundColor: ["#3fb950", "#58a6ff", "#f78166", "#d2a8ff", "#ffa657"]
+    }]
+  },
+  options: { plugins: { legend: { display: true } } }
+});
+
+new Chart(document.getElementById("barChart"), {
+  type: "bar",
+  data: {
+    labels: ["Silhouette", "Calinski-Harabasz", "Davies-Bouldin"],
+    datasets: [{
+      data: [0.6657, 2188, 0.44],
+      backgroundColor: "#3fb950"
+    }]
+  },
+  options: { scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false } } }
+});
 </script>
 
 </body>
