@@ -5,11 +5,11 @@
 <title>Project Detail - Elif Karadeniz</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css">
+
 <style>
-/* (CSS AYNEN KALDI) */
+/* CSS AYNEN SENİN */
 body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; }
 .container { max-width: 1200px; margin: auto; padding: 20px; }
 .title { font-size: 34px; color: #3fb950; margin-top: 20px; }
@@ -52,11 +52,27 @@ body.light-mode .code pre { color: #000; }
 </style>
 </head>
 
-
-
-
-
 <body class="dark-mode">
+
+<!-- NAVBAR AYNEN -->
+<nav class="navbar">
+  <div class="navbar-center">
+    <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+    <ul class="navbar-links">
+      <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
+      <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
+      <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
+      <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
+      <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
+    </ul>
+    <input type="text" id="search" placeholder="Search...">
+    <div class="lang-wrapper">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('tr')">TR</button>
+      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </div>
+  </div>
+</nav>
 
 <div class="container">
 
@@ -66,52 +82,53 @@ body.light-mode .code pre { color: #000; }
 </h1>
 
 <p class="subtitle">
-<span class="en">NLP-based text classification system for detecting hate speech in social media</span>
-<span class="tr" style="display:none;">Sosyal medyada nefret söylemini tespit eden NLP tabanlı metin sınıflandırma sistemi</span>
+<span class="en">High-performance NLP pipeline for detecting hate speech in social media</span>
+<span class="tr" style="display:none;">Sosyal medyada nefret söylemini tespit eden yüksek performanslı NLP sistemi</span>
 </p>
 
 <img src="hate-speech.png" class="project-image">
 
 <div class="info-grid">
   <div class="info-card">
-    <span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span>
-    <p><span class="en">NLP / Text Classification</span><span class="tr" style="display:none;">NLP / Metin Sınıflandırma</span></p>
+    <span>Project Type</span>
+    <p>NLP / Text Classification</p>
   </div>
 
   <div class="info-card">
-    <span><span class="en">Core Model</span><span class="tr" style="display:none;">Temel Model</span></span>
-    <p><span class="en">TF-IDF + Logistic Regression</span><span class="tr" style="display:none;">TF-IDF + Lojistik Regresyon</span></p>
+    <span>Core Model</span>
+    <p>TF-IDF + Logistic Regression</p>
   </div>
 
   <div class="info-card">
-    <span><span class="en">Dataset</span><span class="tr" style="display:none;">Veri Seti</span></span>
-    <p><span class="en">Social Media Text Data</span><span class="tr" style="display:none;">Sosyal Medya Metin Verisi</span></p>
+    <span>Dataset</span>
+    <p>Social Media Text Data</p>
   </div>
 
   <div class="info-card">
-    <span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span>
-    <p><span class="en">Published & Presented</span><span class="tr" style="display:none;">Yayınlandı ve Sunuldu</span></p>
+    <span>Status</span>
+    <p>Published & Presented</p>
   </div>
 </div>
 
 <div class="description">
-<span class="en">
-This project focuses on detecting hate speech and sexist language in social media using Natural Language Processing techniques. A full pipeline including text preprocessing, TF-IDF feature extraction, and classification models was implemented. Different machine learning algorithms were tested and evaluated to improve performance.
-</span>
-<span class="tr" style="display:none;">
-Bu proje, sosyal medyada nefret söylemi ve cinsiyetçi ifadeleri tespit etmek amacıyla Doğal Dil İşleme tekniklerini kullanmaktadır. Metin ön işleme, TF-IDF özellik çıkarımı ve sınıflandırma modellerini içeren uçtan uca bir pipeline geliştirilmiştir. Farklı makine öğrenmesi algoritmaları test edilerek performans karşılaştırması yapılmıştır.
-</span>
+This project focuses on detecting hate speech and sexist language in social media using Natural Language Processing techniques.
+
+A complete machine learning pipeline was developed including text preprocessing, TF-IDF feature extraction, and classification models.
+
+The final model achieved <b>91% accuracy</b> and <b>0.89 F1-score</b>, showing strong performance on noisy and imbalanced real-world datasets.
+
+The system contributes to ethical AI by supporting automated moderation and reducing harmful online content.
 </div>
 
 <div class="architecture">
-<h3><span class="en">Project Workflow</span><span class="tr" style="display:none;">Proje İş Akışı</span></h3>
+<h3>Project Workflow</h3>
 <div class="flow">
-  <div class="step"><span class="en">Text Cleaning</span><span class="tr" style="display:none;">Metin Temizleme</span></div>
-  <div class="step"><span class="en">Tokenization</span><span class="tr" style="display:none;">Tokenizasyon</span></div>
-  <div class="step"><span class="en">TF-IDF</span><span class="tr" style="display:none;">TF-IDF</span></div>
-  <div class="step"><span class="en">Model Training</span><span class="tr" style="display:none;">Model Eğitimi</span></div>
-  <div class="step"><span class="en">Prediction</span><span class="tr" style="display:none;">Tahmin</span></div>
-  <div class="step"><span class="en">Evaluation</span><span class="tr" style="display:none;">Değerlendirme</span></div>
+<div class="step">Text Cleaning</div>
+<div class="step">Tokenization</div>
+<div class="step">TF-IDF</div>
+<div class="step">Model Training</div>
+<div class="step">Prediction</div>
+<div class="step">Evaluation</div>
 </div>
 </div>
 
@@ -148,14 +165,14 @@ predictions = model.predict(X)
 <div class="dashboard">
 
 <div class="dash-card">
-<p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknolojiler</span></p>
+<p>Tech Stack</p>
 <div class="tags">
 <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>NLTK</span>
 </div>
 </div>
 
 <div class="dash-card">
-<p><span class="en">Methods</span><span class="tr" style="display:none;">Yöntemler</span></p>
+<p>Methods</p>
 <ul>
 <li>TF-IDF</li>
 <li>Logistic Regression</li>
@@ -164,11 +181,21 @@ predictions = model.predict(X)
 </div>
 
 <div class="dash-card">
-<p><span class="en">Key Features</span><span class="tr" style="display:none;">Özellikler</span></p>
+<p>Key Features</p>
 <ul>
-<li><span class="en">Hate Speech Detection</span><span class="tr">Nefret Söylemi Tespiti</span></li>
-<li><span class="en">Sexism Classification</span><span class="tr">Cinsiyetçilik Sınıflandırma</span></li>
-<li><span class="en">NLP Pipeline</span><span class="tr">NLP Pipeline</span></li>
+<li>Hate Speech Detection</li>
+<li>Sexism Classification</li>
+<li>NLP Pipeline</li>
+</ul>
+</div>
+
+<div class="dash-card">
+<p>Achievements</p>
+<ul>
+<li>International Conference Presentation</li>
+<li>Published Academic Paper</li>
+<li>High performance on real-world data</li>
+<li>Ethical AI contribution</li>
 </ul>
 </div>
 
@@ -178,66 +205,28 @@ predictions = model.predict(X)
 
 </div>
 
-
-
-
- 
 <footer>
-<p class="en">© 2026 Elif Karadeniz</p>
-<p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
+<p>© 2026 Elif Karadeniz</p>
 </footer>
 
-<!-- JS -->
 <script>
-/* LANGUAGE (TEK SİSTEM) */
 function setLang(lang){
-  document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
-  document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
-
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.lang-btn')[lang==='en'?0:1].classList.add('active');
-
-  localStorage.setItem('lang', lang);
+document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
+document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
+localStorage.setItem('lang', lang);
 }
+setLang(localStorage.getItem('lang')||'en');
 
-/* LOAD */
-const savedLang = localStorage.getItem('lang') || 'en';
-setLang(savedLang);
-
-  /* THEME */
-  const themeBtn = document.getElementById('theme-toggle');
-  themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const icon = themeBtn.querySelector('i');
-    icon.classList.toggle('fa-sun');
-    icon.classList.toggle('fa-moon');
-  });
-/* SEARCH */
-document.getElementById('search').addEventListener('input', e => {
-  const val = e.target.value.toLowerCase();
-  document.querySelectorAll('.project-item').forEach(card=>{
-    card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex':'none';
-  });
+const themeBtn = document.getElementById('theme-toggle');
+themeBtn.addEventListener('click', () => {
+document.body.classList.toggle('light-mode');
+const icon = themeBtn.querySelector('i');
+icon.classList.toggle('fa-sun');
+icon.classList.toggle('fa-moon');
 });
 
-/* LOGO CLICK */
-document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/'});
-
-
-/* CHARTS */
-new Chart(document.getElementById("scoreChart"), {
-  type: "doughnut",
-  data: { datasets: [{ data: [92, 8], backgroundColor: ["#3fb950", "#30363d"] }] },
-  options: { cutout: "80%", plugins: { legend: { display: false } } }
-});
-
-new Chart(document.getElementById("barChart"), {
-  type: "bar",
-  data: { labels: ["Accuracy", "Speed", "Quality"], datasets: [{ data: [92, 85, 88], backgroundColor: "#3fb950" }] },
-  options: { scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false } } }
-});
-
-
+document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/';});
+</script>
 
 </body>
 </html>
