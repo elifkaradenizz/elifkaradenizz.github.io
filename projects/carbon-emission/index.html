@@ -95,11 +95,22 @@
             color: #000;
         }
 
-        body.light-mode .description p {
-            background: #ffffff;
-            border-color: #3fb950;
-            color: #000;
-        }
+    /* DARK MODE (default) */
+.insight-card {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+}
+
+/* LIGHT MODE */
+body.light-mode .insight-card {
+    background: #ffffff;
+    border: 1px solid #3fb950;
+    color: #000;
+}
 
         /* ACADEMIC BADGE */
         .academic-badge {
@@ -512,8 +523,9 @@
         Modeller R², RMSE, MAE ve MSE metrikleri ile değerlendirilmiş; yaşam tarzı faktörlerinin karbon emisyonu üzerindeki 
         etkileri ve özellikle doğrusal olmayan ilişkilerin model performansına katkısı analiz edilmiştir.
     </span>
+    
 
-    <div style="margin-top:15px; padding:12px; border-radius:10px; background:#0d1117; border:1px solid #30363d;">
+   <div class="insight-card">
     
     <strong style="color:#3fb950;">
         <span class="en">Key Insight:</span>
