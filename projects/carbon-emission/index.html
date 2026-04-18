@@ -480,31 +480,52 @@
 
         <!-- DESCRIPTION -->
 <div class="description" style="border-left: 4px solid #3fb950;">
-    <span class="en">
-        Instead of relying on static visual outputs, this project emphasizes analytical model evaluation and comparative learning.
-        Multiple regression algorithms were trained and systematically compared under different hyperparameter configurations.
+      <span class="en">
+        This project focuses on estimating individual carbon emissions based on daily lifestyle habits using Machine Learning techniques. 
+        The analysis was conducted on a real-world dataset consisting of 10,000 samples and 20 different features, including 
+        transportation preferences, dietary habits, energy consumption, and consumption behaviors.
 
-        The analysis revealed that ensemble-based methods such as Random Forest and Gradient Boosting achieved more stable
-        and higher predictive performance compared to linear models. Regularization techniques (Ridge, Lasso, ElasticNet)
-        were also evaluated to understand bias-variance trade-offs, showing limited but consistent impact on performance.
+        An end-to-end regression pipeline was designed covering data preprocessing, categorical encoding, and model training. 
+        Multiple regression algorithms such as Linear Regression, Ridge, Lasso, ElasticNet, Decision Tree, Random Forest, 
+        and Gradient Boosting were implemented and systematically compared.
 
-        This approach highlights the importance of model selection and evaluation over visual representation,
-        focusing on extracting actionable insights from data rather than surface-level outputs.
+        The models were evaluated using R², RMSE, MAE, and MSE metrics to ensure robust performance analysis. 
+        Special focus was given to understanding how different lifestyle factors contribute to carbon emissions 
+        and how non-linear relationships impact prediction performance.
     </span>
 
     <span class="tr" style="display:none;">
-        Bu projede statik görseller yerine analitik model değerlendirmesi ve karşılaştırmalı öğrenme yaklaşımı
-        ön plana çıkarılmıştır. Farklı regresyon algoritmaları eğitilmiş ve çeşitli hiperparametre ayarları altında
-        sistematik olarak karşılaştırılmıştır.
+        Bu proje, bireylerin günlük yaşam alışkanlıklarına bağlı karbon emisyonlarını Makine Öğrenmesi teknikleri ile 
+        tahmin etmeyi amaçlamaktadır. Çalışma, ulaşım tercihleri, beslenme alışkanlıkları, enerji tüketimi ve 
+        harcama davranışları gibi 20 farklı özelliği içeren 10.000 örnekten oluşan gerçek dünya veri seti üzerinde gerçekleştirilmiştir.
 
-        Yapılan analizler sonucunda Random Forest ve Gradient Boosting gibi ensemble yöntemlerin,
-        lineer modellere kıyasla daha stabil ve yüksek performans sağladığı gözlemlenmiştir.
-        Ridge, Lasso ve ElasticNet gibi regularization teknikleri de bias-variance dengesi açısından
-        değerlendirilmiş ve performans üzerindeki etkileri analiz edilmiştir.
+        Veri ön işleme, kategorik değişkenlerin encode edilmesi ve model eğitimi adımlarını kapsayan uçtan uca bir 
+        regresyon pipeline’ı kurulmuştur. Linear Regression, Ridge, Lasso, ElasticNet, Decision Tree, Random Forest 
+        ve Gradient Boosting gibi farklı algoritmalar uygulanmış ve sistematik olarak karşılaştırılmıştır.
 
-        Bu yaklaşım, görsel çıktılardan ziyade model seçimi ve değerlendirme sürecinin önemini vurgulayarak,
-        veriden anlamlı içgörüler elde etmeye odaklanmaktadır.
+        Modeller R², RMSE, MAE ve MSE metrikleri ile değerlendirilmiş; yaşam tarzı faktörlerinin karbon emisyonu üzerindeki 
+        etkileri ve özellikle doğrusal olmayan ilişkilerin model performansına katkısı analiz edilmiştir.
     </span>
+
+    <div style="margin-top:15px; padding:12px; border-radius:10px; background:#0d1117; border:1px solid #30363d;">
+    
+    <strong style="color:#3fb950;">
+        <span class="en">Key Insight:</span>
+        <span class="tr" style="display:none;">Temel Çıkarım:</span>
+    </strong>
+
+    <p style="margin-top:8px;">
+        <span class="en">
+            Ensemble models demonstrated up to ~25% performance improvement over baseline linear regression,
+            indicating non-linear relationships between lifestyle factors and carbon emissions.
+        </span>
+        <span class="tr" style="display:none;">
+            Ensemble modeller, temel doğrusal regresyona kıyasla yaklaşık %25’e kadar performans artışı göstermiştir. 
+            Bu durum, yaşam tarzı faktörleri ile karbon emisyonları arasında doğrusal olmayan ilişkiler bulunduğunu göstermektedir.
+        </span>
+    </p>
+
+</div>
 </div>
 
         <!-- ACADEMIC BADGE -->
