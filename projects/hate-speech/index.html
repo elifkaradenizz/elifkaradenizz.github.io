@@ -729,45 +729,6 @@ preds      = model.<span class="func">predict</span>(X_test)
             window.location.href = '/';
         });
 
-        /* CHARTS */
-        new Chart(document.getElementById("scoreChart"), {
-            type: "doughnut",
-            data: {
-                labels: ["Hate Speech", "Offensive", "Neutral"],
-                datasets: [{
-                    data: [210, 185, 380],
-                    backgroundColor: ["#f78166", "#ffa657", "#3fb950"]
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: { display: true }
-                }
-            }
-        });
-
-        new Chart(document.getElementById("barChart"), {
-            type: "bar",
-            data: {
-                labels: ["Accuracy", "Precision", "Recall", "F1 Score"],
-                datasets: [{
-                    data: [0.9347, 0.9348, 0.9347, 0.9328],
-                    backgroundColor: "#3fb950"
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: false,
-                        min: 0.90,
-                        max: 1.00
-                    }
-                },
-                plugins: {
-                    legend: { display: false }
-                }
-            }
-        });
     </script>
 
 </body>
