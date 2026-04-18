@@ -229,6 +229,7 @@
             color: #000;
         }
 
+    
         /* DASHBOARD RIGHT COLUMN */
         .dashboard {
             display: flex;
@@ -335,204 +336,375 @@
                 flex-direction: column;
             }
         }
+
+        .metric-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 14px;
+    padding: 16px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* hover efekti (dash-card hissi) */
+.metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(63, 185, 80, 0.25);
+    border-color: #3fb950;
+}
+
+/* başlık */
+.metric-card p {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* DARK MODE LIST */
+.metric-card ul {
+    margin: 0;
+    padding-left: 16px;
+}
+
+.metric-card li {
+    font-size: 12.5px;
+    color: #c9d1d9;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+/* LIGHT MODE – SENİN İSTEDİĞİN YEŞİL ARKA PLAN */
+body.light-mode .metric-card {
+    background: #f0fff4;
+    border-color: #3fb950;
+    color: #000;
+}
+
+/* LIGHT MODE TEXT */
+body.light-mode .metric-card p {
+    color: #000;
+}
+
+body.light-mode .metric-card li {
+    color: #111;
+}
+
+/* küçük vurgu (strong effect) */
+.metric-card li span.en {
+    display: inline-block;
+}
+
+/* hover light mode */
+body.light-mode .metric-card:hover {
+    box-shadow: 0 8px 18px rgba(63, 185, 80, 0.25);
+    transform: translateY(-3px);
+}
+
+/* yeşil vurgu efekti (right card hissi gibi) */
+.metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #3fb950;
+}
     </style>
 </head>
 
 <body class="dark-mode">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="navbar-center">
-        <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
-
-        <ul class="navbar-links">
-            <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
-            <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
-            <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
-            <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-            <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
-        </ul>
-
-        <input type="text" id="search" placeholder="Search...">
-
-        <div class="lang-wrapper">
-            <button class="lang-btn active" onclick="setLang('en')">EN</button>
-            <button class="lang-btn" onclick="setLang('tr')">TR</button>
-            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+            <ul class="navbar-links">
+                <li>
+                    <a href="/">
+                        <span class="en">Home</span>
+                        <span class="tr" style="display:none;">Ana Sayfa</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <span class="en">About</span>
+                        <span class="tr" style="display:none;">Hakkımda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/projects/">
+                        <span class="en">Projects</span>
+                        <span class="tr" style="display:none;">Projeler</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/articles/">
+                        <span class="en">Articles</span>
+                        <span class="tr" style="display:none;">Yazılar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/conference/">
+                        <span class="en">Conference</span>
+                        <span class="tr" style="display:none;">Konferans</span>
+                    </a>
+                </li>
+            </ul>
+            <input type="text" id="search" placeholder="Search...">
+            <div class="lang-wrapper">
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('tr')">TR</button>
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
 <!-- MAIN CONTENT -->
 <div class="container">
 
-    <!-- TITLE -->
     <h1 class="title">
-        <span class="en">LLM File Analysis Chatbot</span>
-        <span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span>
+        <span class="en">NLP & LLM Dashboard</span>
+        <span class="tr" style="display:none;">NLP & LLM Dashboard</span>
     </h1>
 
     <p class="subtitle">
         <span class="en">
-            AI-powered chatbot that analyzes CSV, Excel and PDF files using Large Language Models (LLM)
+            Analytics dashboard with sentiment analysis and LLM-powered insights
         </span>
         <span class="tr" style="display:none;">
-            Büyük Dil Modelleri (LLM) kullanarak CSV, Excel ve PDF dosyalarını analiz eden yapay zeka chatbot sistemi
+            Duygu analizi ve LLM destekli içgörüler sunan analitik dashboard
         </span>
     </p>
 
-    <img src="llm-chatbot.png" class="project-image">
+    <img src="nlp.png" class="project-image">
 
     <!-- INFO GRID -->
     <div class="info-grid">
-
         <div class="info-card">
-            <span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span>
-            <p><span class="en">Machine Learning / NLP</span><span class="tr" style="display:none;">Makine Öğrenmesi / NLP</span></p>
+            <span>
+                <span class="en">Project Type</span>
+                <span class="tr" style="display:none;">Proje Türü</span>
+            </span>
+            <p>
+                <span class="en">NLP / Machine Learning / LLM</span>
+                <span class="tr" style="display:none;">NLP / Makine Öğrenmesi / LLM</span>
+            </p>
         </div>
 
         <div class="info-card">
-            <span><span class="en">Core Technology</span><span class="tr" style="display:none;">Temel Teknoloji</span></span>
-            <p>OpenAI GPT (LLM)</p>
+            <span>
+                <span class="en">Core Technology</span>
+                <span class="tr" style="display:none;">Temel Teknoloji</span>
+            </span>
+            <p>
+                <span class="en">XGBoost + OpenAI GPT</span>
+                <span class="tr" style="display:none;">XGBoost + OpenAI GPT</span>
+            </p>
         </div>
 
         <div class="info-card">
-            <span><span class="en">File Types</span><span class="tr" style="display:none;">Veri Tipleri</span></span>
-            <p>CSV / Excel / PDF</p>
+            <span>
+                <span class="en">Model Type</span>
+                <span class="tr" style="display:none;">Model Türü</span>
+            </span>
+            <p>
+                <span class="en">TF-IDF + Classification + LLM Analysis</span>
+                <span class="tr" style="display:none;">TF-IDF + Sınıflandırma + LLM Analizi</span>
+            </p>
         </div>
 
         <div class="info-card">
-            <span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span>
-            <p><span class="en">Completed</span><span class="tr" style="display:none;">Tamamlandı</span></p>
+            <span>
+                <span class="en">Status</span>
+                <span class="tr" style="display:none;">Durum</span>
+            </span>
+            <p>
+                <span class="en">Completed</span>
+                <span class="tr" style="display:none;">Tamamlandı</span>
+            </p>
         </div>
-
     </div>
 
     <!-- DESCRIPTION -->
     <div class="description">
-
         <span class="en">
-            This project enables users to analyze structured and unstructured data files without any technical knowledge.
-            The system reads CSV, Excel and PDF files, processes the content, and generates contextual answers using LLMs.
-            Users can interact with their data through natural language queries or use the system as a general AI assistant.
+            This project combines traditional NLP machine learning techniques with Large Language Model (LLM) capabilities. 
+            It provides sentiment analysis using classical ML models and enriches outputs with LLM-based explanations, 
+            content rewriting, hashtag generation and user engagement insights.
         </span>
-
         <span class="tr" style="display:none;">
-            Bu proje, kullanıcıların teknik bilgiye ihtiyaç duymadan CSV, Excel ve PDF gibi veri dosyalarını analiz etmesini sağlar.
-            Sistem dosya içeriğini okuyarak LLM (Büyük Dil Modeli) ile bağlamsal cevaplar üretir.
-            Kullanıcılar doğal dil ile veri sorgulaması yapabilir veya sistemi genel amaçlı yapay zeka asistanı olarak kullanabilir.
+            Bu proje, klasik NLP makine öğrenmesi tekniklerini büyük dil modeli (LLM) yetenekleri ile birleştirir. 
+            Duygu analizi klasik ML modelleri ile yapılırken, LLM ile açıklama üretimi, metin yeniden yazımı, hashtag üretimi ve etkileşim odaklı içgörüler sağlanır.
         </span>
-
     </div>
 
-    <!-- WORKFLOW -->
+    <!-- ARCHITECTURE -->
     <div class="architecture">
-
         <h3>
-            <span class="en">Project Workflow</span>
-            <span class="tr" style="display:none;">Proje İş Akışı</span>
+            <span class="en">Dashboard Structure</span>
+            <span class="tr" style="display:none;">Dashboard Yapısı</span>
         </h3>
 
         <div class="flow">
-            <div class="step"><span class="en">File Upload</span><span class="tr" style="display:none;">Dosya Yükleme</span></div>
-            <div class="step"><span class="en">Data Parsing</span><span class="tr" style="display:none;">Veri Ayrıştırma</span></div>
-            <div class="step"><span class="en">PDF / Excel Reading</span><span class="tr" style="display:none;">PDF / Excel Okuma</span></div>
-            <div class="step"><span class="en">Text Cleaning</span><span class="tr" style="display:none;">Metin Temizleme</span></div>
-            <div class="step"><span class="en">LLM Processing</span><span class="tr" style="display:none;">LLM İşleme</span></div>
-            <div class="step"><span class="en">Response Generation</span><span class="tr" style="display:none;">Cevap Üretimi</span></div>
-        </div>
 
+            <div class="step">
+                <span class="en">Text Input / Dataset Upload</span>
+                <span class="tr" style="display:none;">Metin Girişi / Veri Yükleme</span>
+            </div>
+
+            <div class="step">
+                <span class="en">TF-IDF Vectorization</span>
+                <span class="tr" style="display:none;">TF-IDF Vektörizasyonu</span>
+            </div>
+
+            <div class="step">
+                <span class="en">XGBoost Sentiment Model</span>
+                <span class="tr" style="display:none;">XGBoost Duygu Modeli</span>
+            </div>
+
+            <div class="step">
+                <span class="en">Prediction & Probability Output</span>
+                <span class="tr" style="display:none;">Tahmin ve Olasılık Çıktısı</span>
+            </div>
+
+            <div class="step">
+                <span class="en">LLM Explanation Layer</span>
+                <span class="tr" style="display:none;">LLM Açıklama Katmanı</span>
+            </div>
+
+            <div class="step">
+                <span class="en">Content Enhancement (Rewrite / Hashtags)</span>
+                <span class="tr" style="display:none;">İçerik Geliştirme (Yeniden Yazım / Hashtag)</span>
+            </div>
+
+            <div class="step">
+                <span class="en">Insights & Visualization Dashboard</span>
+                <span class="tr" style="display:none;">İçgörü ve Görselleştirme Dashboard’u</span>
+            </div>
+
+        </div>
     </div>
 
-    <!-- MAIN -->
+    <!-- LEFT + RIGHT CONTENT -->
     <div class="content">
 
-        <!-- CODE -->
-        <div class="code">
+        <!-- LEFT -->
+        <div>
 
-            <div class="code-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
+            <div class="code">
+                <div class="code-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+
+<pre>
+<span class="keyword">import</span> streamlit <span class="keyword">as</span> st
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">import</span> joblib
+<span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI
+
+model = joblib.load(<span class="string">"best_model.pkl"</span>)
+vectorizer = joblib.load(<span class="string">"tfidf_vectorizer_text.pkl"</span>)
+</pre>
+
             </div>
 
-            <pre>
-from langchain.chat_models import ChatOpenAI
-import pandas as pd
-import PyPDF2
+            <!-- METRICS -->
+            <div class="charts-container">
 
-df = pd.read_csv("data.csv")
+                <div class="dash-card metric-card">
+                    <p>
+                        <span class="en">NLP Performance</span>
+                        <span class="tr" style="display:none;">NLP Performansı</span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span class="en">TF-IDF based text representation</span>
+                            <span class="tr" style="display:none;">TF-IDF tabanlı metin temsili</span>
+                        </li>
+                        <li>
+                            <span class="en">XGBoost sentiment classification</span>
+                            <span class="tr" style="display:none;">XGBoost duygu sınıflandırması</span>
+                        </li>
+                        <li>
+                            <span class="en">Probability-based predictions</span>
+                            <span class="tr" style="display:none;">Olasılık tabanlı tahminler</span>
+                        </li>
+                    </ul>
+                </div>
 
-llm = ChatOpenAI(model="gpt-4")
+                <div class="dash-card metric-card">
+                    <p>
+                        <span class="en">LLM Enhancement</span>
+                        <span class="tr" style="display:none;">LLM Geliştirme Katmanı</span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span class="en">Sentiment explanation with GPT</span>
+                            <span class="tr" style="display:none;">GPT ile duygu açıklama</span>
+                        </li>
+                        <li>
+                            <span class="en">Text rewriting (positive tone)</span>
+                            <span class="tr" style="display:none;">Metin yeniden yazımı</span>
+                        </li>
+                        <li>
+                            <span class="en">Hashtag & content generation</span>
+                            <span class="tr" style="display:none;">Hashtag ve içerik üretimi</span>
+                        </li>
+                    </ul>
+                </div>
 
-question = "What is the highest selling product?"
-
-response = llm.predict(
-    f"""
-    Data:
-    {df.head().to_string()}
-
-    Question:
-    {question}
-    """
-)
-
-print(response)
-            </pre>
+            </div>
 
         </div>
 
-        <!-- DASHBOARD -->
+        <!-- RIGHT -->
         <div class="dashboard">
 
-            <!-- CAPABILITY -->
             <div class="dash-card">
                 <p>
-                    <span class="en">Capability</span>
-                    <span class="tr" style="display:none;">Yetenek</span>
+                    <span class="en">Tech Stack</span>
+                    <span class="tr" style="display:none;">Teknolojiler</span>
                 </p>
-                <div class="value">
-                    Context-aware answer generation<br>
-                    Multi-format file understanding (CSV, PDF, Excel)<br>
-                    Natural language query interpretation<br>
-                    General AI assistant mode (no data required)
+                <div class="tags">
+                    <span>Python</span>
+                    <span>Streamlit</span>
+                    <span>Scikit-learn</span>
+                    <span>XGBoost</span>
+                    <span>OpenAI API</span>
+                    <span>Pandas</span>
                 </div>
             </div>
 
-            <!-- UX -->
             <div class="dash-card">
                 <p>
-                    <span class="en">User Experience (UX)</span>
-                    <span class="tr" style="display:none;">Kullanıcı Deneyimi</span>
+                    <span class="en">Key Features</span>
+                    <span class="tr" style="display:none;">Özellikler</span>
                 </p>
-                <div class="value">
-                    No technical knowledge required<br>
-                    Interactive chat-based analysis<br>
-                    Fast data exploration workflow<br>
-                    Streamlit-based simple interface
-                </div>
+                <ul>
+                    <li>Sentiment classification (positive / negative / neutral)</li>
+                    <li>LLM-based explanation layer</li>
+                    <li>Social media content optimization</li>
+                    <li>Emotion scoring (0–100)</li>
+                    <li>Dual system: ML + LLM integration</li>
+                </ul>
             </div>
 
-            <!-- EXTRA -->
-            <div class="dash-card">
-                <p>
-                    <span class="en">Additional Strength</span>
-                    <span class="tr" style="display:none;">Ek Güç</span>
-                </p>
-                <div class="value">
-                    Prompt engineering optimized responses<br>
-                    LLM-powered reasoning over structured data<br>
-                    Flexible file-agnostic architecture
+            <div class="actions">
+                <div class="btn" onclick="history.back()">
+                    <span class="en">Back</span>
+                    <span class="tr" style="display:none;">Geri</span>
                 </div>
+                <div class="btn">GitHub</div>
             </div>
 
         </div>
-
     </div>
 
 </div>
-
-
 
     <footer>
         <p class="en">© 2026 Elif Karadeniz</p>
@@ -574,41 +746,7 @@ print(response)
             window.location.href = '/';
         });
 
-        /* CHARTS */
-        new Chart(document.getElementById("scoreChart"), {
-            type: "doughnut",
-            data: {
-                labels: ["Cluster 1", "Cluster 2", "Cluster 3", "Cluster 4", "Cluster 5"],
-                datasets: [{
-                    data: [120, 95, 140, 80, 106],
-                    backgroundColor: ["#3fb950", "#58a6ff", "#f78166", "#d2a8ff", "#ffa657"]
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: { display: true }
-                }
-            }
-        });
-
-        new Chart(document.getElementById("barChart"), {
-            type: "bar",
-            data: {
-                labels: ["Silhouette", "Calinski-Harabasz", "Davies-Bouldin"],
-                datasets: [{
-                    data: [0.6657, 2188, 0.44],
-                    backgroundColor: "#3fb950"
-                }]
-            },
-            options: {
-                scales: {
-                    y: { beginAtZero: true }
-                },
-                plugins: {
-                    legend: { display: false }
-                }
-            }
-        });
+   
     </script>
 
 </body>
