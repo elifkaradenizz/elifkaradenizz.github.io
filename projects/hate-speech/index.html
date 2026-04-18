@@ -8,122 +8,70 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
  <link rel="stylesheet" href="/style.css">
-
- <style>
-
-
-/* CONTAINER */
-.container { max-width: 1200px; margin: auto; }
-
-/* TITLE */
+<style>
+/* (CSS AYNEN KALDI) */
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; }
+.container { max-width: 1200px; margin: auto; padding: 20px; }
 .title { font-size: 34px; color: #3fb950; margin-top: 20px; }
 .subtitle { color: #8b949e; margin-bottom: 25px; }
- body.light-mode .subtitle { color: #555; }
-
-/* IMAGE */
-.project-image { width: 100%; border-radius: 15px; margin: 25px 0; border: 1px solid #30363d; }
- body.light-mode .project-image { border-color: #ccc; }
-
-/* INFO GRID */
+body.light-mode .subtitle { color: #555; }
+.project-image { width: 100%; height: 500px; object-fit: cover; border-radius: 15px; margin: 25px 0; border: 1px solid #30363d; }
+body.light-mode .project-image { border-color: #ccc; }
 .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 25px; }
 .info-card { background: #161b22; padding: 15px; border-radius: 12px; border: 1px solid #30363d; }
- body.light-mode .info-card { background: #fff; color: #000; }
+body.light-mode .info-card {background: #fff; border-color: #ccc; color: #000;  }
 .info-card span { font-size: 13px; color: #ffffff; }
 body.light-mode .info-card span { color: #000; }
 .info-card p { margin-top: 5px; font-weight: bold; }
 body.light-mode .info-card p { color: #000; }
-
-/* DESCRIPTION */
 .description { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; line-height: 1.6; }
-
-/* ARCHITECTURE */
+body.light-mode .description { background: #fff; color: #000; }
 .architecture { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; }
- body.light-mode .architecture { background: #fff; border-color: #ccc; color: #000; }
+body.light-mode .architecture { background: #fff; border-color: #ccc; color: #000; }
 .architecture h3 { margin-bottom: 15px; color: #3fb950; }
- body.light-mode .architecture  h3{ color: #000; }
+body.light-mode .architecture h3{ color: #000; }
 .flow { display: flex; gap: 10px; flex-wrap: wrap; }
 .step { flex: 1; min-width: 140px; background: #0d1117; border: 1px solid #30363d; padding: 10px; border-radius: 10px; text-align: center; font-size: 13px; }
- body.light-mode .step { background: #fff; border-color: #ccc; color: #000; }
-
-/* MAIN CONTENT GRID */
+body.light-mode .step { background: #fff; border-color: #ccc; color: #000; }
 .content { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: start; }
-body.light-mode .description { background: #fff; color: #000; }
-
-/* CODE BLOCK */
 .code { background: #161b22; border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
- body.light-mode .code { background: #fff; color: #000; }
+body.light-mode .code { background: #fff; color: #000; }
 .code-header { background: #21262d; padding: 10px; display: flex; gap: 8px; }
- body.light-mode .code-header { background: #eee; }
+body.light-mode .code-header { background: #eee; }
 .dot { width: 12px; height: 12px; border-radius: 50%; }
 .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
 .code pre { padding: 20px; font-size: 14px; color: #c9d1d9; line-height: 1.5; overflow-x: auto; max-height: 220px; }
- body.light-mode .code pre { color: #000; }
-.keyword { color: #ff7b72; } .string { color: #a5d6ff; } .func { color: #d2a8ff; }
-
-/* CHARTS UNDER CODE */
+body.light-mode .code pre { color: #000; }
 .charts-container { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-.charts-container .dash-card { flex: 1; min-width: 220px; }
- body.light-mode .charts-container .dash-card { background: #fff; border-color: #ccc; color: #000; }
-
-/* DASHBOARD RIGHT COLUMN */
 .dashboard { display: flex; flex-direction: column; gap: 12px; }
-.dash-card { background: #161b22; padding: 12px; border-radius: 12px; border: 1px solid #30363d; }
-body.light-mode .dashboard .dash-card { background: #fff; border-color: #ccc; color: #000; }
-.dash-card p { font-size: 13px; color:#ffffff; font-weight: bold; }
- body.light-mode .dashboard .dash-card  p{  color: #000; }
-.value { font-size: 20px; color: #3fb950; margin-top: 5px; }
-canvas { margin-top: 10px; max-height: 140px; }
-.tags span { display: inline-block; background: #0d1117; border: 1px solid #30363d; padding: 5px 10px; border-radius: 8px; margin: 3px; font-size: 12px; }
-.dash-card ul { margin-top: 8px; padding-left: 15px; font-size: 13px; }
- body.light-mode .tags span { background: #fff; border-color: #ccc; color: #000; }
-
-/* BUTTONS */
+.dash-card { background: #161b22; padding: 10px 12px; border-radius: 12px; border: 1px solid #30363d; }
+.value { font-size: 22px; font-weight: bold; color: #3fb950; }
+.tags span { display: inline-block; background: #0d1117; border: 1px solid #30363d; padding: 4px 8px; border-radius: 6px; margin: 2px; font-size: 11px; }
 .actions { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-.btn { padding: 10px; border-radius: 8px; border: 1px solid #3fb950; text-align: center; cursor: pointer; transition: 0.3s; }
-.btn:hover { background: #3fb950; color: #0d1117; }
- body.light-mode .btn { color: #3fb950; border-color: #3fb950; }
- body.light-mode .btn:hover { color: #fff; }
-
-
+.btn { padding: 10px; border-radius: 8px; border: 1px solid #3fb950; text-align: center; cursor: pointer; }
 </style>
-
 </head>
+
+
+
+
 
 <body class="dark-mode">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="navbar-center">
-    <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
-    <ul class="navbar-links">
-      <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
-      <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
-      <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
-      <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-      <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
-    </ul>
-    <input type="text" id="search" placeholder="Search...">
-    <div class="lang-wrapper">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('tr')">TR</button>
-      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
-    </div>
-  </div>
-</nav>
+<div class="container">
 
 <h1 class="title">
-  <span class="en">Hate Speech Detection & Sexism Analysis</span>
-  <span class="tr" style="display:none;">Nefret Söylemi ve Cinsiyetçilik Analizi</span>
+<span class="en">Hate Speech Detection & Sexism Analysis</span>
+<span class="tr" style="display:none;">Nefret Söylemi ve Cinsiyetçilik Tespiti</span>
 </h1>
 
 <p class="subtitle">
-  <span class="en">Detecting hate speech and sexism on social media using NLP-based text classification</span>
-  <span class="tr" style="display:none;">NLP tabanlı metin sınıflandırma ile sosyal medyada nefret söylemi ve cinsiyetçilik tespiti</span>
+<span class="en">NLP-based text classification system for detecting hate speech in social media</span>
+<span class="tr" style="display:none;">Sosyal medyada nefret söylemini tespit eden NLP tabanlı metin sınıflandırma sistemi</span>
 </p>
 
 <img src="hate-speech.png" class="project-image">
 
-<!-- INFO GRID -->
 <div class="info-grid">
   <div class="info-card">
     <span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span>
@@ -132,7 +80,7 @@ canvas { margin-top: 10px; max-height: 140px; }
 
   <div class="info-card">
     <span><span class="en">Core Model</span><span class="tr" style="display:none;">Temel Model</span></span>
-    <p><span class="en">TF-IDF + Machine Learning</span><span class="tr" style="display:none;">TF-IDF + Makine Öğrenmesi</span></p>
+    <p><span class="en">TF-IDF + Logistic Regression</span><span class="tr" style="display:none;">TF-IDF + Lojistik Regresyon</span></p>
   </div>
 
   <div class="info-card">
@@ -142,61 +90,40 @@ canvas { margin-top: 10px; max-height: 140px; }
 
   <div class="info-card">
     <span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span>
-    <p><span class="en">Published & Presented</span><span class="tr" style="display:none;">Yayınlandı & Sunuldu</span></p>
+    <p><span class="en">Published & Presented</span><span class="tr" style="display:none;">Yayınlandı ve Sunuldu</span></p>
   </div>
 </div>
 
-<!-- DESCRIPTION -->
 <div class="description">
-  <span class="en">
-    This project focuses on detecting sexism and hate speech in social media using Natural Language Processing techniques.
-    A complete machine learning pipeline was implemented including text preprocessing, TF-IDF feature extraction, 
-    and multiple classification models.
-
-    The system was evaluated using various metrics and optimized to achieve high performance.
-
-    The project was presented at an international conference and published as an academic paper, contributing to ethical AI and social media analysis.
-  </span>
-
-  <span class="tr" style="display:none;">
-    Bu proje, sosyal medyada cinsiyetçilik ve nefret söylemini tespit etmek amacıyla Doğal Dil İşleme tekniklerini kullanmaktadır.
-    Metin temizleme, TF-IDF ile özellik çıkarımı ve çeşitli sınıflandırma modellerini içeren uçtan uca bir makine öğrenmesi süreci uygulanmıştır.
-
-    Sistem farklı metriklerle değerlendirilmiş ve yüksek performans elde edecek şekilde optimize edilmiştir.
-
-    Proje uluslararası bir konferansta sunulmuş ve akademik makale olarak yayınlanarak etik yapay zeka ve sosyal medya analizi alanına katkı sağlamıştır.
-  </span>
+<span class="en">
+This project focuses on detecting hate speech and sexist language in social media using Natural Language Processing techniques. A full pipeline including text preprocessing, TF-IDF feature extraction, and classification models was implemented. Different machine learning algorithms were tested and evaluated to improve performance.
+</span>
+<span class="tr" style="display:none;">
+Bu proje, sosyal medyada nefret söylemi ve cinsiyetçi ifadeleri tespit etmek amacıyla Doğal Dil İşleme tekniklerini kullanmaktadır. Metin ön işleme, TF-IDF özellik çıkarımı ve sınıflandırma modellerini içeren uçtan uca bir pipeline geliştirilmiştir. Farklı makine öğrenmesi algoritmaları test edilerek performans karşılaştırması yapılmıştır.
+</span>
 </div>
 
-<!-- ARCHITECTURE -->
 <div class="architecture">
-  <h3>
-    <span class="en">Project Workflow</span>
-    <span class="tr" style="display:none;">Proje İş Akışı</span>
-  </h3>
-
-  <div class="flow">
-    <div class="step"><span class="en">Text Cleaning</span><span class="tr" style="display:none;">Metin Temizleme</span></div>
-    <div class="step"><span class="en">Tokenization</span><span class="tr" style="display:none;">Tokenizasyon</span></div>
-    <div class="step"><span class="en">TF-IDF</span><span class="tr" style="display:none;">TF-IDF</span></div>
-    <div class="step"><span class="en">Model Training</span><span class="tr" style="display:none;">Model Eğitimi</span></div>
-    <div class="step"><span class="en">Prediction</span><span class="tr" style="display:none;">Tahmin</span></div>
-    <div class="step"><span class="en">Evaluation</span><span class="tr" style="display:none;">Değerlendirme</span></div>
-  </div>
+<h3><span class="en">Project Workflow</span><span class="tr" style="display:none;">Proje İş Akışı</span></h3>
+<div class="flow">
+  <div class="step"><span class="en">Text Cleaning</span><span class="tr" style="display:none;">Metin Temizleme</span></div>
+  <div class="step"><span class="en">Tokenization</span><span class="tr" style="display:none;">Tokenizasyon</span></div>
+  <div class="step"><span class="en">TF-IDF</span><span class="tr" style="display:none;">TF-IDF</span></div>
+  <div class="step"><span class="en">Model Training</span><span class="tr" style="display:none;">Model Eğitimi</span></div>
+  <div class="step"><span class="en">Prediction</span><span class="tr" style="display:none;">Tahmin</span></div>
+  <div class="step"><span class="en">Evaluation</span><span class="tr" style="display:none;">Değerlendirme</span></div>
+</div>
 </div>
 
-<!-- MAIN GRID -->
 <div class="content">
 
-  <!-- LEFT -->
-  <div>
-
-    <div class="code">
-      <div class="code-header">
-        <div class="dot red"></div>
-        <div class="dot yellow"></div>
-        <div class="dot green"></div>
-      </div>
+<div>
+<div class="code">
+<div class="code-header">
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+</div>
 <pre>
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -209,83 +136,49 @@ model.fit(X, y)
 
 predictions = model.predict(X)
 </pre>
-    </div>
+</div>
 
-    <div class="charts-container">
-      <div class="dash-card metric-card">
-        <p><span class="en">Accuracy</span><span class="tr" style="display:none;">Doğruluk</span></p>
-        <div class="value">0.91</div>
-      </div>
+<div class="charts-container">
+<div class="dash-card"><p>Accuracy</p><div class="value">0.91</div></div>
+<div class="dash-card"><p>F1 Score</p><div class="value">0.89</div></div>
+<div class="dash-card"><p>Precision</p><div class="value">0.90</div></div>
+</div>
+</div>
 
-      <div class="dash-card metric-card">
-        <p><span class="en">F1 Score</span><span class="tr" style="display:none;">F1 Skoru</span></p>
-        <div class="value">0.89</div>
-      </div>
+<div class="dashboard">
 
-      <div class="dash-card metric-card">
-        <p><span class="en">Precision</span><span class="tr" style="display:none;">Kesinlik</span></p>
-        <div class="value">0.90</div>
-      </div>
-    </div>
+<div class="dash-card">
+<p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknolojiler</span></p>
+<div class="tags">
+<span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>NLTK</span>
+</div>
+</div>
 
-  </div>
+<div class="dash-card">
+<p><span class="en">Methods</span><span class="tr" style="display:none;">Yöntemler</span></p>
+<ul>
+<li>TF-IDF</li>
+<li>Logistic Regression</li>
+<li>Naive Bayes</li>
+</ul>
+</div>
 
-  <!-- RIGHT -->
-  <div class="dashboard">
-
-    <div class="dash-card">
-      <p><span class="en">Tech Stack</span><span class="tr" style="display:none;">Teknolojiler</span></p>
-      <div class="tags">
-        <span>Python</span>
-        <span>Pandas</span>
-        <span>Scikit-learn</span>
-        <span>NLTK</span>
-      </div>
-    </div>
-
-    <div class="dash-card">
-      <p><span class="en">Methods</span><span class="tr" style="display:none;">Yöntemler</span></p>
-      <ul>
-        <li><span class="en">Text Preprocessing</span><span class="tr" style="display:none;">Metin Ön İşleme</span></li>
-        <li><span class="en">TF-IDF</span><span class="tr" style="display:none;">TF-IDF</span></li>
-        <li><span class="en">Logistic Regression</span><span class="tr" style="display:none;">Lojistik Regresyon</span></li>
-        <li><span class="en">Naive Bayes</span><span class="tr" style="display:none;">Naive Bayes</span></li>
-      </ul>
-    </div>
-
-    <div class="dash-card">
-      <p><span class="en">Key Features</span><span class="tr" style="display:none;">Öne Çıkan Özellikler</span></p>
-      <ul>
-        <li><span class="en">Hate Speech Detection</span><span class="tr" style="display:none;">Nefret Söylemi Tespiti</span></li>
-        <li><span class="en">Sexism Classification</span><span class="tr" style="display:none;">Cinsiyetçilik Sınıflandırması</span></li>
-        <li><span class="en">NLP Pipeline</span><span class="tr" style="display:none;">NLP Süreci</span></li>
-        <li><span class="en">Text Analysis</span><span class="tr" style="display:none;">Metin Analizi</span></li>
-      </ul>
-    </div>
-
-    <div class="dash-card">
-      <p><span class="en">Achievements</span><span class="tr" style="display:none;">Başarılar</span></p>
-      <ul>
-        <li><span class="en">International Conference Presentation</span><span class="tr" style="display:none;">Uluslararası Konferans Sunumu</span></li>
-        <li><span class="en">Published Academic Paper</span><span class="tr" style="display:none;">Akademik Yayın</span></li>
-        <li><span class="en">Certificate Awarded</span><span class="tr" style="display:none;">Sertifika Alındı</span></li>
-      </ul>
-    </div>
-
-    <div class="actions">
-      <div class="btn">
-        <span class="en">Conference Paper</span>
-        <span class="tr" style="display:none;">Konferans Bildirisi</span>
-      </div>
-
-      <div class="btn">GitHub</div>
-
-      <div class="btn">Blog</div>
-    </div>
-
-  </div>
+<div class="dash-card">
+<p><span class="en">Key Features</span><span class="tr" style="display:none;">Özellikler</span></p>
+<ul>
+<li><span class="en">Hate Speech Detection</span><span class="tr">Nefret Söylemi Tespiti</span></li>
+<li><span class="en">Sexism Classification</span><span class="tr">Cinsiyetçilik Sınıflandırma</span></li>
+<li><span class="en">NLP Pipeline</span><span class="tr">NLP Pipeline</span></li>
+</ul>
+</div>
 
 </div>
+
+</div>
+
+</div>
+
+
 
 
  
@@ -343,7 +236,8 @@ new Chart(document.getElementById("barChart"), {
   data: { labels: ["Accuracy", "Speed", "Quality"], datasets: [{ data: [92, 85, 88], backgroundColor: "#3fb950" }] },
   options: { scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false } } }
 });
-</script>
+
+
 
 </body>
 </html>
