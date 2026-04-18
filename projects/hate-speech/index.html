@@ -1,376 +1,782 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Project Detail - Elif Karadeniz</title>
+    <meta charset="UTF-8">
+    <title>Project Detail - Elif Karadeniz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* CONTAINER */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link rel="stylesheet" href="/style.css">
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
 
-<style>
-body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; }
-.container { max-width: 1200px; margin: auto; padding: 20px; }
+        /* TITLE */
+        .title {
+            font-size: 34px;
+            color: #3fb950;
+            margin-top: 20px;
+        }
 
-.title { font-size: 34px; color: #3fb950; margin-top: 20px; }
-.subtitle { color: #8b949e; margin-bottom: 25px; }
-body.light-mode .subtitle { color: #555; }
+        .subtitle {
+            color: #8b949e;
+            margin-bottom: 25px;
+        }
 
-/* IMAGE */
-.project-image { width: 100%;  height: 500px; object-fit: cover border-radius: 15px; margin: 25px 0; border: 1px solid #30363d; }
-body.light-mode .project-image { border-color: #ccc; }
+        body.light-mode .subtitle {
+            color: #555;
+        }
 
-.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 25px; }
-.info-card { background: #161b22; padding: 15px; border-radius: 12px; border: 1px solid #30363d; }
-.info-card span { font-size: 13px; color: #8b949e; }
-.info-card p { margin-top: 5px; font-weight: bold; }
+        /* IMAGE */
+        .project-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 1px solid #30363d;
+        }
 
-.description { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; line-height: 1.6; }
+        body.light-mode .project-image {
+            border-color: #ccc;
+        }
 
-.architecture { background: #161b22; padding: 20px; border-radius: 15px; margin-bottom: 25px; }
-.architecture h3 { margin-bottom: 15px; color: #3fb950; }
+        /* INFO GRID */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
 
-.flow { display: flex; gap: 10px; flex-wrap: wrap; }
-.step { flex: 1; min-width: 140px; background: #0d1117; border: 1px solid #30363d; padding: 10px; border-radius: 10px; text-align: center; font-size: 13px; }
+        .info-card {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+        }
 
-.content { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: start; }
+        body.light-mode .info-card {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
 
-/* CODE */
-.code { background: #161b22; border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
-.code-header { background: #21262d; padding: 10px; display: flex; gap: 8px; }
-.dot { width: 12px; height: 12px; border-radius: 50%; }
-.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-.code pre { padding: 20px; font-size: 14px; }
+        .info-card span {
+            font-size: 13px;
+            color: #ffffff;
+        }
 
-/* METRICS */
-.charts-container { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px; }
-.metric-card {
-  flex: 1;
-  min-width: 150px;
-  background: #161b22;
-  padding: 15px;
-  border-radius: 12px;
-  border: 1px solid #30363d;
-  text-align: center;
-}
-.metric-card p { font-size: 13px; color: #8b949e; }
-.value { font-size: 22px; font-weight: bold; color: #3fb950; margin-top: 5px; }
+        body.light-mode .info-card span {
+            color: #000;
+        }
 
-/* RIGHT PANEL */
-.dashboard { display: flex; flex-direction: column; gap: 15px; }
-.dash-card {
-  background: #161b22;
-  padding: 15px;
-  border-radius: 12px;
-  border: 1px solid #30363d;
-}
-.dash-card p { font-weight: bold; margin-bottom: 10px; }
+        .info-card p {
+            margin-top: 5px;
+            font-weight: bold;
+        }
 
-.tags span {
-  display: inline-block;
-  background: #0d1117;
-  border: 1px solid #30363d;
-  padding: 5px 10px;
-  border-radius: 8px;
-  margin: 3px;
-  font-size: 12px;
-}
+        body.light-mode .info-card p {
+            color: #000;
+        }
 
-.dash-card ul { padding-left: 18px; font-size: 13px; }
+        /* DESCRIPTION */
+        .description {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .content { grid-template-columns: 1fr; }
-}
-</style>
+        body.light-mode .description {
+            background: #fff;
+            color: #000;
+        }
+
+        /* ARCHITECTURE */
+        .architecture {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        body.light-mode .architecture {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        .architecture h3 {
+            margin-bottom: 15px;
+            color: #3fb950;
+        }
+
+        body.light-mode .architecture h3 {
+            color: #000;
+        }
+
+        .flow {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 140px;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        body.light-mode .step {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        /* MAIN CONTENT GRID */
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* CODE BLOCK */
+        .code {
+            background: #161b22;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        body.light-mode .code {
+            background: #fff;
+            color: #000;
+        }
+
+        .code-header {
+            background: #21262d;
+            padding: 10px;
+            display: flex;
+            gap: 8px;
+        }
+
+        body.light-mode .code-header {
+            background: #eee;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .red    { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green  { background: #27c93f; }
+
+        .code pre {
+            padding: 20px;
+            font-size: 14px;
+            color: #c9d1d9;
+            line-height: 1.5;
+            overflow-x: auto;
+            max-height: 220px;
+        }
+
+        body.light-mode .code pre {
+            color: #000;
+        }
+
+        .keyword { color: #ff7b72; }
+        .string  { color: #a5d6ff; }
+        .func    { color: #d2a8ff; }
+
+        /* CHARTS UNDER CODE */
+        .charts-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .charts-container .dash-card {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        body.light-mode .charts-container .dash-card {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        /* ACADEMIC BADGE */
+        .academic-badge {
+            background: #161b22;
+            border: 1px solid #3fb950;
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        body.light-mode .academic-badge {
+            background: #f0fff4;
+            border-color: #3fb950;
+            color: #000;
+        }
+
+        .academic-badge i {
+            color: #3fb950;
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .academic-badge .badge-text {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #c9d1d9;
+        }
+
+        body.light-mode .academic-badge .badge-text {
+            color: #000;
+        }
+
+        .academic-badge .badge-text strong {
+            color: #3fb950;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        body.light-mode .academic-badge .badge-text strong {
+            color: #2a8a3e;
+        }
+
+        /* DASHBOARD RIGHT COLUMN */
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .dash-card {
+            background: #161b22;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        body.light-mode .dashboard .dash-card {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        .dash-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(63, 185, 80, 0.3);
+        }
+
+        .dash-card p {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        body.light-mode .dashboard .dash-card p {
+            color: #000;
+        }
+
+        .value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #3fb950;
+        }
+
+        .tags span {
+            display: inline-block;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin: 2px;
+            font-size: 11px;
+        }
+
+        .dash-card ul {
+            margin-top: 8px;
+            padding-left: 15px;
+            font-size: 13px;
+        }
+
+        body.light-mode .tags span {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        /* BUTTONS */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #3fb950;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #3fb950;
+            color: #0d1117;
+        }
+
+        body.light-mode .btn {
+            color: #3fb950;
+            border-color: #3fb950;
+        }
+
+        body.light-mode .btn:hover {
+            color: #fff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .charts-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body class="dark-mode">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="navbar-center">
-    <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+            <ul class="navbar-links">
+                <li>
+                    <a href="/">
+                        <span class="en">Home</span>
+                        <span class="tr" style="display:none;">Ana Sayfa</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <span class="en">About</span>
+                        <span class="tr" style="display:none;">Hakkımda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/projects/">
+                        <span class="en">Projects</span>
+                        <span class="tr" style="display:none;">Projeler</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/articles/">
+                        <span class="en">Articles</span>
+                        <span class="tr" style="display:none;">Yazılar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/conference/">
+                        <span class="en">Conference</span>
+                        <span class="tr" style="display:none;">Konferans</span>
+                    </a>
+                </li>
+            </ul>
+            <input type="text" id="search" placeholder="Search...">
+            <div class="lang-wrapper">
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('tr')">TR</button>
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
 
-    <ul class="navbar-links">
-      <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
-      <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
-      <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
-      <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-      <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
-    </ul>
+    <!-- MAIN CONTENT -->
+    <div class="container">
 
-    <input type="text" id="search" placeholder="Search...">
+        <h1 class="title">
+            <span class="en">Hate Speech Detection System</span>
+            <span class="tr" style="display:none;">Nefret Söylemi Tespit Sistemi</span>
+        </h1>
 
-    <div class="lang-wrapper">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('tr')">TR</button>
-      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+        <p class="subtitle">
+            <span class="en">NLP & Machine Learning based hate speech and offensive language detection with academic publication</span>
+            <span class="tr" style="display:none;">Akademik yayın destekli, NLP ve makine öğrenmesi tabanlı nefret söylemi ve saldırgan dil tespit sistemi</span>
+        </p>
+
+        <img src="hate-speech.png" class="project-image">
+
+        <!-- INFO GRID -->
+        <div class="info-grid">
+            <div class="info-card">
+                <span>
+                    <span class="en">Project Type</span>
+                    <span class="tr" style="display:none;">Proje Türü</span>
+                </span>
+                <p>
+                    <span class="en">NLP / Text Classification</span>
+                    <span class="tr" style="display:none;">NLP / Metin Sınıflandırma</span>
+                </p>
+            </div>
+            <div class="info-card">
+                <span>
+                    <span class="en">Core Algorithm</span>
+                    <span class="tr" style="display:none;">Temel Algoritma</span>
+                </span>
+                <p>
+                    <span class="en">Random Forest / Logistic Regression</span>
+                    <span class="tr" style="display:none;">Random Forest / Lojistik Regresyon</span>
+                </p>
+            </div>
+            <div class="info-card">
+                <span>
+                    <span class="en">Dataset</span>
+                    <span class="tr" style="display:none;">Veri Seti</span>
+                </span>
+                <p>
+                    <span class="en">Social Media Dataset</span>
+                    <span class="tr" style="display:none;">Sosyal Medya Veri Seti</span>
+                </p>
+            </div>
+            <div class="info-card">
+                <span>
+                    <span class="en">Status</span>
+                    <span class="tr" style="display:none;">Durum</span>
+                </span>
+                <p>
+                    <span class="en">Completed & Published</span>
+                    <span class="tr" style="display:none;">Tamamlandı & Yayınlandı</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="description">
+            <span class="en">
+                This project aims to detect hate speech and offensive language in social media texts using
+                Natural Language Processing (NLP) and Machine Learning techniques. Texts are classified into
+                three categories: hate speech, offensive content, and neutral content. An end-to-end
+                classification pipeline was built including data preprocessing, text cleaning, tokenization,
+                TF-IDF based feature extraction, and various machine learning algorithms.
+            </span>
+            <span class="tr" style="display:none;">
+                Bu proje, sosyal medya platformlarındaki metinlerde nefret söylemi ve saldırgan dilin
+                tespit edilmesini amaçlayan bir Doğal Dil İşleme (NLP) ve Makine Öğrenmesi çalışmasıdır.
+                Metinler; nefret söylemi, saldırgan içerik ve nötr içerik olmak üzere üç kategoriye
+                ayrılmıştır. Veri ön işleme, metin temizleme, tokenization, TF-IDF tabanlı özellik
+                çıkarımı ve çeşitli makine öğrenmesi algoritmaları kullanılarak uçtan uca bir
+                sınıflandırma pipeline'ı oluşturulmuştur.
+            </span>
+        </div>
+
+        <!-- ACADEMIC BADGE -->
+        <div class="academic-badge">
+            <i class="fas fa-graduation-cap"></i>
+            <div class="badge-text">
+                <strong>
+                    <span class="en">Academic Contribution & Conference Presentation</span>
+                    <span class="tr" style="display:none;">Akademik Katkı ve Konferans Sunumu</span>
+                </strong>
+                <span class="en">
+                    This work was presented as an oral presentation at an international scientific conference
+                    under the title <em>"Hate Speech Detection and Analysis in Social Media"</em>. The methodological
+                    approach, dataset structure and model performance results were shared in detail. The study
+                    was also prepared in academic writing format and reported as a conference paper / journal publication.
+                </span>
+                <span class="tr" style="display:none;">
+                    Bu çalışma, <em>"Sosyal Medyada Nefret Söylemi Tespiti ve Analizi"</em> başlığıyla uluslararası
+                    bir bilimsel konferansta sözlü bildiri olarak sunulmuştur. Yöntemsel yaklaşım, veri seti
+                    yapısı ve model performans sonuçları detaylı olarak paylaşılmıştır. Çalışma ayrıca
+                    akademik yazım formatında hazırlanarak bildiri / dergi yayını formatında raporlanmıştır.
+                </span>
+            </div>
+        </div>
+
+        <!-- ARCHITECTURE -->
+        <div class="architecture">
+            <h3>
+                <span class="en">Project Workflow</span>
+                <span class="tr" style="display:none;">Proje İş Akışı</span>
+            </h3>
+            <div class="flow">
+                <div class="step">
+                    <span class="en">Data Collection</span>
+                    <span class="tr" style="display:none;">Veri Toplama</span>
+                </div>
+                <div class="step">
+                    <span class="en">Preprocessing</span>
+                    <span class="tr" style="display:none;">Veri Temizleme</span>
+                </div>
+                <div class="step">
+                    <span class="en">Tokenization</span>
+                    <span class="tr" style="display:none;">Tokenization</span>
+                </div>
+                <div class="step">
+                    <span class="en">TF-IDF Extraction</span>
+                    <span class="tr" style="display:none;">TF-IDF Çıkarımı</span>
+                </div>
+                <div class="step">
+                    <span class="en">Model Training</span>
+                    <span class="tr" style="display:none;">Model Eğitimi</span>
+                </div>
+                <div class="step">
+                    <span class="en">Evaluation</span>
+                    <span class="tr" style="display:none;">Değerlendirme</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEFT + RIGHT CONTENT -->
+        <div class="content">
+
+            <!-- LEFT -->
+            <div>
+                <div class="code">
+                    <div class="code-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <pre>
+<span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier
+<span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> TfidfVectorizer
+
+vectorizer = <span class="func">TfidfVectorizer</span>(max_features=5000)
+X_train    = vectorizer.<span class="func">fit_transform</span>(texts)
+
+model      = <span class="func">RandomForestClassifier</span>(n_estimators=100)
+model.<span class="func">fit</span>(X_train, y_train)
+preds      = model.<span class="func">predict</span>(X_test)
+                    </pre>
+                </div>
+
+                <div class="charts-container">
+                    <div class="dash-card metric-card">
+                        <p>
+                            <span class="en">Accuracy</span>
+                            <span class="tr" style="display:none;">Doğruluk</span>
+                        </p>
+                        <div class="value">0.9347</div>
+                    </div>
+                    <div class="dash-card metric-card">
+                        <p>
+                            <span class="en">F1 Score</span>
+                            <span class="tr" style="display:none;">F1 Skoru</span>
+                        </p>
+                        <div class="value">0.9328</div>
+                    </div>
+                    <div class="dash-card metric-card">
+                        <p>
+                            <span class="en">Precision</span>
+                            <span class="tr" style="display:none;">Kesinlik</span>
+                        </p>
+                        <div class="value">0.9348</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="dashboard">
+                <div class="dash-card">
+                    <p>
+                        <span class="en">Tech Stack</span>
+                        <span class="tr" style="display:none;">Teknolojiler</span>
+                    </p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Scikit-learn</span>
+                        <span>NLTK</span>
+                        <span>TF-IDF</span>
+                    </div>
+                </div>
+
+                <div class="dash-card">
+                    <p>
+                        <span class="en">Methods</span>
+                        <span class="tr" style="display:none;">Yöntemler</span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span class="en">Random Forest</span>
+                            <span class="tr" style="display:none;">Random Forest</span>
+                        </li>
+                        <li>
+                            <span class="en">Logistic Regression</span>
+                            <span class="tr" style="display:none;">Lojistik Regresyon</span>
+                        </li>
+                        <li>
+                            <span class="en">Naive Bayes</span>
+                            <span class="tr" style="display:none;">Naive Bayes</span>
+                        </li>
+                        <li>
+                            <span class="en">TF-IDF Vectorizer</span>
+                            <span class="tr" style="display:none;">TF-IDF Vektörizasyonu</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dash-card">
+                    <p>
+                        <span class="en">Key Features</span>
+                        <span class="tr" style="display:none;">Özellikler</span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span class="en">Hate Speech Detection</span>
+                            <span class="tr" style="display:none;">Nefret Söylemi Tespiti</span>
+                        </li>
+                        <li>
+                            <span class="en">Offensive Language Analysis</span>
+                            <span class="tr" style="display:none;">Saldırgan Dil Analizi</span>
+                        </li>
+                        <li>
+                            <span class="en">End-to-End NLP Pipeline</span>
+                            <span class="tr" style="display:none;">Uçtan Uca NLP Pipeline</span>
+                        </li>
+                        <li>
+                            <span class="en">Conference Presentation</span>
+                            <span class="tr" style="display:none;">Konferans Sunumu</span>
+                        </li>
+                        <li>
+                            <span class="en">Academic Publication</span>
+                            <span class="tr" style="display:none;">Akademik Yayın</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="actions">
+                    <div class="btn" onclick="history.back()">
+                        <span class="en">Back</span>
+                        <span class="tr" style="display:none;">Geri</span>
+                    </div>
+                    <div class="btn">GitHub</div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-  </div>
-</nav>
 
-<div class="container">
+    <footer>
+        <p class="en">© 2026 Elif Karadeniz</p>
+        <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
+    </footer>
 
-<h1 class="title">
-<span class="en">Hate Speech Detection & Sexism Analysis</span>
-<span class="tr" style="display:none;">Nefret Söylemi ve Cinsiyetçilik Tespiti</span>
-</h1>
+    <script>
+        /* LANGUAGE */
+        function setLang(lang) {
+            document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
+            document.querySelectorAll('.tr').forEach(el => el.style.display = (lang === 'tr') ? '' : 'none');
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.lang-btn')[lang === 'en' ? 0 : 1].classList.add('active');
+            localStorage.setItem('lang', lang);
+        }
 
-<p class="subtitle">
-<span class="en">High-performance NLP pipeline for detecting hate speech in social media</span>
-<span class="tr" style="display:none;">Sosyal medyada nefret söylemini tespit eden yüksek performanslı NLP sistemi</span>
-</p>
+        const savedLang = localStorage.getItem('lang') || 'en';
+        setLang(savedLang);
 
-<img src="hate-speech.png" class="project-image">
+        /* THEME */
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const icon = themeBtn.querySelector('i');
+            icon.classList.toggle('fa-sun');
+            icon.classList.toggle('fa-moon');
+        });
 
-<!-- INFO -->
-<div class="info-grid">
-  <div class="info-card">
-    <span>
-      <span class="en">Project Type</span>
-      <span class="tr" style="display:none;">Proje Türü</span>
-    </span>
-    <p>
-      <span class="en">NLP / Text Classification</span>
-      <span class="tr" style="display:none;">NLP / Metin Sınıflandırma</span>
-    </p>
-  </div>
+        /* SEARCH */
+        document.getElementById('search').addEventListener('input', e => {
+            const val = e.target.value.toLowerCase();
+            document.querySelectorAll('.project-item').forEach(card => {
+                card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex' : 'none';
+            });
+        });
 
-  <div class="info-card">
-    <span>
-      <span class="en">Core Model</span>
-      <span class="tr" style="display:none;">Temel Model</span>
-    </span>
-    <p>TF-IDF + Logistic Regression</p>
-  </div>
+        /* LOGO CLICK */
+        document.getElementById('navbar-name').addEventListener('click', () => {
+            window.location.href = '/';
+        });
 
-  <div class="info-card">
-    <span>
-      <span class="en">Dataset</span>
-      <span class="tr" style="display:none;">Veri Seti</span>
-    </span>
-    <p>
-      <span class="en">Social Media Data</span>
-      <span class="tr" style="display:none;">Sosyal Medya Verileri</span>
-    </p>
-  </div>
+        /* CHARTS */
+        new Chart(document.getElementById("scoreChart"), {
+            type: "doughnut",
+            data: {
+                labels: ["Hate Speech", "Offensive", "Neutral"],
+                datasets: [{
+                    data: [210, 185, 380],
+                    backgroundColor: ["#f78166", "#ffa657", "#3fb950"]
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { display: true }
+                }
+            }
+        });
 
-  <div class="info-card">
-    <span>
-      <span class="en">Status</span>
-      <span class="tr" style="display:none;">Durum</span>
-    </span>
-    <p>
-      <span class="en">Published</span>
-      <span class="tr" style="display:none;">Yayınlandı</span>
-    </p>
-  </div>
-</div>
-
-<!-- DESCRIPTION -->
-<div class="description">
-
-<span class="en">
-This project detects hate speech and sexism in social media using NLP techniques.
-A full pipeline including text preprocessing, TF-IDF feature extraction and classification models was implemented.
-The system achieved high accuracy and contributes to ethical AI by reducing harmful content.
-</span>
-
-<span class="tr" style="display:none;">
-Bu proje, sosyal medyada nefret söylemi ve cinsiyetçi içerikleri tespit etmek amacıyla geliştirilmiş bir doğal dil işleme sistemidir.
-Metin ön işleme, TF-IDF özellik çıkarımı ve sınıflandırma modellerini içeren tam bir makine öğrenmesi pipeline’ı kurulmuştur.
-Model yüksek doğruluk elde etmiş olup zararlı içeriklerin azaltılmasına katkı sağlayarak etik yapay zekâ alanına destek sunmaktadır.
-</span>
-
-</div>
-
-<!-- CONTENT -->
-<div class="content">
-
-<!-- LEFT -->
-<div>
-
-<div class="code">
-<div class="code-header">
-<div class="dot red"></div>
-<div class="dot yellow"></div>
-<div class="dot green"></div>
-</div>
-<pre>
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-</pre>
-</div>
-
-<!-- METRICS -->
-<div class="charts-container">
-
-<div class="metric-card">
-<p>
-  <span class="en">Accuracy</span>
-  <span class="tr" style="display:none;">Doğruluk</span>
-</p>
-<div class="value">0.91</div>
-</div>
-
-<div class="metric-card">
-<p>
-  <span class="en">F1 Score</span>
-  <span class="tr" style="display:none;">F1 Skoru</span>
-</p>
-<div class="value">0.89</div>
-</div>
-
-<div class="metric-card">
-<p>
-  <span class="en">Precision</span>
-  <span class="tr" style="display:none;">Kesinlik</span>
-</p>
-<div class="value">0.90</div>
-</div>
-
-</div>
-
-</div>
-
-<!-- RIGHT -->
-<div class="dashboard">
-
-<div class="dash-card">
-<p>
-  <span class="en">Tech Stack</span>
-  <span class="tr" style="display:none;">Teknolojiler</span>
-</p>
-<div class="tags">
-<span>Python</span>
-<span>Pandas</span>
-<span>Scikit-learn</span>
-<span>NLTK</span>
-</div>
-</div>
-
-<div class="dash-card">
-<p>
-  <span class="en">Methods</span>
-  <span class="tr" style="display:none;">Yöntemler</span>
-</p>
-<ul>
-<li>TF-IDF</li>
-<li>Logistic Regression</li>
-<li>Naive Bayes</li>
-</ul>
-</div>
-
-<div class="dash-card">
-<p>
-  <span class="en">Key Features</span>
-  <span class="tr" style="display:none;">Özellikler</span>
-</p>
-<ul>
-<li>
-  <span class="en">Hate Speech Detection</span>
-  <span class="tr" style="display:none;">Nefret Söylemi Tespiti</span>
-</li>
-<li>
-  <span class="en">Sexism Classification</span>
-  <span class="tr" style="display:none;">Cinsiyetçilik Sınıflandırması</span>
-</li>
-<li>
-  <span class="en">NLP Pipeline</span>
-  <span class="tr" style="display:none;">NLP İş Akışı</span>
-</li>
-</ul>
-</div>
-
-<div class="dash-card">
-<p>
-  <span class="en">Achievements</span>
-  <span class="tr" style="display:none;">Başarılar</span>
-</p>
-<ul>
-<li>
-  <span class="en">Conference Presentation</span>
-  <span class="tr" style="display:none;">Konferans Sunumu</span>
-</li>
-<li>
-  <span class="en">Published Paper</span>
-  <span class="tr" style="display:none;">Yayınlanan Akademik Makale</span>
-</li>
-<li>
-  <span class="en">High Accuracy</span>
-  <span class="tr" style="display:none;">Yüksek Doğruluk</span>
-</li>
-<li>
-  <span class="en">Ethical AI Contribution</span>
-  <span class="tr" style="display:none;">Etik Yapay Zekâ Katkısı</span>
-</li>
-</ul>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<script>
-/* LANGUAGE */
-function setLang(lang){
-  document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
-  document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.lang-btn')[lang==='en'?0:1].classList.add('active');
-  localStorage.setItem('lang', lang);
-}
-const savedLang = localStorage.getItem('lang') || 'en';
-setLang(savedLang);
-
-/* THEME */
-const themeBtn = document.getElementById('theme-toggle');
-themeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-  const icon = themeBtn.querySelector('i');
-  icon.classList.toggle('fa-sun');
-  icon.classList.toggle('fa-moon');
-});
-
-/* SEARCH */
-document.getElementById('search').addEventListener('input', e => {
-  const val = e.target.value.toLowerCase();
-  document.querySelectorAll('.project-item').forEach(card=>{
-    card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex':'none';
-  });
-});
-
-/* LOGO CLICK */
-document.getElementById('navbar-name').addEventListener('click',()=>{window.location.href='/';});
-
-/* CHARTS */
-new Chart(document.getElementById("scoreChart"), {
-  type: "doughnut",
-  data: {
-    labels: ["Cluster 1", "Cluster 2", "Cluster 3", "Cluster 4", "Cluster 5"],
-    datasets: [{
-      data: [120, 95, 140, 80, 106],
-      backgroundColor: ["#3fb950", "#58a6ff", "#f78166", "#d2a8ff", "#ffa657"]
-    }]
-  },
-  options: { plugins: { legend: { display: true } } }
-});
-
-new Chart(document.getElementById("barChart"), {
-  type: "bar",
-  data: {
-    labels: ["Silhouette", "Calinski-Harabasz", "Davies-Bouldin"],
-    datasets: [{
-      data: [0.6657, 2188, 0.44],
-      backgroundColor: "#3fb950"
-    }]
-  },
-  options: { scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false } } }
-});
-</script>
+        new Chart(document.getElementById("barChart"), {
+            type: "bar",
+            data: {
+                labels: ["Accuracy", "Precision", "Recall", "F1 Score"],
+                datasets: [{
+                    data: [0.9347, 0.9348, 0.9347, 0.9328],
+                    backgroundColor: "#3fb950"
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 0.90,
+                        max: 1.00
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
