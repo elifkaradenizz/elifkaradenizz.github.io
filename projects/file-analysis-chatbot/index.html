@@ -229,6 +229,9 @@
             color: #000;
         }
 
+        body.light-mode .metric-card p {
+        color: #000;
+     }
         /* DASHBOARD RIGHT COLUMN */
         .dashboard {
             display: flex;
@@ -340,199 +343,355 @@
 
 <body class="dark-mode">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="navbar-center">
-        <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
-
-        <ul class="navbar-links">
-            <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
-            <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
-            <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
-            <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
-            <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
-        </ul>
-
-        <input type="text" id="search" placeholder="Search...">
-
-        <div class="lang-wrapper">
-            <button class="lang-btn active" onclick="setLang('en')">EN</button>
-            <button class="lang-btn" onclick="setLang('tr')">TR</button>
-            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
-        </div>
-    </div>
-</nav>
-
-<!-- MAIN CONTENT -->
-<div class="container">
-
-    <!-- TITLE -->
-    <h1 class="title">
-        <span class="en">LLM File Analysis Chatbot</span>
-        <span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span>
-    </h1>
-
-    <p class="subtitle">
-        <span class="en">
-            AI-powered chatbot that analyzes CSV, Excel and PDF files using Large Language Models (LLM)
-        </span>
-        <span class="tr" style="display:none;">
-            Büyük Dil Modelleri (LLM) kullanarak CSV, Excel ve PDF dosyalarını analiz eden yapay zeka chatbot sistemi
-        </span>
-    </p>
-
-    <img src="llm-chatbot.png" class="project-image">
-
-    <!-- INFO GRID -->
-    <div class="info-grid">
-
-        <div class="info-card">
-            <span><span class="en">Project Type</span><span class="tr" style="display:none;">Proje Türü</span></span>
-            <p><span class="en">Machine Learning / NLP</span><span class="tr" style="display:none;">Makine Öğrenmesi / NLP</span></p>
-        </div>
-
-        <div class="info-card">
-            <span><span class="en">Core Technology</span><span class="tr" style="display:none;">Temel Teknoloji</span></span>
-            <p>OpenAI GPT (LLM)</p>
-        </div>
-
-        <div class="info-card">
-            <span><span class="en">File Types</span><span class="tr" style="display:none;">Veri Tipleri</span></span>
-            <p>CSV / Excel / PDF</p>
-        </div>
-
-        <div class="info-card">
-            <span><span class="en">Status</span><span class="tr" style="display:none;">Durum</span></span>
-            <p><span class="en">Completed</span><span class="tr" style="display:none;">Tamamlandı</span></p>
-        </div>
-
-    </div>
-
-    <!-- DESCRIPTION -->
-    <div class="description">
-
-        <span class="en">
-            This project enables users to analyze structured and unstructured data files without any technical knowledge.
-            The system reads CSV, Excel and PDF files, processes the content, and generates contextual answers using LLMs.
-            Users can interact with their data through natural language queries or use the system as a general AI assistant.
-        </span>
-
-        <span class="tr" style="display:none;">
-            Bu proje, kullanıcıların teknik bilgiye ihtiyaç duymadan CSV, Excel ve PDF gibi veri dosyalarını analiz etmesini sağlar.
-            Sistem dosya içeriğini okuyarak LLM (Büyük Dil Modeli) ile bağlamsal cevaplar üretir.
-            Kullanıcılar doğal dil ile veri sorgulaması yapabilir veya sistemi genel amaçlı yapay zeka asistanı olarak kullanabilir.
-        </span>
-
-    </div>
-
-    <!-- WORKFLOW -->
-    <div class="architecture">
-
-        <h3>
-            <span class="en">Project Workflow</span>
-            <span class="tr" style="display:none;">Proje İş Akışı</span>
-        </h3>
-
-        <div class="flow">
-            <div class="step"><span class="en">File Upload</span><span class="tr" style="display:none;">Dosya Yükleme</span></div>
-            <div class="step"><span class="en">Data Parsing</span><span class="tr" style="display:none;">Veri Ayrıştırma</span></div>
-            <div class="step"><span class="en">PDF / Excel Reading</span><span class="tr" style="display:none;">PDF / Excel Okuma</span></div>
-            <div class="step"><span class="en">Text Cleaning</span><span class="tr" style="display:none;">Metin Temizleme</span></div>
-            <div class="step"><span class="en">LLM Processing</span><span class="tr" style="display:none;">LLM İşleme</span></div>
-            <div class="step"><span class="en">Response Generation</span><span class="tr" style="display:none;">Cevap Üretimi</span></div>
-        </div>
-
-    </div>
-
-    <!-- MAIN -->
-    <div class="content">
-
-        <!-- CODE -->
-        <div class="code">
-
-            <div class="code-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+            <ul class="navbar-links">
+                <li>
+                    <a href="/">
+                        <span class="en">Home</span>
+                        <span class="tr" style="display:none;">Ana Sayfa</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <span class="en">About</span>
+                        <span class="tr" style="display:none;">Hakkımda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/projects/">
+                        <span class="en">Projects</span>
+                        <span class="tr" style="display:none;">Projeler</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/articles/">
+                        <span class="en">Articles</span>
+                        <span class="tr" style="display:none;">Yazılar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/conference/">
+                        <span class="en">Conference</span>
+                        <span class="tr" style="display:none;">Konferans</span>
+                    </a>
+                </li>
+            </ul>
+            <input type="text" id="search" placeholder="Search...">
+            <div class="lang-wrapper">
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('tr')">TR</button>
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
             </div>
+        </div>
+    </nav>
 
-            <pre>
-from langchain.chat_models import ChatOpenAI
-import pandas as pd
-import PyPDF2
+    <!-- MAIN CONTENT -->
+    <div class="container">
 
-df = pd.read_csv("data.csv")
+        <h1 class="title">
+            <span class="en">LLM File Analysis Chatbot</span>
+            <span class="tr" style="display:none;">LLM Dosya Analiz Chatbotu</span>
+        </h1>
 
-llm = ChatOpenAI(model="gpt-4")
+        <p class="subtitle">
+            <span class="en">AI-powered chatbot that analyzes CSV, Excel and PDF files using Large Language Models (LLM</span>
+            <span class="tr" style="display:none;">Büyük Dil Modelleri (LLM) kullanarak CSV, Excel ve PDF dosyalarını analiz eden yapay zeka destekli sohbet botu</span>
+        </p>
 
-question = "What is the highest selling product?"
+        <img src="llm-chatbot.png" class="project-image">
 
-response = llm.predict(
-    f"""
-    Data:
-    {df.head().to_string()}
+        <!-- INFO GRID -->
+        <div class="info-grid">
+            <div class="info-card">
+                <span>
+                    <span class="en">Project Type</span>
+                    <span class="tr" style="display:none;">Proje Türü</span>
+                </span>
+                <p>
+                    <span class="en">Machine Learning / Data Analysis</span>
+                    <span class="tr" style="display:none;">Makine Öğrenmesi / Veri Analizi</span>
+                </p>
+            </div>
+            <div class="info-card">
+                <span>
+                    <span class="en">Core Technology</span>
+                    <span class="tr" style="display:none;">Temel Teknoloji</span>
+                </span>
+                <p>
+                    <span class="en">OpenAI GPT (LLM)</span>
+                    <span class="tr" style="display:none;">OpenAI GPT (Büyük Dil Modeli)</span>
+                </p>
+            </div>
+            <div class="info-card">
+                <span>
+                    <span class="en">File TypesF</span>
+                    <span class="tr" style="display:none;">Dosya Türleri</span>
+                </span>
+                <p>
+                    <span class="en">CSV / Excel / PDF</span>
+                    <span class="tr" style="display:none;">CSV / Excel / PDF</span>
+                </p>
+            </div>
+            <div class="info-card">
+                <span>
+                    <span class="en">Status</span>
+                    <span class="tr" style="display:none;">Durum</span>
+                </span>
+                <p>
+                    <span class="en">Completed</span>
+                    <span class="tr" style="display:none;">Tamamlandı</span>
+                </p>
+            </div>
+        </div>
 
-    Question:
-    {question}
-    """
+        <!-- DESCRIPTION -->
+        <div class="description">
+            <span class="en">
+              This project enables users to analyze structured and unstructured data files without any technical knowledge. The system reads CSV, Excel and PDF files, processes the content, and generates contextual answers using LLMs. Users can interact with their data through natural language queries or use the system as a general AI assistant.
+            </span>
+            <span class="tr" style="display:none;">
+             Bu proje, kullanıcıların herhangi bir teknik bilgiye sahip olmadan yapılandırılmış ve yapılandırılmamış veri dosyalarını analiz etmelerine olanak tanır. Sistem, CSV, Excel ve PDF dosyalarını okur, içeriği işler ve büyük dil modelleri (LLM) kullanarak bağlamsal yanıtlar üretir. Kullanıcılar, doğal dil sorguları yoluyla verileriyle etkileşime girebilir veya sistemi genel bir yapay zeka asistanı olarak kullanabilir.
+            </span>
+        </div>
+
+        <!-- ARCHITECTURE -->
+        <div class="architecture">
+            <h3>
+                <span class="en">Project Workflow</span>
+                <span class="tr" style="display:none;">Proje İş Akışı</span>
+            </h3>
+          <div class="flow">
+    <div class="step">
+        <span class="en">File Upload (CSV / Excel / PDF)</span>
+        <span class="tr" style="display:none;">Dosya Yükleme (CSV / Excel / PDF)</span>
+    </div>
+
+    <div class="step">
+        <span class="en">File Type Detection</span>
+        <span class="tr" style="display:none;">Dosya Tipi Tespiti</span>
+    </div>
+
+    <div class="step">
+        <span class="en">Data Reading (Pandas / PDF Parser)</span>
+        <span class="tr" style="display:none;">Veri Okuma (Pandas / PDF Parser)</span>
+    </div>
+
+    <div class="step">
+        <span class="en">Merge Text + Table Data</span>
+        <span class="tr" style="display:none;">Metin + Tablo Verisinin Birleştirilmesi</span>
+    </div>
+
+    <div class="step">
+        <span class="en">Data Cleaning & Normalization</span>
+        <span class="tr" style="display:none;">Veri Temizleme ve Normalizasyon</span>
+    </div>
+
+    <div class="step">
+        <span class="en">Chunking (Text Splitting)</span>
+        <span class="tr" style="display:none;">Chunking (Parçalara Bölme)</span>
+    </div>
+
+    <div class="step">
+        <span class="en">Prompt Creation (Context + Question)</span>
+        <span class="tr" style="display:none;">Prompt Oluşturma (Bağlam + Soru)</span>
+    </div>
+
+    <div class="step">
+        <span class="en">LLM Processing (GPT)</span>
+        <span class="tr" style="display:none;">LLM İşleme (GPT)</span>
+    </div>
+
+    <div class="step">
+        <span class="en">Contextual Answer Generation</span>
+        <span class="tr" style="display:none;">Bağlamsal Cevap Üretimi</span>
+    </div>
+
+    <div class="step">
+        <span class="en">Response Display to User</span>
+        <span class="tr" style="display:none;">Kullanıcıya Yanıt Gösterimi</span>
+    </div>
+</div>
+        </div>
+
+        <!-- LEFT + RIGHT CONTENT -->
+        <div class="content">
+
+            <!-- LEFT -->
+            <div>
+                <div class="code">
+                    <div class="code-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                  <pre>
+<span class="keyword">import</span> streamlit <span class="keyword">as</span> st
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">import</span> os
+<span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv
+<span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI
+<span class="keyword">import</span> PyPDF2
+
+load_dotenv()
+
+client = <span class="func">OpenAI</span>(
+    api_key=os.getenv(<span class="string">"OPENAI_API_KEY"</span>)
 )
+</pre>
+                </div>
 
-print(response)
-            </pre>
+                <div class="charts-container">
 
+    <div class="dash-card metric-card">
+        <p>
+            <span class="en">Capability Score</span>
+            <span class="tr" style="display:none;">Yetenek Bazlı Başarı</span>
+        </p>
+        <ul>
+            <li>
+                <span class="en">Context-aware response generation</span>
+                <span class="tr" style="display:none;">Bağlama uygun cevap üretebilme</span>
+            </li>
+            <li>
+                <span class="en">Multi-file understanding (CSV / Excel / PDF)</span>
+                <span class="tr" style="display:none;">Farklı dosya tiplerinden anlam çıkarabilme</span>
+            </li>
+            <li>
+                <span class="en">Natural language query understanding</span>
+                <span class="tr" style="display:none;">Doğal dil sorgularını anlayabilme</span>
+            </li>
+            <li>
+                <span class="en">General assistant mode without data</span>
+                <span class="tr" style="display:none;">Veri yokken bile genel asistan olarak çalışabilme</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="dash-card metric-card">
+        <p>
+            <span class="en">UX Performance</span>
+            <span class="tr" style="display:none;">Kullanıcı Deneyimi (UX)</span>
+        </p>
+        <ul>
+            <li>
+                <span class="en">No technical knowledge required</span>
+                <span class="tr" style="display:none;">Teknik bilgi gerektirmeden kullanım</span>
+            </li>
+            <li>
+                <span class="en">Interactive analysis workflow</span>
+                <span class="tr" style="display:none;">İnteraktif analiz süreci</span>
+            </li>
+            <li>
+                <span class="en">Fast data exploration</span>
+                <span class="tr" style="display:none;">Hızlı veri keşfi</span>
+            </li>
+            <li>
+                <span class="en">User-friendly Streamlit interface</span>
+                <span class="tr" style="display:none;">Kullanıcı dostu Streamlit arayüzü</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+         
+
+<!-- RIGHT -->
+<div class="dashboard">
+
+    <div class="dash-card">
+        <p>
+            <span class="en">Tech Stack</span>
+            <span class="tr" style="display:none;">Teknolojiler</span>
+        </p>
+        <div class="tags">
+            <span>Python</span>
+            <span>Streamlit</span>
+            <span>OpenAI API</span>
+            <span>Pandas</span>
+            <span>PyPDF2</span>
+            <span>python-dotenv</span>
         </div>
+    </div>
 
-        <!-- DASHBOARD -->
-        <div class="dashboard">
+    <div class="dash-card">
+        <p>
+            <span class="en">Methods</span>
+            <span class="tr" style="display:none;">Yöntemler</span>
+        </p>
+        <ul>
+            <li>
+                <span class="en">CSV / Excel data parsing with Pandas</span>
+                <span class="tr" style="display:none;">Pandas ile CSV / Excel veri ayrıştırma</span>
+            </li>
+            <li>
+                <span class="en">PDF text extraction using PyPDF2</span>
+                <span class="tr" style="display:none;">PyPDF2 ile PDF metin çıkarımı</span>
+            </li>
+            <li>
+                <span class="en">Structured data analysis (shape, columns, head)</span>
+                <span class="tr" style="display:none;">Yapısal veri analizi (shape, columns, head)</span>
+            </li>
+            <li>
+                <span class="en">Prompt engineering for LLM reasoning</span>
+                <span class="tr" style="display:none;">LLM mantığı için prompt mühendisliği</span>
+            </li>
+            <li>
+                <span class="en">Context injection into GPT-3.5-turbo</span>
+                <span class="tr" style="display:none;">GPT-3.5-turbo’ya bağlam enjekte etme</span>
+            </li>
+            <li>
+                <span class="en">Fallback chatbot mode without file input</span>
+                <span class="tr" style="display:none;">Dosya olmadan fallback chatbot modu</span>
+            </li>
+        </ul>
+    </div>
 
-            <!-- CAPABILITY -->
-            <div class="dash-card">
-                <p>
-                    <span class="en">Capability</span>
-                    <span class="tr" style="display:none;">Yetenek</span>
-                </p>
-                <div class="value">
-                    Context-aware answer generation<br>
-                    Multi-format file understanding (CSV, PDF, Excel)<br>
-                    Natural language query interpretation<br>
-                    General AI assistant mode (no data required)
-                </div>
-            </div>
-
-            <!-- UX -->
-            <div class="dash-card">
-                <p>
-                    <span class="en">User Experience (UX)</span>
-                    <span class="tr" style="display:none;">Kullanıcı Deneyimi</span>
-                </p>
-                <div class="value">
-                    No technical knowledge required<br>
-                    Interactive chat-based analysis<br>
-                    Fast data exploration workflow<br>
-                    Streamlit-based simple interface
-                </div>
-            </div>
-
-            <!-- EXTRA -->
-            <div class="dash-card">
-                <p>
-                    <span class="en">Additional Strength</span>
-                    <span class="tr" style="display:none;">Ek Güç</span>
-                </p>
-                <div class="value">
-                    Prompt engineering optimized responses<br>
-                    LLM-powered reasoning over structured data<br>
-                    Flexible file-agnostic architecture
-                </div>
-            </div>
-
-        </div>
-
+    <div class="dash-card">
+        <p>
+            <span class="en">Key Features</span>
+            <span class="tr" style="display:none;">Özellikler</span>
+        </p>
+        <ul>
+            <li>
+                <span class="en">Multi-format file support (CSV, Excel, PDF)</span>
+                <span class="tr" style="display:none;">Çoklu dosya desteği (CSV, Excel, PDF)</span>
+            </li>
+            <li>
+                <span class="en">Natural language question answering</span>
+                <span class="tr" style="display:none;">Doğal dil ile soru cevaplama</span>
+            </li>
+            <li>
+                <span class="en">Context-aware AI responses</span>
+                <span class="tr" style="display:none;">Bağlama duyarlı yapay zeka cevapları</span>
+            </li>
+            <li>
+                <span class="en">Data-based reasoning (or fallback "I don’t know")</span>
+                <span class="tr" style="display:none;">Veriye dayalı akıl yürütme (yoksa bilmiyorum cevabı)</span>
+            </li>
+            <li>
+                <span class="en">Dual mode: file-based + standalone chatbot</span>
+                <span class="tr" style="display:none;">Çift mod: dosya tabanlı + bağımsız chatbot</span>
+            </li>
+        </ul>
     </div>
 
 </div>
 
+                <div class="actions">
+                    <div class="btn" onclick="history.back()">
+                        <span class="en">Back</span>
+                        <span class="tr" style="display:none;">Geri</span>
+                    </div>
+                    <div class="btn">GitHub</div>
+                </div>
+            </div>
 
+        </div>
+
+    </div>
 
     <footer>
         <p class="en">© 2026 Elif Karadeniz</p>
