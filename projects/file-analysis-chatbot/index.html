@@ -471,7 +471,7 @@ body.light-mode .metric-card:hover {
         </h1>
 
         <p class="subtitle">
-            <span class="en">AI-powered chatbot that analyzes CSV, Excel and PDF files using Large Language Models (LLM</span>
+            <span class="en">AI-powered chatbot that analyzes CSV, Excel and PDF files using Large Language Models (LLM)</span>
             <span class="tr" style="display:none;">Büyük Dil Modelleri (LLM) kullanarak CSV, Excel ve PDF dosyalarını analiz eden yapay zeka destekli sohbet botu</span>
         </p>
 
@@ -501,7 +501,7 @@ body.light-mode .metric-card:hover {
             </div>
             <div class="info-card">
                 <span>
-                    <span class="en">File TypesF</span>
+                    <span class="en">File Types</span>
                     <span class="tr" style="display:none;">Dosya Türleri</span>
                 </span>
                 <p>
@@ -807,41 +807,7 @@ client = <span class="func">OpenAI</span>(
             window.location.href = '/';
         });
 
-        /* CHARTS */
-        new Chart(document.getElementById("scoreChart"), {
-            type: "doughnut",
-            data: {
-                labels: ["Cluster 1", "Cluster 2", "Cluster 3", "Cluster 4", "Cluster 5"],
-                datasets: [{
-                    data: [120, 95, 140, 80, 106],
-                    backgroundColor: ["#3fb950", "#58a6ff", "#f78166", "#d2a8ff", "#ffa657"]
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: { display: true }
-                }
-            }
-        });
-
-        new Chart(document.getElementById("barChart"), {
-            type: "bar",
-            data: {
-                labels: ["Silhouette", "Calinski-Harabasz", "Davies-Bouldin"],
-                datasets: [{
-                    data: [0.6657, 2188, 0.44],
-                    backgroundColor: "#3fb950"
-                }]
-            },
-            options: {
-                scales: {
-                    y: { beginAtZero: true }
-                },
-                plugins: {
-                    legend: { display: false }
-                }
-            }
-        });
+   
     </script>
 
 </body>
