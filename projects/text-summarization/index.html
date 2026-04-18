@@ -1,1 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <title>Project Detail - Elif Karadeniz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* CONTAINER */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* TITLE */
+        .title {
+            font-size: 34px;
+            color: #3fb950;
+            margin-top: 20px;
+        }
+
+        .subtitle {
+            color: #8b949e;
+            margin-bottom: 25px;
+        }
+
+        body.light-mode .subtitle {
+            color: #555;
+        }
+
+   
+        /* INFO GRID */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-card {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+        }
+
+        body.light-mode .info-card {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        .info-card span {
+            font-size: 13px;
+            color: #ffffff;
+        }
+
+        body.light-mode .info-card span {
+            color: #000;
+        }
+
+        .info-card p {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        body.light-mode .info-card p {
+            color: #000;
+        }
+
+        /* DESCRIPTION */
+        .description {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        body.light-mode .description {
+            background: #fff;
+            color: #000;
+        }
+
+        /* ARCHITECTURE */
+        .architecture {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        body.light-mode .architecture {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        .architecture h3 {
+            margin-bottom: 15px;
+            color: #3fb950;
+        }
+
+        body.light-mode .architecture h3 {
+            color: #000;
+        }
+
+        .flow {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 140px;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        body.light-mode .step {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        /* MAIN CONTENT GRID */
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* CODE BLOCK */
+        .code {
+            background: #161b22;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        body.light-mode .code {
+            background: #fff;
+            color: #000;
+        }
+
+        .code-header {
+            background: #21262d;
+            padding: 10px;
+            display: flex;
+            gap: 8px;
+        }
+
+        body.light-mode .code-header {
+            background: #eee;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .red    { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green  { background: #27c93f; }
+
+        .code pre {
+            padding: 20px;
+            font-size: 14px;
+            color: #c9d1d9;
+            line-height: 1.5;
+            overflow-x: auto;
+            max-height: 220px;
+        }
+
+        body.light-mode .code pre {
+            color: #000;
+        }
+
+        .keyword { color: #ff7b72; }
+        .string  { color: #a5d6ff; }
+        .func    { color: #d2a8ff; }
+
+        /* CHARTS UNDER CODE */
+        .charts-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .charts-container .dash-card {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        body.light-mode .charts-container .dash-card {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        body.light-mode .metric-card p {
+        color: #000;
+     }
+        /* DASHBOARD RIGHT COLUMN */
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .dash-card {
+            background: #161b22;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        body.light-mode .dashboard .dash-card {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        .dash-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(63, 185, 80, 0.3);
+        }
+
+        .dash-card p {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        body.light-mode .dashboard .dash-card p {
+            color: #000;
+        }
+
+        .value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #3fb950;
+        }
+
+        .tags span {
+            display: inline-block;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin: 2px;
+            font-size: 11px;
+        }
+
+        .dash-card ul {
+            margin-top: 8px;
+            padding-left: 15px;
+            font-size: 13px;
+        }
+
+        body.light-mode .tags span {
+            background: #fff;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        /* BUTTONS */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #3fb950;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #3fb950;
+            color: #0d1117;
+        }
+
+        body.light-mode .btn {
+            color: #3fb950;
+            border-color: #3fb950;
+        }
+
+        body.light-mode .btn:hover {
+            color: #fff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .charts-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+            <ul class="navbar-links">
+                <li>
+                    <a href="/">
+                        <span class="en">Home</span>
+                        <span class="tr" style="display:none;">Ana Sayfa</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <span class="en">About</span>
+                        <span class="tr" style="display:none;">Hakkımda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/projects/">
+                        <span class="en">Projects</span>
+                        <span class="tr" style="display:none;">Projeler</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/articles/">
+                        <span class="en">Articles</span>
+                        <span class="tr" style="display:none;">Yazılar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/conference/">
+                        <span class="en">Conference</span>
+                        <span class="tr" style="display:none;">Konferans</span>
+                    </a>
+                </li>
+            </ul>
+            <input type="text" id="search" placeholder="Search...">
+            <div class="lang-wrapper">
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('tr')">TR</button>
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <h1 class="title">
+        <span class="en">Intrusion Detection System (UNSW-NB15)</span>
+        <span class="tr" style="display:none;">Siber Saldırı Tespit Sistemi (UNSW-NB15)</span>
+    </h1>
+
+    <p class="subtitle">
+        <span class="en">
+            Unsupervised machine learning based intrusion detection system using DBSCAN and Isolation Forest algorithms
+        </span>
+        <span class="tr" style="display:none;">
+            DBSCAN ve Isolation Forest algoritmaları kullanılarak geliştirilmiş denetimsiz öğrenme tabanlı siber saldırı tespit sistemi
+        </span>
+    </p>
+
+    <!-- INFO GRID -->
+    <div class="info-grid">
+
+        <div class="info-card">
+            <span>
+                <span class="en">Project Type</span>
+                <span class="tr" style="display:none;">Proje Türü</span>
+            </span>
+            <p>
+                <span class="en">Cyber Security / Machine Learning</span>
+                <span class="tr" style="display:none;">Siber Güvenlik / Makine Öğrenmesi</span>
+            </p>
+        </div>
+
+        <div class="info-card">
+            <span>
+                <span class="en">Core Dataset</span>
+                <span class="tr" style="display:none;">Veri Seti</span>
+            </span>
+            <p>
+                <span class="en">UNSW-NB15 Network Traffic Dataset</span>
+                <span class="tr" style="display:none;">UNSW-NB15 Ağ Trafik Veri Seti</span>
+            </p>
+        </div>
+
+        <div class="info-card">
+            <span>
+                <span class="en">Main Algorithms</span>
+                <span class="tr" style="display:none;">Ana Algoritmalar</span>
+            </span>
+            <p>
+                <span class="en">DBSCAN / Isolation Forest / PCA</span>
+                <span class="tr" style="display:none;">DBSCAN / Isolation Forest / PCA</span>
+            </p>
+        </div>
+
+        <div class="info-card">
+            <span>
+                <span class="en">Status</span>
+                <span class="tr" style="display:none;">Durum</span>
+            </span>
+            <p>
+                <span class="en">Completed</span>
+                <span class="tr" style="display:none;">Tamamlandı</span>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="description">
+        <span class="en">
+            This project focuses on detecting network intrusions and anomalies using unsupervised learning techniques.
+            DBSCAN and Isolation Forest algorithms were applied and compared on the UNSW-NB15 dataset.
+            The main goal is to detect attack patterns without using labeled data and maximize recall for intrusion detection.
+        </span>
+        <span class="tr" style="display:none;">
+            Bu proje, denetimsiz öğrenme yöntemleri kullanarak ağ trafiğinde saldırı ve anomali tespiti yapmayı amaçlar.
+            UNSW-NB15 veri seti üzerinde DBSCAN ve Isolation Forest algoritmaları karşılaştırmalı olarak uygulanmıştır.
+            Temel hedef, etiket bilgisi kullanmadan saldırıları tespit etmek ve özellikle recall değerini maksimum seviyeye çıkarmaktır.
+        </span>
+    </div>
+
+    <!-- ARCHITECTURE -->
+    <div class="architecture">
+
+        <h3>
+            <span class="en">Workflow</span>
+            <span class="tr" style="display:none;">İş Akışı</span>
+        </h3>
+
+        <div class="flow">
+
+            <div class="step">
+                <span class="en">Data Loading (UNSW-NB15)</span>
+                <span class="tr" style="display:none;">Veri Yükleme (UNSW-NB15)</span>
+            </div>
+
+            <div class="step">
+                <span class="en">Data Preprocessing</span>
+                <span class="tr" style="display:none;">Veri Ön İşleme</span>
+            </div>
+
+            <div class="step">
+                <span class="en">Feature Scaling</span>
+                <span class="tr" style="display:none;">Özellik Ölçekleme</span>
+            </div>
+
+            <div class="step">
+                <span class="en">Dimensionality Reduction (PCA)</span>
+                <span class="tr" style="display:none;">Boyut İndirgeme (PCA)</span>
+            </div>
+
+            <div class="step">
+                <span class="en">DBSCAN Clustering</span>
+                <span class="tr" style="display:none;">DBSCAN Kümeleme</span>
+            </div>
+
+            <div class="step">
+                <span class="en">Isolation Forest Detection</span>
+                <span class="tr" style="display:none;">Isolation Forest Tespiti</span>
+            </div>
+
+            <div class="step">
+                <span class="en">Model Evaluation</span>
+                <span class="tr" style="display:none;">Model Değerlendirme</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LEFT + RIGHT CONTENT -->
+    <div class="content">
+
+        <!-- LEFT -->
+        <div>
+
+            <div class="code">
+                <div class="code-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+
+<pre>
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+<span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> IsolationForest
+<span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> DBSCAN
+<span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler
+<span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA
+</pre>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="dashboard">
+
+            <div class="dash-card">
+                <p>
+                    <span class="en">Tech Stack</span>
+                    <span class="tr" style="display:none;">Teknolojiler</span>
+                </p>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>Scikit-learn</span>
+                    <span>Pandas</span>
+                    <span>NumPy</span>
+                    <span>Matplotlib</span>
+                    <span>Jupyter Notebook</span>
+                </div>
+            </div>
+
+            <div class="dash-card">
+                <p>
+                    <span class="en">Methods</span>
+                    <span class="tr" style="display:none;">Yöntemler</span>
+                </p>
+                <ul>
+                    <li>
+                        <span class="en">Data cleaning & preprocessing</span>
+                        <span class="tr" style="display:none;">Veri temizleme ve ön işleme</span>
+                    </li>
+                    <li>
+                        <span class="en">Label encoding & normalization</span>
+                        <span class="tr" style="display:none;">Label encoding ve normalizasyon</span>
+                    </li>
+                    <li>
+                        <span class="en">StandardScaler & PowerTransformer usage</span>
+                        <span class="tr" style="display:none;">StandardScaler ve PowerTransformer kullanımı</span>
+                    </li>
+                    <li>
+                        <span class="en">DBSCAN clustering for anomaly detection</span>
+                        <span class="tr" style="display:none;">DBSCAN ile anomali tespiti</span>
+                    </li>
+                    <li>
+                        <span class="en">Isolation Forest for intrusion detection</span>
+                        <span class="tr" style="display:none;">Isolation Forest ile saldırı tespiti</span>
+                    </li>
+                    <li>
+                        <span class="en">PCA for dimensionality reduction & visualization</span>
+                        <span class="tr" style="display:none;">PCA ile boyut indirgeme ve görselleştirme</span>
+                    </li>
+                    <li>
+                        <span class="en">Model comparison (Recall / F1 / Precision)</span>
+                        <span class="tr" style="display:none;">Model karşılaştırması (Recall / F1 / Precision)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="dash-card">
+                <p>
+                    <span class="en">Key Insight</span>
+                    <span class="tr" style="display:none;">Önemli Sonuç</span>
+                </p>
+                <ul>
+                    <li>
+                        <span class="en">Isolation Forest outperforms DBSCAN in attack detection</span>
+                        <span class="tr" style="display:none;">Isolation Forest saldırı tespitinde DBSCAN’dan daha başarılıdır</span>
+                    </li>
+                    <li>
+                        <span class="en">Recall is prioritized over accuracy</span>
+                        <span class="tr" style="display:none;">Recall metriği doğruluktan daha önceliklidir</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="actions">
+                <div class="btn" onclick="history.back()">
+                    <span class="en">Back</span>
+                    <span class="tr" style="display:none;">Geri</span>
+                </div>
+                <div class="btn">GitHub</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <footer>
+        <p class="en">© 2026 Elif Karadeniz</p>
+        <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
+    </footer>
+
+    <script>
+        /* LANGUAGE */
+        function setLang(lang) {
+            document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
+            document.querySelectorAll('.tr').forEach(el => el.style.display = (lang === 'tr') ? '' : 'none');
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.lang-btn')[lang === 'en' ? 0 : 1].classList.add('active');
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang') || 'en';
+        setLang(savedLang);
+
+        /* THEME */
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const icon = themeBtn.querySelector('i');
+            icon.classList.toggle('fa-sun');
+            icon.classList.toggle('fa-moon');
+        });
+
+        /* SEARCH */
+        document.getElementById('search').addEventListener('input', e => {
+            const val = e.target.value.toLowerCase();
+            document.querySelectorAll('.project-item').forEach(card => {
+                card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex' : 'none';
+            });
+        });
+
+        /* LOGO CLICK */
+        document.getElementById('navbar-name').addEventListener('click', () => {
+            window.location.href = '/';
+        });
+
+    </script>
+
+</body>
+</html>
