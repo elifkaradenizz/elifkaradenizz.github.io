@@ -657,41 +657,6 @@ clusters = model.<span class="func">predict</span>(data)
             window.location.href = '/';
         });
 
-        /* CHARTS */
-        new Chart(document.getElementById("scoreChart"), {
-            type: "doughnut",
-            data: {
-                labels: ["Cluster 1", "Cluster 2", "Cluster 3", "Cluster 4", "Cluster 5"],
-                datasets: [{
-                    data: [120, 95, 140, 80, 106],
-                    backgroundColor: ["#3fb950", "#58a6ff", "#f78166", "#d2a8ff", "#ffa657"]
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: { display: true }
-                }
-            }
-        });
-
-        new Chart(document.getElementById("barChart"), {
-            type: "bar",
-            data: {
-                labels: ["Silhouette", "Calinski-Harabasz", "Davies-Bouldin"],
-                datasets: [{
-                    data: [0.6657, 2188, 0.44],
-                    backgroundColor: "#3fb950"
-                }]
-            },
-            options: {
-                scales: {
-                    y: { beginAtZero: true }
-                },
-                plugins: {
-                    legend: { display: false }
-                }
-            }
-        });
     </script>
 
 </body>
