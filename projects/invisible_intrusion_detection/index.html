@@ -52,27 +52,32 @@ body.light-mode .project-image {
     border-color: #ccc;
 }
 
+/* ===================== */
 /* INFO GRID */
+/* ===================== */
+
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 12px;
     margin-bottom: 20px;
+
     align-items: stretch;
+    grid-auto-rows: 1fr;
 }
 
 .info-card {
     background: #161b22;
-    padding: 12px;
+    padding: 10px 12px;
     border-radius: 12px;
     border: 1px solid #30363d;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 4px;
 
-    min-height: 80px;
+    min-height: 85px;
+    box-sizing: border-box;
 }
 
 body.light-mode .info-card {
@@ -99,11 +104,10 @@ body.light-mode .info-card span {
     overflow-wrap: break-word;
 }
 
-body.light-mode .info-card p {
-    color: #000;
-}
-
+/* ===================== */
 /* DESCRIPTION */
+/* ===================== */
+
 .description {
     background: #161b22;
     padding: 16px;
@@ -117,7 +121,10 @@ body.light-mode .description {
     color: #000;
 }
 
+/* ===================== */
 /* ARCHITECTURE */
+/* ===================== */
+
 .architecture {
     background: #161b22;
     padding: 16px;
@@ -144,6 +151,7 @@ body.light-mode .architecture h3 {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .step {
@@ -153,14 +161,15 @@ body.light-mode .architecture h3 {
     border: 1px solid #30363d;
     padding: 8px;
     border-radius: 10px;
-    text-align: center;
-    font-size: 13px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    line-height: 1.2;
+    text-align: center;
+    font-size: 13px;
+    min-height: 70px;
+
     word-break: break-word;
 }
 
@@ -170,7 +179,10 @@ body.light-mode .step {
     color: #000;
 }
 
-/* MAIN CONTENT GRID */
+/* ===================== */
+/* MAIN CONTENT */
+/* ===================== */
+
 .content {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -178,7 +190,10 @@ body.light-mode .step {
     align-items: start;
 }
 
+/* ===================== */
 /* CODE BLOCK */
+/* ===================== */
+
 .code {
     background: #161b22;
     border-radius: 15px;
@@ -229,32 +244,43 @@ body.light-mode .code pre {
 .string { color: #a5d6ff; }
 .func { color: #d2a8ff; }
 
-/* CHARTS UNDER CODE */
+/* ===================== */
+/* CHARTS */
+/* ===================== */
+
 .charts-container {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
     margin-bottom: 15px;
+
     align-items: stretch;
+    grid-auto-rows: 1fr;
 }
 
 .charts-container .dash-card {
     flex: 1;
     min-width: 220px;
+
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
-/* METRIC CARD FIX */
+/* metric card fix */
 .metric-card {
     min-width: 240px;
+    min-height: 110px;
 }
 
 .metric-card p {
     margin: 2px 0 4px 0;
 }
 
-/* DASHBOARD RIGHT COLUMN */
+/* ===================== */
+/* DASHBOARD */
+/* ===================== */
+
 .dashboard {
     display: flex;
     flex-direction: column;
@@ -266,13 +292,14 @@ body.light-mode .code pre {
     padding: 10px 12px;
     border-radius: 12px;
     border: 1px solid #30363d;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: 0.2s;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 
-    min-height: 160px;
+    min-height: 150px;
+    box-sizing: border-box;
 }
 
 body.light-mode .dashboard .dash-card {
@@ -290,7 +317,6 @@ body.light-mode .dashboard .dash-card {
     font-size: 13px;
     font-weight: bold;
     margin: 2px 0 6px 0;
-    color: #ffffff;
 
     word-break: break-word;
 }
@@ -307,6 +333,7 @@ body.light-mode .dashboard .dash-card p {
     line-height: 1.2;
 }
 
+/* tags */
 .tags span {
     display: inline-block;
     background: #0d1117;
@@ -317,13 +344,17 @@ body.light-mode .dashboard .dash-card p {
     font-size: 11px;
 }
 
+/* list */
 .dash-card ul {
     margin-top: 6px;
     padding-left: 15px;
     font-size: 13px;
 }
 
+/* ===================== */
 /* BUTTONS */
+/* ===================== */
+
 .actions {
     display: flex;
     flex-direction: column;
@@ -354,7 +385,10 @@ body.light-mode .btn:hover {
     color: #fff;
 }
 
+/* ===================== */
 /* RESPONSIVE */
+/* ===================== */
+
 @media (max-width: 900px) {
     .content {
         grid-template-columns: 1fr;
