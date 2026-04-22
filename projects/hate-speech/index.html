@@ -245,6 +245,8 @@
             font-size: 13px;
             line-height: 1.6;
             color: #c9d1d9;
+              display: flex;
+             flex-direction: column;
         }
 
         body.light-mode .academic-badge .badge-text {
@@ -261,6 +263,22 @@
         body.light-mode .academic-badge .badge-text strong {
             color: #2a8a3e;
         }
+        
+         /* LINK */
+        .detail-link {
+    display: block;
+    margin-top: 10px;   /* yazıdan boşluk */
+    font-weight: 600;
+    color: #6c63ff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+/* hover */
+.detail-link:hover {
+    color: #3fb950;
+    transform: translateX(3px);
+}
 
         /* DASHBOARD RIGHT COLUMN */
         .dashboard {
@@ -362,20 +380,7 @@
         body.light-mode .btn:hover {
             color: #fff;
         }
-        /* LINK */
-.detail-link {
-    display: inline-block;
-    margin-top: 8px;
-    font-weight: 600;
-    color: #6c63ff;        /* normal renk */
-    text-decoration: none; 
-    transition: all 0.2s ease;
-}
 
-.detail-link:hover {
-    color: #3fb950;        /* hover’da yeşil */
-    transform: translateX(3px);
-}
 
         /* RESPONSIVE */
         @media (max-width: 900px) {
