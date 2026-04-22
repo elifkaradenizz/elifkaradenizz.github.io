@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <title>About - Elif Karadeniz</title>
 
+<link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -13,58 +15,60 @@ body {
   margin: 0;
   background: #0d1117;
   color: #c9d1d9;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+  font-family: Arial, sans-serif;
 }
 
-/* ================= CONTAINER ================= */
-.container {
-  max-width: 880px;
-  margin: 100px auto;
-  padding: 0 24px;
+/* ================= PAGE WRAPPER ================= */
+.page-content {
+  max-width: 900px;
+  margin: 100px auto 60px;
+  padding: 0 20px;
 }
 
 /* ================= HERO ================= */
-h1 {
-  font-size: 3rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-  letter-spacing: -0.5px;
+.about-hero {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.subtitle {
-  font-size: 1.15rem;
-  color: #8b949e;
-  max-width: 650px;
-  line-height: 1.7;
+.about-hero h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.about-hero p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #c9d1d9;
+  max-width: 750px;
+  margin: auto;
 }
 
 /* ================= SECTION ================= */
 .section {
-  margin-top: 60px;
+  margin-bottom: 50px;
 }
 
 .section h2 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #3fb950;
+  margin-bottom: 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 15px;
 }
 
-/* ================= TEXT ================= */
-p {
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: #c9d1d9;
-  margin-bottom: 15px;
+.section p {
+  line-height: 1.8;
+  font-size: 1rem;
 }
 
 /* ================= HIGHLIGHT ================= */
 .highlight {
   border-left: 2px solid #3fb950;
   padding-left: 14px;
+  margin: 20px 0;
   color: #e6edf3;
-  margin: 25px 0;
 }
 
 /* ================= TAGS ================= */
@@ -75,27 +79,26 @@ p {
 }
 
 .tag {
-  font-size: 0.85rem;
   padding: 6px 12px;
-  border: 1px solid #30363d;
   border-radius: 999px;
-  color: #c9d1d9;
+  border: 1px solid #30363d;
+  font-size: 0.85rem;
   background: rgba(255,255,255,0.02);
 }
 
 /* ================= TIMELINE ================= */
 .timeline {
-  margin-top: 20px;
   border-left: 1px solid #30363d;
   padding-left: 20px;
+  margin-top: 20px;
 }
 
-.item {
-  margin-bottom: 25px;
+.timeline-item {
   position: relative;
+  margin-bottom: 25px;
 }
 
-.item::before {
+.timeline-item::before {
   content: "";
   position: absolute;
   left: -26px;
@@ -110,90 +113,131 @@ p {
 a {
   color: #3fb950;
   text-decoration: none;
-  font-weight: 500;
 }
 
 a:hover {
   color: #58d26f;
 }
 
-/* ================= DIVIDER ================= */
-.divider {
-  height: 1px;
-  background: #30363d;
-  margin: 50px 0;
-  opacity: 0.5;
-}
-
 </style>
 </head>
 
-<body>
+<body class="dark-mode">
 
-<div class="container">
+<!-- ================= NAVBAR (SENİN SİSTEMLE UYUMLU) ================= -->
+<nav class="navbar">
+  <div class="navbar-center">
+
+    <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+
+    <ul class="navbar-links">
+      <li><a href="/"><span class="en">Home</span><span class="tr" style="display:none;">Ana Sayfa</span></a></li>
+      <li><a href="/about/"><span class="en">About</span><span class="tr" style="display:none;">Hakkımda</span></a></li>
+      <li><a href="/projects/"><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></a></li>
+      <li><a href="/articles/"><span class="en">Articles</span><span class="tr" style="display:none;">Yazılar</span></a></li>
+      <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
+    </ul>
+
+    <input type="text" id="search" placeholder="Search...">
+
+    <div class="lang-wrapper">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('tr')">TR</button>
+      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ================= ABOUT CONTENT ================= -->
+<section class="page-content">
 
   <!-- HERO -->
-  <h1>About Me</h1>
+  <div class="about-hero">
 
-  <p class="subtitle">
-    AI & Data Science Engineer focused on designing intelligent systems, 
-    building scalable machine learning pipelines and transforming data into impact.
-  </p>
+    <h1>
+      <span class="en">About Me</span>
+      <span class="tr" style="display:none;">Hakkımda</span>
+    </h1>
 
-  <div class="highlight">
-    I build ML systems that don’t just predict — they explain, adapt and scale.
+    <p>
+      <span class="en">
+        AI & Data Science Engineer focused on building intelligent systems and solving real-world problems.
+      </span>
+      <span class="tr" style="display:none;">
+        Yapay zeka ve veri bilimi alanında çalışan bir mühendis.
+      </span>
+    </p>
+
+    <div class="highlight">
+      <span class="en">I build ML systems that turn data into impact.</span>
+      <span class="tr" style="display:none;">Veriyi etkiye dönüştüren sistemler geliştiriyorum.</span>
+    </div>
+
   </div>
-
-  <div class="divider"></div>
 
   <!-- WHAT I DO -->
   <div class="section">
-    <h2>What I Focus On</h2>
+    <h2>
+      <span class="en">What I Focus On</span>
+      <span class="tr" style="display:none;">Odak Alanlarım</span>
+    </h2>
 
     <div class="tags">
       <div class="tag">Machine Learning</div>
-      <div class="tag">Deep Learning</div>
       <div class="tag">NLP</div>
       <div class="tag">LLMs</div>
       <div class="tag">Data Engineering</div>
       <div class="tag">EvalOps</div>
-      <div class="tag">Scalable AI Systems</div>
     </div>
   </div>
 
   <!-- BACKGROUND -->
   <div class="section">
-    <h2>Background</h2>
+    <h2>
+      <span class="en">Background</span>
+      <span class="tr" style="display:none;">Geçmiş</span>
+    </h2>
 
     <p>
-      I have worked on recommendation systems, NLP pipelines and image processing models.
-      My focus is not just building models, but making them usable in real-world systems.
-    </p>
-
-    <p>
-      I also worked on research-driven AI projects and presented findings at international conferences.
+      <span class="en">
+        I worked on recommendation systems, NLP pipelines and deep learning models.
+      </span>
+      <span class="tr" style="display:none;">
+        Öneri sistemleri, NLP ve derin öğrenme projeleri geliştirdim.
+      </span>
     </p>
   </div>
 
-  <!-- EXPERIENCE -->
+  <!-- HIGHLIGHTS -->
   <div class="section">
-    <h2>Highlights</h2>
+    <h2>
+      <span class="en">Highlights</span>
+      <span class="tr" style="display:none;">Öne Çıkanlar</span>
+    </h2>
 
     <div class="timeline">
 
-      <div class="item">
-        <strong>AI System Development</strong>
-        <p>Built ML & NLP systems including recommendation engines and classification models.</p>
+      <div class="timeline-item">
+        <strong>
+          <span class="en">AI System Development</span>
+          <span class="tr" style="display:none;">AI Sistem Geliştirme</span>
+        </strong>
+        <p>
+          <span class="en">Built ML & NLP systems and scalable pipelines.</span>
+          <span class="tr" style="display:none;">ML ve NLP sistemleri geliştirdim.</span>
+        </p>
       </div>
 
-      <div class="item">
-        <strong>Research Work</strong>
-        <p>Conducted studies on hate speech detection and social media analysis.</p>
-      </div>
-
-      <div class="item">
-        <strong>Data Science Projects</strong>
-        <p>Worked on feature engineering, model optimization and structured data pipelines.</p>
+      <div class="timeline-item">
+        <strong>
+          <span class="en">Research Work</span>
+          <span class="tr" style="display:none;">Araştırma</span>
+        </strong>
+        <p>
+          <span class="en">Presented at international conferences.</span>
+          <span class="tr" style="display:none;">Uluslararası konferanslarda sunum yaptım.</span>
+        </p>
       </div>
 
     </div>
@@ -201,15 +245,31 @@ a:hover {
 
   <!-- LINKS -->
   <div class="section">
-    <h2>Explore</h2>
+    <h2>
+      <span class="en">Explore</span>
+      <span class="tr" style="display:none;">Keşfet</span>
+    </h2>
 
     <p>
-      <a href="/projects/">View Projects →</a><br>
-      <a href="/conference/">Conference Work →</a>
+      <a href="/projects/">
+        <span class="en">Projects →</span>
+        <span class="tr" style="display:none;">Projeler →</span>
+      </a><br>
+
+      <a href="/conference/">
+        <span class="en">Conference →</span>
+        <span class="tr" style="display:none;">Konferans →</span>
+      </a>
     </p>
   </div>
 
-</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p><span class="en">© 2026 Elif Karadeniz</span>
+     <span class="tr" style="display:none;">© 2026 Elif Karadeniz</span></p>
+</footer>
 
 </body>
 </html>
