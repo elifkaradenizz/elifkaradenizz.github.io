@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>About - Elif Karadeniz</title>
 
-<link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -15,126 +14,92 @@ body {
   font-family: Arial, sans-serif;
   background: #0d1117;
   color: #c9d1d9;
+  line-height: 1.8;
 }
 
-/* ========================= PAGE ========================= */
-.page-content {
-  max-width: 1050px;
-  margin: 60px auto;
+/* ========================= CONTAINER ========================= */
+.container {
+  max-width: 900px;
+  margin: 80px auto;
   padding: 0 20px;
 }
 
-/* ========================= HERO ========================= */
-.about-hero {
-  text-align: center;
-  margin-bottom: 40px;
+/* ========================= TITLE ========================= */
+h1 {
+  font-size: 2.6rem;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
-.about-hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #ffffff;
+h2 {
+  color: #2ea44f;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 
-.about-hero p {
-  max-width: 750px;
-  margin: auto;
-  line-height: 1.8;
+/* ========================= PARAGRAPH ========================= */
+p {
   font-size: 1.05rem;
+  color: #c9d1d9;
+  margin-bottom: 15px;
+}
+
+/* ========================= HIGHLIGHT LINE ========================= */
+.highlight {
+  border-left: 3px solid #2ea44f;
+  padding-left: 15px;
+  margin: 20px 0;
+  color: #e6edf3;
+}
+
+/* ========================= TAGS ========================= */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tag {
+  padding: 6px 12px;
+  border: 1px solid #30363d;
+  border-radius: 20px;
+  font-size: 0.85rem;
   color: #c9d1d9;
 }
 
-/* ========================= SECTION CARD ========================= */
-.section-card {
-  background: #161b22;
-  padding: 2rem;
-  border-radius: 16px;
-  margin-bottom: 2.5rem;
-  border: 1px solid #30363d;
+/* ========================= TIMELINE ========================= */
+.timeline {
+  margin-top: 20px;
+  border-left: 2px solid #30363d;
+  padding-left: 20px;
 }
 
-.section-card h2 {
-  color: #2ea44f;
-  margin-bottom: 15px;
+.timeline-item {
+  margin-bottom: 25px;
+  position: relative;
 }
 
-/* ========================= GRID ========================= */
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+.timeline-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #2ea44f;
+  border-radius: 50%;
+  position: absolute;
+  left: -26px;
+  top: 6px;
 }
 
-/* ========================= CARD ========================= */
-.card {
-  background: #0d1117;
-  padding: 1.2rem;
-  border-radius: 12px;
-  border: 1px solid #30363d;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.35);
-}
-
-/* ========================= INNER CARD ========================= */
-.inner-card {
-  background: #161b22;
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #30363d;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.inner-card:hover {
-  transform: translateX(5px);
-  background: #21262d;
-}
-
-/* ========================= SEE ALL ========================= */
-.see-all {
-  margin-top: 15px;
-  text-align: center;
-}
-
-.see-all a {
+/* ========================= LINKS ========================= */
+a {
   color: #2ea44f;
   text-decoration: none;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
 }
 
-.see-all a:hover {
+a:hover {
   color: #3fb950;
-}
-
-/* ========================= LINK ARROW ========================= */
-.card-arrow {
-  margin-top: auto;
-  color: #2ea44f;
-  font-size: 1.2rem;
-  transition: 0.2s;
-  text-decoration: none;
-}
-
-.card-arrow:hover {
-  color: #3fb950;
-  transform: translateX(4px);
-}
-
-/* ========================= DIVIDER ========================= */
-.divider {
-  height: 1px;
-  background: #30363d;
-  margin: 30px 0;
 }
 
 </style>
@@ -142,77 +107,73 @@ body {
 
 <body>
 
-<section class="page-content">
+<div class="container">
 
   <!-- HERO -->
-  <div class="about-hero">
-    <h1>About Me</h1>
+  <h1>About Me</h1>
 
-    <p>
-      I am an AI & Data Science Engineer focused on building intelligent systems and solving real-world problems.
-      My work spans machine learning, NLP, and large language models. I enjoy transforming data into meaningful insights.
-    </p>
-  </div>
+  <p class="highlight">
+    AI & Data Science Engineer focused on building intelligent systems, 
+    extracting insights from data, and designing scalable ML pipelines.
+  </p>
 
-  <div class="divider"></div>
+  <p>
+    I specialize in Machine Learning, Natural Language Processing, and Large Language Models.
+    My focus is turning complex data into real-world impact.
+  </p>
 
-  <!-- PASSIONS -->
-  <div class="section-card">
-    <h2>My Passions</h2>
-    <p>AI, Machine Learning, NLP, LLMs, Data Engineering, Scalable Systems</p>
+  <!-- PASSION -->
+  <h2>What I Work On</h2>
+
+  <div class="tags">
+    <div class="tag">Machine Learning</div>
+    <div class="tag">NLP</div>
+    <div class="tag">LLMs</div>
+    <div class="tag">Data Engineering</div>
+    <div class="tag">EvalOps</div>
+    <div class="tag">Scalable Systems</div>
   </div>
 
   <!-- BACKGROUND -->
-  <div class="section-card">
-    <h2>My Background</h2>
-    <p>
-      I have worked on recommendation systems, image processing and deep learning projects.
-      I also presented research at international conferences.
-    </p>
-  </div>
+  <h2>Background</h2>
 
-  <!-- ACHIEVEMENTS -->
-  <div class="section-card">
-    <h2>Achievements & Highlights</h2>
+  <p>
+    I have worked on recommendation systems, image processing pipelines and deep learning models.
+    I also built research-driven AI systems and presented work at international conferences.
+  </p>
 
-    <div class="card-container">
+  <!-- TIMELINE -->
+  <h2>Experience & Highlights</h2>
 
-      <!-- PROJECTS -->
-      <div class="card">
-        <h3>Featured Projects</h3>
+  <div class="timeline">
 
-        <div class="inner-card">E-commerce Recommendation System</div>
-        <div class="inner-card">Hate Speech Detection</div>
-        <div class="inner-card">NLP + LLM Dashboard</div>
-
-        <div class="see-all">
-          <a href="/projects/">
-            See All Projects
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- EVALOPS -->
-      <div class="card">
-        <h3>EvalOps & DataOps</h3>
-        <p>Working on AI evaluation pipelines and data workflows.</p>
-      </div>
-
-      <!-- CONFERENCE -->
-      <div class="card">
-        <h3>Conference</h3>
-        <p>Presented research on hate speech detection and bias analysis.</p>
-
-        <a href="/conference/" class="card-arrow">
-          <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-
+    <div class="timeline-item">
+      <strong>AI / ML Projects</strong>
+      <p>Built recommendation systems, NLP models and LLM-based analytics tools.</p>
     </div>
+
+    <div class="timeline-item">
+      <strong>Research Presentation</strong>
+      <p>Presented work on hate speech detection and social media analysis.</p>
+    </div>
+
+    <div class="timeline-item">
+      <strong>Data Science Focus</strong>
+      <p>Worked on structured data analysis, feature engineering and model optimization.</p>
+    </div>
+
   </div>
 
-</section>
+  <!-- LINK -->
+  <h2>Explore More</h2>
+
+  <p>
+    <a href="/projects/">View Projects →</a>  
+    <br>
+    <a href="/conference/">Conference Work →</a>
+  </p>
+
+</div>
 
 </body>
 </html>
