@@ -1,665 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Project Detail - Elif Karadeniz</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
+<title>About - Elif Karadeniz</title>
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 
-/* CONTAINER */
+/* ========================= BASE ========================= */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0d1117;
-    color: #c9d1d9;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+/* ========================= PAGE ========================= */
+.page-content {
+  max-width: 1050px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
-/* TITLE */
-.title {
-    font-size: 34px;
-    color: #3fb950;
-    margin-top: 20px;
+/* ========================= HERO ========================= */
+.about-hero {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.subtitle {
-    color: #8b949e;
-    margin-bottom: 25px;
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ffffff;
 }
 
-body.light-mode .subtitle {
-    color: #555;
+.about-hero p {
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #c9d1d9;
 }
 
-/* INFO GRID */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    margin-bottom: 25px;
+/* ========================= SECTION CARD ========================= */
+.section-card {
+  background: #161b22;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2.5rem;
+  border: 1px solid #30363d;
 }
 
-.info-card {
-    background: #161b22;
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid #30363d;
+.section-card h2 {
+  color: #2ea44f;
+  margin-bottom: 15px;
 }
 
-body.light-mode .info-card {
-    background: #fff;
-    border-color: #ccc;
-    color: #000;
+/* ========================= GRID ========================= */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
 
-.info-card span {
-    font-size: 13px;
-    color: #ffffff;
+/* ========================= CARD ========================= */
+.card {
+  background: #0d1117;
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.25s ease;
 }
 
-body.light-mode .info-card span {
-    color: #000;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.35);
 }
 
-.info-card p {
-    margin-top: 5px;
-    font-weight: bold;
+/* ========================= INNER CARD ========================= */
+.inner-card {
+  background: #161b22;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
-/* DESCRIPTION */
-.description {
-    background: #161b22;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    line-height: 1.6;
+.inner-card:hover {
+  transform: translateX(5px);
+  background: #21262d;
 }
 
-body.light-mode .description {
-    background: #fff;
-    color: #000;
+/* ========================= SEE ALL ========================= */
+.see-all {
+  margin-top: 15px;
+  text-align: center;
 }
 
-/* ARCHITECTURE */
-.architecture {
-    background: #161b22;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 25px;
+.see-all a {
+  color: #2ea44f;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-body.light-mode .architecture {
-    background: #fff;
-    color: #000;
+.see-all a:hover {
+  color: #3fb950;
 }
 
-.architecture h3 {
-    margin-bottom: 15px;
-    color: #3fb950;
+/* ========================= LINK ARROW ========================= */
+.card-arrow {
+  margin-top: auto;
+  color: #2ea44f;
+  font-size: 1.2rem;
+  transition: 0.2s;
+  text-decoration: none;
 }
 
-body.light-mode .architecture h3 {
-    color: #000;
+.card-arrow:hover {
+  color: #3fb950;
+  transform: translateX(4px);
 }
 
-.flow {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.step {
-    flex: 1;
-    min-width: 140px;
-    background: #0d1117;
-    border: 1px solid #30363d;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 13px;
-}
-
-body.light-mode .step {
-    background: #fff;
-    border-color: #ccc;
-    color: #000;
-}
-
-/* MAIN CONTENT */
-.content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    align-items: start;
-}
-
-/* CODE */
-.code {
-    background: #161b22;
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-
-body.light-mode .code {
-    background: #fff;
-    color: #000;
-}
-
-.code-header {
-    background: #21262d;
-    padding: 10px;
-    display: flex;
-    gap: 8px;
-}
-
-body.light-mode .code-header {
-    background: #eee;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
-
-.code pre {
-    padding: 20px;
-    font-size: 14px;
-    line-height: 1.5;
-    overflow-x: auto;
-}
-
-.keyword { color: #ff7b72; }
-.string  { color: #a5d6ff; }
-.func    { color: #d2a8ff; }
-
-/* ========================= */
-/* 🔥 METRIC FIX (ANA KISIM) */
-/* ========================= */
-
-.charts-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    align-items: stretch; /* hepsi eşit */
-}
-
-/* kartlar */
-.charts-container .dash-card {
-    flex: 1;
-    min-width: 220px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* metric özel */
-.metric-card {
-    min-width: 260px;
-    min-height: 110px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-}
-
-/* başlık */
-.metric-card p {
-    font-size: 12px;
-    margin-bottom: 5px;
-}
-
-/* değer */
-.metric-card .value {
-    font-size: 20px;
-    font-weight: bold;
-    color: #3fb950;
-}
-
-/* UL normalize */
-.metric-card ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.metric-card ul li {
-    word-break: break-word;
-    line-height: 1.4;
-}
-
-/* light mode fix */
-body.light-mode .charts-container .dash-card {
-    background: #fff;
-    border-color: #ccc;
-    color: #000;
-}
-
-body.light-mode .metric-card p {
-    color: #000;
-}
-
-/* ========================= */
-/* DASHBOARD */
-/* ========================= */
-
-.dashboard {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.dash-card {
-    background: #161b22;
-    padding: 12px;
-    border-radius: 12px;
-    border: 1px solid #30363d;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-body.light-mode .dashboard .dash-card {
-    background: #fff;
-    border-color: #ccc;
-    color: #000;
-}
-
-.dash-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(63, 185, 80, 0.3);
-}
-
-.dash-card p {
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #ffffff;
-}
-
-body.light-mode .dashboard .dash-card p {
-    color: #000;
-}
-
-/* TAGS */
-.tags span {
-    display: inline-block;
-    background: #0d1117;
-    border: 1px solid #30363d;
-    padding: 4px 8px;
-    border-radius: 6px;
-    margin: 2px;
-    font-size: 11px;
-}
-
-body.light-mode .tags span {
-    background: #fff;
-    border-color: #ccc;
-    color: #000;
-}
-
-/* BUTTON */
-.actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.btn {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #3fb950;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #3fb950;
-    color: #0d1117;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .content {
-        grid-template-columns: 1fr;
-    }
-
-    .charts-container {
-        flex-direction: column;
-    }
+/* ========================= DIVIDER ========================= */
+.divider {
+  height: 1px;
+  background: #30363d;
+  margin: 30px 0;
 }
 
 </style>
 </head>
 
-<body class="dark-mode">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="navbar-center">
-            <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
-            <ul class="navbar-links">
-                <li>
-                    <a href="/">
-                        <span class="en">Home</span>
-                        <span class="tr" style="display:none;">Ana Sayfa</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/about/">
-                        <span class="en">About</span>
-                        <span class="tr" style="display:none;">Hakkımda</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/projects/">
-                        <span class="en">Projects</span>
-                        <span class="tr" style="display:none;">Projeler</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/articles/">
-                        <span class="en">Articles</span>
-                        <span class="tr" style="display:none;">Yazılar</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/conference/">
-                        <span class="en">Conference</span>
-                        <span class="tr" style="display:none;">Konferans</span>
-                    </a>
-                </li>
-            </ul>
-            <input type="text" id="search" placeholder="Search...">
-            <div class="lang-wrapper">
-                <button class="lang-btn active" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" onclick="setLang('tr')">TR</button>
-                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
-            </div>
-        </div>
-    </nav>
+<section class="page-content">
 
-  <!-- MAIN CONTENT -->
-<div class="container">
+  <!-- HERO -->
+  <div class="about-hero">
+    <h1>About Me</h1>
 
-    <h1 class="title">
-        <span class="en">Intrusion Detection System (UNSW-NB15)</span>
-        <span class="tr" style="display:none;">Siber Saldırı Tespit Sistemi (UNSW-NB15)</span>
-    </h1>
-
-    <p class="subtitle">
-        <span class="en">
-            Unsupervised machine learning based intrusion detection system using Isolation Forest
-        </span>
-        <span class="tr" style="display:none;">
-            Isolation Forest kullanılarak geliştirilmiş denetimsiz öğrenme tabanlı siber saldırı tespit sistemi
-        </span>
+    <p>
+      I am an AI & Data Science Engineer focused on building intelligent systems and solving real-world problems.
+      My work spans machine learning, NLP, and large language models. I enjoy transforming data into meaningful insights.
     </p>
+  </div>
 
-    <!-- INFO GRID -->
-    <div class="info-grid">
+  <div class="divider"></div>
 
-        <div class="info-card">
-            <span>
-                <span class="en">Project Type</span>
-                <span class="tr" style="display:none;">Proje Türü</span>
-            </span>
-            <p>
-                <span class="en">Cyber Security / Machine Learning</span>
-                <span class="tr" style="display:none;">Siber Güvenlik / Makine Öğrenmesi</span>
-            </p>
+  <!-- PASSIONS -->
+  <div class="section-card">
+    <h2>My Passions</h2>
+    <p>AI, Machine Learning, NLP, LLMs, Data Engineering, Scalable Systems</p>
+  </div>
+
+  <!-- BACKGROUND -->
+  <div class="section-card">
+    <h2>My Background</h2>
+    <p>
+      I have worked on recommendation systems, image processing and deep learning projects.
+      I also presented research at international conferences.
+    </p>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="section-card">
+    <h2>Achievements & Highlights</h2>
+
+    <div class="card-container">
+
+      <!-- PROJECTS -->
+      <div class="card">
+        <h3>Featured Projects</h3>
+
+        <div class="inner-card">E-commerce Recommendation System</div>
+        <div class="inner-card">Hate Speech Detection</div>
+        <div class="inner-card">NLP + LLM Dashboard</div>
+
+        <div class="see-all">
+          <a href="/projects/">
+            See All Projects
+            <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
+      </div>
 
-        <div class="info-card">
-            <span>
-                <span class="en">Dataset</span>
-                <span class="tr" style="display:none;">Veri Seti</span>
-            </span>
-            <p>UNSW-NB15</p>
-        </div>
+      <!-- EVALOPS -->
+      <div class="card">
+        <h3>EvalOps & DataOps</h3>
+        <p>Working on AI evaluation pipelines and data workflows.</p>
+      </div>
 
-        <div class="info-card">
-            <span>
-                <span class="en">Algorithm</span>
-                <span class="tr" style="display:none;">Algoritma</span>
-            </span>
-            <p>Isolation Forest</p>
-        </div>
+      <!-- CONFERENCE -->
+      <div class="card">
+        <h3>Conference</h3>
+        <p>Presented research on hate speech detection and bias analysis.</p>
 
-        <div class="info-card">
-            <span>
-                <span class="en">Status</span>
-                <span class="tr" style="display:none;">Durum</span>
-            </span>
-            <p>
-                <span class="en">Completed</span>
-                <span class="tr" style="display:none;">Tamamlandı</span>
-            </p>
-        </div>
+        <a href="/conference/" class="card-arrow">
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
 
     </div>
+  </div>
 
-    <!-- DESCRIPTION -->
-    <div class="description">
-        <span class="en">
-            This project detects network intrusions using unsupervised learning techniques.
-            The main goal is maximizing recall for attack detection without labeled data.
-        </span>
-        <span class="tr" style="display:none;">
-            Bu proje, denetimsiz öğrenme yöntemleri kullanarak ağ trafiğinde saldırı tespiti yapmayı amaçlar.
-            Temel hedef etiket bilgisi olmadan saldırıları yüksek recall ile yakalamaktır.
-        </span>
-    </div>
-
-    <!-- ARCHITECTURE -->
-    <div class="architecture">
-
-        <h3>
-            <span class="en">Workflow</span>
-            <span class="tr" style="display:none;">İş Akışı</span>
-        </h3>
-
-        <div class="flow">
-            <div class="step"><span class="en">Data Loading</span><span class="tr" style="display:none;">Veri Yükleme</span></div>
-            <div class="step"><span class="en">Cleaning</span><span class="tr" style="display:none;">Temizleme</span></div>
-            <div class="step"><span class="en">Scaling</span><span class="tr" style="display:none;">Ölçekleme</span></div>
-            <div class="step"><span class="en">PCA</span><span class="tr" style="display:none;">Boyut İndirgeme</span></div>
-            <div class="step"><span class="en">Isolation Forest</span><span class="tr" style="display:none;">Isolation Forest</span></div>
-            <div class="step"><span class="en">Evaluation</span><span class="tr" style="display:none;">Değerlendirme</span></div>
-        </div>
-    </div>
-<!-- LEFT + RIGHT CONTENT -->
-<div class="content">
-
-    <!-- LEFT -->
-    <div>
-
-        <!-- CODE -->
-        <div class="code">
-            <div class="code-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
-            </div>
-
-<pre>
-<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
-<span class="keyword">import</span> numpy <span class="keyword">as</span> np
-<span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> IsolationForest
-<span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> DBSCAN
-<span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler
-<span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA
-</pre>
-
-        </div>
-
-
-               <div class="charts-container">
-
-    <div class="dash-card metric-card">
-        <p>
-            <span class="en">Recall (Attack Detection)</span>
-            <span class="tr" style="display:none;">Recall (Saldırı Tespiti)</span>
-        </p>
-        <div class="value">0.32</div>
-    </div>
-
-    <div class="dash-card metric-card">
-        <p>
-            <span class="en">Precision</span>
-            <span class="tr" style="display:none;">Precision</span>
-        </p>
-        <div class="value">0.32</div>
-    </div>
-
-    <div class="dash-card metric-card">
-        <p>
-            <span class="en">F1 Score</span>
-            <span class="tr" style="display:none;">F1 Skoru</span>
-        </p>
-        <div class="value">0.32</div>
-    </div>
-
-    <div class="dash-card metric-card">
-        <p>
-            <span class="en">True Positives</span>
-            <span class="tr" style="display:none;">Doğru Tespit (TP)</span>
-        </p>
-        <div class="value">158</div>
-    </div>
-
-    <div class="dash-card metric-card">
-        <p>
-            <span class="en">Total Errors (FP + FN)</span>
-            <span class="tr" style="display:none;">Toplam Hata (FP + FN)</span>
-        </p>
-        <div class="value">684</div>
-    </div>
-
-</div>
-         </div>
-
-    <!-- RIGHT -->
-    <div class="dashboard">
-
-        <!-- TECH STACK -->
-        <div class="dash-card">
-            <p>
-                <span class="en">Tech Stack</span>
-                <span class="tr" style="display:none;">Teknolojiler</span>
-            </p>
-            <div class="tags">
-                <span>Python</span>
-                <span>Scikit-learn</span>
-                <span>Pandas</span>
-                <span>NumPy</span>
-                <span>Matplotlib</span>
-            </div>
-        </div>
-
-        <!-- METHODS (NEW) -->
-        <div class="dash-card">
-            <p>
-                <span class="en">Methods</span>
-                <span class="tr" style="display:none;">Yöntemler</span>
-            </p>
-            <div class="tags">
-                <span>StandardScaler</span>
-                <span>PCA</span>
-                <span>DBSCAN</span>
-                <span>Isolation Forest</span>
-                <span>Data Cleaning</span>
-                <span>Feature Scaling</span>
-            </div>
-        </div>
-
-<!-- KEY INSIGHT -->
-        <div class="dash-card">
-                    <p>
-                        <span class="en">Key Findings</span>
-                        <span class="tr" style="display:none;">Önemli Bulgular</span>
-                    </p>
-                    <ul>
-                        <li>
-                            <span class="en">    In this project, accurately detecting attacks takes precedence over general accuracy metrics. For this reason, recall has been treated as the most critical evaluation metric.</span>
-                            <span class="tr" style="display:none;">  Bu projede, saldırıları doğru bir şekilde tespit etmek genel doğruluk ölçütlerinden daha önceliklidir. Bu nedenle, recall en önemli değerlendirme ölçütü olarak kabul edilmiştir.</span>
-                        </li>
-                        <li>
-                            <span class="en">Isolation Forest has demonstrated better performance in recall-based evaluations</span>
-                            <span class="tr" style="display:none;">Isolation Forest, geri çağırma tabanlı değerlendirmelerde daha iyi bir performans sergilemiştir</span>
-                        </li>
-                    </ul>
-                </div>
-        <!-- ACTIONS -->
-        <div class="actions">
-            <div class="btn" onclick="history.back()">
-                <span class="en">Back</span>
-                <span class="tr" style="display:none;">Geri</span>
-            </div>
-            <div class="btn">GitHub</div>
-        </div>
-
-    </div>
-
-</div>
-
-    <footer>
-        <p class="en">© 2026 Elif Karadeniz</p>
-        <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
-    </footer>
-
-    <script>
-        /* LANGUAGE */
-        function setLang(lang) {
-            document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
-            document.querySelectorAll('.tr').forEach(el => el.style.display = (lang === 'tr') ? '' : 'none');
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.lang-btn')[lang === 'en' ? 0 : 1].classList.add('active');
-            localStorage.setItem('lang', lang);
-        }
-
-        const savedLang = localStorage.getItem('lang') || 'en';
-        setLang(savedLang);
-
-        /* THEME */
-        const themeBtn = document.getElementById('theme-toggle');
-        themeBtn.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            const icon = themeBtn.querySelector('i');
-            icon.classList.toggle('fa-sun');
-            icon.classList.toggle('fa-moon');
-        });
-
-        /* SEARCH */
-        document.getElementById('search').addEventListener('input', e => {
-            const val = e.target.value.toLowerCase();
-            document.querySelectorAll('.project-item').forEach(card => {
-                card.style.display = card.innerText.toLowerCase().includes(val) ? 'flex' : 'none';
-            });
-        });
-
-        /* LOGO CLICK */
-        document.getElementById('navbar-name').addEventListener('click', () => {
-            window.location.href = '/';
-        });
-
-    </script>
+</section>
 
 </body>
 </html>
