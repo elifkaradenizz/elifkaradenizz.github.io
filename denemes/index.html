@@ -8,98 +8,121 @@
 
 <style>
 
-/* ========================= BASE ========================= */
+/* ================= BASE ================= */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background: #0d1117;
   color: #c9d1d9;
-  line-height: 1.8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
 }
 
-/* ========================= CONTAINER ========================= */
+/* ================= CONTAINER ================= */
 .container {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 0 20px;
+  max-width: 880px;
+  margin: 100px auto;
+  padding: 0 24px;
 }
 
-/* ========================= TITLE ========================= */
+/* ================= HERO ================= */
 h1 {
-  font-size: 2.6rem;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-h2 {
-  color: #2ea44f;
-  margin-top: 50px;
+  font-size: 3rem;
+  color: #ffffff;
   margin-bottom: 10px;
-  font-size: 1.4rem;
+  letter-spacing: -0.5px;
 }
 
-/* ========================= PARAGRAPH ========================= */
+.subtitle {
+  font-size: 1.15rem;
+  color: #8b949e;
+  max-width: 650px;
+  line-height: 1.7;
+}
+
+/* ================= SECTION ================= */
+.section {
+  margin-top: 60px;
+}
+
+.section h2 {
+  font-size: 1rem;
+  color: #3fb950;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* ================= TEXT ================= */
 p {
   font-size: 1.05rem;
+  line-height: 1.9;
   color: #c9d1d9;
   margin-bottom: 15px;
 }
 
-/* ========================= HIGHLIGHT LINE ========================= */
+/* ================= HIGHLIGHT ================= */
 .highlight {
-  border-left: 3px solid #2ea44f;
-  padding-left: 15px;
-  margin: 20px 0;
+  border-left: 2px solid #3fb950;
+  padding-left: 14px;
   color: #e6edf3;
+  margin: 25px 0;
 }
 
-/* ========================= TAGS ========================= */
+/* ================= TAGS ================= */
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 10px;
 }
 
 .tag {
+  font-size: 0.85rem;
   padding: 6px 12px;
   border: 1px solid #30363d;
-  border-radius: 20px;
-  font-size: 0.85rem;
+  border-radius: 999px;
   color: #c9d1d9;
+  background: rgba(255,255,255,0.02);
 }
 
-/* ========================= TIMELINE ========================= */
+/* ================= TIMELINE ================= */
 .timeline {
   margin-top: 20px;
-  border-left: 2px solid #30363d;
+  border-left: 1px solid #30363d;
   padding-left: 20px;
 }
 
-.timeline-item {
+.item {
   margin-bottom: 25px;
   position: relative;
 }
 
-.timeline-item::before {
+.item::before {
   content: "";
-  width: 10px;
-  height: 10px;
-  background: #2ea44f;
-  border-radius: 50%;
   position: absolute;
   left: -26px;
   top: 6px;
+  width: 8px;
+  height: 8px;
+  background: #3fb950;
+  border-radius: 50%;
 }
 
-/* ========================= LINKS ========================= */
+/* ================= LINKS ================= */
 a {
-  color: #2ea44f;
+  color: #3fb950;
   text-decoration: none;
+  font-weight: 500;
 }
 
 a:hover {
-  color: #3fb950;
+  color: #58d26f;
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  height: 1px;
+  background: #30363d;
+  margin: 50px 0;
+  opacity: 0.5;
 }
 
 </style>
@@ -112,66 +135,79 @@ a:hover {
   <!-- HERO -->
   <h1>About Me</h1>
 
-  <p class="highlight">
-    AI & Data Science Engineer focused on building intelligent systems, 
-    extracting insights from data, and designing scalable ML pipelines.
+  <p class="subtitle">
+    AI & Data Science Engineer focused on designing intelligent systems, 
+    building scalable machine learning pipelines and transforming data into impact.
   </p>
 
-  <p>
-    I specialize in Machine Learning, Natural Language Processing, and Large Language Models.
-    My focus is turning complex data into real-world impact.
-  </p>
+  <div class="highlight">
+    I build ML systems that don’t just predict — they explain, adapt and scale.
+  </div>
 
-  <!-- PASSION -->
-  <h2>What I Work On</h2>
+  <div class="divider"></div>
 
-  <div class="tags">
-    <div class="tag">Machine Learning</div>
-    <div class="tag">NLP</div>
-    <div class="tag">LLMs</div>
-    <div class="tag">Data Engineering</div>
-    <div class="tag">EvalOps</div>
-    <div class="tag">Scalable Systems</div>
+  <!-- WHAT I DO -->
+  <div class="section">
+    <h2>What I Focus On</h2>
+
+    <div class="tags">
+      <div class="tag">Machine Learning</div>
+      <div class="tag">Deep Learning</div>
+      <div class="tag">NLP</div>
+      <div class="tag">LLMs</div>
+      <div class="tag">Data Engineering</div>
+      <div class="tag">EvalOps</div>
+      <div class="tag">Scalable AI Systems</div>
+    </div>
   </div>
 
   <!-- BACKGROUND -->
-  <h2>Background</h2>
+  <div class="section">
+    <h2>Background</h2>
 
-  <p>
-    I have worked on recommendation systems, image processing pipelines and deep learning models.
-    I also built research-driven AI systems and presented work at international conferences.
-  </p>
+    <p>
+      I have worked on recommendation systems, NLP pipelines and image processing models.
+      My focus is not just building models, but making them usable in real-world systems.
+    </p>
 
-  <!-- TIMELINE -->
-  <h2>Experience & Highlights</h2>
-
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <strong>AI / ML Projects</strong>
-      <p>Built recommendation systems, NLP models and LLM-based analytics tools.</p>
-    </div>
-
-    <div class="timeline-item">
-      <strong>Research Presentation</strong>
-      <p>Presented work on hate speech detection and social media analysis.</p>
-    </div>
-
-    <div class="timeline-item">
-      <strong>Data Science Focus</strong>
-      <p>Worked on structured data analysis, feature engineering and model optimization.</p>
-    </div>
-
+    <p>
+      I also worked on research-driven AI projects and presented findings at international conferences.
+    </p>
   </div>
 
-  <!-- LINK -->
-  <h2>Explore More</h2>
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <h2>Highlights</h2>
 
-  <p>
-    <a href="/projects/">View Projects →</a>  
-    <br>
-    <a href="/conference/">Conference Work →</a>
-  </p>
+    <div class="timeline">
+
+      <div class="item">
+        <strong>AI System Development</strong>
+        <p>Built ML & NLP systems including recommendation engines and classification models.</p>
+      </div>
+
+      <div class="item">
+        <strong>Research Work</strong>
+        <p>Conducted studies on hate speech detection and social media analysis.</p>
+      </div>
+
+      <div class="item">
+        <strong>Data Science Projects</strong>
+        <p>Worked on feature engineering, model optimization and structured data pipelines.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <div class="section">
+    <h2>Explore</h2>
+
+    <p>
+      <a href="/projects/">View Projects →</a><br>
+      <a href="/conference/">Conference Work →</a>
+    </p>
+  </div>
 
 </div>
 
