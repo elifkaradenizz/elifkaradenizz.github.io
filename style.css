@@ -7,15 +7,22 @@
   transition: all 0.3s ease;
 }
 
-/* ========================= DARK / LIGHT MODE ========================= */
+/* ========================= BODY ========================= */
 body.dark-mode {
-  background-color: #0d1117; /* Github dark */
+  background-color: #0d1117;
   color: #c9d1d9;
 }
 
 body.light-mode {
-  background-color: #f6f8fa; /* Github light */
+  background-color: #f6f8fa;
   color: #24292e;
+}
+
+/* ========================= CONTAINER ========================= */
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
 }
 
 /* ========================= NAVBAR ========================= */
@@ -26,17 +33,16 @@ body.light-mode {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(13,17,23,0.85); /* dark mode default */
+  background: rgba(13,17,23,0.85);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #2ea44f;
 }
 
 body.light-mode .navbar {
   background: rgba(246,248,250,0.9);
-  border-bottom: 1px solid #2ea44f;
 }
 
-/* Navbar center container */
+/* CENTER */
 .navbar-center {
   display: flex;
   align-items: center;
@@ -45,18 +51,19 @@ body.light-mode .navbar {
   justify-content: center;
 }
 
-/* Navbar name */
+/* NAME */
 .navbar-name {
   font-size: 1.5rem;
   font-weight: 700;
   color: #c9d1d9;
+  cursor: pointer;
 }
 
 body.light-mode .navbar-name {
   color: #24292e;
 }
 
-/* Navbar links */
+/* LINKS */
 .navbar-links {
   list-style: none;
   display: flex;
@@ -84,7 +91,7 @@ body.light-mode .navbar-links li a {
   text-align: center;
 }
 
-/* Search input */
+/* ========================= SEARCH ========================= */
 #search {
   padding: 6px 12px;
   border-radius: 6px;
@@ -104,23 +111,21 @@ body.light-mode #search {
   color: #888;
 }
 
-/* ========================= LANGUAGE BUTTONS ========================= */
+/* ========================= LANGUAGE ========================= */
 .lang-wrapper {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-/* EN/TR buttons */
 .lang-btn {
   border: none;
   padding: 6px 10px;
-  border-radius: 4px; /* kare buton */
+  border-radius: 4px;
   background: #2a2d3e;
   color: #fff;
   cursor: pointer;
   font-weight: 500;
-  transition: all 0.3s;
 }
 
 .lang-btn.active {
@@ -132,11 +137,11 @@ body.light-mode #search {
   background: #22863a;
 }
 
-/* ========================= THEME TOGGLE ========================= */
+/* ========================= THEME BUTTON ========================= */
 #theme-toggle {
   border: none;
   padding: 6px 10px;
-  border-radius: 4px; /* kare */
+  border-radius: 4px;
   background: #2a2d3e;
   color: #fff;
   cursor: pointer;
@@ -144,11 +149,10 @@ body.light-mode #search {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s, color 0.3s;
 }
 
 #theme-toggle:hover {
-  background-color: #2ea44f; /* Github green hover */
+  background-color: #2ea44f;
 }
 
 body.light-mode #theme-toggle {
@@ -161,25 +165,17 @@ body.light-mode #theme-toggle:hover {
   color: #fff;
 }
 
-/* ========================= CONTAINER ========================= */
-.container {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 20px;
-}
-
-/* ========================= HERO SECTION ========================= */
+/* ========================= HERO (HOME) ========================= */
 .hero {
   text-align: center;
   padding: 150px 20px;
 }
 
 .hero h1 {
-  font-size:3rem; /* büyük ve zarif */
+  font-size: 3rem;
   font-weight: 800;
   color: #2ea44f;
   letter-spacing: 1px;
-  line-height: 1.2;
 }
 
 body.light-mode .hero h1 {
@@ -188,18 +184,18 @@ body.light-mode .hero h1 {
 
 .hero p {
   margin: 40px 0;
-  font-size: 1rem; /* daha okunaklı */
-  font-weight: 400;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
-.hero p.en, .hero p.tr {
+.hero p.en,
+.hero p.tr {
   display: inline-block;
-  min-width: 300px; /* hero alanına göre ayarlayın */
+  min-width: 300px;
   text-align: center;
 }
 
-/* Social links */
+/* ========================= SOCIAL ========================= */
 .socials {
   margin-top: 30px;
 }
@@ -208,16 +204,11 @@ body.light-mode .hero h1 {
   margin: 0 12px;
   text-decoration: none;
   color: #c9d1d9;
-  font-weight: 500;
   font-size: 1.5rem;
 }
 
 body.light-mode .socials a {
   color: #24292e;
-}
-
-.socials a i {
-  margin-right: 5px;
 }
 
 .socials a:hover {
@@ -238,466 +229,22 @@ footer {
     flex-direction: column;
     gap: 20px;
   }
+
   .navbar-links {
     flex-direction: column;
     gap: 12px;
   }
-  .navbar-controls {
-    flex-direction: column;
-    gap: 12px;
-  }
+
   #search {
     width: 100%;
   }
+
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
+
   .hero p {
-    font-size: 1.1rem;
-  }
-}
-
-
-
-/* ========================= CERTIFICATE BUTTON ========================= */
-.certificate-btn {
-  margin-top: 15px;
-  padding: 10px 18px;
-  border: 1px solid #2ea44f;
-  background: transparent;
-  color: #2ea44f;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.certificate-btn i {
-  margin-left: 5px;
-  transition: transform 0.3s ease;
-}
-
-.certificate-btn:hover {
-  background: rgba(46,164,79,0.1);
-}
-
-.certificate-btn:hover i {
-  transform: translateX(4px);
-}
-
-/* ========================= MODAL / LIGHTBOX ========================= */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-.close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-}
-
-/* ========================= GENERAL CONTAINER ========================= */
-.conference-list {
-  max-width: 900px;
-  margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-/* ========================= CARD ========================= */
-.conference-card {
-  background: #161b22;
-  padding: 25px 30px;
-  border-radius: 14px;
-  position: relative;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-.conference-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(46,164,79,0.25);
-}
-
-/* META (year + status) */
-.conf-meta {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 8px 0 15px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #2ea44f;
-}
-
-/* Year badge hover */
-.year-badge {
-  display: inline-block;
-  background: rgba(46,164,79,0.15);
-  color: #2ea44f;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  border: 1px solid rgba(46,164,79,0.4);
-  transition: all 0.3s;
-}
-
-.conference-card:hover .year-badge {
-  background: #2ea44f;
-  color: #fff;
-}
-
-.conference-card h2 {
-  font-size: 1.6rem;
-  color: #fff;
-  margin-bottom: 10px;
-  transition: color 0.3s;
-}
-
-.conference-card:hover h2 {
-  color: #2ea44f;
-}
-
-.conference-card p {
-  max-height: 130px;
-  overflow: hidden;
-  position: relative;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-.conf-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #2ea44f;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.conf-link i {
-  transition: transform 0.3s;
-}
-
-.conf-link:hover {
-  color: #1aff72;
-}
-
-.conf-link:hover i {
-  transform: translateX(6px);
-}
-
-/* LIGHT MODE */
-body.light-mode .conference-card {
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-body .year-badge {
-  background: rgba(46,164,79,0.15);
-  color: #2ea44f;
-}
-
-body .conference-card:hover .year-badge {
-  background: #2ea44f;
-  color: #fff;
-}
-
-body .conference-card:hover h2 {
-  color: #2ea44f;
-}
-
-/* Conference Hero */
-.conference-hero {
-  max-width: 800px;
-  margin: 80px auto 20px;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.conference-hero h1 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.conference-hero p {
-  color: #aaa;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-body.light-mode .conference-hero h1 {
-  color: #111;
-}
-
-body.light-mode .conference-hero p {
-  color: #555;
-}
-
-/* PROJECT HERO */
-.project-hero {
-  max-width: 800px;
-  margin: 80px auto 40px;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.project-hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.project-hero .subtitle {
-  color: #aaa;
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-}
-
-.project-meta {
-  font-size: 0.9rem;
-  color: #2ea44f;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.project-content {
-  max-width: 750px;
-  margin: auto;
-  padding: 0 20px 60px;
-  line-height: 1.8;
-  font-size: 1.05rem;
-  color: #ccc;
-}
-
-.project-content p {
-  margin-bottom: 20px;
-}
-
-.project-content .contributors {
-  margin-top: 30px;
-  padding-top: 15px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  color: #aaa;
-}
-
-/* CERTIFICATE CARD */
-.certificate-card {
-  max-width: 750px;
-  margin: 40px auto;
-  text-align: center;
-  background: #161b22;
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-/* LIGHT MODE */
-body.light-mode .project-hero h1 {
-  color: #111;
-}
-
-body.light-mode .project-content {
-  color: #444;
-}
-
-body.light-mode .certificate-card {
-  background: #fff;
-}
-
-/* ========================= PROJECTS SECTION ========================= */
-
-.projects {
-  padding: 60px 20px;
-}
-
-/* container hizalama (senin diğer sayfalarla uyumlu) */
-.projects .container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* başlık ortalama */
-.projects h1 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.projects p {
-   text-align: center;
-  margin-bottom: 50px;
-  width: 100%;
-}
-
-/* CARD */
-.project-item {
-  display: flex;
-  flex-direction: column;  
-  gap: 10px;                
-  align-items: flex-start;
-  background: #161b22;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  transition: 0.25s;
-}
-
-.project-item:hover {
-  transform: translateY(-4px);
-}
-
-/* LIGHT MODE uyumu */
-body.light-mode .project-item {
-  background: #ffffff;
-  border: 1px solid #d0d7de;
-}
-
-/* içerik */
-.project-info {
-  width: 100%;
-}
-
-/* başlık */
-.project-title {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-/* TAG */
-.project-subtitle span {
-  display: inline-block;
-  background: #2a2d3e;
-  color: #2ecc71;
-  padding: 5px 10px;
-  margin: 6px 6px 6px 0;
-  border-radius: 20px;
-  font-size: 0.75em;
-}
-
-/* light mode tag */
-body.light-mode .project-subtitle span {
-  background: #f3f4f6;
-  color: #2ea44f;
-}
-
-/* DESC */
-.project-desc {
-  margin: 10px 0;
-  width: 100%;
-}
-
-/* BUTTONS */
-.button-group {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.project-btn {
-  padding: 8px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 0.85em;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-/* BLOG */
-.blog-btn {
-  border: 1px solid #2ecc71;
-  color: #2ecc71;
-}
-
-.blog-btn:hover {
-  background: #2ecc71;
-  color: white;
-}
-
-/* GITHUB */
-.github-btn {
-  border: 1px solid #999;
-  color: #ccc;
-}
-
-.github-btn:hover {
-  background: #333;
-}
-
-/* DETAIL */
-.detail-btn {
-  border: 1px solid #2ecc71;
-  color: #2ecc71;
-}
-
-.detail-btn:hover {
-  background: #2ecc71;
-  color: white;
-}
-
-/* light mode button fix */
-body.light-mode .github-btn {
-  color: #333;
-  border: 1px solid #ccc;
-}
-
-body.light-mode .github-btn:hover {
-  background: #eee;
-}
-
-/* FOOTER BUTTON */
-.all-projects {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.all-projects a {
-  border: 1px solid #2ecc71;
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: #2ecc71;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.all-projects a:hover {
-  background: #2ecc71;
-  color: white;
-}
-
-/* ========================= RESPONSIVE ========================= */
-@media (max-width: 768px) {
-  .project-item {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .project-info {
-    max-width: 100%;
+    font-size: 1rem;
   }
 }
 
