@@ -19,7 +19,7 @@ body {
 }
 
 .page-content {
-  max-width: 900px;
+  max-width: 920px;
   margin: 110px auto 60px;
   padding: 0 22px;
 }
@@ -27,51 +27,54 @@ body {
 /* ================= HERO ================= */
 .about-hero {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 .about-hero h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: #fff;
+  margin-bottom: 15px;
+  letter-spacing: -0.8px;
 }
 
 .about-hero p {
   font-size: 1.15rem;
   line-height: 1.9;
   color: #9aa4af;
-  max-width: 780px;
+  max-width: 820px;
   margin: 0 auto;
 }
 
 .highlight {
-  margin-top: 25px;
-  padding: 16px 18px;
-  border-left: 3px solid #3fb950;
-  background: rgba(63,185,80,0.05);
-  border-radius: 10px;
-  max-width: 720px;
+  margin-top: 26px;
+  padding: 18px 20px;
+  border-left: 4px solid #3fb950;
+  background: rgba(63,185,80,0.06);
+  border-radius: 12px;
+  max-width: 760px;
   margin-left: auto;
   margin-right: auto;
   color: #e6edf3;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   line-height: 1.7;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
 /* ================= SECTION ================= */
 .section {
-  margin-bottom: 45px;
+  margin-bottom: 50px;
 }
 
 .section h2 {
-  font-size: 0.9rem;
-  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  letter-spacing: 1.6px;
   color: #3fb950;
   margin-bottom: 18px;
 }
 
 .section p {
-  line-height: 1.85;
   font-size: 1rem;
+  line-height: 1.85;
   color: #c9d1d9;
 }
 
@@ -88,7 +91,7 @@ body {
   border: 1px solid #30363d;
   background: rgba(255,255,255,0.02);
   font-size: 0.85rem;
-  transition: 0.2s ease;
+  transition: 0.25s ease;
 }
 
 .tag:hover {
@@ -99,25 +102,49 @@ body {
 
 /* ================= TIMELINE ================= */
 .timeline {
-  border-left: 1px solid #30363d;
-  padding-left: 20px;
-  margin-top: 20px;
+  position: relative;
+  border-left: 2px solid rgba(63,185,80,0.35);
+  padding-left: 28px;
+  margin-top: 25px;
 }
 
 .timeline-item {
-  margin-bottom: 25px;
+  margin-bottom: 28px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
   position: relative;
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -26px;
-  top: 6px;
-  width: 8px;
-  height: 8px;
+  left: -35px;
+  top: 18px;
+  width: 10px;
+  height: 10px;
   background: #3fb950;
   border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(63,185,80,0.15);
+}
+
+.timeline-item:hover {
+  background: rgba(255,255,255,0.02);
+  transform: translateX(4px);
+}
+
+.timeline-item strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.timeline-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #9aa4af;
+  line-height: 1.6;
 }
 
 /* ================= EXPLORE ================= */
@@ -202,19 +229,17 @@ a { text-decoration: none; }
 
 <p>
 <span class="en">
-I am an AI & Data Science Engineer focused on building intelligent systems that solve real-world problems.
+AI & Data Science Engineer focused on building intelligent systems that solve real-world problems.
 
-My work combines Machine Learning, Natural Language Processing, and Data Engineering to transform raw data into scalable, production-ready solutions.
+I work across Machine Learning, NLP, and Data Engineering to transform raw data into scalable, production-ready solutions.
 
-Instead of building isolated models, I design end-to-end systems — from data pipelines to deployment — ensuring reliability, scalability, and real-world impact.
+Instead of building isolated models, I design full end-to-end systems — from data pipelines to deployment.
 </span>
 
 <span class="tr" style="display:none;">
-Gerçek dünya problemlerine çözüm üreten akıllı sistemler geliştiren bir Yapay Zeka ve Veri Bilimi mühendisiyim.
+Gerçek dünya problemlerine çözüm üreten yapay zeka ve veri bilimi mühendisiyim.
 
-Çalışmalarım Makine Öğrenimi, Doğal Dil İşleme ve Veri Mühendisliğini bir araya getirerek ham veriyi ölçeklenebilir ve üretime hazır çözümlere dönüştürür.
-
-Sadece model değil, uçtan uca sistem tasarlarım.
+ML, NLP ve veri mühendisliği ile veriyi ölçeklenebilir sistemlere dönüştürürüm.
 </span>
 </p>
 
@@ -223,13 +248,13 @@ Sadece model değil, uçtan uca sistem tasarlarım.
 I design systems that turn data into decisions, models into products, and research into real-world impact.
 </span>
 <span class="tr" style="display:none;">
-Veriyi karara, modelleri ürüne ve araştırmayı gerçek dünya etkisine dönüştüren sistemler tasarlarım.
+Veriyi karara, modelleri ürüne ve araştırmayı gerçek etkiye dönüştüren sistemler tasarlarım.
 </span>
 </div>
 
 </div>
 
-<!-- CORE STRENGTHS -->
+<!-- SKILLS -->
 <div class="section">
 <h2>
 <span class="en">Core Strengths</span>
@@ -239,9 +264,9 @@ Veriyi karara, modelleri ürüne ve araştırmayı gerçek dünya etkisine dön�
 <div class="tags">
 
 <div class="tag"><span class="en">Machine Learning</span><span class="tr" style="display:none;">Makine Öğrenimi</span></div>
-<div class="tag"><span class="en">Natural Language Processing</span><span class="tr" style="display:none;">Doğal Dil İşleme</span></div>
-<div class="tag"><span class="en">LLMs & Prompt Engineering</span><span class="tr" style="display:none;">LLM & Prompt Mühendisliği</span></div>
-<div class="tag"><span class="en">DataOps & Evaluation</span><span class="tr" style="display:none;">DataOps & Değerlendirme</span></div>
+<div class="tag"><span class="en">Natural Language Processing</span><span class="tr" style="display:none;">NLP</span></div>
+<div class="tag"><span class="en">LLMs & Prompt Engineering</span><span class="tr" style="display:none;">LLM & Prompt</span></div>
+<div class="tag"><span class="en">DataOps & Evaluation</span><span class="tr" style="display:none;">DataOps</span></div>
 <div class="tag"><span class="en">Scalable Systems</span><span class="tr" style="display:none;">Ölçeklenebilir Sistemler</span></div>
 
 </div>
@@ -257,50 +282,50 @@ Veriyi karara, modelleri ürüne ve araştırmayı gerçek dünya etkisine dön�
 <div class="timeline">
 
 <div class="timeline-item">
-<strong>AI Awakening (University Final Year)</strong>
+<strong>AI Discovery</strong>
 <p>
-<span class="en">Discovered AI and shifted focus toward data-driven systems.</span>
-<span class="tr" style="display:none;">Yapay zekayı keşfederek yönümü veri bilimine çevirdim.</span>
+<span class="en">Shifted from traditional software to AI systems during university final year.</span>
+<span class="tr" style="display:none;">Üniversitede AI'a yöneldim.</span>
 </p>
 </div>
 
 <div class="timeline-item">
-<strong>Bootcamps & Self Learning</strong>
+<strong>Bootcamps</strong>
 <p>
-<span class="en">Built strong foundations in ML, NLP and deep learning.</span>
-<span class="tr" style="display:none;">ML, NLP ve DL alanında temelimi güçlendirdim.</span>
+<span class="en">Built strong foundation in ML, DL and NLP systems.</span>
+<span class="tr" style="display:none;">ML ve NLP öğrendim.</span>
 </p>
 </div>
 
 <div class="timeline-item">
 <strong>SistersLab AI Academy</strong>
 <p>
-<span class="en">Developed ML models, NLP systems and capstone AI project.</span>
-<span class="tr" style="display:none;">ML ve NLP projeleri geliştirdim.</span>
+<span class="en">Developed ML models and real-world AI classification systems.</span>
+<span class="tr" style="display:none;">AI projeleri geliştirdim.</span>
 </p>
 </div>
 
 <div class="timeline-item">
 <strong>PranaGEO Internship</strong>
 <p>
-<span class="en">Worked on AI-driven emotion analysis and wellness systems.</span>
-<span class="tr" style="display:none;">AI tabanlı duygu analizi yaptım.</span>
+<span class="en">Worked on AI-driven emotion and behavior analysis systems.</span>
+<span class="tr" style="display:none;">Duygu analizi yaptım.</span>
 </p>
 </div>
 
 <div class="timeline-item">
-<strong>Social Media Team Lead</strong>
+<strong>Social Media Lead</strong>
 <p>
 <span class="en">Led AI product communication and content strategy.</span>
-<span class="tr" style="display:none;">AI ürünlerinin iletişim ve içerik süreçlerini yönettim.</span>
+<span class="tr" style="display:none;">AI içerik süreçlerini yönettim.</span>
 </p>
 </div>
 
 <div class="timeline-item">
 <strong>Kairu Experience</strong>
 <p>
-<span class="en">AI benchmarking, evaluation systems and mentoring roles.</span>
-<span class="tr" style="display:none;">AI değerlendirme ve mentorluk yaptım.</span>
+<span class="en">AI benchmarking, evaluation systems and mentoring.</span>
+<span class="tr" style="display:none;">AI değerlendirme ve mentorluk.</span>
 </p>
 </div>
 
@@ -320,7 +345,7 @@ Veriyi karara, modelleri ürüne ve araştırmayı gerçek dünya etkisine dön�
 <a href="/projects/" class="explore-card">
 <div>
 <strong><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></strong>
-<p><span class="en">AI, ML & NLP systems</span><span class="tr" style="display:none;">AI projeleri</span></p>
+<p><span class="en">AI, ML & NLP systems</span><span class="tr" style="display:none;">Projeler</span></p>
 </div>
 <div class="explore-icon">→</div>
 </a>
