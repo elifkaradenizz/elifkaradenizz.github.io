@@ -20,7 +20,7 @@ body {
 
 /* ================= PAGE ================= */
 .page-content {
-  max-width: 950px;
+  max-width: 920px;
   margin: 110px auto 80px;
   padding: 0 22px;
 }
@@ -53,7 +53,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.95;
   color: #9aa4af;
-  max-width: 780px;
+  max-width: 820px;
   margin: 0 auto;
 }
 
@@ -70,11 +70,11 @@ body {
   border-left: 4px solid #3fb950;
   background: rgba(63,185,80,0.06);
   border-radius: 12px;
-  max-width: 720px;
+  max-width: 760px;
   margin-left: auto;
   margin-right: auto;
   color: #e6edf3;
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   line-height: 1.7;
 }
 
@@ -84,9 +84,8 @@ body {
 }
 
 .section h2 {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  letter-spacing: 1.6px;
   color: #3fb950;
   margin-bottom: 18px;
 }
@@ -95,47 +94,66 @@ body {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .tag {
-  font-size: 0.85rem;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid #30363d;
   background: rgba(255,255,255,0.02);
+  font-size: 0.85rem;
+  transition: 0.25s ease;
+}
+
+.tag:hover {
+  border-color: #3fb950;
+  transform: translateY(-2px);
 }
 
 /* ================= TIMELINE ================= */
 .timeline {
-  border-left: 2px solid #30363d;
-  padding-left: 22px;
-  margin-top: 20px;
+  position: relative;
+  border-left: 2px solid rgba(63,185,80,0.35);
+  padding-left: 28px;
+  margin-top: 25px;
 }
 
 .timeline-item {
   margin-bottom: 28px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: 0.25s ease;
   position: relative;
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -28px;
-  top: 6px;
+  left: -35px;
+  top: 18px;
   width: 10px;
   height: 10px;
   background: #3fb950;
   border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(63,185,80,0.15);
+}
+
+.timeline-item:hover {
+  background: rgba(255,255,255,0.02);
+  transform: translateX(4px);
 }
 
 .timeline-item strong {
-  font-size: 1rem;
-  color: #ffffff;
+  display: block;
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 6px;
 }
 
 .timeline-item p {
-  margin-top: 6px;
+  margin: 0;
+  font-size: 0.95rem;
   color: #9aa4af;
   line-height: 1.6;
 }
@@ -156,7 +174,7 @@ body {
   border: 1px solid #30363d;
   text-decoration: none;
   color: inherit;
-  transition: all 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .explore-card:hover {
@@ -167,7 +185,6 @@ body {
 
 .explore-card strong {
   color: #fff;
-  font-size: 1rem;
 }
 
 .explore-card p {
@@ -179,20 +196,17 @@ body {
 .explore-icon {
   color: #3fb950;
   font-size: 1.2rem;
-  margin-left: 10px;
 }
 
 /* LINKS */
-a {
-  text-decoration: none;
-}
+a { text-decoration: none; }
 
 </style>
 </head>
 
 <body class="dark-mode">
 
-<!-- NAVBAR -->
+<!-- NAVBAR (seninki aynı kalabilir) -->
 <nav class="navbar">
   <div class="navbar-center">
 
@@ -231,7 +245,7 @@ a {
 
   <p class="hero-text">
     <span class="en">
-      I design and build intelligent systems that solve real-world problems using Machine Learning, NLP and Data Engineering.
+      I design and build intelligent systems that solve real-world problems using Machine Learning, NLP and Data Engineering.  
       My focus is not just models — but complete, production-ready AI systems that scale and create real impact.
     </span>
 
@@ -247,101 +261,108 @@ a {
       I turn data into decisions, models into products, and ideas into scalable systems.
     </span>
     <span class="tr" style="display:none;">
-      Veriyi karara, modelleri ürüne, fikirleri ölçeklenebilir sistemlere dönüştürürüm.
+      Veriyi karara, modelleri ürüne ve fikirleri ölçeklenebilir sistemlere dönüştürürüm.
     </span>
   </div>
 
 </div>
 
+<!-- SKILLS -->
+<div class="section">
+<h2>
+<span class="en">Core Strengths</span>
+<span class="tr" style="display:none;">Güçlü Yönler</span>
+</h2>
+
+<div class="tags">
+<div class="tag"><span class="en">Machine Learning</span><span class="tr" style="display:none;">Makine Öğrenimi</span></div>
+<div class="tag"><span class="en">Natural Language Processing</span><span class="tr" style="display:none;">NLP</span></div>
+<div class="tag"><span class="en">LLMs & Prompt Engineering</span><span class="tr" style="display:none;">LLM & Prompt</span></div>
+<div class="tag"><span class="en">DataOps & Evaluation</span><span class="tr" style="display:none;">DataOps</span></div>
+<div class="tag"><span class="en">Scalable Systems</span><span class="tr" style="display:none;">Ölçeklenebilir Sistemler</span></div>
+</div>
+</div>
+
 <!-- JOURNEY -->
 <div class="section">
 
-  <h2>
-    <span class="en">Journey</span>
-    <span class="tr" style="display:none;">Yolculuk</span>
-  </h2>
+<h2>
+<span class="en">Journey</span>
+<span class="tr" style="display:none;">Yolculuk</span>
+</h2>
 
-  <div class="timeline">
+<div class="timeline">
 
-    <div class="timeline-item">
-      <strong>AI Discovery (University Final Year)</strong>
-      <p>
-        <span class="en">Started focusing on AI after academic projects.</span>
-        <span class="tr" style="display:none;">Yapay zekaya akademik projelerle yöneldim.</span>
-      </p>
-    </div>
+<div class="timeline-item">
+<strong>SistersLab AI Academy</strong>
+<p>
+<span class="en">Built ML models, NLP systems and capstone classification project.</span>
+<span class="tr" style="display:none;">ML ve NLP projeleri geliştirdim.</span>
+</p>
+</div>
 
-    <div class="timeline-item">
-      <strong>Bootcamps & Self Learning</strong>
-      <p>
-        <span class="en">Strengthened ML, NLP and deep learning foundations.</span>
-        <span class="tr" style="display:none;">ML ve NLP becerilerimi geliştirdim.</span>
-      </p>
-    </div>
+<div class="timeline-item">
+<strong>PranaGEO Internship</strong>
+<p>
+<span class="en">Worked on AI-driven emotion analysis and personalized recommendation systems.</span>
+<span class="tr" style="display:none;">Duygu analizi yaptım.</span>
+</p>
+</div>
 
-    <div class="timeline-item">
-      <strong>SistersLab AI Academy</strong>
-      <p>
-        <span class="en">Built ML models, NLP pipelines and capstone project.</span>
-        <span class="tr" style="display:none;">ML projeleri ve NLP çalışmaları yaptım.</span>
-      </p>
-    </div>
+<div class="timeline-item">
+<strong>Social Media Team Lead</strong>
+<p>
+<span class="en">Led content strategy for AI products and coordinated digital communication.</span>
+<span class="tr" style="display:none;">AI içerik süreçlerini yönettim.</span>
+</p>
+</div>
 
-    <div class="timeline-item">
-      <strong>PranaGEO Internship</strong>
-      <p>
-        <span class="en">Worked on AI-based emotion analysis and recommendation systems.</span>
-        <span class="tr" style="display:none;">AI tabanlı duygu analizi yaptım.</span>
-      </p>
-    </div>
+<div class="timeline-item">
+<strong>Kairu Experience</strong>
+<p>
+<span class="en">AI benchmarking, evaluation pipelines, prompt design and mentoring.</span>
+<span class="tr" style="display:none;">AI değerlendirme ve mentorluk.</span>
+</p>
+</div>
 
-    <div class="timeline-item">
-      <strong>Social Media Team Lead</strong>
-      <p>
-        <span class="en">Led content strategy for AI-driven products.</span>
-        <span class="tr" style="display:none;">AI ürünleri için ekip yönettim.</span>
-      </p>
-    </div>
+<div class="timeline-item">
+<strong>Bootcamps & Transition</strong>
+<p>
+<span class="en">Shifted fully into AI through intensive ML/NLP learning programs.</span>
+<span class="tr" style="display:none;">AI’a geçiş sürecim.</span>
+</p>
+</div>
 
-    <div class="timeline-item">
-      <strong>Kairu AI Projects</strong>
-      <p>
-        <span class="en">Worked on AI evaluation, benchmarking and mentoring.</span>
-        <span class="tr" style="display:none;">AI değerlendirme ve mentorluk yaptım.</span>
-      </p>
-    </div>
-
-  </div>
-
+</div>
 </div>
 
 <!-- EXPLORE -->
 <div class="section">
 
-  <h2>
-    <span class="en">Explore</span>
-    <span class="tr" style="display:none;">Keşfet</span>
-  </h2>
+<h2>
+<span class="en">Explore</span>
+<span class="tr" style="display:none;">Keşfet</span>
+</h2>
 
-  <div class="explore-grid">
+<div class="explore-grid">
 
-    <a href="/projects/" class="explore-card">
-      <div>
-        <strong><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></strong>
-        <p><span class="en">AI, ML, NLP systems</span><span class="tr">Projeler</span></p>
-      </div>
-      <div class="explore-icon">→</div>
-    </a>
+<a href="/projects/" class="explore-card">
+<div>
+<strong><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></strong>
+<p><span class="en">AI, ML & NLP systems</span><span class="tr" style="display:none;">Projeler</span></p>
+</div>
+<div class="explore-icon">→</div>
+</a>
 
-    <a href="/conference/" class="explore-card">
-      <div>
-        <strong><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></strong>
-        <p><span class="en">Research & presentations</span><span class="tr">Sunumlar</span></p>
-      </div>
-      <div class="explore-icon">→</div>
-    </a>
+<a href="/conference/" class="explore-card">
+<div>
+<strong><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></strong>
+<p><span class="en">Research & presentations</span><span class="tr" style="display:none;">Sunumlar</span></p>
+</div>
+<div class="explore-icon">→</div>
+</a>
 
-  </div>
+</div>
 
 </div>
 
@@ -364,4 +385,4 @@ setLang(localStorage.getItem('lang') || 'en');
 </script>
 
 </body>
-</html>
+</html>>
