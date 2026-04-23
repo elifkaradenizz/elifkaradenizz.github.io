@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elif Karadeniz - About</title>
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= BASE ================= */
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0d1117, #090c10);
+  color: #c9d1d9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+}
+
+/* ================= PAGE ================= */
+.page-content {
+  max-width: 920px;
+  margin: 110px auto 80px;
+  padding: 0 22px;
+}
+
+/* ================= HERO ================= */
+.about-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid rgba(63,185,80,0.4);
+  color: #3fb950;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+  background: rgba(63,185,80,0.06);
+}
+
+.about-hero h1 {
+  font-size: 3.4rem;
+  color: #fff;
+  margin: 10px 0 14px;
+  letter-spacing: -1px;
+}
+
+.hero-text {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #9aa4af;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.hero-divider {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3fb950, transparent);
+  margin: 25px auto;
+}
+
+.highlight {
+  margin-top: 10px;
+  padding: 18px 22px;
+  border-left: 4px solid #3fb950;
+  background: rgba(63,185,80,0.06);
+  border-radius: 12px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #e6edf3;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ================= SECTION ================= */
+.section {
+  margin-bottom: 60px;
+}
+
+.section h2 {
+  font-size: 0.85rem;
+  letter-spacing: 1.6px;
+  color: #3fb950;
+  margin-bottom: 18px;
+}
+
+/* ================= TAGS ================= */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tag {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #30363d;
+  background: rgba(255,255,255,0.02);
+  font-size: 0.85rem;
+  transition: 0.25s ease;
+}
+
+.tag:hover {
+  border-color: #3fb950;
+  transform: translateY(-2px);
+}
+
+/* ================= TIMELINE ================= */
+.timeline {
+  position: relative;
+  border-left: 2px solid rgba(63,185,80,0.35);
+  padding-left: 28px;
+  margin-top: 25px;
+}
+
+.timeline-item {
+  margin-bottom: 28px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: 0.25s ease;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -35px;
+  top: 18px;
+  width: 10px;
+  height: 10px;
+  background: #3fb950;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(63,185,80,0.15);
+}
+
+.timeline-item:hover {
+  background: rgba(255,255,255,0.02);
+  transform: translateX(4px);
+}
+
+.timeline-item strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.timeline-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #9aa4af;
+  line-height: 1.6;
+}
+
+/* ================= EXPLORE ================= */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.explore-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+  border-radius: 14px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.25s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-6px);
+  border-color: #3fb950;
+  box-shadow: 0 12px 28px rgba(63,185,80,0.18);
+}
+
+.explore-card strong {
+  color: #fff;
+}
+
+.explore-card p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #9aa4af;
+}
+
+.explore-icon {
+  color: #3fb950;
+  font-size: 1.2rem;
+}
+
+/* LINKS */
+a { text-decoration: none; }
+
+</style>
+</head>
+
+<body class="dark-mode">
+
+<nav class="navbar">
+  <div class="navbar-center">
+
+    <span class="navbar-name" id="navbar-name">Elif Karadeniz</span>
+
+    <ul class="navbar-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/conference/">Conference</a></li>
+    </ul>
+
+    <input type="text" id="search" placeholder="Search...">
+
+    <div class="lang-wrapper">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('tr')">TR</button>
+      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </div>
+
+  </div>
+</nav>
+
+<section class="page-content">
+
+<div class="about-hero">
+
+  <div class="hero-badge">
+    AI & Data Science Engineer
+  </div>
+
+  <h1>About Me</h1>
+
+  <p class="hero-text">
+
+    <span class="en">
+      I am an AI & Data Science focused software engineer who builds intelligent systems that solve real-world problems.
+      My journey started with traditional software development, but during my final university year, I shifted my focus toward Artificial Intelligence.
+
+      Since then, I have been working on Machine Learning, NLP, and LLM-based systems — not only building models, but also learning how to evaluate, scale, and deploy them in real-world scenarios.
+
+      I am particularly interested in end-to-end AI systems that combine data, models, and production-ready architectures.
+    </span>
+
+    <span class="tr" style="display:none;">
+      Gerçek dünya problemlerine çözüm üreten yapay zeka sistemleri geliştiren, AI ve Veri Bilimi odaklı bir yazılım mühendisiyim.
+      Yolculuğum geleneksel yazılım geliştirme ile başladı; ancak üniversitenin son yılında Yapay Zeka alanına yöneldim.
+
+      O zamandan bu yana makine öğrenmesi, NLP ve LLM tabanlı sistemler üzerinde çalışıyor; yalnızca model geliştirmekle kalmayıp bu sistemlerin gerçek dünyada nasıl değerlendirileceğini ve ölçekleneceğini öğreniyorum.
+
+      Özellikle veri, model ve production süreçlerini bir araya getiren uçtan uca yapay zeka sistemlerine odaklanıyorum.
+    </span>
+
+  </p>
+
+  <div class="hero-divider"></div>
+
+  <div class="highlight">
+    <span class="en">I turn data into decisions, models into products, and ideas into scalable AI systems.</span>
+    <span class="tr" style="display:none;">Veriyi karara, modelleri ürüne ve fikirleri ölçeklenebilir yapay zeka sistemlerine dönüştürürüm.</span>
+  </div>
+
+</div>
+
+<div class="section">
+<h2>Core Strengths</h2>
+
+<div class="tags">
+<div class="tag">Machine Learning</div>
+<div class="tag">NLP</div>
+<div class="tag">LLMs</div>
+<div class="tag">Prompt Engineering</div>
+<div class="tag">Data Engineering</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<strong>Transition to AI</strong>
+<p>
+<span class="en">Shifted from traditional software to AI during my final year.</span>
+<span class="tr" style="display:none;">Üniversitenin son yılında yapay zekaya geçiş yaptım.</span>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>SistersLab AI Academy</strong>
+<p>
+<span class="en">Completed intensive AI training and built ML models.</span>
+<span class="tr" style="display:none;">Yoğun AI eğitimi alıp ML projeleri geliştirdim.</span>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>PranaGEO Internship</strong>
+<p>
+<span class="en">Worked on emotion analysis and recommendation systems.</span>
+<span class="tr" style="display:none;">Duygu analizi ve öneri sistemleri geliştirdim.</span>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>Kairu</strong>
+<p>
+<span class="en">Worked on AI evaluation, prompts and mentoring.</span>
+<span class="tr" style="display:none;">AI değerlendirme, prompt ve mentorluk yaptım.</span>
+</p>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<footer>
+  <p>© 2026 Elif Karadeniz</p>
+</footer>
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
+  document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
+}
+</script>
+
+</body>
+</html>
