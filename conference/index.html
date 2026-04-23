@@ -5,6 +5,119 @@
   <title>Elif Karadeniz</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ================= CONFERENCE LIST PAGE ONLY ================= */
+
+.conference-hero {
+  max-width: 800px;
+  margin: 80px auto 20px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.conference-hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.conference-hero p {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+body.light-mode .conference-hero h1 {
+  color: #111;
+}
+
+body.light-mode .conference-hero p {
+  color: #555;
+}
+
+/* LIST */
+.conference-list {
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* CARD */
+.conference-card {
+  background: #161b22;
+  padding: 25px 30px;
+  border-radius: 14px;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.conference-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(46,164,79,0.25);
+}
+
+/* META */
+.conf-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2ea44f;
+}
+
+.year-badge {
+  background: rgba(46,164,79,0.15);
+  color: #2ea44f;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(46,164,79,0.4);
+}
+
+.conference-card:hover .year-badge {
+  background: #2ea44f;
+  color: #fff;
+}
+
+.conference-card h2 {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.conference-card:hover h2 {
+  color: #2ea44f;
+}
+
+.conference-card p {
+  max-height: 130px;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+/* LINK */
+.conf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2ea44f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.conf-link:hover {
+  color: #1aff72;
+}
+
+/* LIGHT MODE */
+body.light-mode .conference-card {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+  </style>
 </head>
 
 <body class="dark-mode">
