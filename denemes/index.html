@@ -10,7 +10,7 @@
 
 <style>
 
-/* ================= BASE ================= */
+/* BASE */
 body {
   margin: 0;
   background: radial-gradient(circle at top, #0d1117, #090c10);
@@ -18,14 +18,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
 }
 
-/* ================= PAGE ================= */
 .page-content {
   max-width: 900px;
   margin: 110px auto 60px;
   padding: 0 22px;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 .about-hero {
   text-align: center;
   margin-bottom: 60px;
@@ -34,16 +33,12 @@ body {
 .about-hero h1 {
   font-size: 3rem;
   color: #fff;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
 }
 
 .about-hero p {
   font-size: 1.15rem;
   line-height: 1.9;
   color: #9aa4af;
-  max-width: 750px;
-  margin: 0 auto;
 }
 
 .highlight {
@@ -51,30 +46,27 @@ body {
   border-left: 3px solid #3fb950;
   padding-left: 14px;
   max-width: 700px;
-  margin: 20px auto 0;
-  font-size: 1.05rem;
+  margin-left: auto;
+  margin-right: auto;
   color: #e6edf3;
 }
 
-/* ================= SECTION ================= */
+/* SECTION */
 .section {
   margin-bottom: 45px;
 }
 
 .section h2 {
   font-size: 0.9rem;
-  text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #3fb950;
-  margin-bottom: 18px;
 }
 
 .section p {
-  font-size: 1rem;
-  line-height: 1.85;
+  line-height: 1.8;
 }
 
-/* ================= TAGS ================= */
+/* TAGS */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -82,14 +74,12 @@ body {
 }
 
 .tag {
-  font-size: 0.85rem;
   padding: 6px 12px;
   border-radius: 999px;
   border: 1px solid #30363d;
-  background: rgba(255,255,255,0.02);
 }
 
-/* ================= TIMELINE ================= */
+/* TIMELINE */
 .timeline {
   border-left: 1px solid #30363d;
   padding-left: 20px;
@@ -112,7 +102,7 @@ body {
   border-radius: 50%;
 }
 
-/* ================= EXPLORE ================= */
+/* EXPLORE */
 .explore-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -128,34 +118,20 @@ body {
   border: 1px solid #30363d;
   text-decoration: none;
   color: inherit;
-  transition: all 0.25s ease;
+  transition: 0.25s;
 }
 
 .explore-card:hover {
   transform: translateY(-6px);
   border-color: #3fb950;
-  box-shadow: 0 12px 28px rgba(63,185,80,0.18);
-}
-
-.explore-card strong {
-  color: #fff;
-}
-
-.explore-card p {
-  margin: 5px 0 0;
-  font-size: 0.9rem;
-  color: #9aa4af;
 }
 
 .explore-icon {
   color: #3fb950;
-  font-size: 1.2rem;
 }
 
-/* ================= LINKS ================= */
-a {
-  text-decoration: none;
-}
+/* LINKS */
+a { text-decoration: none; }
 
 </style>
 </head>
@@ -176,12 +152,9 @@ a {
       <li><a href="/conference/"><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></a></li>
     </ul>
 
-    <input type="text" id="search" placeholder="Search...">
-
     <div class="lang-wrapper">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('tr')">TR</button>
-      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     </div>
 
   </div>
@@ -199,23 +172,16 @@ a {
 
 <p>
 <span class="en">
-I am an AI & Data Science Engineer focused on building intelligent systems that solve real-world problems. 
-I work across machine learning, natural language processing and data engineering to transform data into scalable solutions.
+I am an AI & Data Science Engineer focused on building intelligent systems that solve real-world problems.
 </span>
-
 <span class="tr" style="display:none;">
-Gerçek dünya problemlerine çözüm üreten akıllı sistemler geliştiren bir Yapay Zeka ve Veri Bilimi mühendisiyim.
+Gerçek dünya problemlerine çözüm üreten yapay zeka ve veri bilimi mühendisiyim.
 </span>
 </p>
 
 <div class="highlight">
-<span class="en">
-I design systems — not just models — that can scale, adapt and deliver real impact.
-</span>
-
-<span class="tr" style="display:none;">
-Sadece model değil, ölçeklenebilir ve gerçek etki yaratan sistemler tasarlarım.
-</span>
+<span class="en">I design systems — not just models.</span>
+<span class="tr" style="display:none;">Sadece model değil, sistem tasarlarım.</span>
 </div>
 
 </div>
@@ -226,10 +192,10 @@ Sadece model değil, ölçeklenebilir ve gerçek etki yaratan sistemler tasarlar
 
 <p>
 <span class="en">
-I approach problems analytically and focus on building end-to-end solutions — from data preprocessing to model deployment.
+I build end-to-end solutions from data preprocessing to deployment.
 </span>
 <span class="tr" style="display:none;">
-Problemlere analitik yaklaşır ve uçtan uca çözümler geliştiririm.
+Veri ön işlemeden deploy sürecine kadar uçtan uca çözümler geliştiririm.
 </span>
 </p>
 </div>
@@ -239,11 +205,73 @@ Problemlere analitik yaklaşır ve uçtan uca çözümler geliştiririm.
 <h2><span class="en">Core Strengths</span><span class="tr" style="display:none;">Güçlü Yönler</span></h2>
 
 <div class="tags">
-<div class="tag">Problem Solving</div>
-<div class="tag">Analytical Thinking</div>
-<div class="tag">Scalable Systems</div>
-<div class="tag">Data Pipelines</div>
-<div class="tag">Model Optimization</div>
+<div class="tag">ML</div>
+<div class="tag">NLP</div>
+<div class="tag">DataOps</div>
+<div class="tag">System Design</div>
+</div>
+</div>
+
+<!-- TIMELINE -->
+<div class="section">
+<h2><span class="en">Journey</span><span class="tr" style="display:none;">Yolculuk</span></h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<strong>
+<span class="en">Final Year – Turning Point</span>
+<span class="tr" style="display:none;">Son Sınıf – Dönüm Noktası</span>
+</strong>
+<p>
+<span class="en">Discovered AI and shifted my focus.</span>
+<span class="tr" style="display:none;">Yapay zekaya yöneldim.</span>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>Bootcamps</strong>
+<p>
+<span class="en">Strengthened ML & NLP skills.</span>
+<span class="tr" style="display:none;">ML ve NLP geliştirdim.</span>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>SistersLab</strong>
+<p>
+<span class="en">Built ML models and capstone project.</span>
+<span class="tr" style="display:none;">ML projeleri geliştirdim.</span>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>PranaGEO</strong>
+<p>
+<span class="en">Worked on AI + emotion analysis.</span>
+<span class="tr" style="display:none;">AI ve duygu analizi yaptım.</span>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>
+<span class="en">Team Lead</span>
+<span class="tr" style="display:none;">Takım Lideri</span>
+</strong>
+<p>
+<span class="en">Led content for AI products.</span>
+<span class="tr" style="display:none;">AI ürünleri için ekip yönettim.</span>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>Kairu</strong>
+<p>
+<span class="en">Worked on AI evaluation & mentoring.</span>
+<span class="tr" style="display:none;">AI değerlendirme ve mentorluk yaptım.</span>
+</p>
+</div>
+
 </div>
 </div>
 
@@ -257,7 +285,7 @@ Problemlere analitik yaklaşır ve uçtan uca çözümler geliştiririm.
 <a href="/projects/" class="explore-card">
 <div>
 <strong><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></strong>
-<p><span class="en">ML, NLP & AI systems</span><span class="tr">Projeler</span></p>
+<p><span class="en">AI & ML work</span><span class="tr">Projeler</span></p>
 </div>
 <div class="explore-icon">→</div>
 </a>
@@ -265,7 +293,7 @@ Problemlere analitik yaklaşır ve uçtan uca çözümler geliştiririm.
 <a href="/conference/" class="explore-card">
 <div>
 <strong><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></strong>
-<p><span class="en">Research & presentations</span><span class="tr">Sunumlar</span></p>
+<p><span class="en">Research & talks</span><span class="tr">Sunumlar</span></p>
 </div>
 <div class="explore-icon">→</div>
 </a>
@@ -277,14 +305,21 @@ Problemlere analitik yaklaşır ve uçtan uca çözümler geliştiririm.
 </section>
 
 <footer>
-<p><span class="en">© 2026 Elif Karadeniz</span><span class="tr">© 2026 Elif Karadeniz</span></p>
+<p>
+<span class="en">© 2026 Elif Karadeniz</span>
+<span class="tr" style="display:none;">© 2026 Elif Karadeniz</span>
+</p>
 </footer>
 
 <script>
 function setLang(lang){
-document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
-document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
-localStorage.setItem('lang', lang);
+  document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
+  document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
+
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.lang-btn')[lang==='en'?0:1].classList.add('active');
+
+  localStorage.setItem('lang', lang);
 }
 setLang(localStorage.getItem('lang') || 'en');
 </script>
