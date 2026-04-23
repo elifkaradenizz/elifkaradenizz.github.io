@@ -10,7 +10,7 @@
 
 <style>
 
-/* BASE */
+/* ================= BASE ================= */
 body {
   margin: 0;
   background: radial-gradient(circle at top, #0d1117, #090c10);
@@ -24,7 +24,7 @@ body {
   padding: 0 22px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .about-hero {
   text-align: center;
   margin-bottom: 60px;
@@ -39,58 +39,73 @@ body {
   font-size: 1.15rem;
   line-height: 1.9;
   color: #9aa4af;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
 .highlight {
-  margin-top: 20px;
+  margin-top: 25px;
+  padding: 16px 18px;
   border-left: 3px solid #3fb950;
-  padding-left: 14px;
+  background: rgba(63,185,80,0.05);
+  border-radius: 10px;
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
   color: #e6edf3;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
-/* SECTION */
+/* ================= SECTION ================= */
 .section {
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 }
 
 .section h2 {
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
   color: #3fb950;
   margin-bottom: 18px;
 }
 
 .section p {
   line-height: 1.85;
+  font-size: 1rem;
+  color: #c9d1d9;
 }
 
-/* TAGS */
+/* ================= TAGS ================= */
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .tag {
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid #30363d;
+  background: rgba(255,255,255,0.02);
   font-size: 0.85rem;
+  transition: 0.2s ease;
 }
 
-/* TIMELINE */
+.tag:hover {
+  border-color: #3fb950;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(63,185,80,0.15);
+}
+
+/* ================= TIMELINE ================= */
 .timeline {
   border-left: 1px solid #30363d;
   padding-left: 20px;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .timeline-item {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   position: relative;
 }
 
@@ -99,41 +114,45 @@ body {
   position: absolute;
   left: -26px;
   top: 6px;
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   background: #3fb950;
   border-radius: 50%;
 }
 
-.timeline-item strong {
-  color: #fff;
-  display: block;
-  margin-bottom: 4px;
-}
-
-/* EXPLORE */
+/* ================= EXPLORE ================= */
 .explore-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
+  gap: 16px;
 }
 
 .explore-card {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 18px;
   border-radius: 14px;
   background: #161b22;
   border: 1px solid #30363d;
   text-decoration: none;
   color: inherit;
-  transition: 0.25s;
+  transition: 0.25s ease;
 }
 
 .explore-card:hover {
   transform: translateY(-6px);
   border-color: #3fb950;
-  box-shadow: 0 12px 28px rgba(63,185,80,0.15);
+  box-shadow: 0 12px 28px rgba(63,185,80,0.18);
+}
+
+.explore-card strong {
+  color: #fff;
+}
+
+.explore-card p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #9aa4af;
 }
 
 .explore-icon {
@@ -183,147 +202,105 @@ a { text-decoration: none; }
 
 <p>
 <span class="en">
-I am an AI & Data Science Engineer focused on building intelligent systems that solve real-world problems. 
-My work integrates machine learning, natural language processing, and data engineering to transform raw data into scalable, production-ready solutions.
+I am an AI & Data Science Engineer focused on building intelligent systems that solve real-world problems.
 
-Rather than building isolated models, I focus on designing complete systems — from data pipelines to model deployment — ensuring that solutions are not only accurate, but also reliable, maintainable, and impactful in real-world scenarios.
+My work combines Machine Learning, Natural Language Processing, and Data Engineering to transform raw data into scalable, production-ready solutions.
+
+Instead of building isolated models, I design end-to-end systems — from data pipelines to deployment — ensuring reliability, scalability, and real-world impact.
 </span>
 
 <span class="tr" style="display:none;">
-Gerçek dünya problemlerine çözüm üreten akıllı sistemler geliştiren bir Yapay Zeka ve Veri Bilimi mühendisiyim. 
-Çalışmalarım makine öğrenimi, doğal dil işleme ve veri mühendisliğini bir araya getirerek ham veriyi ölçeklenebilir ve üretime hazır çözümlere dönüştürmeye odaklanır.
+Gerçek dünya problemlerine çözüm üreten akıllı sistemler geliştiren bir Yapay Zeka ve Veri Bilimi mühendisiyim.
 
-Sadece model geliştirmek yerine, veri pipeline’larından model deploy sürecine kadar uçtan uca sistemler tasarlarım. Bu sayede çözümlerim yalnızca doğru değil, aynı zamanda sürdürülebilir, güvenilir ve gerçek dünyada uygulanabilir olur.
+Çalışmalarım Makine Öğrenimi, Doğal Dil İşleme ve Veri Mühendisliğini bir araya getirerek ham veriyi ölçeklenebilir ve üretime hazır çözümlere dönüştürür.
+
+Sadece model değil, uçtan uca sistem tasarlarım.
 </span>
 </p>
 
 <div class="highlight">
 <span class="en">
-I build systems that turn data into decisions, insights into products, and ideas into real-world impact.
+I design systems that turn data into decisions, models into products, and research into real-world impact.
 </span>
 <span class="tr" style="display:none;">
-Veriyi karara, içgörüyü ürüne ve fikirleri gerçek dünya etkisine dönüştüren sistemler geliştiririm.
+Veriyi karara, modelleri ürüne ve araştırmayı gerçek dünya etkisine dönüştüren sistemler tasarlarım.
 </span>
 </div>
 
 </div>
 
-<!-- HOW I WORK -->
+<!-- CORE STRENGTHS -->
 <div class="section">
-<h2><span class="en">How I Work</span><span class="tr" style="display:none;">Nasıl Çalışırım</span></h2>
-
-<p>
-<span class="en">
-I approach problems with a strong analytical mindset and a system-oriented perspective. I focus on building end-to-end solutions, ensuring that each stage — from data preprocessing to evaluation and deployment — contributes to a coherent and scalable architecture.
-
-I value clean design, reproducibility, and measurable performance. I continuously iterate on my work by incorporating feedback, experimenting with new techniques, and optimizing models for real-world constraints.
-</span>
-
-<span class="tr" style="display:none;">
-Problemlere analitik ve sistem odaklı bir bakış açısıyla yaklaşırım. Veri ön işleme aşamasından model değerlendirme ve deploy sürecine kadar her adımı bir bütün olarak ele alırım.
-
-Temiz tasarım, tekrarlanabilirlik ve ölçülebilir performans benim için önemlidir. Çalışmalarımı sürekli geliştirir, yeni yöntemler dener ve modelleri gerçek dünya koşullarına göre optimize ederim.
-</span>
-</p>
-</div>
-
-<!-- STRENGTHS -->
-<div class="section">
-<h2><span class="en">Core Strengths</span><span class="tr" style="display:none;">Güçlü Yönler</span></h2>
+<h2>
+<span class="en">Core Strengths</span>
+<span class="tr" style="display:none;">Güçlü Yönler</span>
+</h2>
 
 <div class="tags">
-<div class="tag">Machine Learning</div>
-<div class="tag">Natural Language Processing</div>
-<div class="tag">LLMs & Prompt Engineering</div>
-<div class="tag">DataOps & Evaluation</div>
-<div class="tag">Scalable Systems</div>
+
+<div class="tag"><span class="en">Machine Learning</span><span class="tr" style="display:none;">Makine Öğrenimi</span></div>
+<div class="tag"><span class="en">Natural Language Processing</span><span class="tr" style="display:none;">Doğal Dil İşleme</span></div>
+<div class="tag"><span class="en">LLMs & Prompt Engineering</span><span class="tr" style="display:none;">LLM & Prompt Mühendisliği</span></div>
+<div class="tag"><span class="en">DataOps & Evaluation</span><span class="tr" style="display:none;">DataOps & Değerlendirme</span></div>
+<div class="tag"><span class="en">Scalable Systems</span><span class="tr" style="display:none;">Ölçeklenebilir Sistemler</span></div>
+
 </div>
 </div>
 
-<!-- TIMELINE -->
+<!-- JOURNEY -->
 <div class="section">
-<h2><span class="en">Journey</span><span class="tr" style="display:none;">Yolculuk</span></h2>
+<h2>
+<span class="en">Journey</span>
+<span class="tr" style="display:none;">Yolculuk</span>
+</h2>
 
 <div class="timeline">
 
 <div class="timeline-item">
-<strong>
-<span class="en">Final Year – Turning Point</span>
-<span class="tr" style="display:none;">Son Sınıf – Dönüm Noktası</span>
-</strong>
+<strong>AI Awakening (University Final Year)</strong>
 <p>
-<span class="en">
-Discovered my passion for AI through academic projects and decided to specialize in intelligent systems.
-</span>
-<span class="tr" style="display:none;">
-Akademik projelerle yapay zekaya yöneldim ve bu alanda uzmanlaşmaya karar verdim.
-</span>
+<span class="en">Discovered AI and shifted focus toward data-driven systems.</span>
+<span class="tr" style="display:none;">Yapay zekayı keşfederek yönümü veri bilimine çevirdim.</span>
 </p>
 </div>
 
 <div class="timeline-item">
-<strong>
-<span class="en">AI Bootcamps & Self-Learning</span>
-<span class="tr" style="display:none;">Bootcamp ve Öğrenme Süreci</span>
-</strong>
+<strong>Bootcamps & Self Learning</strong>
 <p>
-<span class="en">
-Strengthened my skills in machine learning, NLP and real-world problem solving through intensive programs and self-study.
-</span>
-<span class="tr" style="display:none;">
-Makine öğrenimi ve NLP alanında yoğun çalışmalarla kendimi geliştirdim.
-</span>
+<span class="en">Built strong foundations in ML, NLP and deep learning.</span>
+<span class="tr" style="display:none;">ML, NLP ve DL alanında temelimi güçlendirdim.</span>
 </p>
 </div>
 
 <div class="timeline-item">
 <strong>SistersLab AI Academy</strong>
 <p>
-<span class="en">
-Completed a comprehensive AI training program and developed a capstone project focused on classification and evaluation.
-</span>
-<span class="tr" style="display:none;">
-Kapsamlı bir AI eğitimi alarak bitirme projesi geliştirdim.
-</span>
+<span class="en">Developed ML models, NLP systems and capstone AI project.</span>
+<span class="tr" style="display:none;">ML ve NLP projeleri geliştirdim.</span>
 </p>
 </div>
 
 <div class="timeline-item">
 <strong>PranaGEO Internship</strong>
 <p>
-<span class="en">
-Worked on AI-driven solutions combining emotion analysis and personalized insights.
-</span>
-<span class="tr" style="display:none;">
-Duygu analizi ve kişiselleştirme üzerine çalıştım.
-</span>
+<span class="en">Worked on AI-driven emotion analysis and wellness systems.</span>
+<span class="tr" style="display:none;">AI tabanlı duygu analizi yaptım.</span>
 </p>
 </div>
 
 <div class="timeline-item">
-<strong>
-<span class="en">Social Media Team Lead</span>
-<span class="tr" style="display:none;">Takım Lideri</span>
-</strong>
+<strong>Social Media Team Lead</strong>
 <p>
-<span class="en">
-Led content and communication strategies for AI products, improving visibility and engagement.
-</span>
-<span class="tr" style="display:none;">
-AI ürünleri için içerik stratejisi ve ekip yönetimi yaptım.
-</span>
+<span class="en">Led AI product communication and content strategy.</span>
+<span class="tr" style="display:none;">AI ürünlerinin iletişim ve içerik süreçlerini yönettim.</span>
 </p>
 </div>
 
 <div class="timeline-item">
-<strong>Kairu – AI & DataOps</strong>
+<strong>Kairu Experience</strong>
 <p>
-<span class="en">
-Contributed to AI benchmark creation, prompt engineering, model evaluation and mentoring processes.
-</span>
-<span class="tr" style="display:none;">
-AI benchmark, model değerlendirme ve mentorluk süreçlerinde yer aldım.
-</span>
+<span class="en">AI benchmarking, evaluation systems and mentoring roles.</span>
+<span class="tr" style="display:none;">AI değerlendirme ve mentorluk yaptım.</span>
 </p>
 </div>
 
@@ -333,14 +310,17 @@ AI benchmark, model değerlendirme ve mentorluk süreçlerinde yer aldım.
 <!-- EXPLORE -->
 <div class="section">
 
-<h2><span class="en">Explore</span><span class="tr" style="display:none;">Keşfet</span></h2>
+<h2>
+<span class="en">Explore</span>
+<span class="tr" style="display:none;">Keşfet</span>
+</h2>
 
 <div class="explore-grid">
 
 <a href="/projects/" class="explore-card">
 <div>
 <strong><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></strong>
-<p><span class="en">AI & Machine Learning Work</span><span class="tr">Projelerimi incele</span></p>
+<p><span class="en">AI, ML & NLP systems</span><span class="tr" style="display:none;">AI projeleri</span></p>
 </div>
 <div class="explore-icon">→</div>
 </a>
@@ -348,7 +328,7 @@ AI benchmark, model değerlendirme ve mentorluk süreçlerinde yer aldım.
 <a href="/conference/" class="explore-card">
 <div>
 <strong><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></strong>
-<p><span class="en">Research & Presentations</span><span class="tr">Sunumlarımı incele</span></p>
+<p><span class="en">Research & presentations</span><span class="tr" style="display:none;">Sunumlar</span></p>
 </div>
 <div class="explore-icon">→</div>
 </a>
@@ -370,15 +350,9 @@ AI benchmark, model değerlendirme ve mentorluk süreçlerinde yer aldım.
 function setLang(lang){
   document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
   document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
-
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.lang-btn')[lang==='en'?0:1].classList.add('active');
-
   localStorage.setItem('lang', lang);
 }
 setLang(localStorage.getItem('lang') || 'en');
-
-document.getElementById('navbar-name').onclick = () => window.location.href = "/";
 </script>
 
 </body>
