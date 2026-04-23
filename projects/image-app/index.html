@@ -346,14 +346,30 @@ body.light-mode .tags span {
     gap: 10px;
     margin-top: 10px;
 }
-
 .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 10px;
     border-radius: 8px;
+
     border: 1px solid #3fb950;
-    text-align: center;
+
+    color: #ffffff;           /* BEYAZ YAZI */
+    text-decoration: none;    /* ALT ÇİZGİYİ KESİN KALDIR */
+
     cursor: pointer;
     transition: 0.3s;
+
+    background: transparent;
+}
+
+/* link olduğu için bunu da garantiye al */
+.btn:link,
+.btn:visited {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .btn:hover {
@@ -361,15 +377,21 @@ body.light-mode .tags span {
     color: #0d1117;
 }
 
+/* LIGHT MODE */
 body.light-mode .btn {
     color: #3fb950;
     border-color: #3fb950;
+    text-decoration: none;
+}
+
+body.light-mode .btn:link,
+body.light-mode .btn:visited {
+    color: #3fb950;
 }
 
 body.light-mode .btn:hover {
     color: #fff;
 }
-
 /* =======================
    RESPONSIVE
 ======================= */
