@@ -46,14 +46,12 @@ body {
   margin: 0 auto;
 }
 
-/* ================= HIGHLIGHT ================= */
 .highlight {
   margin-top: 20px;
   border-left: 3px solid #3fb950;
   padding-left: 14px;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto 0;
   font-size: 1.05rem;
   color: #e6edf3;
 }
@@ -71,11 +69,9 @@ body {
   margin-bottom: 18px;
 }
 
-/* ================= TEXT ================= */
 .section p {
   font-size: 1rem;
   line-height: 1.85;
-  color: #c9d1d9;
 }
 
 /* ================= TAGS ================= */
@@ -116,18 +112,16 @@ body {
   border-radius: 50%;
 }
 
-/* ================= EXPLORE GRID (FIX) ================= */
+/* ================= EXPLORE ================= */
 .explore-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
-  margin-top: 15px;
 }
 
-/* CARD */
 .explore-card {
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
   padding: 18px;
   border-radius: 14px;
   background: #161b22;
@@ -135,46 +129,32 @@ body {
   text-decoration: none;
   color: inherit;
   transition: all 0.25s ease;
-  align-items: flex-start;
 }
 
-/* HOVER */
 .explore-card:hover {
   transform: translateY(-6px);
   border-color: #3fb950;
   box-shadow: 0 12px 28px rgba(63,185,80,0.18);
 }
 
-/* ICON */
-.explore-icon {
-  font-size: 1.5rem;
-  margin-top: 2px;
-}
-
-/* TEXT */
 .explore-card strong {
-  font-size: 1rem;
-  color: #ffffff;
-  display: block;
-  margin-bottom: 4px;
+  color: #fff;
 }
 
 .explore-card p {
+  margin: 5px 0 0;
   font-size: 0.9rem;
   color: #9aa4af;
-  margin: 0;
-  line-height: 1.5;
+}
+
+.explore-icon {
+  color: #3fb950;
+  font-size: 1.2rem;
 }
 
 /* ================= LINKS ================= */
 a {
-  color: #3fb950;
   text-decoration: none;
-  font-weight: 500;
-}
-
-a:hover {
-  color: #58d26f;
 }
 
 </style>
@@ -182,7 +162,7 @@ a:hover {
 
 <body class="dark-mode">
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="navbar-center">
 
@@ -207,144 +187,106 @@ a:hover {
   </div>
 </nav>
 
-<!-- ================= CONTENT ================= -->
 <section class="page-content">
 
-  <!-- HERO -->
-  <div class="about-hero">
+<!-- HERO -->
+<div class="about-hero">
 
-    <h1>
-      <span class="en">About Me</span>
-      <span class="tr" style="display:none;">Hakkımda</span>
-    </h1>
+<h1>
+<span class="en">About Me</span>
+<span class="tr" style="display:none;">Hakkımda</span>
+</h1>
 
-    <p>
-      <span class="en">
-        AI & Data Science Engineer focused on building intelligent systems and solving real-world problems.
-      </span>
-      <span class="tr" style="display:none;">
-        Yapay zeka ve veri bilimi alanında çalışan bir mühendis.
-      </span>
-    </p>
+<p>
+<span class="en">
+I am an AI & Data Science Engineer focused on building intelligent systems that solve real-world problems. 
+I work across machine learning, natural language processing and data engineering to transform data into scalable solutions.
+</span>
 
-    <div class="highlight">
-      <span class="en">I build ML systems that turn data into impact.</span>
-      <span class="tr" style="display:none;">Veriyi etkiye dönüştüren sistemler geliştiriyorum.</span>
-    </div>
+<span class="tr" style="display:none;">
+Gerçek dünya problemlerine çözüm üreten akıllı sistemler geliştiren bir Yapay Zeka ve Veri Bilimi mühendisiyim.
+</span>
+</p>
 
-  </div>
+<div class="highlight">
+<span class="en">
+I design systems — not just models — that can scale, adapt and deliver real impact.
+</span>
 
-  <!-- FOCUS -->
-  <div class="section">
-    <h2><span class="en">Focus</span><span class="tr" style="display:none;">Odak</span></h2>
+<span class="tr" style="display:none;">
+Sadece model değil, ölçeklenebilir ve gerçek etki yaratan sistemler tasarlarım.
+</span>
+</div>
 
-    <div class="tags">
-      <div class="tag">Machine Learning</div>
-      <div class="tag">Deep Learning</div>
-      <div class="tag">NLP</div>
-      <div class="tag">LLMs</div>
-      <div class="tag">Data Engineering</div>
-    </div>
-  </div>
+</div>
 
-  <!-- BACKGROUND -->
-  <div class="section">
-    <h2><span class="en">Background</span><span class="tr" style="display:none;">Geçmiş</span></h2>
+<!-- HOW I WORK -->
+<div class="section">
+<h2><span class="en">How I Work</span><span class="tr" style="display:none;">Nasıl Çalışırım</span></h2>
 
-    <p>
-      <span class="en">
-        Built recommendation systems, NLP pipelines and deep learning models for real-world datasets.
-      </span>
-      <span class="tr" style="display:none;">
-        Gerçek veri setleri üzerinde öneri sistemleri ve NLP modelleri geliştirdim.
-      </span>
-    </p>
-  </div>
+<p>
+<span class="en">
+I approach problems analytically and focus on building end-to-end solutions — from data preprocessing to model deployment.
+</span>
+<span class="tr" style="display:none;">
+Problemlere analitik yaklaşır ve uçtan uca çözümler geliştiririm.
+</span>
+</p>
+</div>
 
-  <!-- HIGHLIGHTS -->
-  <div class="section">
-    <h2><span class="en">Highlights</span><span class="tr" style="display:none;">Öne Çıkanlar</span></h2>
+<!-- STRENGTHS -->
+<div class="section">
+<h2><span class="en">Core Strengths</span><span class="tr" style="display:none;">Güçlü Yönler</span></h2>
 
-    <div class="timeline">
+<div class="tags">
+<div class="tag">Problem Solving</div>
+<div class="tag">Analytical Thinking</div>
+<div class="tag">Scalable Systems</div>
+<div class="tag">Data Pipelines</div>
+<div class="tag">Model Optimization</div>
+</div>
+</div>
 
-      <div class="timeline-item">
-        <strong>AI System Development</strong>
-        <p>ML & NLP pipelines, scalable AI architectures.</p>
-      </div>
+<!-- EXPLORE -->
+<div class="section">
 
-      <div class="timeline-item">
-        <strong>Research</strong>
-        <p>International conference presentations on NLP & social media analysis.</p>
-      </div>
+<h2><span class="en">Explore</span><span class="tr" style="display:none;">Keşfet</span></h2>
 
-      <div class="timeline-item">
-        <strong>Data Science</strong>
-        <p>Feature engineering, model tuning, data pipelines.</p>
-      </div>
+<div class="explore-grid">
 
-    </div>
-  </div>
+<a href="/projects/" class="explore-card">
+<div>
+<strong><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></strong>
+<p><span class="en">ML, NLP & AI systems</span><span class="tr">Projeler</span></p>
+</div>
+<div class="explore-icon">→</div>
+</a>
 
-  <!-- EXPLORE (FULL FIXED VERSION) -->
-  <div class="section">
+<a href="/conference/" class="explore-card">
+<div>
+<strong><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></strong>
+<p><span class="en">Research & presentations</span><span class="tr">Sunumlar</span></p>
+</div>
+<div class="explore-icon">→</div>
+</a>
 
-    <h2>
-      <span class="en">Explore</span>
-      <span class="tr" style="display:none;">Keşfet</span>
-    </h2>
+</div>
 
-    <div class="explore-grid">
-
-      <a href="/projects/" class="explore-card">
-        <div>
-          <strong><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></strong>
-          <p><span class="en">ML, NLP and AI systems</span><span class="tr" style="display:none;">AI projeleri</span></p>
-        </div>
-      </a>
-
-      <a href="/conference/" class="explore-card">
-      
-        <div>
-          <strong><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></strong>
-          <p><span class="en">Research & presentations</span><span class="tr" style="display:none;">Sunumlar</span></p>
-        </div>
-      </a>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer>
-  <p>
-    <span class="en">© 2026 Elif Karadeniz</span>
-    <span class="tr" style="display:none;">© 2026 Elif Karadeniz</span>
-  </p>
+<p><span class="en">© 2026 Elif Karadeniz</span><span class="tr">© 2026 Elif Karadeniz</span></p>
 </footer>
 
-<!-- ================= JS ================= -->
 <script>
 function setLang(lang){
-  document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
-  document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
-
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.lang-btn')[lang==='en'?0:1].classList.add('active');
-
-  localStorage.setItem('lang', lang);
+document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
+document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
+localStorage.setItem('lang', lang);
 }
-
 setLang(localStorage.getItem('lang') || 'en');
-
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-});
-
-document.getElementById('navbar-name').addEventListener('click', () => {
-  window.location.href = '/';
-});
 </script>
 
 </body>
