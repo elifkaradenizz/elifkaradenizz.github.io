@@ -18,131 +18,124 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
 }
 
+/* ================= PAGE ================= */
 .page-content {
-  max-width: 920px;
-  margin: 110px auto 60px;
+  max-width: 950px;
+  margin: 110px auto 80px;
   padding: 0 22px;
 }
 
 /* ================= HERO ================= */
 .about-hero {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 80px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid rgba(63,185,80,0.4);
+  color: #3fb950;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+  background: rgba(63,185,80,0.06);
 }
 
 .about-hero h1 {
-  font-size: 3.2rem;
+  font-size: 3.4rem;
   color: #fff;
-  margin-bottom: 15px;
-  letter-spacing: -0.8px;
+  margin: 10px 0 14px;
+  letter-spacing: -1px;
 }
 
-.about-hero p {
-  font-size: 1.15rem;
-  line-height: 1.9;
+.hero-text {
+  font-size: 1.2rem;
+  line-height: 1.95;
   color: #9aa4af;
-  max-width: 820px;
+  max-width: 780px;
   margin: 0 auto;
 }
 
+.hero-divider {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3fb950, transparent);
+  margin: 25px auto;
+}
+
 .highlight {
-  margin-top: 26px;
-  padding: 18px 20px;
+  margin-top: 10px;
+  padding: 18px 22px;
   border-left: 4px solid #3fb950;
   background: rgba(63,185,80,0.06);
   border-radius: 12px;
-  max-width: 760px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
   color: #e6edf3;
-  font-size: 1.08rem;
+  font-size: 1.1rem;
   line-height: 1.7;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
 /* ================= SECTION ================= */
 .section {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .section h2 {
-  font-size: 0.85rem;
-  letter-spacing: 1.6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   color: #3fb950;
   margin-bottom: 18px;
-}
-
-.section p {
-  font-size: 1rem;
-  line-height: 1.85;
-  color: #c9d1d9;
 }
 
 /* ================= TAGS ================= */
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .tag {
-  padding: 8px 14px;
+  font-size: 0.85rem;
+  padding: 6px 12px;
   border-radius: 999px;
   border: 1px solid #30363d;
   background: rgba(255,255,255,0.02);
-  font-size: 0.85rem;
-  transition: 0.25s ease;
-}
-
-.tag:hover {
-  border-color: #3fb950;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(63,185,80,0.15);
 }
 
 /* ================= TIMELINE ================= */
 .timeline {
-  position: relative;
-  border-left: 2px solid rgba(63,185,80,0.35);
-  padding-left: 28px;
-  margin-top: 25px;
+  border-left: 2px solid #30363d;
+  padding-left: 22px;
+  margin-top: 20px;
 }
 
 .timeline-item {
   margin-bottom: 28px;
-  padding: 12px 14px;
-  border-radius: 10px;
-  transition: all 0.25s ease;
   position: relative;
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -35px;
-  top: 18px;
+  left: -28px;
+  top: 6px;
   width: 10px;
   height: 10px;
   background: #3fb950;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(63,185,80,0.15);
-}
-
-.timeline-item:hover {
-  background: rgba(255,255,255,0.02);
-  transform: translateX(4px);
 }
 
 .timeline-item strong {
-  display: block;
-  font-size: 1.05rem;
-  color: #fff;
-  margin-bottom: 6px;
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 .timeline-item p {
-  margin: 0;
-  font-size: 0.95rem;
+  margin-top: 6px;
   color: #9aa4af;
   line-height: 1.6;
 }
@@ -163,7 +156,7 @@ body {
   border: 1px solid #30363d;
   text-decoration: none;
   color: inherit;
-  transition: 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .explore-card:hover {
@@ -174,6 +167,7 @@ body {
 
 .explore-card strong {
   color: #fff;
+  font-size: 1rem;
 }
 
 .explore-card p {
@@ -185,10 +179,13 @@ body {
 .explore-icon {
   color: #3fb950;
   font-size: 1.2rem;
+  margin-left: 10px;
 }
 
 /* LINKS */
-a { text-decoration: none; }
+a {
+  text-decoration: none;
+}
 
 </style>
 </head>
@@ -222,143 +219,129 @@ a { text-decoration: none; }
 <!-- HERO -->
 <div class="about-hero">
 
-<h1>
-<span class="en">About Me</span>
-<span class="tr" style="display:none;">Hakkımda</span>
-</h1>
+  <div class="hero-badge">
+    <span class="en">AI & Data Science Engineer</span>
+    <span class="tr" style="display:none;">Yapay Zeka & Veri Bilimi Mühendisi</span>
+  </div>
 
-<p>
-<span class="en">
-AI & Data Science Engineer focused on building intelligent systems that solve real-world problems.
+  <h1>
+    <span class="en">About Me</span>
+    <span class="tr" style="display:none;">Hakkımda</span>
+  </h1>
 
-I work across Machine Learning, NLP, and Data Engineering to transform raw data into scalable, production-ready solutions.
+  <p class="hero-text">
+    <span class="en">
+      I design and build intelligent systems that solve real-world problems using Machine Learning, NLP and Data Engineering.
+      My focus is not just models — but complete, production-ready AI systems that scale and create real impact.
+    </span>
 
-Instead of building isolated models, I design full end-to-end systems — from data pipelines to deployment.
-</span>
+    <span class="tr" style="display:none;">
+      Gerçek dünya problemlerine çözüm üreten yapay zeka sistemleri geliştiriyorum.
+    </span>
+  </p>
 
-<span class="tr" style="display:none;">
-Gerçek dünya problemlerine çözüm üreten yapay zeka ve veri bilimi mühendisiyim.
+  <div class="hero-divider"></div>
 
-ML, NLP ve veri mühendisliği ile veriyi ölçeklenebilir sistemlere dönüştürürüm.
-</span>
-</p>
+  <div class="highlight">
+    <span class="en">
+      I turn data into decisions, models into products, and ideas into scalable systems.
+    </span>
+    <span class="tr" style="display:none;">
+      Veriyi karara, modelleri ürüne, fikirleri ölçeklenebilir sistemlere dönüştürürüm.
+    </span>
+  </div>
 
-<div class="highlight">
-<span class="en">
-I design systems that turn data into decisions, models into products, and research into real-world impact.
-</span>
-<span class="tr" style="display:none;">
-Veriyi karara, modelleri ürüne ve araştırmayı gerçek etkiye dönüştüren sistemler tasarlarım.
-</span>
-</div>
-
-</div>
-
-<!-- SKILLS -->
-<div class="section">
-<h2>
-<span class="en">Core Strengths</span>
-<span class="tr" style="display:none;">Güçlü Yönler</span>
-</h2>
-
-<div class="tags">
-
-<div class="tag"><span class="en">Machine Learning</span><span class="tr" style="display:none;">Makine Öğrenimi</span></div>
-<div class="tag"><span class="en">Natural Language Processing</span><span class="tr" style="display:none;">NLP</span></div>
-<div class="tag"><span class="en">LLMs & Prompt Engineering</span><span class="tr" style="display:none;">LLM & Prompt</span></div>
-<div class="tag"><span class="en">DataOps & Evaluation</span><span class="tr" style="display:none;">DataOps</span></div>
-<div class="tag"><span class="en">Scalable Systems</span><span class="tr" style="display:none;">Ölçeklenebilir Sistemler</span></div>
-
-</div>
 </div>
 
 <!-- JOURNEY -->
 <div class="section">
-<h2>
-<span class="en">Journey</span>
-<span class="tr" style="display:none;">Yolculuk</span>
-</h2>
 
-<div class="timeline">
+  <h2>
+    <span class="en">Journey</span>
+    <span class="tr" style="display:none;">Yolculuk</span>
+  </h2>
 
-<div class="timeline-item">
-<strong>AI Discovery</strong>
-<p>
-<span class="en">Shifted from traditional software to AI systems during university final year.</span>
-<span class="tr" style="display:none;">Üniversitede AI'a yöneldim.</span>
-</p>
-</div>
+  <div class="timeline">
 
-<div class="timeline-item">
-<strong>Bootcamps</strong>
-<p>
-<span class="en">Built strong foundation in ML, DL and NLP systems.</span>
-<span class="tr" style="display:none;">ML ve NLP öğrendim.</span>
-</p>
-</div>
+    <div class="timeline-item">
+      <strong>AI Discovery (University Final Year)</strong>
+      <p>
+        <span class="en">Started focusing on AI after academic projects.</span>
+        <span class="tr" style="display:none;">Yapay zekaya akademik projelerle yöneldim.</span>
+      </p>
+    </div>
 
-<div class="timeline-item">
-<strong>SistersLab AI Academy</strong>
-<p>
-<span class="en">Developed ML models and real-world AI classification systems.</span>
-<span class="tr" style="display:none;">AI projeleri geliştirdim.</span>
-</p>
-</div>
+    <div class="timeline-item">
+      <strong>Bootcamps & Self Learning</strong>
+      <p>
+        <span class="en">Strengthened ML, NLP and deep learning foundations.</span>
+        <span class="tr" style="display:none;">ML ve NLP becerilerimi geliştirdim.</span>
+      </p>
+    </div>
 
-<div class="timeline-item">
-<strong>PranaGEO Internship</strong>
-<p>
-<span class="en">Worked on AI-driven emotion and behavior analysis systems.</span>
-<span class="tr" style="display:none;">Duygu analizi yaptım.</span>
-</p>
-</div>
+    <div class="timeline-item">
+      <strong>SistersLab AI Academy</strong>
+      <p>
+        <span class="en">Built ML models, NLP pipelines and capstone project.</span>
+        <span class="tr" style="display:none;">ML projeleri ve NLP çalışmaları yaptım.</span>
+      </p>
+    </div>
 
-<div class="timeline-item">
-<strong>Social Media Lead</strong>
-<p>
-<span class="en">Led AI product communication and content strategy.</span>
-<span class="tr" style="display:none;">AI içerik süreçlerini yönettim.</span>
-</p>
-</div>
+    <div class="timeline-item">
+      <strong>PranaGEO Internship</strong>
+      <p>
+        <span class="en">Worked on AI-based emotion analysis and recommendation systems.</span>
+        <span class="tr" style="display:none;">AI tabanlı duygu analizi yaptım.</span>
+      </p>
+    </div>
 
-<div class="timeline-item">
-<strong>Kairu Experience</strong>
-<p>
-<span class="en">AI benchmarking, evaluation systems and mentoring.</span>
-<span class="tr" style="display:none;">AI değerlendirme ve mentorluk.</span>
-</p>
-</div>
+    <div class="timeline-item">
+      <strong>Social Media Team Lead</strong>
+      <p>
+        <span class="en">Led content strategy for AI-driven products.</span>
+        <span class="tr" style="display:none;">AI ürünleri için ekip yönettim.</span>
+      </p>
+    </div>
 
-</div>
+    <div class="timeline-item">
+      <strong>Kairu AI Projects</strong>
+      <p>
+        <span class="en">Worked on AI evaluation, benchmarking and mentoring.</span>
+        <span class="tr" style="display:none;">AI değerlendirme ve mentorluk yaptım.</span>
+      </p>
+    </div>
+
+  </div>
+
 </div>
 
 <!-- EXPLORE -->
 <div class="section">
 
-<h2>
-<span class="en">Explore</span>
-<span class="tr" style="display:none;">Keşfet</span>
-</h2>
+  <h2>
+    <span class="en">Explore</span>
+    <span class="tr" style="display:none;">Keşfet</span>
+  </h2>
 
-<div class="explore-grid">
+  <div class="explore-grid">
 
-<a href="/projects/" class="explore-card">
-<div>
-<strong><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></strong>
-<p><span class="en">AI, ML & NLP systems</span><span class="tr" style="display:none;">Projeler</span></p>
-</div>
-<div class="explore-icon">→</div>
-</a>
+    <a href="/projects/" class="explore-card">
+      <div>
+        <strong><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></strong>
+        <p><span class="en">AI, ML, NLP systems</span><span class="tr">Projeler</span></p>
+      </div>
+      <div class="explore-icon">→</div>
+    </a>
 
-<a href="/conference/" class="explore-card">
-<div>
-<strong><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></strong>
-<p><span class="en">Research & presentations</span><span class="tr" style="display:none;">Sunumlar</span></p>
-</div>
-<div class="explore-icon">→</div>
-</a>
+    <a href="/conference/" class="explore-card">
+      <div>
+        <strong><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></strong>
+        <p><span class="en">Research & presentations</span><span class="tr">Sunumlar</span></p>
+      </div>
+      <div class="explore-icon">→</div>
+    </a>
 
-</div>
+  </div>
 
 </div>
 
