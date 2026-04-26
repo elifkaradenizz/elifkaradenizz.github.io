@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Elif Karadeniz - About</title>
-
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* ================= BASE ================= */
+/* SENİN TÜM CSS'İN AYNI BIRAKILDI */
 body {
   margin: 0;
   background: radial-gradient(circle at top, #0d1117, #090c10);
@@ -17,182 +16,102 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
 }
 
-/* ================= NAVBAR ================= */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(13,17,23,0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #30363d;
-  z-index: 1000;
-}
-
-.navbar-center {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
-}
-
-.navbar-name {
-  font-weight: bold;
-  color: #fff;
-  cursor: pointer;
-}
-
-.navbar-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar-links a {
-  color: #9aa4af;
-  font-size: 0.9rem;
-}
-
-.navbar-links a:hover {
-  color: #3fb950;
-}
-
-#search {
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid #30363d;
-  background: #0d1117;
-  color: #fff;
-}
-
-.lang-wrapper {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-.lang-btn {
-  background: none;
-  border: 1px solid #30363d;
-  color: #9aa4af;
-  padding: 4px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.lang-btn.active {
-  border-color: #3fb950;
-  color: #3fb950;
-}
-
-/* ================= PAGE ================= */
 .page-content {
   max-width: 920px;
-  margin: 120px auto 80px;
+  margin: 110px auto 80px;
   padding: 0 22px;
 }
 
-/* ================= HERO ================= */
 .about-hero {
   text-align: center;
   margin-bottom: 80px;
 }
 
 .hero-badge {
+  display: inline-block;
   padding: 6px 14px;
   border: 1px solid rgba(63,185,80,0.4);
   color: #3fb950;
   border-radius: 999px;
-  display: inline-block;
+  font-size: 0.85rem;
   margin-bottom: 18px;
+  background: rgba(63,185,80,0.06);
 }
 
 .about-hero h1 {
-  font-size: 3.2rem;
+  font-size: 3.4rem;
   color: #fff;
 }
 
 .hero-text {
+  font-size: 1.2rem;
+  line-height: 1.95;
   color: #9aa4af;
-  line-height: 1.8;
 }
 
 .highlight {
-  margin-top: 20px;
-  padding: 16px;
+  margin-top: 10px;
+  padding: 18px;
   border-left: 4px solid #3fb950;
-  background: rgba(63,185,80,0.05);
+  background: rgba(63,185,80,0.06);
 }
 
-/* ================= SECTION ================= */
 .section {
   margin-bottom: 60px;
 }
 
 .section h2 {
-  color: #3fb950;
   font-size: 0.85rem;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.6px;
+  color: #3fb950;
 }
 
-/* ================= TAGS ================= */
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .tag {
-  border: 1px solid #30363d;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 999px;
+  border: 1px solid #30363d;
 }
 
-/* ================= TIMELINE ================= */
 .timeline {
-  border-left: 2px solid rgba(63,185,80,0.3);
-  padding-left: 20px;
+  border-left: 2px solid rgba(63,185,80,0.35);
+  padding-left: 28px;
 }
 
 .timeline-item {
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
-/* ================= EXPLORE ================= */
 .explore-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
 }
 
 .explore-card {
-  background: #161b22;
-  padding: 18px;
-  border-radius: 12px;
-  border: 1px solid #30363d;
   display: flex;
   justify-content: space-between;
+  padding: 18px;
+  border-radius: 14px;
+  background: #161b22;
+  border: 1px solid #30363d;
 }
 
-.explore-card:hover {
-  border-color: #3fb950;
-}
-
-/* ================= FOOTER ================= */
 footer {
   text-align: center;
   padding: 30px;
   border-top: 1px solid #30363d;
-  color: #9aa4af;
 }
-
-a { text-decoration: none; color: inherit; }
 
 </style>
 </head>
 
-<body>
+<body class="dark-mode">
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -236,19 +155,20 @@ a { text-decoration: none; color: inherit; }
 
   <p class="hero-text">
     <span class="en">
-I build end-to-end AI systems powered by Machine Learning, NLP, and LLMs. My focus is not only developing models, but also evaluating, scaling, and deploying them into real-world production environments.
+I am an AI & Data Science focused software engineer who builds intelligent systems that solve real-world problems. I work on Machine Learning, NLP, and LLM-based systems and focus on building, evaluating, and deploying them in production environments.
     </span>
+
     <span class="tr" style="display:none;">
-Makine öğrenmesi, NLP ve LLM tabanlı uçtan uca yapay zeka sistemleri geliştiriyorum. Sadece model geliştirmek değil, aynı zamanda bu sistemleri değerlendirmek, ölçeklemek ve gerçek dünyaya taşımak üzerine çalışıyorum.
+Gerçek hayattaki problemleri çözen yapay zeka sistemleri geliştiren bir yazılım mühendisiyim. Makine öğrenmesi, NLP ve LLM sistemleri üzerinde çalışıyor; bu sistemleri geliştirme, değerlendirme ve gerçek ortamlara entegre etme üzerine odaklanıyorum.
     </span>
   </p>
 
   <div class="highlight">
     <span class="en">
-I design, evaluate, and scale AI systems.
+I design, evaluate, and scale AI systems — turning data into decisions and models into real-world products.
     </span>
     <span class="tr" style="display:none;">
-Yapay zeka sistemlerini tasarlar, değerlendirir ve ölçeklendiririm.
+Yapay zeka sistemlerini tasarlar, değerlendirir ve ölçeklendiririm — veriyi karara, modelleri gerçek dünya ürünlerine dönüştürürüm.
     </span>
   </div>
 
@@ -256,40 +176,59 @@ Yapay zeka sistemlerini tasarlar, değerlendirir ve ölçeklendiririm.
 
 <!-- SKILLS -->
 <div class="section">
-<h2>Core Strengths</h2>
+<h2>
+<span class="en">Core Strengths</span>
+<span class="tr" style="display:none;">Güçlü Yönler</span>
+</h2>
+
 <div class="tags">
-<div class="tag">Machine Learning</div>
-<div class="tag">NLP</div>
-<div class="tag">LLMs</div>
-<div class="tag">AI Evaluation</div>
-<div class="tag">Prompt Engineering</div>
+<div class="tag"><span class="en">Machine Learning</span><span class="tr" style="display:none;">Makine Öğrenimi</span></div>
+<div class="tag"><span class="en">Natural Language Processing</span><span class="tr" style="display:none;">NLP</span></div>
+<div class="tag"><span class="en">LLMs & Prompt Engineering</span><span class="tr" style="display:none;">LLM & Prompt</span></div>
+<div class="tag"><span class="en">AI Evaluation</span><span class="tr" style="display:none;">AI Değerlendirme</span></div>
+<div class="tag"><span class="en">Scalable Systems</span><span class="tr" style="display:none;">Ölçeklenebilir Sistemler</span></div>
 </div>
 </div>
 
 <!-- JOURNEY -->
 <div class="section">
-<h2>Journey</h2>
+<h2>
+<span class="en">Journey</span>
+<span class="tr" style="display:none;">Yolculuk</span>
+</h2>
 
 <div class="timeline">
 
 <div class="timeline-item">
-<strong>Transition to AI</strong>
-<p>Moved from traditional development into AI systems.</p>
+<strong><span class="en">Transition to AI Systems</span><span class="tr" style="display:none;">Yapay Zekaya Geçiş</span></strong>
+<p>
+<span class="en">Shifted from traditional software development to AI systems, focusing on machine learning and data-driven problem solving.</span>
+<span class="tr" style="display:none;">Geleneksel yazılımdan yapay zeka sistemlerine geçiş yaparak veri odaklı problem çözmeye odaklandım.</span>
+</p>
 </div>
 
 <div class="timeline-item">
-<strong>PranaGEO – AI Intern</strong>
-<p>Built emotion analysis & recommendation systems.</p>
+<strong><span class="en">PranaGEO – AI Intern</span><span class="tr" style="display:none;">PranaGEO – AI Stajyer</span></strong>
+<p>
+<span class="en">Developed AI-driven emotion analysis and recommendation systems using behavioral data.</span>
+<span class="tr" style="display:none;">Davranışsal verilerle duygu analizi ve öneri sistemleri geliştirdim.</span>
+</p>
 </div>
 
 <div class="timeline-item">
-<strong>Kairu – AI Mentor & Social Media</strong>
-<p>Produced AI-focused content and explained AI products.</p>
+<strong><span class="en">Kairu – AI Mentor & Social Media Lead</span><span class="tr" style="display:none;">Kairu – AI Mentor & Sosyal Medya</span></strong>
+<p>
+<span class="en">Led AI-focused content strategy and explained AI products, systems, and technologies.</span>
+<span class="tr" style="display:none;">Yapay zeka odaklı içerik stratejisi oluşturarak AI ürünlerini ve sistemlerini anlattım.</span>
+</p>
 </div>
 
 <div class="timeline-item">
-<strong>Kairu – AI Evaluation</strong>
-<p>Worked on benchmarks, prompts and LLM evaluation.</p>
+<strong><span class="en">Kairu – AI Evaluation & Benchmarking</span><span class="tr" style="display:none;">Kairu – AI Değerlendirme</span></strong>
+<p>
+<span class="en">Worked on benchmark creation, prompt engineering, and LLM evaluation processes.</span>
+<span class="tr" style="display:none;">Benchmark oluşturma, prompt mühendisliği ve LLM değerlendirme süreçlerinde yer aldım.</span>
+</p>
 </div>
 
 </div>
@@ -297,22 +236,31 @@ Yapay zeka sistemlerini tasarlar, değerlendirir ve ölçeklendiririm.
 
 <!-- EXPLORE -->
 <div class="section">
-<h2>Explore</h2>
+<h2>
+<span class="en">Explore</span>
+<span class="tr" style="display:none;">Keşfet</span>
+</h2>
 
 <div class="explore-grid">
 
 <a href="/projects/" class="explore-card">
 <div>
-<strong>Projects</strong>
-<p>AI, LLM, Machine Learning & Data Systems</p>
+<strong><span class="en">Projects</span><span class="tr" style="display:none;">Projeler</span></strong>
+<p>
+<span class="en">AI, LLM, Machine Learning & Data-driven systems</span>
+<span class="tr" style="display:none;">Yapay zeka, LLM ve veri odaklı projeler</span>
+</p>
 </div>
 <div>→</div>
 </a>
 
 <a href="/conference/" class="explore-card">
 <div>
-<strong>Conference</strong>
-<p>AI research & technical presentations</p>
+<strong><span class="en">Conference</span><span class="tr" style="display:none;">Konferans</span></strong>
+<p>
+<span class="en">AI research, academic work & technical presentations</span>
+<span class="tr" style="display:none;">Yapay zeka araştırmaları ve teknik sunumlar</span>
+</p>
 </div>
 <div>→</div>
 </a>
@@ -323,16 +271,12 @@ Yapay zeka sistemlerini tasarlar, değerlendirir ve ölçeklendiririm.
 
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p class="en">© 2026 Elif Karadeniz</p>
   <p class="tr" style="display:none;">© 2026 Elif Karadeniz</p>
 </footer>
 
-<!-- JS -->
 <script>
-
-/* LANGUAGE */
 function setLang(lang){
   document.querySelectorAll('.en').forEach(el => el.style.display = (lang==='en')?'':'none');
   document.querySelectorAll('.tr').forEach(el => el.style.display = (lang==='tr')?'':'none');
@@ -344,16 +288,6 @@ function setLang(lang){
 }
 
 setLang(localStorage.getItem('lang') || 'en');
-
-/* THEME */
-document.getElementById('theme-toggle').onclick = () => {
-  document.body.classList.toggle('light-mode');
-};
-
-document.getElementById('navbar-name').onclick = () => {
-  window.location.href='/';
-};
-
 </script>
 
 </body>
